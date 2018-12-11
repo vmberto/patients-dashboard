@@ -1,0 +1,97 @@
+<div class="panel">
+
+  <h4 class="panel-title"><button routerLink="../.." class="return-btn btn btn-primary">
+    <i class="fa fa-arrow-left"></i></button> Paciente #{{patientData.id}}
+  </h4>
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <h5>Nome <i [ngClass]="{'always-shown': openInput}" class="edit-pencil fa fa-pencil"></i></h5>
+        <p [hidden]="openInput" (click)="openInputToEdit('name')" class="click-for-edit"> {{patientData.name ?
+          patientData.name : '--'}} </p>
+        <div *ngIf="openInput" class="input-group">
+          <input [(ngModel)]="edit" class="form-control" autofocus type="text">
+          <div class="input-group-append">
+            <button (click)="closeOrEditButton(edit)" [ngClass]="{'btn-success': edit, 'btn-danger': !edit || edit === patientData.name}"
+              class="btn btn-success" type="button">
+              <i class="fa" [ngClass]="{'fa-check': edit, 'fa-times': !edit || edit === patientData.name}"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h5>Plano de Saúde</h5>
+        <p class="click-for-edit">{{patientData.HealthInsurance.name ? patientData.HealthInsurance.name :
+          '--'}}</p>
+
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h5>Celular</h5>
+        <p class="click-for-edit">{{patientData.Contact.phone ? patientData.Contact.phone : '--'}}</p>
+        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h5>Email</h5>
+        <p class="click-for-edit">{{patientData.Contact.email ? patientData.Contact.email : '--'}}</p>
+        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+      </div>
+    </div>
+    <hr class="details-separator">
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Endereço</h4>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h5>CEP</h5>
+        <p class="click-for-edit">{{patientData.Addresses[0].zip_code ? patientData.Addresses[0].zip_code :
+          '--'}}</p>
+        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h5>Rua</h5>
+        <p class="click-for-edit">{{patientData.Addresses[0].street ? patientData.Addresses[0].street :
+          '--'}}</p>
+        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h5>Número</h5>
+        <p class="click-for-edit">{{patientData.Addresses[0].number ? patientData.Addresses[0].number :
+          '--'}}</p>
+        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h5>Complemento</h5>
+        <p class="click-for-edit">{{patientData.Addresses[0].complement ? patientData.Addresses[0].complement
+          : '--'}}</p>
+        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <h5>Bairro</h5>
+        <p class="click-for-edit">{{patientData.Addresses[0].district ? patientData.Addresses[0].district :
+          '--'}}</p>
+        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h5>Cidade</h5>
+        <p class="click-for-edit">{{patientData.Addresses[0].city ? patientData.Addresses[0].city : '--'}}</p>
+        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+      </div>
+    </div>
+    <hr class="details-separator">
+    <div class="panel-footer">
+      <div class="row">
+        <div class="col-md-12">
+          <p style="display: inline"><strong>Cadastrado em: </strong>{{patientData.created_at | date:'dd/MM/yyyy
+            HH:mm'}}&emsp;</p>
+          <p style="display: inline"><strong> Atualizado em: </strong>{{patientData.updated_at | date:'dd/MM/yyyy
+            HH:mm'}}</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>

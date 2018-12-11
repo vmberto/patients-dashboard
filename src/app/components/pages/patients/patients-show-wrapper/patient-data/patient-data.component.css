@@ -1,0 +1,54 @@
+.panel-footer p {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.details-separator {
+    border-top: 1px solid #8c8c8c;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+
+
+.input-group {
+    margin-bottom: 0.7rem;
+}
+
+.click-for-edit {
+    border-radius: 10px;
+    background: none;
+    transition: background 0.5s;
+    padding: 5px 0;
+    cursor: pointer;
+
+}
+
+.click-for-edit:hover {
+    border-radius: 10px;
+    background: rgba(187, 187, 187, 0.200);
+    padding: 5px 0;
+}
+
+.edit-pencil + .click-for-edit:hover, .always-shown {
+    opacity: 1!important;
+}
+
+.edit-pencil {
+    color: white;
+    transition: opacity 0.5s;
+    opacity: 0;
+
+}
+
+.close-edition {
+    color: white;
+
+}
+
+.save-changes-button {
+    right: 3%;
+    transform: translateY(-48%);
+    z-index: -1;
+    position: absolute;
+}

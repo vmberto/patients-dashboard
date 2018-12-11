@@ -1,0 +1,34 @@
+<div class="title text-uppercase" [style.color]="normalFontColor">
+  <h3 style="font-weight: 300">Dashboard</h3>
+</div>
+<hr>
+<div class="nav-container">
+  <h4 class="title">{{userData.name}}</h4>
+  <ul class="nav">
+    <li *ngFor="let menuItem of menuItems">
+
+      <a *ngIf="!menuItem.children" [routerLink]="menuItem.path" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:true}">
+        <i [class]="menuItem.icon" style="padding: 15px;"></i>{{menuItem.title}}
+      </a>
+
+
+      <a *ngIf="menuItem.children" (click)="menuItem.subMenuOpen = !menuItem.subMenuOpen" class="pointer" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:true}">
+          <i [class]="menuItem.icon" style="padding: 15px;"></i>{{menuItem.title}} 
+      </a>
+      
+
+      <ul [@collapse] *ngIf="menuItem.subMenuOpen" class="subMenu">
+        <li *ngFor="let subMenuItem of menuItem.children">
+            <a  [routerLink]="subMenuItem.path" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:true}">
+                <i [class]="subMenuItem.icon" style="padding: 15px;"></i>{{subMenuItem.title}}
+            </a>
+        </li>
+      </ul>
+
+
+    </li>
+    <li>
+      <a style="cursor: pointer" (click)="logout()"><i class="fa fa-sign-out" style="padding: 15px"></i>Sair</a>
+    </li>
+  </ul>
+</div>

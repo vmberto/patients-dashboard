@@ -1,0 +1,15 @@
+<div class="wrapper">
+
+    <button (click)="sidebarOpened = !sidebarOpened" class="btn" id="myBtn" title="Go to top"><i class="fa fa-bars"></i></button>
+
+    <div *ngIf="sidebarOpened || windowSize > 768" class="sidebar-panel" id="sidebar">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="main-panel" id="main-panel">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div *ngIf="showLoadingScreen | async" class="loading">Loading&#8230;</div>
+
+</div>

@@ -1,0 +1,24 @@
+<h3 class="page-title">Painel de Monitoramento</h3>
+
+<div class="row">
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+        <app-data-card [cardTitle]="'Pacientes'" [cardIcon]="'fa-users'" [cardData]="patientsCounter | async" [routerLink]="'/home/patients'"></app-data-card>
+    </div>
+    <!-- <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+        <div class="card danger-card card-hover">
+            <h5 class="card-title">Status</h5>
+            <span style="text-align: right; font-size: 20px;">
+                <i class="fa fa-user"></i>
+                <span> {{ patientsCounter | async}}</span>
+            </span>
+        </div>
+    </div> -->
+</div>
+<div class="row">
+    <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12">
+        <div class="card">
+            <h5 style="color: var(--darker-background-color)!important" class="card-title">Relação Pacientes x Planos de Saúde</h5>
+                <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+<div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
+
+  <div class="panel">
+
+    <h4 class="panel-title"><button routerLink=".." class="return-btn btn btn-primary"><i class="fa fa-arrow-left"></i></button>Adicionar Paciente</h4>
+
+
+    <div class="panel-body">
+      <form [formGroup]="patientForm" (submit)="submitPatientData()">
+
+        <div class="form-row">
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="">Nome</label>
+              <input formControlName="name" type="text" class="form-control">
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="">Plano de Saúde</label>
+              <select formControlName="health_insurance" type="text" class="form-control">
+                <option *ngFor="let healthInsurance of healthInsurances" [value]="healthInsurance.id">{{healthInsurance.name}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="">Celular</label>
+              <input formControlName="phone" type="text" class="form-control">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="">Email</label>
+                <input formControlName="email" type="text" class="form-control">
+              </div>
+            </div>
+  
+  
+          </div>
+
+        <h5>Endereço</h5>
+
+        <div class="form-row">
+
+          <div class="col-md-7">
+            <div class="form-group">
+              <label for="">Rua</label>
+              <input formControlName="street" type="text" class="form-control">
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="">Número</label>
+              <input formControlName="number" type="text" class="form-control">
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">Complemento</label>
+              <input formControlName="complement" type="text" class="form-control">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="">CEP</label>
+              <input formControlName="zip_code" type="text" class="form-control" maxlength="8">
+            </div>
+          </div>
+
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="">Bairro</label>
+              <input formControlName="district" type="text" class="form-control">
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            <div class="form-group">
+              <label for="">Cidade</label>
+              <input formControlName="city" type="text" class="form-control">
+            </div>
+          </div>
+
+
+
+        </div>
+
+        <button [disabled]="creatingPatient" type="submit" class="btn btn-success pull-right">{{creatingPatient ? 'Criando' : 'Criar'}} <i *ngIf="creatingPatient" class="fa fa-spinner fa-spin"></i></button>
+
+      </form>
+
+    </div>
+
+
+
+  </div>
+
+
+</div>

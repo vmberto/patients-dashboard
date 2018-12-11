@@ -1,0 +1,9 @@
+<a [routerLink]="routerLink">
+    <div class="card info-card card-hover">
+        <h5 class="card-title">{{cardTitle}}</h5>
+        <i class="fa background-icon" [ngClass]="{'fa-spinner': validateCardData() , 'fa-spin': validateCardData()}" [class]="cardIcon"></i>
+        <span style="font-weight: 400; font-size: 20px;">
+            {{cardData ? cardData : ' -- '}}
+        </span>
+    </div>
+</a>
