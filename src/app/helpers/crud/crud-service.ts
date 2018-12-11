@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { ObserveOnOperator } from 'rxjs/internal/operators/observeOn';
 
 export abstract class CrudServices {
-    protected http: HttpClient;
-    protected entity: string;
+    public http: HttpClient;
+    public entity: string;
 
     public constructor() { }
 

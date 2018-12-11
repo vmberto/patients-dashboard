@@ -10,14 +10,14 @@ export class ListComponent {
 
     @ViewChild(MatPaginator) pagination: MatPaginator;
 
-    protected resource;
-    protected resourceFunction;
-    protected filterCriteria;
-    protected shareDataService;
+    public resource;
+    public resourceFunction;
+    public filterCriteria;
+    public shareDataService;
 
-    protected tableData;
-    protected tableHeaders;
-    protected tableMetaData;
+    public tableData;
+    public tableHeaders;
+    public tableMetaData;
 
     private sortedByHeader;
     private sortChanges = 0;

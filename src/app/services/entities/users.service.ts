@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UsersService extends CrudServices{
-  protected entity = 'users';
+  public entity = 'users';
 
   constructor(public http: HttpClient) {
     super();

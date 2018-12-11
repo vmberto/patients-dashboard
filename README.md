@@ -1,4 +1,4 @@
-# Learning Project - Angular 7
+# Angular 7 Dashboard Boilerplate
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
