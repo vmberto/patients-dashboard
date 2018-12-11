@@ -1,5 +1,5 @@
 {
-  "name": "monitor-front",
+  "name": "patients-dashboard",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
