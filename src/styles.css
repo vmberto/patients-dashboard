@@ -60,6 +60,7 @@ p {
 
 /*-- Panel--Styles --*/
 .panel{
+  margin-top: 15px;
   padding: 30px 30px 15px 30px; 
   background: var(--lighter-background-color);
   border-radius: 10px;

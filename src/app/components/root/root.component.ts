@@ -22,9 +22,7 @@ export class RootComponent implements OnInit {
   constructor(private router: Router, private shareData: ShareDataService) {
 
     router.events.subscribe((event: Event) => {
-
       if (event instanceof NavigationStart) this.sidebarOpened = false;
-
     });
 
   }
@@ -33,6 +31,7 @@ export class RootComponent implements OnInit {
   ngOnInit() {
 
     this.showLoadingScreen = this.shareData.loadingScreenEvent;
+
   }
 
   public openSidebar() {

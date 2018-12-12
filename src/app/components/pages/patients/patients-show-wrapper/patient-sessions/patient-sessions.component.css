@@ -9,13 +9,18 @@
 .no-top-radius {
   border-radius: 0 0 10px 10px!important;
 }
-.expansive-panel {
+.expansive-panel,
+.expansive-panel-no-session {
   transition: 100ms;
-  cursor: pointer;
   padding: 15px;
   background: var(--darker-background-color);
   border-bottom: 1px solid var(--main-background-color);
   overflow: hidden;
+}
+
+.expansive-panel-no-session {
+  border: none!important;
+  border-radius: 10px!important;
 }
 
 .expansive-panel:hover {

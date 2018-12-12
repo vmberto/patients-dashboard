@@ -1,5 +1,14 @@
 a{text-decoration: none}
 
+
+@media only screen and (max-width: 768px) {
+  .page-title {
+    margin-left: 50px;
+    font-size: 22px!important;
+    line-height: 35px;
+  }
+}
+
 .card {
   color: white;
   padding: 10px 15px;
