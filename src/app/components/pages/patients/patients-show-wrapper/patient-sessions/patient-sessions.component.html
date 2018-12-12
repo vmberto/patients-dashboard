@@ -1,6 +1,6 @@
 <div class="panel" style="padding: 25px;">
   <h4 class="panel-title">Sessões</h4>
-  <div class="expansive-panel" (click)="session.opened = !session.opened" *ngFor="let session of patientSessions" [ngClass]="
+  <div class="expansive-panel pointer" (click)="session.opened = !session.opened" *ngFor="let session of patientSessions" [ngClass]="
   {
     'no-top-radius': patientSessions[patientSessions.length - 1] === session,
     'no-bottom-radius': patientSessions[0] === session,
@@ -15,5 +15,8 @@
     <div [@collapse] *ngIf="session.opened" class="expanded">
       {{session.description}}
     </div>
+  </div>
+  <div style="text-align: center" class="expansive-panel-no-session">
+    <span>Não houve sessões com este paciente</span>
   </div>
 </div>

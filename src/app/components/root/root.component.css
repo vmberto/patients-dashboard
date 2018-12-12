@@ -43,10 +43,9 @@
     padding: 20px 20px 20px 20px; /*top right bottom left*/
   }
 
-
 }
 
-#myBtn {
+#sidebarBtn {
   position: fixed;
   top: 15px;
   left: 15px;
@@ -59,11 +58,17 @@
   color: white;
   cursor: pointer;
   padding: 10px 15px;
-
-    -moz-box-shadow: 0 8px 10px -1px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 0 8px 10px -1px rgba(0, 0, 0, 0.42);
   -webkit-box-shadow: 0 8px 10px -1px rgba(0, 0, 0, 0.42);
   box-shadow: 0 8px 10px -1px rgba(0, 0, 0, 0.42);
+
+  transition: all 500ms;
 }
+
+.btnChangePosition {
+  left: 11.5em!important;
+}
+
 
 
 

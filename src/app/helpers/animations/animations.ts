@@ -49,11 +49,11 @@ export const fade = trigger('fade', [
 export const showSidebar = trigger('showSidebar', [
     transition('void => *', [
         style({ transform: 'translateX(-200%)' }),
-        animate(250, style({ transform: 'translateX(0)' }))
+        animate(300, style({ transform: 'translateX(0)' }))
     ]),
     transition('* => void', [
         style({ transform: 'translateX(0)' }),
-        animate(250, style({ transform: 'translateX(-200%)' }))
+        animate(300, style({ transform: 'translateX(-200%)' }))
     ])
 ]);
 
