@@ -8,4 +8,3 @@ export const config = {
     CLIENT_ID : 18,
     scope : '*'
   };
-  

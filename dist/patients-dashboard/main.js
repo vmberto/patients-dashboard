@@ -595,7 +595,7 @@ function getCookie(cname) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".card{\r\n    border: none!important;\r\n    background-color: var(--secondary-color);\r\n    margin: 100px auto;\r\n    max-width: 500px;\r\n    text-align: center;\r\n    box-shadow: var(--box-shadow);\r\n    \r\n    -webkit-animation: showup 1s;\r\n    \r\n            animation: showup 1s;\r\n    transition: all 500ms;\r\n  }\r\n\r\n  @-webkit-keyframes showup {\r\n      0% {opacity: 0;-webkit-transform: translateY(-110%);transform: translateY(-110%);}\r\n      100% {opacity: 1;-webkit-transform: translateY(0);transform: translateY(0);}\r\n  }\r\n\r\n  @keyframes showup {\r\n      0% {opacity: 0;-webkit-transform: translateY(-110%);transform: translateY(-110%);}\r\n      100% {opacity: 1;-webkit-transform: translateY(0);transform: translateY(0);}\r\n  }\r\n\r\n  .card-body{\r\n    padding: 35px 70px;\r\n  }\r\n\r\n  input, button {\r\n      margin-top: 0.7em;\r\n      font-size: 85%;\r\n  }\r\n\r\n  @media only screen and (max-width: 768px) {\r\n    .card {margin: 45px auto;}\r\n    .card-body{padding: 35px 110px;}\r\n    small{font-size: 75%;}\r\n}\r\n\r\n  @media only screen and (max-width: 425px) {\r\n      .card {margin: 45px auto;border-radius: 0;}\r\n      .card-body{padding: 35px 55px;}\r\n      .card-title h2 {font-size:20px;}\r\n      small{font-size: 65%;}\r\n  }\r\n\r\n  \r\n\r\n\r\n\r\n"
+module.exports = ".card{\r\n    border: none!important;\r\n    background-color: var(--secondary-color);\r\n    margin: 100px auto;\r\n    max-width: 500px;\r\n    text-align: center;\r\n    box-shadow: var(--box-shadow);\r\n    \r\n    -webkit-animation: showup 1s;\r\n    \r\n            animation: showup 1s;\r\n    transition: all 500ms;\r\n  }\r\n\r\n  @-webkit-keyframes showup {\r\n      0% {opacity: 0;-webkit-transform: translateY(-110%);transform: translateY(-110%);}\r\n      100% {opacity: 1;-webkit-transform: translateY(0);transform: translateY(0);}\r\n  }\r\n\r\n  @keyframes showup {\r\n      0% {opacity: 0;-webkit-transform: translateY(-110%);transform: translateY(-110%);}\r\n      100% {opacity: 1;-webkit-transform: translateY(0);transform: translateY(0);}\r\n  }\r\n\r\n  .card-body{\r\n    padding: 35px 70px;\r\n  }\r\n\r\n  input, button {\r\n      margin-top: 0.7em;\r\n      font-size: 85%;\r\n  }\r\n\r\n  input {\r\n  background: white!important;\r\n  display: inline;\r\n  color: var(--darker-font-color)!important;\r\n  border: 1px solid var(--font-subcolor)!important;\r\n}\r\n\r\n  @media only screen and (max-width: 768px) {\r\n    .card {margin: 45px auto;}\r\n    .card-body{padding: 35px 110px;}\r\n    small{font-size: 75%;}\r\n}\r\n\r\n  @media only screen and (max-width: 425px) {\r\n      .card {margin: 45px auto;border-radius: 0;}\r\n      .card-body{padding: 35px 55px;}\r\n      .card-title h2 {font-size:20px;}\r\n      small{font-size: 65%;}\r\n  }\r\n\r\n  \r\n\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -761,7 +761,7 @@ var AnamnesisListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "a{text-decoration: none}\r\n\r\n\r\n@media only screen and (max-width: 768px) {\r\n  .page-title {\r\n    margin-left: 50px;\r\n    font-size: 22px!important;\r\n    line-height: 35px;\r\n  }\r\n}\r\n\r\n\r\n.card {\r\n  color: white;\r\n  padding: 10px 15px;\r\n  margin: 10px;\r\n  overflow: hidden;\r\n  min-height: 98px;\r\n  box-shadow: var(--box-shadow)\r\n\r\n}\r\n\r\n\r\n.card-title {\r\n  font-weight: 300;\r\n}\r\n\r\n\r\n.success-card {\r\n  background: var(--success-color);\r\n}\r\n\r\n\r\n.danger-card {\r\n  background: var(--danger-color);\r\n}\r\n\r\n\r\n.card-hover:hover{\r\n  opacity: 0.8;\r\n  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);\r\n  cursor: pointer;\r\n}\r\n\r\n\r\n.background-icon {\r\n  position: absolute;\r\n  font-size: 100px;\r\n  opacity: 0.4;\r\n  right: 5px;\r\n  top: 10px;\r\n}"
+module.exports = "@media only screen and (max-width: 768px) {\r\n  .page-title {\r\n    margin-left: 50px;\r\n    font-size: 22px!important;\r\n    line-height: 35px;\r\n  }\r\n}\r\n\r\n.card {\r\n  background: var(--lighter-background-color);\r\n\r\n  margin: 10px;\r\n  overflow: hidden;\r\n  min-height: 98px;\r\n  box-shadow: var(--box-shadow)\r\n}\r\n\r\n.card-head {\r\n  background: var(--darker-background-color);\r\n}\r\n\r\n.card-title {\r\n  font-weight: 300;\r\n  font-size: 17px;\r\n  padding: 11px;\r\n  margin: 0;\r\n  border-bottom: 2px solid var(--primary);\r\n  text-align: center;\r\n}\r\n\r\n"
 
 /***/ }),
 
@@ -772,7 +772,7 @@ module.exports = "a{text-decoration: none}\r\n\r\n\r\n@media only screen and (ma
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3 class=\"page-title\">Painel de Monitoramento</h3>\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12\">\r\n        <app-data-card [cardTitle]=\"'Pacientes'\" [cardIcon]=\"'fa-users'\" [cardData]=\"patientsCounter | async\" [routerLink]=\"'/home/patients'\"></app-data-card>\r\n    </div>\r\n    <!-- <div class=\"col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12\">\r\n        <div class=\"card danger-card card-hover\">\r\n            <h5 class=\"card-title\">Status</h5>\r\n            <span style=\"text-align: right; font-size: 20px;\">\r\n                <i class=\"fa fa-user\"></i>\r\n                <span> {{ patientsCounter | async}}</span>\r\n            </span>\r\n        </div>\r\n    </div> -->\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12\">\r\n        <div class=\"card\">\r\n            <h5 style=\"color: var(--darker-background-color)!important\" class=\"card-title\">Relação Pacientes x Planos de Saúde</h5>\r\n                <canvas id=\"myChart\"></canvas>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<h3 class=\"page-title\">Painel de Monitoramento</h3>\r\n\r\n<div class=\"row\">\r\n    <div class=\"col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12\">\r\n        <app-data-card [cardTitle]=\"'Pacientes'\" [cardIcon]=\"'fa-users'\" [cardData]=\"patientsCounter | async\" [routerLink]=\"'/home/patients'\"></app-data-card>\r\n    </div>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12\">\r\n        <div class=\"card\">\r\n            <div class=\"card-head\">\r\n                <h5 class=\"card-title\">Relação Pacientes x Planos de Saúde</h5>\r\n            </div>\r\n            <div class=\"card-body\">\r\n                <canvas id=\"myChart\"></canvas>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -832,14 +832,23 @@ var DashboardComponent = /** @class */ (function () {
                 data: {
                     labels: _this.labels,
                     datasets: [{
-                            label: 'Cores',
                             data: _this.chartData,
                             backgroundColor: _this.colors,
                             borderColor: _this.colors,
                             borderWidth: 1
                         }]
                 },
-                options: {}
+                options: {
+                    legend: {
+                        fullWidth: true,
+                        display: true,
+                        poisition: 'right',
+                        labels: {
+                            fontColor: 'white',
+                            fontSize: 15
+                        }
+                    },
+                }
             });
         });
     };
@@ -939,7 +948,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel\">\r\n  <h4 class=\"panel-title\">Planos de Saúde</h4>\r\n\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4 input-group mb-3\">\r\n      <div class=\"input-group-prepend\">\r\n        <button  (click)=\"openCreateInput()\" class=\"btn btn-primary\">Adicionar Plano de Saúde</button>\r\n      </div>\r\n      <input *ngIf=\"createHealthInsurance\" [(ngModel)]=\"newHealthInsurance\" type=\"text\" class=\"form-control\"\r\n        placeholder=\"Plano de Saúde\">\r\n      <button (click)=\"create(newHealthInsurance)\" *ngIf=\"createHealthInsurance\" class=\"btn btn-success\" type=\"button\">\r\n        <i class=\"fa fa-check\"></i>\r\n      </button>\r\n    </div>\r\n\r\n  </div>\r\n\r\n\r\n\r\n  <div class=\"panel-body\">\r\n\r\n\r\n    <div class=\"table-wrapper\">\r\n\r\n\r\n\r\n      <div class=\"tableStyles\">\r\n\r\n        <table class=\"display table table-condensed table-responsive-md\">\r\n          <thead>\r\n            <th>#</th>\r\n            <th>Nome</th>\r\n            <th>Quantidade de Pacientes</th>\r\n            <th>Adicionado em</th>\r\n            <th>Ação</th>\r\n          </thead>\r\n          <tbody>\r\n\r\n            <tr *ngFor=\"let data of tableData\">\r\n              <td>{{data.id}}</td>\r\n              <td>{{data.name}}</td>\r\n              <td>{{data.Patients.length}}</td>\r\n              <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>\r\n              <td>\r\n                <button [title]=\"data.Patients.length > 0 ? 'Planos de Saúde com pacientes cadastrados não podem ser excluídos' : 'Excluir Plano de Saúde'\"\r\n                        [disabled]=\"data.Patients.length > 0\"\r\n                        (click)=\"delete(data.id)\"\r\n                        class=\"btn btn-danger btn-sm\">\r\n                     <i class=\"fa fa-trash\"></i>\r\n                  </button>\r\n              </td>\r\n            </tr>\r\n\r\n            <tr *ngIf=\"!tableData || tableData.length <= 0\">\r\n              <td colspan=\"6\" class=\"text-center\">\r\n                Nenhum Dado Encontrado\r\n              </td>\r\n            </tr>\r\n\r\n\r\n\r\n          </tbody>\r\n\r\n        </table>\r\n\r\n\r\n        <!-- <nav style=\"float: right\">\r\n                  <select [(ngModel)]=\"limitPerPage\" (change)=\"limitChange(limitPerPage)\" style=\"display: inline;\">\r\n                    <option value=\"15\">15</option>\r\n                    <option value=\"20\">20</option>\r\n                    <option value=\"30\">30</option>\r\n                    <option value=\"45\">45</option>\r\n                    <option value=\"55\">55</option>\r\n                  </select>\r\n              \r\n                  <ul class=\"pagination\">\r\n                    <li class=\"page-item\">\r\n                      <a class=\"page-link\" (click)=\"paginationChange(pagination.current_page - 1)\"><</a> </li>\r\n              \r\n                    <li *ngIf=\"pagination.links.previous && pagination.links.next\" class=\"page-item\"><a class=\"page-link\" href=\"#\">{{pagination.current_page\r\n                        - 1}}</a></li>\r\n                    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">{{pagination.current_page}}</a></li>\r\n              \r\n              \r\n                    <li class=\"page-item\">\r\n                      <a class=\"page-link\" (click)=\"paginationChange(pagination.current_page + 1)\">></a>\r\n                    </li>\r\n                  </ul>\r\n                </nav> -->\r\n\r\n\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n\r\n\r\n</div>"
+module.exports = "<div class=\"panel\">\r\n  <h4 class=\"panel-title\">Planos de Saúde</h4>\r\n\r\n  <div class=\"row  mb-3\">\r\n    <div class=\"col-md-3\">\r\n      <div class=\"input-group\">\r\n        <input [(ngModel)]=\"newHealthInsurance\" type=\"text\" class=\"form-control\" placeholder=\"Adicionar Plano de Saúde\">\r\n        <div class=\"input-group-append\">\r\n          <button (click)=\"create(newHealthInsurance)\" class=\"btn btn-success\" type=\"button\">\r\n            <i class=\"fa fa-check\"></i>\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n\r\n\r\n  <div class=\"panel-body\">\r\n\r\n\r\n    <div class=\"table-wrapper\">\r\n\r\n\r\n\r\n      <div class=\"tableStyles\">\r\n\r\n        <table class=\"display table table-condensed table-responsive-md\">\r\n          <thead>\r\n            <th>#</th>\r\n            <th>Nome</th>\r\n            <th>Quantidade de Pacientes</th>\r\n            <th>Adicionado em</th>\r\n            <th>Ação</th>\r\n          </thead>\r\n          <tbody>\r\n\r\n            <tr *ngFor=\"let data of tableData\">\r\n              <td>{{data.id}}</td>\r\n              <td>{{data.name}}</td>\r\n              <td>{{data.Patients.length}}</td>\r\n              <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>\r\n              <td>\r\n                <button [title]=\"data.Patients.length > 0 ? 'Planos de Saúde com pacientes cadastrados não podem ser excluídos' : 'Excluir Plano de Saúde'\"\r\n                  [disabled]=\"data.Patients.length > 0\" (click)=\"delete(data.id)\" class=\"btn btn-danger btn-sm\">\r\n                  <i class=\"fa fa-trash\"></i>\r\n                </button>\r\n              </td>\r\n            </tr>\r\n\r\n            <tr *ngIf=\"!tableData || tableData.length <= 0\">\r\n              <td colspan=\"6\" class=\"text-center\">\r\n                Nenhum Dado Encontrado\r\n              </td>\r\n            </tr>\r\n\r\n\r\n\r\n          </tbody>\r\n\r\n        </table>\r\n\r\n\r\n        <!-- <nav style=\"float: right\">\r\n                  <select [(ngModel)]=\"limitPerPage\" (change)=\"limitChange(limitPerPage)\" style=\"display: inline;\">\r\n                    <option value=\"15\">15</option>\r\n                    <option value=\"20\">20</option>\r\n                    <option value=\"30\">30</option>\r\n                    <option value=\"45\">45</option>\r\n                    <option value=\"55\">55</option>\r\n                  </select>\r\n              \r\n                  <ul class=\"pagination\">\r\n                    <li class=\"page-item\">\r\n                      <a class=\"page-link\" (click)=\"paginationChange(pagination.current_page - 1)\"><</a> </li>\r\n              \r\n                    <li *ngIf=\"pagination.links.previous && pagination.links.next\" class=\"page-item\"><a class=\"page-link\" href=\"#\">{{pagination.current_page\r\n                        - 1}}</a></li>\r\n                    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">{{pagination.current_page}}</a></li>\r\n              \r\n              \r\n                    <li class=\"page-item\">\r\n                      <a class=\"page-link\" (click)=\"paginationChange(pagination.current_page + 1)\">></a>\r\n                    </li>\r\n                  </ul>\r\n                </nav> -->\r\n\r\n\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n\r\n\r\n</div>"
 
 /***/ }),
 
@@ -953,11 +962,12 @@ module.exports = "<div class=\"panel\">\r\n  <h4 class=\"panel-title\">Planos de
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HealthInsurancesListComponent", function() { return HealthInsurancesListComponent; });
-/* harmony import */ var _services_share_data_share_data_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../services/share-data/share-data.service */ "./src/app/services/share-data/share-data.service.ts");
-/* harmony import */ var src_app_helpers_crud_list_components_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/helpers/crud/list-components.helpers */ "./src/app/helpers/crud/list-components.helpers.ts");
-/* harmony import */ var _helpers_crud_filter_criteria__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../helpers/crud/filter-criteria */ "./src/app/helpers/crud/filter-criteria.ts");
-/* harmony import */ var _services_entities_health_insurances_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../services/entities/health-insurances.service */ "./src/app/services/entities/health-insurances.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _helpers_animations_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../helpers/animations/animations */ "./src/app/helpers/animations/animations.ts");
+/* harmony import */ var _services_share_data_share_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../services/share-data/share-data.service */ "./src/app/services/share-data/share-data.service.ts");
+/* harmony import */ var src_app_helpers_crud_list_components_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/helpers/crud/list-components.helpers */ "./src/app/helpers/crud/list-components.helpers.ts");
+/* harmony import */ var _helpers_crud_filter_criteria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../helpers/crud/filter-criteria */ "./src/app/helpers/crud/filter-criteria.ts");
+/* harmony import */ var _services_entities_health_insurances_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../services/entities/health-insurances.service */ "./src/app/services/entities/health-insurances.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -985,6 +995,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var HealthInsurancesListComponent = /** @class */ (function (_super) {
     __extends(HealthInsurancesListComponent, _super);
     function HealthInsurancesListComponent(healthInsurancesService, shareData) {
@@ -998,7 +1009,7 @@ var HealthInsurancesListComponent = /** @class */ (function (_super) {
             { title: 'Criado em', value: 'created_at' },
             { title: 'Atualizado em', value: 'updated_at' }
         ];
-        _this.filterCriteria = new _helpers_crud_filter_criteria__WEBPACK_IMPORTED_MODULE_2__["FilterCriteria"]();
+        _this.filterCriteria = new _helpers_crud_filter_criteria__WEBPACK_IMPORTED_MODULE_3__["FilterCriteria"]();
         _this.resource = _this.healthInsurancesService;
         _this.shareDataService = _this.shareData;
         return _this;
@@ -1012,9 +1023,11 @@ var HealthInsurancesListComponent = /** @class */ (function (_super) {
     };
     HealthInsurancesListComponent.prototype.create = function (newHealthInsurance) {
         var _this = this;
-        this.resource.post({ name: newHealthInsurance }).subscribe(function () {
-            _this.loadData();
-        });
+        if (newHealthInsurance) {
+            this.resource.post({ name: newHealthInsurance }).subscribe(function () {
+                _this.loadData();
+            });
+        }
     };
     HealthInsurancesListComponent.prototype.delete = function (id) {
         var _this = this;
@@ -1023,15 +1036,16 @@ var HealthInsurancesListComponent = /** @class */ (function (_super) {
         });
     };
     HealthInsurancesListComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_5__["Component"])({
             selector: 'app-health-insurances-list',
             template: __webpack_require__(/*! ./health-insurances-list.component.html */ "./src/app/components/pages/health-insurances/health-insurances-list/health-insurances-list.component.html"),
             styles: [__webpack_require__(/*! ./health-insurances-list.component.css */ "./src/app/components/pages/health-insurances/health-insurances-list/health-insurances-list.component.css")],
+            animations: [_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_0__["showCreateInput"]]
         }),
-        __metadata("design:paramtypes", [_services_entities_health_insurances_service__WEBPACK_IMPORTED_MODULE_3__["HealthInsurancesService"], _services_share_data_share_data_service__WEBPACK_IMPORTED_MODULE_0__["ShareDataService"]])
+        __metadata("design:paramtypes", [_services_entities_health_insurances_service__WEBPACK_IMPORTED_MODULE_4__["HealthInsurancesService"], _services_share_data_share_data_service__WEBPACK_IMPORTED_MODULE_1__["ShareDataService"]])
     ], HealthInsurancesListComponent);
     return HealthInsurancesListComponent;
-}(src_app_helpers_crud_list_components_helpers__WEBPACK_IMPORTED_MODULE_1__["ListComponent"]));
+}(src_app_helpers_crud_list_components_helpers__WEBPACK_IMPORTED_MODULE_2__["ListComponent"]));
 
 
 
@@ -1118,7 +1132,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-xl-8 col-lg-12 col-md-12 col-sm-12\">\r\n\r\n  <div class=\"panel\">\r\n\r\n    <h4 class=\"panel-title\"><button routerLink=\"..\" class=\"return-btn btn btn-primary\"><i class=\"fa fa-arrow-left\"></i></button>Adicionar Paciente</h4>\r\n\r\n\r\n    <div class=\"panel-body\">\r\n      <form [formGroup]=\"patientForm\" (submit)=\"submitPatientData()\">\r\n\r\n        <div class=\"form-row\">\r\n\r\n          <div class=\"col-md-4\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Nome</label>\r\n              <input formControlName=\"name\" type=\"text\" class=\"form-control\">\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-md-4\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Plano de Saúde</label>\r\n              <select formControlName=\"health_insurance\" type=\"text\" class=\"form-control\">\r\n                <option *ngFor=\"let healthInsurance of healthInsurances\" [value]=\"healthInsurance.id\">{{healthInsurance.name}}</option>\r\n              </select>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-md-4\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Celular</label>\r\n              <input formControlName=\"phone\" type=\"text\" class=\"form-control\">\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n\r\n        <div class=\"form-row\">\r\n\r\n            <div class=\"col-md-4\">\r\n              <div class=\"form-group\">\r\n                <label for=\"\">Email</label>\r\n                <input formControlName=\"email\" type=\"text\" class=\"form-control\">\r\n              </div>\r\n            </div>\r\n  \r\n  \r\n          </div>\r\n\r\n        <h5>Endereço</h5>\r\n\r\n        <div class=\"form-row\">\r\n\r\n          <div class=\"col-md-7\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Rua</label>\r\n              <input formControlName=\"street\" type=\"text\" class=\"form-control\">\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-md-2\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Número</label>\r\n              <input formControlName=\"number\" type=\"text\" class=\"form-control\">\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-md-3\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Complemento</label>\r\n              <input formControlName=\"complement\" type=\"text\" class=\"form-control\">\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n\r\n\r\n          <div class=\"col-md-3\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">CEP</label>\r\n              <input formControlName=\"zip_code\" type=\"text\" class=\"form-control\" maxlength=\"8\">\r\n            </div>\r\n          </div>\r\n\r\n\r\n          <div class=\"col-md-4\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Bairro</label>\r\n              <input formControlName=\"district\" type=\"text\" class=\"form-control\">\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-md-5\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Cidade</label>\r\n              <input formControlName=\"city\" type=\"text\" class=\"form-control\">\r\n            </div>\r\n          </div>\r\n\r\n\r\n\r\n        </div>\r\n\r\n        <button [disabled]=\"creatingPatient\" type=\"submit\" class=\"btn btn-success pull-right\">{{creatingPatient ? 'Criando' : 'Criar'}} <i *ngIf=\"creatingPatient\" class=\"fa fa-spinner fa-spin\"></i></button>\r\n\r\n      </form>\r\n\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n\r\n</div>"
+module.exports = "<div class=\"col-xl-8 col-lg-12 col-md-12 col-sm-12\">\r\n\r\n  <div class=\"panel\">\r\n\r\n    <h4 class=\"panel-title\"><button routerLink=\"..\" class=\"return-btn btn btn-primary\"><i class=\"fa fa-arrow-left\"></i></button>Adicionar Paciente</h4>\r\n\r\n\r\n    <div class=\"panel-body\">\r\n      <form [formGroup]=\"patientForm\" (submit)=\"submitPatientData()\">\r\n\r\n        <div class=\"form-row\">\r\n\r\n          <div class=\"col-md-4\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Nome</label>\r\n              <input formControlName=\"name\" type=\"text\" class=\"form-control\" placeholder=\"Umberto Barros\">\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-md-4\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Plano de Saúde</label>\r\n              <select formControlName=\"health_insurance\" type=\"text\" class=\"form-control\" placeholder=\"Umberto Barros\">\r\n                <option *ngFor=\"let healthInsurance of healthInsurances\" [value]=\"healthInsurance.id\">{{healthInsurance.name}}</option>\r\n              </select>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-md-4\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Celular</label>\r\n              <input formControlName=\"phone\" type=\"text\" class=\"form-control\" placeholder=\"+55 (81) 99818-1213\">\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n\r\n        <div class=\"form-row\">\r\n\r\n            <div class=\"col-md-4\">\r\n              <div class=\"form-group\">\r\n                <label for=\"\">Email</label>\r\n                <input formControlName=\"email\" type=\"text\" class=\"form-control\" placeholder=\"email@email.com\">\r\n              </div>\r\n            </div>\r\n  \r\n  \r\n          </div>\r\n\r\n        <h5>Endereço</h5>\r\n\r\n        <div class=\"form-row\">\r\n\r\n          <div class=\"col-md-7\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Rua</label>\r\n              <input formControlName=\"street\" type=\"text\" class=\"form-control\" placeholder=\"Av. Caxangá\">\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-md-2\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Número</label>\r\n              <input formControlName=\"number\" type=\"text\" class=\"form-control\" placeholder=\"000\">\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-md-3\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Complemento</label>\r\n              <input formControlName=\"complement\" type=\"text\" class=\"form-control\" placeholder=\"Aptº 0000\">\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n\r\n\r\n          <div class=\"col-md-3\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">CEP</label>\r\n              <input formControlName=\"zip_code\" type=\"text\" class=\"form-control\" placeholder=\"00000-000\" maxlength=\"8\">\r\n            </div>\r\n          </div>\r\n\r\n\r\n          <div class=\"col-md-4\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Bairro</label>\r\n              <input formControlName=\"district\" type=\"text\" class=\"form-control\" placeholder=\"Barro\">\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-md-5\">\r\n            <div class=\"form-group\">\r\n              <label for=\"\">Cidade</label>\r\n              <input formControlName=\"city\" type=\"text\" class=\"form-control\" placeholder=\"Recife\">\r\n            </div>\r\n          </div>\r\n\r\n\r\n\r\n        </div>\r\n\r\n        <button [disabled]=\"creatingPatient\" type=\"submit\" class=\"btn btn-success pull-right\">{{creatingPatient ? 'Criando' : 'Criar'}} <i *ngIf=\"creatingPatient\" class=\"fa fa-spinner fa-spin\"></i></button>\r\n\r\n      </form>\r\n\r\n    </div>\r\n\r\n\r\n\r\n  </div>\r\n\r\n\r\n</div>"
 
 /***/ }),
 
@@ -1244,7 +1258,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel\">\r\n  <h4 class=\"panel-title\">Pacientes</h4>\r\n\r\n  <button routerLink=\"create\" class=\"btn btn-primary\">Adicionar Paciente</button>\r\n\r\n  <div class=\"panel-body\">\r\n    <div class=\"table-wrapper\">\r\n\r\n\r\n      <form *ngIf=\"tableMetaData\" [formGroup]=\"filterForm\" (submit)=\"filterList()\">\r\n        <div class=\"tableFilters row\">\r\n\r\n\r\n          <div class=\"col-md-3 mb-3\">\r\n            <input type=\"text\" class=\"form-control\" placeholder=\"Buscar\" formControlName=\"search\">\r\n          </div>\r\n\r\n          <div class=\"col-md-3 mb-3\">\r\n            <select type=\"text\" class=\"custom-select\" formControlName=\"health_insurance\">\r\n              <option value=\"\" disabled selected>Plano de Saúde</option>\r\n              <option *ngFor=\"let filter of tableMetaData.filterConfig.health_insurances\" [value]=\"filter.id\">{{filter.name}}</option>\r\n            </select>\r\n          </div>\r\n\r\n          <div class=\"col-md-3 mb-3\">\r\n            <button class=\"btn full-width-mobile btn-primary\" type=\"submit\"><i class=\"fa fa-search\"></i></button>\r\n          </div>\r\n\r\n\r\n        </div>\r\n      </form>\r\n\r\n      <div class=\"tableStyles\">\r\n\r\n\r\n        <table class=\"display table table-condensed table-responsive-md\">\r\n          <thead>\r\n            <th *ngFor=\"let tableHead of tableHeaders\"><a class=\"pointer\" (click)=\"changeSort(tableHead)\">{{tableHead.title}}\r\n                <i class=\"fa\" [ngClass]=\"{'fa-caret-up': tableHead.sorted === 'asc', 'fa-caret-down': tableHead.sorted === 'desc'}\"></i>\r\n              </a>\r\n            </th>\r\n            <th>Ação</th>\r\n          </thead>\r\n          <tbody>\r\n\r\n            <tr *ngFor=\"let data of tableData\">\r\n              <td>{{data.id}}</td>\r\n              <td>{{data.name}}</td>\r\n              <td>{{data.HealthInsurance.name}}</td>\r\n              <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>\r\n              <td>{{data.updated_at | date:'dd/MM/yyyy HH:mm'}}</td>\r\n              <td>\r\n                <button title=\"Ver Paciente\" (click)=\"show(data.id)\" class=\"mr-2 btn btn-primary btn-sm\">\r\n                  <i class=\"fa fa-search\"></i>\r\n                </button>\r\n                <button title=\"Excluir Paciente\" (click)=\"delete(data.id)\" class=\"btn btn-danger btn-sm\">\r\n                  <i class=\"fa fa-trash\"></i>\r\n                </button>\r\n              </td>\r\n            </tr>\r\n\r\n            <tr *ngIf=\"!tableData || tableData.length <= 0\">\r\n              <td colspan=\"6\" class=\"text-center\">\r\n                Nenhum Dado Encontrado\r\n              </td>\r\n            </tr>\r\n\r\n\r\n\r\n          </tbody>\r\n\r\n        </table>\r\n\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"tableMetaData\" class=\"row tablePagination\">\r\n\r\n\r\n        <div class=\"input-group col-xl-2 col-lg-4 col-md-4 col-sm-6 col-12 mb-3\">\r\n          <div class=\"input-group-prepend\">\r\n            <label class=\"input-group-text\" for=\"inputGroupSelect01\">Limite</label>\r\n          </div>\r\n          <select [(ngModel)]=\"selectedSize\" (change)=\"limitChange(selectedSize)\" class=\"custom-select\" id=\"inputGroupSelect01\">\r\n            <option *ngFor=\"let pageSize of pageSizeOptions\" [value]=\"pageSize\">{{pageSize}}</option>\r\n          </select>\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"btn-group col-xl-4 col-lg-8 col-md-8 col-sm-12 col-12\" role=\"group\" aria-label=\"Basic example\">\r\n          <button type=\"button\" [disabled]=\"tableMetaData.paginationConfig.current_page === 1\" class=\"btn btn-secondary\"\r\n            (click)=\"paginationChange(tableMetaData.paginationConfig.current_page - 1)\">\r\n            <i class=\"fa fa-angle-left\"></i>\r\n          </button>\r\n          <button type=\"button\" class=\"btn btn-primary\">{{tableMetaData.paginationConfig.current_page}}</button>\r\n          <button type=\"button\" [disabled]=\"tableMetaData.paginationConfig.current_page === tableMetaData.paginationConfig.total_pages\"\r\n            class=\"btn btn-secondary\" (click)=\"paginationChange(tableMetaData.paginationConfig.current_page + 1)\">\r\n            <i class=\"fa fa-angle-right\"></i>\r\n          </button>\r\n        </div>\r\n\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n\r\n  </div>\r\n\r\n\r\n</div>"
+module.exports = "<div class=\"panel\">\r\n  <h4 class=\"panel-title\">Pacientes</h4>\r\n\r\n  <button routerLink=\"create\" class=\"btn btn-primary\">Adicionar Paciente</button>\r\n\r\n  <div class=\"panel-body\">\r\n    <div class=\"table-wrapper\">\r\n\r\n\r\n      <form *ngIf=\"tableMetaData\" [formGroup]=\"filterForm\" (submit)=\"submitFilters()\">\r\n        <div class=\"tableFilters row\">\r\n\r\n\r\n          <div class=\"col-md-3 mb-3\">\r\n            <input type=\"text\" class=\"form-control\" placeholder=\"Buscar\" formControlName=\"search\">\r\n          </div>\r\n\r\n          <div class=\"col-md-3 mb-3\">\r\n            <select type=\"text\" class=\"custom-select\" formControlName=\"health_insurance\">\r\n              <option value=\"\" disabled selected>Plano de Saúde</option>\r\n              <option *ngFor=\"let filter of tableMetaData.filterConfig.health_insurances\" [value]=\"filter.id\">{{filter.name}}</option>\r\n            </select>\r\n          </div>\r\n\r\n          <div class=\"col-md-3 mb-3\">\r\n            <button class=\"btn full-width-mobile btn-primary mr-2 mb-1\" type=\"submit\"><i class=\"fa fa-search\"></i></button>\r\n            <button *ngIf=\"clearFiltersBtn\" class=\"btn full-width-mobile btn-warning mr-2 mb-1\" type=\"button\" (click)=\"clearFilters()\"><i class=\"fa fa-times\"></i></button>\r\n          </div>\r\n\r\n\r\n        </div>\r\n      </form>\r\n\r\n      <div class=\"tableStyles\">\r\n\r\n\r\n        <table class=\"display table table-condensed table-responsive-md\">\r\n          <thead>\r\n            <th *ngFor=\"let tableHead of tableHeaders\"><a class=\"pointer\" (click)=\"changeSort(tableHead)\">{{tableHead.title}}\r\n                <i class=\"fa\" [ngClass]=\"{'fa-caret-up': tableHead.sorted === 'asc', 'fa-caret-down': tableHead.sorted === 'desc'}\"></i>\r\n              </a>\r\n            </th>\r\n            <th>Ação</th>\r\n          </thead>\r\n          <tbody>\r\n\r\n            <tr *ngFor=\"let data of tableData\">\r\n              <td>{{data.id}}</td>\r\n              <td>{{data.name}}</td>\r\n              <td>{{data.HealthInsurance.name}}</td>\r\n              <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>\r\n              <td>{{data.updated_at | date:'dd/MM/yyyy HH:mm'}}</td>\r\n              <td>\r\n                <button title=\"Ver Paciente\" (click)=\"show(data.id)\" class=\"mr-2 btn btn-primary btn-sm\">\r\n                  <i class=\"fa fa-search\"></i>\r\n                </button>\r\n                <button title=\"Excluir Paciente\" (click)=\"delete(data.id)\" class=\"btn btn-danger btn-sm\">\r\n                  <i class=\"fa fa-trash\"></i>\r\n                </button>\r\n              </td>\r\n            </tr>\r\n\r\n            <tr *ngIf=\"!tableData || tableData.length <= 0\">\r\n              <td colspan=\"6\" class=\"text-center\">\r\n                Nenhum Dado Encontrado\r\n              </td>\r\n            </tr>\r\n\r\n\r\n\r\n          </tbody>\r\n\r\n        </table>\r\n\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"tableMetaData\" class=\"row tablePagination\">\r\n\r\n\r\n        <div class=\"input-group col-xl-2 col-lg-4 col-md-4 col-sm-6 col-12 mb-3\">\r\n          <div class=\"input-group-prepend\">\r\n            <label class=\"input-group-text\" for=\"inputGroupSelect01\">Limite</label>\r\n          </div>\r\n          <select [(ngModel)]=\"selectedSize\" (change)=\"limitChange(selectedSize)\" class=\"custom-select\" id=\"inputGroupSelect01\">\r\n            <option *ngFor=\"let pageSize of pageSizeOptions\" [value]=\"pageSize\">{{pageSize}}</option>\r\n          </select>\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"btn-group col-xl-4 col-lg-8 col-md-8 col-sm-12 col-12\" role=\"group\" aria-label=\"Basic example\">\r\n          <button type=\"button\" [disabled]=\"tableMetaData.paginationConfig.current_page === 1\" class=\"btn btn-secondary\"\r\n            (click)=\"paginationChange(tableMetaData.paginationConfig.current_page - 1)\">\r\n            <i class=\"fa fa-angle-left\"></i>\r\n          </button>\r\n          <button type=\"button\" class=\"btn btn-primary\">{{tableMetaData.paginationConfig.current_page}}</button>\r\n          <button type=\"button\" [disabled]=\"tableMetaData.paginationConfig.current_page === tableMetaData.paginationConfig.total_pages\"\r\n            class=\"btn btn-secondary\" (click)=\"paginationChange(tableMetaData.paginationConfig.current_page + 1)\">\r\n            <i class=\"fa fa-angle-right\"></i>\r\n          </button>\r\n        </div>\r\n\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n\r\n  </div>\r\n\r\n\r\n</div>"
 
 /***/ }),
 
@@ -1307,13 +1321,6 @@ var PatientsListComponent = /** @class */ (function (_super) {
         _this.router = router;
         _this.fb = fb;
         _this.selectedSize = 15;
-        // public patientsTableHeading = [
-        //   { title: '#', value: 'id' },
-        //   { title: 'Nome', value: 'name' },
-        //   { title: 'Plano de Saúde', value: ['health_insurance', 'name'] },
-        //   { title: 'Criada em', value: 'created_at' },
-        //   { title: 'Atualizado em', value: 'updated_at' }
-        // ];
         _this.tableHeaders = [
             { title: '#', value: 'id' },
             { title: 'Nome', value: 'name' },
@@ -1334,20 +1341,33 @@ var PatientsListComponent = /** @class */ (function (_super) {
         this.filterCriteria.addListParams();
         this.loadData();
     };
-    PatientsListComponent.prototype.filterList = function () {
+    PatientsListComponent.prototype.submitFilters = function () {
         var controls = this.filterForm.controls;
+        var countFilters = 0;
         if (controls.health_insurance.value) {
             this.filterCriteria.addParam('health_insurance', this.filterForm.controls.health_insurance.value);
+            countFilters += 1;
         }
         else {
             this.filterCriteria.removeParam('health_insurance');
         }
         if (controls.search.value) {
             this.filterCriteria.addParam('search', this.filterForm.controls.search.value);
+            countFilters += 1;
         }
         else {
             this.filterCriteria.removeParam('search');
         }
+        if (countFilters > 0)
+            this.clearFiltersBtn = true;
+        else
+            this.clearFiltersBtn = false;
+        this.loadData();
+    };
+    PatientsListComponent.prototype.clearFilters = function () {
+        this.filterCriteria.clearParams();
+        this.filterCriteria.addListParams();
+        this.clearFiltersBtn = false;
         this.loadData();
     };
     PatientsListComponent.prototype.limitChange = function (newLimit) {
@@ -1485,7 +1505,7 @@ var PatientDataComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".no-radius {\r\n  border-radius: 0!important;\r\n}\r\n\r\n.no-bottom-radius {\r\n  border-radius: 10px 10px 0 0!important;\r\n}\r\n\r\n.no-top-radius {\r\n  border-radius: 0 0 10px 10px!important;\r\n}\r\n\r\n.expansive-panel,\r\n.expansive-panel-no-session {\r\n  transition: 100ms;\r\n  padding: 15px;\r\n  background: var(--darker-background-color);\r\n  border-bottom: 1px solid var(--main-background-color);\r\n  overflow: hidden;\r\n}\r\n\r\n.expansive-panel-no-session {\r\n  border: none!important;\r\n  border-radius: 10px!important;\r\n}\r\n\r\n.expansive-panel:hover {\r\n  background: var(--darker-background-selected);\r\n}\r\n\r\n.selected-panel {\r\n  background: var(--darker-background-selected);\r\n  border-bottom: 1px solid var(--main-background-color)\r\n}\r\n\r\n.expansive-panel-good {\r\n  border-right: 7.85px solid var(--success)\r\n}\r\n\r\n.expansive-panel-medium {\r\n  border-right: 7.85px solid var(--warning)\r\n}\r\n\r\n.expansive-panel-bad {\r\n  border-right: 7.85px solid var(--danger)\r\n}\r\n\r\n.expanded {\r\n  padding: 7.5px;\r\n  color: var(--font-color);\r\n  font-size: 14px;\r\n  margin-top: 10px;\r\n}\r\n"
+module.exports = ".panel-head {\r\n  background: var(--darker-background-color);\r\n}\r\n.panel-title {\r\n  font-weight: 300;\r\n  font-size: 19px;\r\n  padding: 11px;\r\n  margin: 0;\r\n  border-bottom: 2px solid var(--primary);\r\n  text-align: center;\r\n}\r\n.no-radius {\r\n  border-radius: 0!important;\r\n}\r\n.no-bottom-radius {\r\n  border-radius: 10px 10px 0 0!important;\r\n}\r\n.no-top-radius {\r\n  border-radius: 0 0 10px 10px!important;\r\n}\r\n.expansive-panel,\r\n.expansive-panel-no-session {\r\n  transition: 100ms;\r\n  padding: 15px;\r\n  background: var(--darker-background-color);\r\n  border-bottom: 1px solid var(--main-background-color);\r\n  overflow: hidden;\r\n}\r\n.expansive-panel-no-session {\r\n  border: none!important;\r\n  border-radius: 10px!important;\r\n}\r\n.expansive-panel:hover {\r\n  background: var(--darker-background-selected);\r\n}\r\n.selected-panel {\r\n  background: var(--darker-background-selected);\r\n  border-bottom: 1px solid var(--main-background-color)\r\n}\r\n.expansive-panel-good {\r\n  border-right: 7.85px solid var(--success)\r\n}\r\n.expansive-panel-medium {\r\n  border-right: 7.85px solid var(--warning)\r\n}\r\n.expansive-panel-bad {\r\n  border-right: 7.85px solid var(--danger)\r\n}\r\n.expanded {\r\n  padding: 7.5px;\r\n  color: var(--font-color);\r\n  font-size: 14px;\r\n  margin-top: 10px;\r\n}\r\n"
 
 /***/ }),
 
@@ -1496,7 +1516,7 @@ module.exports = ".no-radius {\r\n  border-radius: 0!important;\r\n}\r\n\r\n.no-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel\" style=\"padding: 25px;\">\r\n  <h4 class=\"panel-title\">Sessões</h4>\r\n  <div class=\"expansive-panel pointer\" (click)=\"session.opened = !session.opened\" *ngFor=\"let session of patientSessions\" [ngClass]=\"\r\n  {\r\n    'no-top-radius': patientSessions[patientSessions.length - 1] === session,\r\n    'no-bottom-radius': patientSessions[0] === session,\r\n    'no-radius': patientSessions[patientSessions.length - 1] !== session && patientSessions[0] !== session,\r\n    'selected-panel': session.opened,\r\n    'expansive-panel-good': session.humour === 'Bem Humorado',\r\n    'expansive-panel-medium': session.humour === 'Chateado',\r\n    'expansive-panel-bad': session.humour === 'Triste'\r\n  }\">\r\n    <span>{{session.humour}}<span class=\"text-primary\">  {{(patientSessions[0] == session ? '- Primeira Sessão' : '')}}</span></span>\r\n    <span style=\"float: right\">{{ (session.created_at | date:'dd/MM/yyyy') + ' - ' + (session.created_at | date:'HH:mm') }}</span>\r\n    <div [@collapse] *ngIf=\"session.opened\" class=\"expanded\">\r\n      {{session.description}}\r\n    </div>\r\n  </div>\r\n  <div style=\"text-align: center\" class=\"expansive-panel-no-session\">\r\n    <span>Não houve sessões com este paciente</span>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"panel\" style=\"padding: 0;\">\r\n  <div class=\"panel-head\">\r\n    <h4 class=\"panel-title\">Sessões</h4>\r\n  </div>\r\n  <div class=\"panel-body\" style=\"padding: 25px;\">\r\n    <div class=\"expansive-panel pointer\" (click)=\"session.opened = !session.opened\" *ngFor=\"let session of patientSessions\" [ngClass]=\"\r\n    {\r\n      'no-top-radius': patientSessions[patientSessions.length - 1] === session,\r\n      'no-bottom-radius': patientSessions[0] === session,\r\n      'no-radius': patientSessions[patientSessions.length - 1] !== session && patientSessions[0] !== session,\r\n      'selected-panel': session.opened,\r\n      'expansive-panel-good': session.humour === 'Bem Humorado',\r\n      'expansive-panel-medium': session.humour === 'Chateado',\r\n      'expansive-panel-bad': session.humour === 'Triste'\r\n    }\">\r\n      <span><strong>{{session.humour}}</strong><span class=\"text-primary\">  {{(patientSessions[patientSessions.length - 1] == session ? '- Primeira Sessão' : '')}}</span></span>\r\n      <span style=\"float: right\">{{ (session.created_at | date:'dd/MM/yyyy') + ' - ' + (session.created_at | date:'HH:mm') }}</span>\r\n      <div [@collapse] *ngIf=\"session.opened\" class=\"expanded\">\r\n        {{session.description}}\r\n      </div>\r\n    </div>\r\n    <div *ngIf=\"patientSessions.length === 0\" style=\"text-align: center\">\r\n      <span>Não houve sessões com este paciente</span>\r\n    </div>\r\n\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -1510,8 +1530,9 @@ module.exports = "<div class=\"panel\" style=\"padding: 25px;\">\r\n  <h4 class=
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientSessionsComponent", function() { return PatientSessionsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/helpers/animations/animations */ "./src/app/helpers/animations/animations.ts");
+/* harmony import */ var src_app_helpers_consts_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/helpers/consts.helpers */ "./src/app/helpers/consts.helpers.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/helpers/animations/animations */ "./src/app/helpers/animations/animations.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1523,33 +1544,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var PatientSessionsComponent = /** @class */ (function () {
     function PatientSessionsComponent() {
         this.date = new Date();
         this.array = [{ opened: false, humour: 1 }, { opened: false, humour: 2 }, { opened: false, humour: 0 }, { opened: false, humour: 2 }, { opened: false, humour: 1 }];
     }
     PatientSessionsComponent.prototype.ngOnInit = function () {
-        function compare(a, b) {
-            if (a > b)
-                return 1;
-            if (b < a)
-                return -1;
-            return 0;
-        }
         this.patientSessions.map(function (p) {
             p.opened = false;
         });
+        this.patientSessions = Object(src_app_helpers_consts_helpers__WEBPACK_IMPORTED_MODULE_0__["sortByKey"])(this.patientSessions, 'created_at');
     };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         __metadata("design:type", Object)
     ], PatientSessionsComponent.prototype, "patientSessions", void 0);
     PatientSessionsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-patient-sessions',
             template: __webpack_require__(/*! ./patient-sessions.component.html */ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/patient-sessions.component.html"),
             styles: [__webpack_require__(/*! ./patient-sessions.component.css */ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/patient-sessions.component.css")],
-            animations: [src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_1__["collapse"]]
+            animations: [src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_2__["collapse"]]
         }),
         __metadata("design:paramtypes", [])
     ], PatientSessionsComponent);
@@ -1656,7 +1672,7 @@ var PatientsShowComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".wrapper {\r\n  position: relative;\r\n  width: 100%;\r\n}\r\n\r\n.responsive {\r\n  display: none;\r\n}\r\n\r\n.sidebar-panel{\r\n  overflow-x: hidden;\r\n  background-color: var(--secondary-color);\r\n  width: 200px;\r\n  position: absolute;\r\n  height: 100%;\r\n  min-height: 100vh;\r\n  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);\r\n  transition: all 500ms;\r\n  z-index: 998;\r\n}\r\n\r\n.main-panel{\r\n  width: 100%;\r\n  flex: 1;\r\n  padding: 20px 20px 20px 220px; /*top right bottom left*/\r\n}\r\n\r\n@media only screen and (max-width: 768px) {\r\n  .responsive {\r\n    display: block;\r\n  }\r\n\r\n  .main-panel{\r\n    padding: 20px 20px 20px 20px; /*top right bottom left*/\r\n  }\r\n\r\n}\r\n\r\n#sidebarBtn {\r\n  position: fixed;\r\n  top: 15px;\r\n  left: 15px;\r\n  z-index: 99;\r\n  font-size: 18px;\r\n  border: none;\r\n  outline: none;\r\n  background-color: var(--secondary-color);\r\n  border-radius: 100%;\r\n  color: white;\r\n  cursor: pointer;\r\n  padding: 10px 15px;\r\n  box-shadow: 0 8px 10px -1px rgba(0, 0, 0, 0.42);\r\n\r\n  transition: all 500ms;\r\n}\r\n\r\n.btnChangePosition {\r\n  left: 11.5em!important;\r\n}\r\n\r\n/*-------LoadingScreen-------*/\r\n\r\n.loading {\r\n  position: fixed;\r\n  z-index: 999;\r\n  height: 2em;\r\n  width: 2em;\r\n  overflow: show;\r\n  margin: auto;\r\n  top: 0;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n}\r\n\r\n/* Transparent Overlay */\r\n\r\n.loading:before {\r\n  content: '';\r\n  display: block;\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n    background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));\r\n\r\n  background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));\r\n}\r\n\r\n/* :not(:required) hides these rules from IE9 and below */\r\n\r\n.loading:not(:required) {\r\n  /* hide \"loading...\" text */\r\n  font: 0/0 a;\r\n  color: transparent;\r\n  text-shadow: none;\r\n  background-color: transparent;\r\n  border: 0;\r\n}\r\n\r\n.loading:not(:required):after {\r\n  content: '';\r\n  display: block;\r\n  font-size: 10px;\r\n  width: 1em;\r\n  height: 1em;\r\n  margin-top: -0.5em;\r\n  -webkit-animation: spinner 1500ms infinite linear;\r\n  animation: spinner 1500ms infinite linear;\r\n  border-radius: 0.5em;\r\nbox-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;\r\n}\r\n\r\n/* Animation */\r\n\r\n@-webkit-keyframes spinner {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(360deg);\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n\r\n@keyframes spinner {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(360deg);\r\n    transform: rotate(360deg);\r\n  }\r\n}"
+module.exports = ".wrapper {\r\n  position: relative;\r\n  width: 100%;\r\n}\r\n\r\n.responsive {\r\n  display: none;\r\n}\r\n\r\n.sidebar-panel{\r\n  overflow-x: hidden;\r\n  background-color: var(--secondary-color);\r\n  width: 200px;\r\n  position: absolute;\r\n  height: 100%;\r\n  min-height: 100vh;\r\n  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);\r\n  transition: all 500ms;\r\n  z-index: 998;\r\n}\r\n\r\n.main-panel{\r\n  width: 100%;\r\n  flex: 1;\r\n  padding: 20px 20px 20px 220px; /*top right bottom left*/\r\n}\r\n\r\n@media only screen and (max-width: 768px) {\r\n  .responsive {\r\n    display: block;\r\n  }\r\n\r\n  .main-panel{\r\n    padding: 20px 20px 20px 20px; /*top right bottom left*/\r\n  }\r\n\r\n}\r\n\r\n#sidebarBtn {\r\n  position: fixed;\r\n  top: 10px;\r\n  left: 10px;\r\n  z-index: 99;\r\n  font-size: 18px;\r\n  border: none;\r\n  outline: none;\r\n  background-color: var(--secondary-color);\r\n  border-radius: 100%;\r\n  color: white;\r\n  cursor: pointer;\r\n  padding: 10px 15px;\r\n  box-shadow: 0 8px 10px -1px rgba(0, 0, 0, 0.42);\r\n\r\n  transition: all 500ms;\r\n}\r\n\r\n.btnChangePosition {\r\n  left: 11.5em!important;\r\n}\r\n\r\n/*-------LoadingScreen-------*/\r\n\r\n.loading {\r\n  position: fixed;\r\n  z-index: 999;\r\n  height: 2em;\r\n  width: 2em;\r\n  overflow: show;\r\n  margin: auto;\r\n  top: 0;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n}\r\n\r\n/* Transparent Overlay */\r\n\r\n.loading:before {\r\n  content: '';\r\n  display: block;\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n    background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));\r\n\r\n  background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));\r\n}\r\n\r\n/* :not(:required) hides these rules from IE9 and below */\r\n\r\n.loading:not(:required) {\r\n  /* hide \"loading...\" text */\r\n  font: 0/0 a;\r\n  color: transparent;\r\n  text-shadow: none;\r\n  background-color: transparent;\r\n  border: 0;\r\n}\r\n\r\n.loading:not(:required):after {\r\n  content: '';\r\n  display: block;\r\n  font-size: 10px;\r\n  width: 1em;\r\n  height: 1em;\r\n  margin-top: -0.5em;\r\n  -webkit-animation: spinner 1500ms infinite linear;\r\n  animation: spinner 1500ms infinite linear;\r\n  border-radius: 0.5em;\r\nbox-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;\r\n}\r\n\r\n/* Animation */\r\n\r\n@-webkit-keyframes spinner {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(360deg);\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n\r\n@keyframes spinner {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(360deg);\r\n    transform: rotate(360deg);\r\n  }\r\n}"
 
 /***/ }),
 
@@ -1853,7 +1869,7 @@ var SidebarComponent = /** @class */ (function () {
 /*!**************************************************!*\
   !*** ./src/app/helpers/animations/animations.ts ***!
   \**************************************************/
-/*! exports provided: showup, listObjShow, fade, showSidebar, collapse */
+/*! exports provided: showup, listObjShow, fade, showSidebar, collapse, showCreateInput */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1863,6 +1879,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fade", function() { return fade; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showSidebar", function() { return showSidebar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "collapse", function() { return collapse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showCreateInput", function() { return showCreateInput; });
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
 
 var showup = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])('showup', [
@@ -1923,6 +1940,16 @@ var collapse = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(150, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ height: '0' }))
     ])
 ]);
+var showCreateInput = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"])('showCreateInput', [
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('void => *', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'translateX(-100%)' }),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(250, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'translateY(0)' }))
+    ]),
+    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["transition"])('* => void', [
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'translateX(0)' }),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(250, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'translateX(-120%)' }))
+    ])
+]);
 
 
 /***/ }),
@@ -1931,17 +1958,25 @@ var collapse = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["trigger"
 /*!*******************************************!*\
   !*** ./src/app/helpers/consts.helpers.ts ***!
   \*******************************************/
-/*! exports provided: generateRandomColor */
+/*! exports provided: generateRandomColor, sortByKey */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateRandomColor", function() { return generateRandomColor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByKey", function() { return sortByKey; });
 var generateRandomColor = function () {
     return new Array(7)
         .fill(0)
         .map(function (_, i) { return i ? '0123456789abcdef'[Math.floor(Math.random() * 16)] : '#'; })
         .join('');
+};
+var sortByKey = function (array, key) {
+    return array.sort(function (a, b) {
+        var x = a[key];
+        var y = b[key];
+        return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+    });
 };
 
 
@@ -2064,6 +2099,9 @@ var FilterCriteria = /** @class */ (function () {
     FilterCriteria.prototype.removeParam = function (paramName) {
         delete this._params[paramName];
     };
+    FilterCriteria.prototype.clearParams = function () {
+        this._params = {};
+    };
     FilterCriteria.prototype.addListParams = function () {
         this.addParam('limit', 15);
         this.addParam('page', 1);
@@ -2162,7 +2200,7 @@ var ListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "a{text-decoration: none}\r\n\r\n.card {\r\n  color: white;\r\n  padding: 10px 15px;\r\n  margin: 10px;\r\n  overflow: hidden;\r\n  min-height: 98px;\r\n  transition: all 500ms;\r\n\r\n}\r\n\r\n.card-title {\r\n  font-weight: 300;\r\n}\r\n\r\n.success-card {\r\n  background: var(--success-color);\r\n}\r\n\r\n.danger-card {\r\n  background: var(--danger-color);\r\n}\r\n\r\n.warning-card {\r\n    background: var(--warning);\r\n}\r\n\r\n.info-card {\r\n    background: var(--info);\r\n}\r\n\r\n.card-hover:hover{\r\n  opacity: 0.8;\r\n  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);\r\n  cursor: pointer;\r\n}\r\n\r\n.background-icon {\r\n  position: absolute;\r\n  font-size: 100px;\r\n  opacity: 0.4;\r\n  right: 0;\r\n  top: 10px;\r\n}\r\n\r\n.fa-spinner {\r\n  color: var(--dark-font-color);\r\n}"
+module.exports = "a{text-decoration: none}\r\n\r\n.card {\r\n  color: white;\r\n  padding: 10px 15px;\r\n  margin: 10px;\r\n  overflow: hidden;\r\n  min-height: 98px;\r\n  transition: all 500ms;\r\n\r\n}\r\n\r\n.card-title {\r\n  font-weight: 300;\r\n}\r\n\r\n.success-card {\r\n  background: var(--success-color);\r\n}\r\n\r\n.danger-card {\r\n  background: var(--danger-color);\r\n}\r\n\r\n.warning-card {\r\n    background: var(--warning);\r\n}\r\n\r\n.info-card {\r\n    background: var(--info-color);\r\n}\r\n\r\n.card-hover:hover{\r\n  opacity: 0.8;\r\n  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);\r\n  cursor: pointer;\r\n}\r\n\r\n.background-icon {\r\n  position: absolute;\r\n  font-size: 100px;\r\n  opacity: 0.4;\r\n  right: 0;\r\n  top: 10px;\r\n}\r\n\r\n.fa-spinner {\r\n  color: var(--dark-font-color);\r\n}"
 
 /***/ }),
 
@@ -2173,7 +2211,7 @@ module.exports = "a{text-decoration: none}\r\n\r\n.card {\r\n  color: white;\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<a [routerLink]=\"routerLink\">\r\n    <div class=\"card info-card card-hover\">\r\n        <h5 class=\"card-title\">{{cardTitle}}</h5>\r\n        <i class=\"fa background-icon\" [ngClass]=\"{'fa-spinner': validateCardData() , 'fa-spin': validateCardData()}\" [class]=\"cardIcon\"></i>\r\n        <span style=\"font-weight: 400; font-size: 20px;\">\r\n            {{cardData ? cardData : ' -- '}}\r\n        </span>\r\n    </div>\r\n</a>"
+module.exports = "<a [routerLink]=\"routerLink\">\r\n    <div class=\"card info-card card-hover\">\r\n        <h5 class=\"card-title\">{{cardTitle}}</h5>\r\n        <i class=\"fa background-icon\" [ngClass]=\"{'fa-spinner': validateCardData() , 'fa-spin': validateCardData()}\" [class]=\"cardIcon\"></i>\r\n        <span style=\"font-weight: 400; font-size: 30px;\">\r\n            {{cardData ? cardData : ' -- '}}\r\n        </span>\r\n    </div>\r\n</a>"
 
 /***/ }),
 
