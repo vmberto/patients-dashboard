@@ -70,3 +70,13 @@ export const collapse = trigger('collapse', [
 ]);
 
 
+export const showCreateInput = trigger('showCreateInput', [
+    transition('void => *', [
+        style({ transform: 'translateX(-100%)' }),
+        animate(250, style({ transform: 'translateY(0)' }))
+    ]),
+    transition('* => void', [
+        style({ transform: 'translateX(0)' }),
+        animate(250, style({ transform: 'translateX(-120%)' }))
+    ])
+]);

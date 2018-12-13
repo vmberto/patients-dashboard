@@ -14,14 +14,8 @@ import { ListComponent } from 'src/app/helpers/crud/list-components.helpers';
 export class PatientsListComponent extends ListComponent implements OnInit {
 
   public filterForm: FormGroup;
+  public clearFiltersBtn: boolean;
   public selectedSize = 15;
-  // public patientsTableHeading = [
-  //   { title: '#', value: 'id' },
-  //   { title: 'Nome', value: 'name' },
-  //   { title: 'Plano de Saúde', value: ['health_insurance', 'name'] },
-  //   { title: 'Criada em', value: 'created_at' },
-  //   { title: 'Atualizado em', value: 'updated_at' }
-  // ];
 
   public tableHeaders = [
     { title: '#', value: 'id' },
@@ -62,24 +56,40 @@ export class PatientsListComponent extends ListComponent implements OnInit {
 
   }
 
-  public filterList() {
+  public submitFilters() {
 
     const controls = this.filterForm.controls;
+    let countFilters = 0;
 
     if (controls.health_insurance.value) {
       this.filterCriteria.addParam('health_insurance', this.filterForm.controls.health_insurance.value);
+      countFilters += 1;
     } else {
       this.filterCriteria.removeParam('health_insurance');
     }
 
     if (controls.search.value) {
       this.filterCriteria.addParam('search', this.filterForm.controls.search.value);
+      countFilters += 1;
+
     } else {
       this.filterCriteria.removeParam('search');
     }
 
+    if (countFilters > 0) this.clearFiltersBtn = true;
+    else this.clearFiltersBtn = false;
+
     this.loadData();
 
+  }
+
+  public clearFilters() {
+    this.filterCriteria.clearParams();
+    this.filterCriteria.addListParams();
+
+    this.clearFiltersBtn = false;
+
+    this.loadData();
   }
 
   public limitChange(newLimit) {

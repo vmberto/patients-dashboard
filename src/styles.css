@@ -111,14 +111,20 @@ thead { background-color: var(--darker-background-color); }
   border-radius: 20px;
 }
 .tablePagination select,
-.tablePagination input {
+.tablePagination input,
+select,
+input {
   background: var(--lighter-background-color)!important;
   display: inline;
   color: var(--font-color)!important;
-
-  border: 1px solid var(--font-subcolor);
-  border-left: none;
+  border: 1px solid var(--font-subcolor)!important;
 }
+
+.tablePagination select,
+.tablePagination input{
+  border-left: none!important;
+}
+
 
 .tablePagination label {
   background: var(--darker-background-color)!important;

@@ -1,3 +1,4 @@
+import { collapse, showCreateInput } from './../../../../helpers/animations/animations';
 import { listObjShow } from 'src/app/helpers/animations/animations';
 import { ShareDataService } from './../../../../services/share-data/share-data.service';
 import { ListComponent } from 'src/app/helpers/crud/list-components.helpers';
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-health-insurances-list',
   templateUrl: './health-insurances-list.component.html',
   styleUrls: ['./health-insurances-list.component.css'],
+  animations: [showCreateInput]
 })
 export class HealthInsurancesListComponent extends ListComponent implements OnInit {
 
@@ -45,9 +47,11 @@ export class HealthInsurancesListComponent extends ListComponent implements OnIn
   }
 
   public create(newHealthInsurance) {
-    this.resource.post({ name: newHealthInsurance }).subscribe(() => {
-      this.loadData();
-    });
+    if (newHealthInsurance) {
+      this.resource.post({ name: newHealthInsurance }).subscribe(() => {
+        this.loadData();
+      });
+    }
   }
 
   public delete(id) {
