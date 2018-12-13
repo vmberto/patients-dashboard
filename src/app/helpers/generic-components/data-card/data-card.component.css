@@ -27,7 +27,7 @@ a{text-decoration: none}
     background: var(--warning);
 }
 .info-card {
-    background: var(--info);
+    background: var(--info-color);
 }
 
 .card-hover:hover{

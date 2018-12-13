@@ -43,14 +43,23 @@ export class DashboardComponent implements OnInit {
                     data: {
                         labels: this.labels,
                         datasets: [{
-                            label: 'Cores',
                             data: this.chartData,
                             backgroundColor: this.colors,
                             borderColor: this.colors,
                             borderWidth: 1
                         }]
                     },
-                    options: {}
+                    options: {
+                        legend: {
+                            fullWidth: true,
+                            display: true,
+                            poisition: 'right',
+                            labels: {
+                                fontColor: 'white',
+                                fontSize: 15
+                            }
+                        },
+                    }
                 });
 
 

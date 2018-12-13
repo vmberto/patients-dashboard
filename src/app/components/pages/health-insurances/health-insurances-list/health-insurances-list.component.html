@@ -2,17 +2,11 @@
   <h4 class="panel-title">Planos de Saúde</h4>
 
   <div class="row  mb-3">
-    <div class="col-md-2">
-      <div class="input-group-prepend">
-        <button (click)="openCreateInput()" class="btn btn-primary">Adicionar Plano de Saúde</button>
-      </div>
-    </div>
-
-    <div class="col-md-2">
-      <div [@showCreateInput] *ngIf="createHealthInsurance" class="input-group">
-        <input [(ngModel)]="newHealthInsurance" type="text" class="form-control" placeholder="Plano de Saúde">
+    <div class="col-md-3">
+      <div class="input-group">
+        <input [(ngModel)]="newHealthInsurance" type="text" class="form-control" placeholder="Adicionar Plano de Saúde">
         <div class="input-group-append">
-          <button (click)="create(newHealthInsurance)" *ngIf="createHealthInsurance" class="btn btn-success" type="button">
+          <button (click)="create(newHealthInsurance)" class="btn btn-success" type="button">
             <i class="fa fa-check"></i>
           </button>
         </div>
