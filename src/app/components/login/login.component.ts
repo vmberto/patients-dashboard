@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.buttonLogin = 'Entrar';
 
     if (this.authService.isLoggedIn()) {
-      this.route.navigate(['home'])
+      this.route.navigate(['home']);
       return;
     }
 
@@ -51,9 +51,9 @@ export class LoginComponent implements OnInit {
 
             const token: string = JSON.stringify({ token: res.token, timeLogin: new Date().getTime() });
             this.authService.createTokenData(token);
-            this.authService.createUserData(JSON.stringify(res.user))
+            this.authService.createUserData(JSON.stringify(res.user));
 
-            this.route.navigate(['home'])
+            this.route.navigate(['home']);
           },
           () => {
             this.loadingLogin = false;

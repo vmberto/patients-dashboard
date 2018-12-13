@@ -28,6 +28,13 @@
       font-size: 85%;
   }
 
+input {
+  background: white!important;
+  display: inline;
+  color: var(--darker-font-color)!important;
+  border: 1px solid var(--font-subcolor)!important;
+}
+
   @media only screen and (max-width: 768px) {
     .card {margin: 45px auto;}
     .card-body{padding: 35px 110px;}

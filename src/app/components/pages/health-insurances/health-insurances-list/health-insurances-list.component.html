@@ -1,17 +1,19 @@
 <div class="panel">
   <h4 class="panel-title">Planos de Saúde</h4>
 
-  <div class="row">
-    <div class="col-md-4 input-group mb-3">
-      <div class="input-group-prepend">
-        <button  (click)="openCreateInput()" class="btn btn-primary">Adicionar Plano de Saúde</button>
+  <div class="row  mb-3">
+    <div class="col-md-3">
+      <div class="input-group">
+        <input [(ngModel)]="newHealthInsurance" type="text" class="form-control" placeholder="Adicionar Plano de Saúde">
+        <div class="input-group-append">
+          <button (click)="create(newHealthInsurance)" class="btn btn-success" type="button">
+            <i class="fa fa-check"></i>
+          </button>
+        </div>
       </div>
-      <input *ngIf="createHealthInsurance" [(ngModel)]="newHealthInsurance" type="text" class="form-control"
-        placeholder="Plano de Saúde">
-      <button (click)="create(newHealthInsurance)" *ngIf="createHealthInsurance" class="btn btn-success" type="button">
-        <i class="fa fa-check"></i>
-      </button>
     </div>
+
+
 
   </div>
 
@@ -43,11 +45,9 @@
               <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>
               <td>
                 <button [title]="data.Patients.length > 0 ? 'Planos de Saúde com pacientes cadastrados não podem ser excluídos' : 'Excluir Plano de Saúde'"
-                        [disabled]="data.Patients.length > 0"
-                        (click)="delete(data.id)"
-                        class="btn btn-danger btn-sm">
-                     <i class="fa fa-trash"></i>
-                  </button>
+                  [disabled]="data.Patients.length > 0" (click)="delete(data.id)" class="btn btn-danger btn-sm">
+                  <i class="fa fa-trash"></i>
+                </button>
               </td>
             </tr>
 

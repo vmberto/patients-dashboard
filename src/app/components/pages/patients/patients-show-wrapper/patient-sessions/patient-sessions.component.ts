@@ -1,3 +1,4 @@
+import { sortByKey } from 'src/app/helpers/consts.helpers';
 import { Component, OnInit, Input } from '@angular/core';
 import { collapse } from 'src/app/helpers/animations/animations';
 
@@ -17,15 +18,11 @@ export class PatientSessionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    function compare(a, b) {
-      if (a > b) return 1;
-      if (b < a) return -1;
-      return 0;
-    }
-
     this.patientSessions.map(p => {
       p.opened = false;
     });
+
+    this.patientSessions = sortByKey(this.patientSessions, 'created_at');
   }
 
 }

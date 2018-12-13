@@ -7,7 +7,7 @@
     <div class="table-wrapper">
 
 
-      <form *ngIf="tableMetaData" [formGroup]="filterForm" (submit)="filterList()">
+      <form *ngIf="tableMetaData" [formGroup]="filterForm" (submit)="submitFilters()">
         <div class="tableFilters row">
 
 
@@ -23,7 +23,8 @@
           </div>
 
           <div class="col-md-3 mb-3">
-            <button class="btn full-width-mobile btn-primary" type="submit"><i class="fa fa-search"></i></button>
+            <button class="btn full-width-mobile btn-primary mr-2 mb-1" type="submit"><i class="fa fa-search"></i></button>
+            <button *ngIf="clearFiltersBtn" class="btn full-width-mobile btn-warning mr-2 mb-1" type="button" (click)="clearFilters()"><i class="fa fa-times"></i></button>
           </div>
 
 

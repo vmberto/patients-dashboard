@@ -1,3 +1,16 @@
+.panel-head {
+  background: var(--darker-background-color);
+}
+.panel-title {
+  font-weight: 300;
+  font-size: 19px;
+  padding: 11px;
+  margin: 0;
+  border-bottom: 2px solid var(--primary);
+  text-align: center;
+}
+
+
 .no-radius {
   border-radius: 0!important;
 }

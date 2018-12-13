@@ -13,14 +13,14 @@
           <div class="col-md-4">
             <div class="form-group">
               <label for="">Nome</label>
-              <input formControlName="name" type="text" class="form-control">
+              <input formControlName="name" type="text" class="form-control" placeholder="Umberto Barros">
             </div>
           </div>
 
           <div class="col-md-4">
             <div class="form-group">
               <label for="">Plano de Saúde</label>
-              <select formControlName="health_insurance" type="text" class="form-control">
+              <select formControlName="health_insurance" type="text" class="form-control" placeholder="Umberto Barros">
                 <option *ngFor="let healthInsurance of healthInsurances" [value]="healthInsurance.id">{{healthInsurance.name}}</option>
               </select>
             </div>
@@ -29,7 +29,7 @@
           <div class="col-md-4">
             <div class="form-group">
               <label for="">Celular</label>
-              <input formControlName="phone" type="text" class="form-control">
+              <input formControlName="phone" type="text" class="form-control" placeholder="+55 (81) 99818-1213">
             </div>
           </div>
 
@@ -40,7 +40,7 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="">Email</label>
-                <input formControlName="email" type="text" class="form-control">
+                <input formControlName="email" type="text" class="form-control" placeholder="email@email.com">
               </div>
             </div>
   
@@ -54,21 +54,21 @@
           <div class="col-md-7">
             <div class="form-group">
               <label for="">Rua</label>
-              <input formControlName="street" type="text" class="form-control">
+              <input formControlName="street" type="text" class="form-control" placeholder="Av. Caxangá">
             </div>
           </div>
 
           <div class="col-md-2">
             <div class="form-group">
               <label for="">Número</label>
-              <input formControlName="number" type="text" class="form-control">
+              <input formControlName="number" type="text" class="form-control" placeholder="000">
             </div>
           </div>
 
           <div class="col-md-3">
             <div class="form-group">
               <label for="">Complemento</label>
-              <input formControlName="complement" type="text" class="form-control">
+              <input formControlName="complement" type="text" class="form-control" placeholder="Aptº 0000">
             </div>
           </div>
 
@@ -80,7 +80,7 @@
           <div class="col-md-3">
             <div class="form-group">
               <label for="">CEP</label>
-              <input formControlName="zip_code" type="text" class="form-control" maxlength="8">
+              <input formControlName="zip_code" type="text" class="form-control" placeholder="00000-000" maxlength="8">
             </div>
           </div>
 
@@ -88,14 +88,14 @@
           <div class="col-md-4">
             <div class="form-group">
               <label for="">Bairro</label>
-              <input formControlName="district" type="text" class="form-control">
+              <input formControlName="district" type="text" class="form-control" placeholder="Barro">
             </div>
           </div>
 
           <div class="col-md-5">
             <div class="form-group">
               <label for="">Cidade</label>
-              <input formControlName="city" type="text" class="form-control">
+              <input formControlName="city" type="text" class="form-control" placeholder="Recife">
             </div>
           </div>
 

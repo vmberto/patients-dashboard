@@ -1,22 +1,27 @@
-<div class="panel" style="padding: 25px;">
-  <h4 class="panel-title">Sessões</h4>
-  <div class="expansive-panel pointer" (click)="session.opened = !session.opened" *ngFor="let session of patientSessions" [ngClass]="
-  {
-    'no-top-radius': patientSessions[patientSessions.length - 1] === session,
-    'no-bottom-radius': patientSessions[0] === session,
-    'no-radius': patientSessions[patientSessions.length - 1] !== session && patientSessions[0] !== session,
-    'selected-panel': session.opened,
-    'expansive-panel-good': session.humour === 'Bem Humorado',
-    'expansive-panel-medium': session.humour === 'Chateado',
-    'expansive-panel-bad': session.humour === 'Triste'
-  }">
-    <span>{{session.humour}}<span class="text-primary">  {{(patientSessions[0] == session ? '- Primeira Sessão' : '')}}</span></span>
-    <span style="float: right">{{ (session.created_at | date:'dd/MM/yyyy') + ' - ' + (session.created_at | date:'HH:mm') }}</span>
-    <div [@collapse] *ngIf="session.opened" class="expanded">
-      {{session.description}}
-    </div>
+<div class="panel" style="padding: 0;">
+  <div class="panel-head">
+    <h4 class="panel-title">Sessões</h4>
   </div>
-  <div style="text-align: center" class="expansive-panel-no-session">
-    <span>Não houve sessões com este paciente</span>
+  <div class="panel-body" style="padding: 25px;">
+    <div class="expansive-panel pointer" (click)="session.opened = !session.opened" *ngFor="let session of patientSessions" [ngClass]="
+    {
+      'no-top-radius': patientSessions[patientSessions.length - 1] === session,
+      'no-bottom-radius': patientSessions[0] === session,
+      'no-radius': patientSessions[patientSessions.length - 1] !== session && patientSessions[0] !== session,
+      'selected-panel': session.opened,
+      'expansive-panel-good': session.humour === 'Bem Humorado',
+      'expansive-panel-medium': session.humour === 'Chateado',
+      'expansive-panel-bad': session.humour === 'Triste'
+    }">
+      <span><strong>{{session.humour}}</strong><span class="text-primary">  {{(patientSessions[patientSessions.length - 1] == session ? '- Primeira Sessão' : '')}}</span></span>
+      <span style="float: right">{{ (session.created_at | date:'dd/MM/yyyy') + ' - ' + (session.created_at | date:'HH:mm') }}</span>
+      <div [@collapse] *ngIf="session.opened" class="expanded">
+        {{session.description}}
+      </div>
+    </div>
+    <div *ngIf="patientSessions.length === 0" style="text-align: center">
+      <span>Não houve sessões com este paciente</span>
+    </div>
+
   </div>
 </div>
