@@ -93,8 +93,15 @@ p {
 thead { background-color: var(--darker-background-color); }
 .table thead th {
   border: none!important;
-  font-weight: 500;
+  color: var(--font-subcolor)!important;
+  font-weight: 700!important;
+  font-size: .65rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
+
 
 .table>tbody>tr>td {
   background-color: var(--secondary-color);

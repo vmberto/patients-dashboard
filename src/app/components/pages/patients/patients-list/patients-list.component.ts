@@ -20,9 +20,9 @@ export class PatientsListComponent extends ListComponent implements OnInit {
   public tableHeaders = [
     { title: '#', value: 'id' },
     { title: 'Nome', value: 'name' },
-    { title: 'Plano de Saúde', value: ['health_insurance', 'name'] },
-    { title: 'Criada em', value: 'created_at' },
-    { title: 'Atualizado em', value: 'updated_at' }
+    { title: 'Plano', value: ['health_insurance', 'name'] },
+    { title: 'Criado', value: 'created_at' },
+    { title: 'Atualizado', value: 'updated_at' }
   ];
 
   // public tableRowActions = [
