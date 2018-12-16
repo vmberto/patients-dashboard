@@ -13,7 +13,6 @@ export class PatientSessionsComponent implements OnInit {
   @Input() patientSessions;
 
   public date = new Date();
-  public array = [{opened: false, humour: 1}, {opened: false, humour: 2}, {opened: false, humour: 0}, {opened: false, humour: 2}, {opened: false, humour: 1}];
 
   constructor() { }
 
