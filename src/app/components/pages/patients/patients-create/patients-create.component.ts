@@ -74,9 +74,7 @@ export class PatientsCreateComponent implements OnInit {
           zip_code: formControls.zip_code.value,
           district: formControls.district.value,
           city: formControls.city.value,
-        },
-        created_at: new Date(),
-        updated_at: new Date(),
+        }
       };
 
 
