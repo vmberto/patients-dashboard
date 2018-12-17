@@ -1,12 +1,24 @@
-.panel-footer p {
-    font-size: 15px;
+.panel-footer p,
+.panel-footer strong {
+    font-size: 0.75rem;
     margin-bottom: 0;
 }
 
 .details-separator {
-    border-top: 1px solid #8c8c8c;
+    border-top: 1px solid var(--main-background-color);
     margin-top: 5px;
     margin-bottom: 15px;
+}
+
+.data-name,
+.data-name-address {
+    border: none!important;
+    color: var(--font-subcolor)!important;
+    font-weight: 700!important;
+    font-size: 1rem;
+    padding-top: .75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 

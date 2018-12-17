@@ -10,6 +10,9 @@
   text-align: center;
 }
 
+.full-radius {
+  border-radius: 10px!important;
+}
 
 .no-radius {
   border-radius: 0!important;
