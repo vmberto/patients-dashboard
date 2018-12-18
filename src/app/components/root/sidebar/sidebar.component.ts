@@ -15,18 +15,16 @@ export class SidebarComponent implements OnInit {
   public menuItems: object;
   public userData: any;
 
-  constructor(private authService: AuthService) {this.menuItems = ROUTES;}
-  
+  constructor(private authService: AuthService) { this.menuItems = ROUTES; }
 
-  logout() {
+  ngOnInit() {
+    this.userData = this.authService.getUserData();
+    this.userData.name = this.userData.name.split(' ', 1);
+
+  }
+
+  public logout() {
     this.authService.logout();
   }
 
-
-
-  ngOnInit() { 
-    this.userData = this.authService.getUserData();
-    this.userData.name = this.userData.name.split(' ', 1);
-    
-  }
 }
