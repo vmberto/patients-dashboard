@@ -5,7 +5,7 @@
 }
 
 .details-separator {
-    border-top: 1px solid var(--main-background-color);
+    border-top: 1px solid var(--main-color);
     margin-top: 5px;
     margin-bottom: 15px;
 }
