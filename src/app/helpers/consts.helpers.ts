@@ -12,3 +12,12 @@ export const sortByKey = (array, key) => {
         return ((x > y) ? -1 : ((x < y) ? 1 : 0));
     });
 };
+
+export const isObjectEmpty = (obj) => {
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        return false;
+      }
+    }
+    return true;
+  }

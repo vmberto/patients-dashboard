@@ -1,10 +1,12 @@
+import { isObjectEmpty } from './../../helpers/consts.helpers';
 import { Router } from '@angular/router';
 import { environment } from './../../../environments/environment';
-import {getObjectCookie, getCookie, eraseCookie} from '../../app.utils';
+import { getObjectCookie, getCookie, eraseCookie } from '../../app.utils';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import * as moment from 'moment';
+import { isEmpty } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -21,11 +23,11 @@ export class AuthService {
    */
   public loginUser(email: string, password: string): Observable<any> {
 
-      return this.http.post(`${environment.API_URL}/api/login`, { email, password });
-        
+    return this.http.post(`${environment.API_URL}/api/login`, { email, password });
+
   }
 
-  
+
   public createTokenData(token: string): void {
 
     eraseCookie('auth_token');
@@ -37,7 +39,7 @@ export class AuthService {
 
   }
 
-  
+
   public createUserData(user: string): void {
 
     eraseCookie('auth_user_data');
@@ -56,20 +58,21 @@ export class AuthService {
     const tokenString: string = getCookie('auth_token') || '{}';
     const userString: string = getCookie('auth_user_data') || '{}';
 
-    
     const token: any = JSON.parse(tokenString);
     const user: any = JSON.parse(userString);
 
-    let result: boolean;
+    let result = false;
 
-    if(token.token){
+
+    if (token.token && !isObjectEmpty(user)) {
       result = true;
     }
 
-    
     return result;
 
   }
+
+
 
   public logout(): void {
 
@@ -84,7 +87,7 @@ export class AuthService {
 
 
 
-  
+
   /**
    *
    * @returns {any}
@@ -92,7 +95,7 @@ export class AuthService {
   public getToken(): any {
 
     const jsonData: any = getObjectCookie('auth_token');
-    
+
 
     if (!(typeof jsonData === "object")) {
 
@@ -119,8 +122,9 @@ export class AuthService {
   }
 
   public getUserData(): any {
-    var userData = getCookie('auth_user_data');
-    return JSON.parse(userData);
+    let userData = getCookie('auth_user_data') || '';
+    if (userData !== '') userData = JSON.parse(userData);
+    return userData;
   }
 
   // public getTokenData(): any {
@@ -129,7 +133,7 @@ export class AuthService {
   // }
 
 
-  
+
 
 
 
