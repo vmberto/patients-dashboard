@@ -12,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class PatientsCreateComponent implements OnInit {
 
   public patientForm: FormGroup;
+  public isPrivateValue: 'Sim' | 'Não' = 'Não';
   public healthInsurances;
 
   public creatingPatient: boolean;
@@ -32,6 +33,8 @@ export class PatientsCreateComponent implements OnInit {
 
     this.patientForm = this.fb.group({
       name: ['', [Validators.required]],
+      is_private: [false, [Validators.required]],
+
       health_insurance: ['', [Validators.required]],
 
       email: ['', [Validators.required]],
@@ -43,11 +46,14 @@ export class PatientsCreateComponent implements OnInit {
       zip_code: ['', [Validators.required]],
       district: ['', [Validators.required]],
       city: ['', [Validators.required]],
-
-
     });
 
+  }
 
+  public setPatientType() {
+    const currentValue = this.patientForm.controls.is_private.value;
+    this.isPrivateValue = currentValue === false ? 'Sim' : 'Não';
+    this.patientForm.controls.is_private.setValue(currentValue === false ? true : false);
   }
 
 
@@ -64,6 +70,7 @@ export class PatientsCreateComponent implements OnInit {
 
       const patientData = {
         name: formControls.name.value,
+        is_private: formControls.is_private.value,
         email: formControls.email.value,
         phone: formControls.phone.value,
         health_insurance_id: formControls.health_insurance.value,
