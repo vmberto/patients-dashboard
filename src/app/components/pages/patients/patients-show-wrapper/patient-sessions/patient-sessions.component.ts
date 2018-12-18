@@ -1,4 +1,4 @@
-import { sortByKey } from 'src/app/helpers/consts.helpers';
+import { sortByKey } from 'src/app/app.utils';
 import { Component, OnInit, Input } from '@angular/core';
 import { collapse } from 'src/app/helpers/animations/animations';
 
@@ -17,8 +17,8 @@ export class PatientSessionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.patientSessions.map(p => {
-      p.opened = false;
+    this.patientSessions.map(patient => {
+      patient.opened = false;
     });
 
     this.patientSessions = sortByKey(this.patientSessions, 'created_at');

@@ -22,6 +22,7 @@
             <div class="form-group">
               <label for="">Plano de Saúde</label>
               <select formControlName="health_insurance" type="text" class="form-control" placeholder="Umberto Barros">
+                <option value=""></option>
                 <option *ngFor="let healthInsurance of healthInsurances" [value]="healthInsurance.id">{{healthInsurance.name}}</option>
               </select>
             </div>

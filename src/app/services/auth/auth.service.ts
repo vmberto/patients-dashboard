@@ -1,4 +1,4 @@
-import { isObjectEmpty } from './../../helpers/consts.helpers';
+import { isObjectEmpty } from 'src/app/app.utils';
 import { Router } from '@angular/router';
 import { environment } from './../../../environments/environment';
 import { getObjectCookie, getCookie, eraseCookie } from '../../app.utils';
@@ -19,7 +19,7 @@ export class AuthService {
    * @param {string} email
    * @param {string} password
    * @returns {Observable<any>}
-   * 
+   *
    */
   public loginUser(email: string, password: string): Observable<any> {
 
@@ -33,7 +33,7 @@ export class AuthService {
     eraseCookie('auth_token');
 
     const objToken: any = JSON.parse(token);
-    const expires: number = (typeof objToken === "object") ? objToken.token.expires_in : 21600;
+    const expires: number = (typeof objToken === 'object') ? objToken.token.expires_in : 21600;
 
     document.cookie = `auth_token=${token};Max-Age=${expires}`;
 
@@ -97,7 +97,7 @@ export class AuthService {
     const jsonData: any = getObjectCookie('auth_token');
 
 
-    if (!(typeof jsonData === "object")) {
+    if (!(typeof jsonData === 'object')) {
 
       eraseCookie('auth_token');
       this.router.navigate(['']);

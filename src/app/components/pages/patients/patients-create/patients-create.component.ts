@@ -35,7 +35,7 @@ export class PatientsCreateComponent implements OnInit {
       name: ['', [Validators.required]],
       is_private: [false, [Validators.required]],
 
-      health_insurance: ['', [Validators.required]],
+      health_insurance: [''],
 
       email: ['', [Validators.required]],
       phone: ['', [Validators.required]],

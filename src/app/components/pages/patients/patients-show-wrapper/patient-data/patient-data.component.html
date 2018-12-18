@@ -1,7 +1,7 @@
 <div class="panel">
 
   <h4 class="panel-title"><button routerLink="../.." class="return-btn btn btn-primary">
-    <i class="fa fa-arrow-left"></i></button> Paciente #{{patientData.id}}
+      <i class="fa fa-arrow-left"></i></button> Paciente #{{patientData.id}}
   </h4>
 
   <div class="panel-body">
@@ -23,8 +23,7 @@
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Plano de Saúde</h5>
-        <p class="click-for-edit">{{patientData.HealthInsurance.name ? patientData.HealthInsurance.name :
-          '--'}}</p>
+        <p class="click-for-edit">{{patientData.HealthInsurance ? patientData.HealthInsurance.name : 'Nenhum'}}</p>
 
       </div>
       <div class="col-md-3 col-sm-6">
@@ -35,6 +34,11 @@
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Email</h5>
         <p class="click-for-edit">{{patientData.Contact.email ? patientData.Contact.email : '--'}}</p>
+        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h5 class="data-name">Particular</h5>
+        <p class="click-for-edit">{{patientData.is_private ? 'Sim' : 'Não'}}</p>
         <!-- <i class="edit-pencil fa fa-pencil"></i> -->
       </div>
     </div>
@@ -85,9 +89,11 @@
     <div class="panel-footer">
       <div class="row">
         <div class="col-md-12">
-          <p style="display: inline-block"><strong class="data-name">Cadastrado em: </strong>{{patientData.created_at | date:'dd/MM/yyyy
+          <p style="display: inline-block"><strong class="data-name">Cadastrado em: </strong>{{patientData.created_at |
+            date:'dd/MM/yyyy
             HH:mm'}}&emsp;</p>
-          <p style="display: inline-block"><strong class="data-name"> Atualizado em: </strong>{{patientData.updated_at | date:'dd/MM/yyyy
+          <p style="display: inline-block"><strong class="data-name"> Atualizado em: </strong>{{patientData.updated_at
+            | date:'dd/MM/yyyy
             HH:mm'}}</p>
         </div>
       </div>
