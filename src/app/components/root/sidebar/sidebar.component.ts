@@ -19,7 +19,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.userData = this.authService.getUserData();
-    this.userData.name = this.userData.name.split(' ', 1);
+    this.userData.name = this.userData.name ? this.userData.name.split(' ', 1) : '';
 
   }
 
