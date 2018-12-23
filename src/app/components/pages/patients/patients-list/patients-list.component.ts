@@ -38,10 +38,6 @@ export class PatientsListComponent extends ListComponent implements OnInit {
     this.filterCriteria = new FilterCriteria();
     this.resource = this.patientsService;
     this.shareDataService = this.shareData;
-
-
-
-
   }
 
   ngOnInit() {
@@ -113,7 +109,6 @@ export class PatientsListComponent extends ListComponent implements OnInit {
    */
   public show(id: number) {
     this.router.navigate([`home/patients/show/${id}`]);
-
   }
 
   /**

@@ -35,13 +35,6 @@
     border-radius: 20px;
   }
   
-  select,
-  input {
-    background: var(--lighter-color)!important;
-    display: inline;
-    color: var(--font-color)!important;
-    border: 1px solid var(--font-subcolor)!important;
-  }
   
   .tablePagination select,
   .tablePagination input{

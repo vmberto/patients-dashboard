@@ -1,0 +1,132 @@
+<div class="row" *ngIf="anamnesisData">
+  <div class="col-xl-12">
+
+    <div class="panel">
+
+      <h4 class="panel-title"><button routerLink="../.." class="return-btn btn btn-primary"><i class="fa fa-arrow-left"></i></button>
+        Anamnese #{{anamnesisData.id}}
+      </h4>
+
+
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <h5 class="data-name">Nome <i [ngClass]="{'always-shown': openInput}" class="edit-pencil fa fa-pencil"></i></h5>
+            <p [hidden]="openInput" (click)="openInputToEdit('name')" class="click-for-edit"> {{anamnesisData.name ?
+              anamnesisData.name : '--'}} </p>
+            <div *ngIf="openInput" class="input-group">
+              <input [(ngModel)]="edit" class="form-control" autofocus type="text">
+              <div class="input-group-append">
+                <button (click)="closeOrEditButton(edit)" [ngClass]="{'btn-success': edit, 'btn-danger': !edit || edit === anamnesisData.name}"
+                  class="btn btn-success" type="button">
+                  <i class="fa" [ngClass]="{'fa-check': edit, 'fa-times': !edit || edit === anamnesisData.name}"></i>
+                </button>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <h5 class="data-name">Criada em</h5>
+            <p>{{anamnesisData.created_at ? (anamnesisData.created_at | date:'dd/MM/yyyy HH:mm')
+              : '--'}}</p>
+
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <h5 class="data-name">Atualizada em</h5>
+            <p>{{anamnesisData.updated_at ? (anamnesisData.updated_at | date:'dd/MM/yyyy HH:mm')
+              : '--'}}</p>
+            <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="col-xl-12">
+
+    <div class="panel">
+
+      <h4 class="panel-title">
+        Perguntas
+      </h4>
+
+      <div class="panel-body">
+
+        <div class="tableStyles">
+
+
+          <table class="display table table-condensed table-responsive-md">
+            <thead>
+              <th>#</th>
+              <th>Pergunta</th>
+              <th>Opções</th>
+              <th>Linhas</th>
+              <th>Ação</th>
+            </thead>
+            <tbody>
+
+              <tr *ngFor="let question of anamnesisData.questions; let index = index;">
+                <td>{{ (index + 1) }}</td>
+                <td>{{ question.title }}</td>
+                <td>{{ question.type === 1 ? 'Pergunta Aberta' : 'Nada' }}</td>
+                <td>{{ question.line_number }}</td>
+                <td>
+                  <button title="Excluir Pergunta" (click)="delete(data.id)" class="btn btn-danger btn-sm">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+
+            </tbody>
+            <tbody class="pointer add-new-question">
+              <tr colspan="5" *ngIf="!newQuestion" (click)="newQuestion = true">
+                <td colspan="6" class="text-center">
+                  <i class="fa fa-plus-circle"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div *ngIf="newQuestion" class="add-new-question row">
+            <div class="col-xl-12">
+              <form [formGroup]="questionsForm" (submit)="submitQuestionData()">
+
+                <div class="form-row">
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="">Pergunta</label>
+                      <input formControlName="question" type="text" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="">Tipo</label>
+                      <input formControlName="type" type="number" class="form-control" placeholder="Tipo"/>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="">Número de Linhas</label>
+                      <input formControlName="line_number" type="text" class="form-control" >
+                    </div>
+                  </div>
+                </div>
+
+                <button [disabled]="creatingQuestion" type="submit" class="btn btn-success pull-right">{{creatingQuestion ? 'Criando' : 'Criar'}} <i *ngIf="creatingQuestion" class="fa fa-spinner fa-spin"></i></button>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

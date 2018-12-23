@@ -1,0 +1,80 @@
+.panel-footer p,
+.panel-footer strong {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+}
+
+.details-separator {
+    border-top: 1px solid var(--main-color);
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.data-name,
+.data-name-address {
+    border: none!important;
+    color: var(--font-subcolor)!important;
+    font-weight: 700!important;
+    font-size: 1rem;
+    padding-top: .75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+
+.input-group {
+    margin-bottom: 0.7rem;
+}
+
+.click-for-edit {
+    border-radius: 10px;
+    background: none;
+    transition: background 0.5s;
+    padding: 5px 0;
+    cursor: pointer;
+
+}
+
+.click-for-edit:hover {
+    border-radius: 10px;
+    background: rgba(187, 187, 187, 0.200);
+    padding: 5px 0;
+}
+
+.edit-pencil + .click-for-edit:hover, .always-shown {
+    opacity: 1!important;
+}
+
+.edit-pencil {
+    color: white;
+    transition: opacity 0.5s;
+    opacity: 0;
+
+}
+
+.close-edition {
+    color: white;
+
+}
+
+.save-changes-button {
+    right: 3%;
+    transform: translateY(-48%);
+    z-index: -1;
+    position: absolute;
+}
+
+.add-new-question {
+    border-top: none;
+}
+
+.table>.add-new-question>tr>td
+ {
+    background: var(--darker-color)!important;
+}
+
+.table>.add-new-question>tr>td:hover
+ {
+    background: var(--darker-color-selected)!important;
+}

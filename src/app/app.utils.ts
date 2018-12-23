@@ -22,8 +22,6 @@ export function getCookie(cname): string {
   return '';
 }
 
-
-
 export const generateRandomColor = () => {
   return new Array(7)
     .fill(0)

@@ -1,0 +1,45 @@
+<div class="panel">
+    <h3 class="page-title">Anamneses</h3>
+
+    <div class="row  mb-3">
+        <div class="col-md-3">
+            <div class="input-group">
+                <input [(ngModel)]="newAnamnesis" type="text" class="form-control" placeholder="Nova Anamnese">
+                <div class="input-group-append">
+                    <button (click)="create(newAnamnesis)" class="btn btn-success" type="button">
+                        <i class="fa fa-check"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="panel-body">
+        <div class="table-wrapper">
+            <div class="row">
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12" *ngFor="let anamnesis of tableData; let i = index;">
+                    <div class="paper-stack">
+                        <h2 class="custom-label" style="font-size: 17px;">Anamnese {{anamnesis.name}}</h2>
+
+                        <button (click)="edit(anamnesis.id)" class="btn btn-primary actions">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+
+                        <p><span class="custom-label">Tipo de Paciente:</span> {{ anamnesis.name }}</p>
+                        <p><span class="custom-label">Criada em: </span>
+                            {{ anamnesis.created_at | date:'dd/MM/yy' }} - {{ anamnesis.created_at | date:'HH:mm' }}</p>
+                        <p><span class="custom-label">Atualizada em: </span>
+                            {{ anamnesis.updated_at | date:'dd/MM/yy' }} - {{ anamnesis.updated_at | date:'HH:mm' }}</p>
+                        <a class="btn btn-info btn-block" href="http://localhost:5000/static/output/anamnesis.pdf"
+                            target="_blank"> Link </a>
+                        <button (click)="download(anamnesis.id)" class="btn btn-info btn-block"> Download </button>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

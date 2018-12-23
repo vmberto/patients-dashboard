@@ -35,6 +35,14 @@ h1, h2, h3, h4, h5, p, span, small, tr, td, th, label {
   word-break: break-all;
 }
 
+select,
+input {
+  background: var(--lighter-color)!important;
+  display: inline;
+  color: var(--font-color)!important;
+  border: 1px solid var(--font-subcolor)!important;
+}
+
   /* ----- Classes ----- */
 
 .page-title {
