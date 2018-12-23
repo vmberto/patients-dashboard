@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { AnamnesisService } from './../../../../services/entities/anamnesis.service';
 import { FilterCriteria } from 'src/app/helpers/crud/filter-criteria';
 import { ListComponent } from 'src/app/helpers/crud/list-components.helpers';
@@ -5,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShareDataService } from 'src/app/services/share-data/share-data.service';
 import { collapse } from 'src/app/helpers/animations/animations';
-import saveAs from 'C:/Users/Umberto/Documents/Pessoal/patients-dashboard/node_modules/file-saver';
+import saveAs from 'node_modules/file-saver';
 
 @Component({
   selector: 'app-anamnesis-list',
@@ -14,6 +15,8 @@ import saveAs from 'C:/Users/Umberto/Documents/Pessoal/patients-dashboard/node_m
   animations: [collapse]
 })
 export class AnamnesisListComponent extends ListComponent implements OnInit {
+
+  public creatingAnamnesis: boolean;
 
   constructor(private anamnesisService: AnamnesisService,
     private shareData: ShareDataService,
@@ -30,7 +33,9 @@ export class AnamnesisListComponent extends ListComponent implements OnInit {
   }
 
   public create(newAnamnesis) {
+    this.creatingAnamnesis = true;
     this.anamnesisService.post({ name: newAnamnesis }).subscribe(res => {
+      this.creatingAnamnesis = false;
       this.router.navigate([`home/anamnesis/edit/${res.id}`]);
     });
   }
@@ -47,17 +52,24 @@ export class AnamnesisListComponent extends ListComponent implements OnInit {
  * Direciona para a rota de detalhes da anamnese
  * @param id (number)
  */
-  public download(id: number) {
-    this.anamnesisService.downloadAnamnesis(id).subscribe(
-      () => {
+  public download(anamnesis: any) {
 
+    anamnesis.downloading = true;
 
-      },
-      (err) => {
-        const file = new Blob([err.error.text], {type: 'application/pdf'});
-        saveAs(file, 'anamnese');
+    this.anamnesisService.downloadAnamnesis(anamnesis.id)
+    .then((res) => {
+        const file = new Blob([res], {type: 'application/pdf'});
+        const anamnesisName = anamnesis.name.toLowerCase().split(' ').join('-');
+        const filename = `anamnese-${anamnesisName}`;
+
+        saveAs(file, filename);
+        anamnesis.downloading = false;
+    })
+    .catch((err) => {
+        anamnesis.downloading = false;
         console.log(err);
-      });
+    });
+
   }
 
 }

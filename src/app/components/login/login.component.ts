@@ -19,6 +19,11 @@ export class LoginComponent implements OnInit {
     private route: Router,
     private authService: AuthService, ) {
 
+    if (this.authService.isLoggedIn()) {
+      this.route.navigate(['home']);
+      return;
+    }
+
   }
 
   ngOnInit() {
@@ -27,10 +32,6 @@ export class LoginComponent implements OnInit {
     this.loadingLogin = false;
     this.buttonLogin = 'Entrar';
 
-    if (this.authService.isLoggedIn()) {
-      this.route.navigate(['home']);
-      return;
-    }
 
     this.loginForm = this.fb.group({
       email: ['', [Validators.required]],
