@@ -2,7 +2,8 @@
 
   <div class="panel">
 
-    <h4 class="panel-title"><button routerLink=".." class="return-btn btn btn-primary"><i class="fa fa-arrow-left"></i></button>Adicionar Paciente</h4>
+    <h4 class="panel-title"><button routerLink=".." class="return-btn btn btn-primary"><i class="fa fa-arrow-left"></i></button>Adicionar
+      Paciente</h4>
 
 
     <div class="panel-body">
@@ -21,6 +22,7 @@
             <div class="form-group">
               <label for="">Plano de Saúde</label>
               <select formControlName="health_insurance" type="text" class="form-control" placeholder="Umberto Barros">
+                <option value=""></option>
                 <option *ngFor="let healthInsurance of healthInsurances" [value]="healthInsurance.id">{{healthInsurance.name}}</option>
               </select>
             </div>
@@ -37,15 +39,29 @@
 
         <div class="form-row">
 
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="">Email</label>
-                <input formControlName="email" type="text" class="form-control" placeholder="email@email.com">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="">Email</label>
+              <input formControlName="email" type="text" class="form-control" placeholder="email@email.com">
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="">Paciente Particular</label>
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <button (click)="setPatientType()" type="button" class="btn" [ngClass]="{'btn-danger': isPrivateValue === 'Não', 'btn-success': isPrivateValue === 'Sim'}" id="inlineFormInputGroup">
+                    <div class="fa" [ngClass]="{'fa-times': isPrivateValue === 'Não', 'fa-check': isPrivateValue === 'Sim'}"></div>
+                  </button>
+                </div>
+                <input type="text" class="form-control" disabled [(ngModel)]="isPrivateValue" [ngModelOptions]="{standalone: true}">
               </div>
             </div>
-  
-  
           </div>
+
+
+        </div>
 
         <h5>Endereço</h5>
 
@@ -103,7 +119,8 @@
 
         </div>
 
-        <button [disabled]="creatingPatient" type="submit" class="btn btn-success pull-right">{{creatingPatient ? 'Criando' : 'Criar'}} <i *ngIf="creatingPatient" class="fa fa-spinner fa-spin"></i></button>
+        <button [disabled]="creatingPatient" type="submit" class="btn btn-success pull-right">{{creatingPatient ?
+          'Criando' : 'Criar'}} <i *ngIf="creatingPatient" class="fa fa-spinner fa-spin"></i></button>
 
       </form>
 

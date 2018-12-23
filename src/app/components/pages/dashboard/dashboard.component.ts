@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { generateRandomColor } from 'src/app/helpers/consts.helpers';
+import { generateRandomColor } from 'src/app/app.utils';
 
 
 @Component({

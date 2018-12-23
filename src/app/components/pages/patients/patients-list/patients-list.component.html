@@ -47,7 +47,7 @@
             <tr *ngFor="let data of tableData">
               <td>{{data.id}}</td>
               <td>{{data.name}}</td>
-              <td>{{data.HealthInsurance.name}}</td>
+              <td>{{data.HealthInsurance ? data.HealthInsurance.name : 'Nenhum'}}</td>
               <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>
               <td>{{data.updated_at | date:'dd/MM/yyyy HH:mm'}}</td>
               <td>

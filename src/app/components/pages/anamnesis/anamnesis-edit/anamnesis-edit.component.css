@@ -64,3 +64,17 @@
     z-index: -1;
     position: absolute;
 }
+
+.add-new-question {
+    border-top: none;
+}
+
+.table>.add-new-question>tr>td
+ {
+    background: var(--darker-color)!important;
+}
+
+.table>.add-new-question>tr>td:hover
+ {
+    background: var(--darker-color-selected)!important;
+}

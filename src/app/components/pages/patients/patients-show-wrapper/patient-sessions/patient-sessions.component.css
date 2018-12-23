@@ -1,5 +1,5 @@
 .panel-head {
-  background: var(--darker-background-color);
+  background: var(--darker-color);
 }
 .panel-title {
   font-weight: 300;
@@ -29,8 +29,8 @@
 .expansive-panel-no-session {
   transition: 100ms;
   padding: 15px;
-  background: var(--darker-background-color);
-  border-bottom: 1px solid var(--main-background-color);
+  background: var(--darker-color);
+  border-bottom: 1px solid var(--main-color);
   overflow: hidden;
 }
 
@@ -40,12 +40,12 @@
 }
 
 .expansive-panel:hover {
-  background: var(--darker-background-selected);
+  background: var(--darker-selected);
 }
 
 .selected-panel {
-  background: var(--darker-background-selected);
-  border-bottom: 1px solid var(--main-background-color)
+  background: var(--darker-selected);
+  border-bottom: 1px solid var(--main-color)
 }
 
 .expansive-panel-good {

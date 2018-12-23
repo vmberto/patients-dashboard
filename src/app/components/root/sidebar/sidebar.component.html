@@ -13,7 +13,9 @@
 
 
       <a *ngIf="menuItem.children" (click)="menuItem.subMenuOpen = !menuItem.subMenuOpen" class="pointer" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:true}">
-          <i [class]="menuItem.icon" style="padding: 15px;"></i>{{menuItem.title}} 
+          <i [class]="menuItem.icon" style="padding: 15px;"></i>
+            {{menuItem.title}}
+          <i class="fa fa-caret-right subMenu-arrow" [ngClass]="{'subMenu-open': menuItem.subMenuOpen}"></i>
       </a>
       
 
@@ -28,7 +30,7 @@
 
     </li>
     <li>
-      <a style="cursor: pointer" (click)="logout()"><i class="fa fa-sign-out" style="padding: 15px"></i>Sair</a>
+      <a class="pointer" (click)="logout()"><i class="fa fa-sign-out" style="padding: 15px"></i>Sair</a>
     </li>
   </ul>
 </div>
