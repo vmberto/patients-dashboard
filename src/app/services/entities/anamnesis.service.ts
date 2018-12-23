@@ -20,14 +20,15 @@ export class AnamnesisService extends CrudServices {
     return this.http.post(`${environment.API_URL}/api/${this.entity}/new-question/${questionData.id}`, questionData);
   }
 
-  public downloadAnamnesis(id): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/pdf',
-      })
-    };
+  public deleteAnamnesisQuestion(id: number): Observable<any> {
+    return this.http.delete(`${environment.API_URL}/api/${this.entity}/delete-question/${id}`);
+  }
 
-    return this.http.get(`${environment.API_URL}/api/${this.entity}/download/${id}`, httpOptions);
+  public downloadAnamnesis(id): Promise<any> {
+    let headers = new HttpHeaders();
+    headers = headers.set('Accept', 'application/pdf');
+
+    return this.http.get(`${environment.API_URL}/api/${this.entity}/download/${id}`, {headers, responseType: 'blob' as 'json'}).toPromise();
   }
 
 

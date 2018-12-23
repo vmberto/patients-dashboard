@@ -21,12 +21,15 @@ export class AnamnesisEditComponent implements OnInit {
 
   public creatingQuestion: boolean;
 
+  public anamnesisName: string;
+
 
   constructor(
     private shareDataService: ShareDataService,
     private fb: FormBuilder,
     private anamnesisService: AnamnesisService,
     private router: Router,
+    private route: ActivatedRoute,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
@@ -55,6 +58,7 @@ export class AnamnesisEditComponent implements OnInit {
     });
 
   }
+
 
   public submitQuestionData() {
     if (this.questionsForm.valid) {
@@ -87,6 +91,26 @@ export class AnamnesisEditComponent implements OnInit {
           }
         );
     }
+  }
+
+
+  deleteAnamnesis() {
+    this.anamnesisService.delete(this.anamnesisData.id).subscribe(
+      () => {
+        this.router.navigate(['../..'], { relativeTo: this.route });
+      }
+    );
+  }
+
+  deleteQuestion(question: any) {
+
+    this.anamnesisService.deleteAnamnesisQuestion(question.id).subscribe(
+      () => {
+        const questions = this.anamnesisData.questions;
+        questions.splice(questions.indexOf(question), 1);
+      }
+    );
+
   }
 
 
