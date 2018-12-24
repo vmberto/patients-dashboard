@@ -1,6 +1,5 @@
+import { QUESTION_TYPES } from './../../../../helpers/consts/config.helpers';
 import { ShareDataService } from './../../../../services/share-data/share-data.service';
-import { isObjectEmpty, sortByKey } from 'src/app/app.utils';
-import { subscribeOn } from 'rxjs/operators';
 import { AnamnesisService } from 'src/app/services/entities/anamnesis.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -22,6 +21,8 @@ export class AnamnesisEditComponent implements OnInit {
   public creatingQuestion: boolean;
 
   public anamnesisName: string;
+
+  public questionTypes = QUESTION_TYPES;
 
 
   constructor(
@@ -55,8 +56,14 @@ export class AnamnesisEditComponent implements OnInit {
       question: ['', [Validators.required]],
       type: [1, [Validators.required]],
       line_number: ['', [Validators.required]],
+      options: [''],
     });
 
+  }
+
+  public getQuestionOptions(question) {
+    const options = question.options.map((option) => option.title );
+    return options.join(', ');
   }
 
 
@@ -68,11 +75,19 @@ export class AnamnesisEditComponent implements OnInit {
 
       const formControls = this.questionsForm.controls;
 
+      const optionsArray = [];
+      if (formControls.options.value) {
+        formControls.options.value.split(',').forEach(option => {
+          optionsArray.push({title: option});
+        });
+      }
+
       const questionData = {
         id: this.anamnesisData.id,
         question: formControls.question.value,
         type: formControls.type.value,
         line_number: formControls.line_number.value,
+        options: optionsArray
       };
 
 
