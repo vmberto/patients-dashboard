@@ -20,13 +20,13 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12" *ngFor="let anamnesis of tableData; let i = index;">
                     <div class="paper-stack">
-                        <h2 class="custom-label" style="font-size: 17px;">Anamnese {{anamnesis.name}}</h2>
+                        <h2 class="custom-label" style="font-size: 17px;">Anamnese #{{anamnesis.id}}</h2>
 
                         <button (click)="edit(anamnesis.id)" class="btn btn-primary actions">
                             <i class="fa fa-pencil"></i>
                         </button>
 
-                        <p><span class="custom-label">Tipo de Paciente:</span> {{ anamnesis.name }}</p>
+                        <p><span class="custom-label">Título:</span> {{ anamnesis.name }}</p>
                         <p><span class="custom-label">Criada em: </span>
                             {{ anamnesis.created_at | date:'dd/MM/yy' }} - {{ anamnesis.created_at | date:'HH:mm' }}</p>
                         <p><span class="custom-label">Atualizada em: </span>

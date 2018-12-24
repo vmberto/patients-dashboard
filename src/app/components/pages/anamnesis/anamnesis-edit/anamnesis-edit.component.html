@@ -42,7 +42,7 @@
             <h5 class="data-name">Excluir Anamnese</h5>
 
             <div class="input-group">
-              <input style="color: var(--danger)!important;" [(ngModel)]="anamnesisName" class="form-control" autofocus type="text" placeholder="Digite o nome da Anamnese">
+              <input style="color: var(--danger)!important;" [(ngModel)]="anamnesisName" class="form-control" type="text" placeholder="Digite o nome da Anamnese">
               <div class="input-group-append">
                 <button (click)="deleteAnamnesis(edit)" class="btn btn-danger" type="button" [disabled]="anamnesisName !== anamnesisData.name">
                   <i class="fa fa-trash"></i>
