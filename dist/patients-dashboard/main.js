@@ -1036,7 +1036,7 @@ var AnamnesisListComponent = /** @class */ (function (_super) {
             .then(function (res) {
             var file = new Blob([res], { type: 'application/pdf' });
             var anamnesisName = anamnesis.name.toLowerCase().split(' ').join('-');
-            var filename = "anamnese-" + anamnesisName;
+            var filename = "anamnese-" + anamnesisName + ".pdf";
             node_modules_file_saver__WEBPACK_IMPORTED_MODULE_7___default()(file, filename);
             anamnesis.downloading = false;
         })
