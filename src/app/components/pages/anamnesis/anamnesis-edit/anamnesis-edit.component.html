@@ -42,7 +42,8 @@
             <h5 class="data-name">Excluir Anamnese</h5>
 
             <div class="input-group">
-              <input style="color: var(--danger)!important;" [(ngModel)]="anamnesisName" class="form-control" autofocus type="text" placeholder="Digite o nome da Anamnese">
+              <input style="color: var(--danger)!important;" [(ngModel)]="anamnesisName" class="form-control" type="text"
+                placeholder="Digite o nome da Anamnese">
               <div class="input-group-append">
                 <button (click)="deleteAnamnesis(edit)" class="btn btn-danger" type="button" [disabled]="anamnesisName !== anamnesisData.name">
                   <i class="fa fa-trash"></i>
@@ -85,7 +86,7 @@
               <tr *ngFor="let question of anamnesisData.questions; let index = index;">
                 <td>{{ (index + 1) }}</td>
                 <td>{{ question.title }}</td>
-                <td>{{ question.type === 1 ? 'Pergunta Aberta' : 'Nada' }}</td>
+                <td [title]="question.type === 1 ? '' : getQuestionOptions(question)">{{ question.type === 1 ? 'Pergunta Aberta' : 'Pergunta Fechada' }}</td>
                 <td>{{ question.line_number }}</td>
                 <td>
                   <button title="Excluir Pergunta" (click)="deleteQuestion(question)" class="btn btn-danger btn-sm">
@@ -120,7 +121,9 @@
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="">Tipo</label>
-                      <input formControlName="type" type="number" class="form-control" placeholder="Tipo" />
+                      <select formControlName="type" type="number" class="form-control" placeholder="Tipo">
+                        <option *ngFor="let type of questionTypes" [value]="type.value">{{type.title}}</option>
+                      </select>
                     </div>
                   </div>
 
@@ -128,6 +131,16 @@
                     <div class="form-group">
                       <label for="">Número de Linhas</label>
                       <input formControlName="line_number" type="text" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="">Opções</label>
+                      <input formControlName="options" type="text" class="form-control" placeholder="Opção, Opção, Opção...">
                     </div>
                   </div>
                 </div>
