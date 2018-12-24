@@ -32,6 +32,9 @@ body{
 h1, h2, h3, h4, h5, p, span, small, tr, td, th, label {
   font-weight: 400!important;
   color: var(--font-color)!important;
+}
+
+p {
   word-break: break-all;
 }
 
