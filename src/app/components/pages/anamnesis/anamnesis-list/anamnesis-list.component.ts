@@ -60,7 +60,7 @@ export class AnamnesisListComponent extends ListComponent implements OnInit {
     .then((res) => {
         const file = new Blob([res], {type: 'application/pdf'});
         const anamnesisName = anamnesis.name.toLowerCase().split(' ').join('-');
-        const filename = `anamnese-${anamnesisName}`;
+        const filename = `anamnese-${anamnesisName}.pdf`;
 
         saveAs(file, filename);
         anamnesis.downloading = false;
