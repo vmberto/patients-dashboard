@@ -706,7 +706,7 @@ module.exports = ".card{\r\n    border: none!important;\r\n    background-color:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card\">\r\n  <div class=\"card-body\">\r\n    <div class=\"card-title\">\r\n      <h2>Dashboard</h2>\r\n    </div>\r\n    <form  [formGroup]=\"loginForm\" (submit)=\"login()\">\r\n\r\n      <div class=\"form-group\">\r\n        <input  class=\"form-control form-control-lg\"  type=\"text\"     placeholder=\"Email\" name=\"email\"    formControlName=\"email\"    autocomplete=\"off\" autofocus>\r\n        <input  class=\"form-control form-control-lg\"  type=\"password\" placeholder=\"Senha\" name=\"password\" formControlName=\"password\" autocomplete=\"off\">\r\n        <button [disabled]=\"loadingLogin\" class=\"btn btn-primary btn-lg btn-block\">{{buttonLogin}} <i *ngIf=\"loadingLogin\" class=\"fa fa-spinner fa-spin\"></i></button>\r\n      </div>\r\n\r\n    </form>\r\n    <small>2018 © Gerenciador by Umberto v1.0.0</small>\r\n  </div>\r\n</div>\r\n\r\n<!-- \r\n<app-notification></app-notification> -->\r\n\r\n"
+module.exports = "<div class=\"card\">\r\n  <div class=\"card-body\">\r\n    <div class=\"card-title\">\r\n      <h2>Dashboard</h2>\r\n    </div>\r\n    <form  [formGroup]=\"loginForm\" (submit)=\"login()\">\r\n\r\n      <div class=\"form-group\">\r\n        <input  class=\"form-control form-control-lg\"  type=\"text\"     placeholder=\"Email\" name=\"email\"    formControlName=\"email\"    autocomplete=\"off\" autofocus>\r\n        <input  class=\"form-control form-control-lg\"  type=\"password\" placeholder=\"Senha\" name=\"password\" formControlName=\"password\" autocomplete=\"off\">\r\n        <button [disabled]=\"loadingLogin\" class=\"btn btn-primary btn-lg btn-block\">{{buttonLogin}} <i *ngIf=\"loadingLogin\" class=\"fa fa-spinner fa-spin\"></i></button>\r\n      </div>\r\n\r\n    </form>\r\n    <small>2018 © Gerenciador por Umberto v1.0.0</small>\r\n  </div>\r\n</div>\r\n\r\n<!-- \r\n<app-notification></app-notification> -->\r\n\r\n"
 
 /***/ }),
 
@@ -809,7 +809,7 @@ module.exports = ".panel-footer p,\r\n.panel-footer strong {\r\n    font-size: 0
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\" *ngIf=\"anamnesisData\">\r\n  <div class=\"col-xl-12\">\r\n\r\n    <div class=\"panel\">\r\n\r\n      <h4 class=\"panel-title\"><button routerLink=\"../..\" class=\"return-btn btn btn-primary\"><i class=\"fa fa-arrow-left\"></i></button>\r\n        Anamnese #{{anamnesisData.id}}\r\n      </h4>\r\n\r\n\r\n      <div class=\"panel-body\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-2 col-sm-6\">\r\n            <h5 class=\"data-name\">Nome <i [ngClass]=\"{'always-shown': openInput}\" class=\"edit-pencil fa fa-pencil\"></i></h5>\r\n            <p [hidden]=\"openInput\" (click)=\"openInputToEdit('name')\" class=\"click-for-edit\"> {{anamnesisData.name ?\r\n              anamnesisData.name : '--'}} </p>\r\n            <div *ngIf=\"openInput\" class=\"input-group\">\r\n              <input [(ngModel)]=\"edit\" class=\"form-control\" autofocus type=\"text\">\r\n              <div class=\"input-group-append\">\r\n                <button (click)=\"closeOrEditButton(edit)\" [ngClass]=\"{'btn-success': edit, 'btn-danger': !edit || edit === anamnesisData.name}\"\r\n                  class=\"btn btn-success\" type=\"button\">\r\n                  <i class=\"fa\" [ngClass]=\"{'fa-check': edit, 'fa-times': !edit || edit === anamnesisData.name}\"></i>\r\n                </button>\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n          <div class=\"col-md-2 col-sm-6\">\r\n            <h5 class=\"data-name\">Criada em</h5>\r\n            <p>{{anamnesisData.created_at ? (anamnesisData.created_at | date:'dd/MM/yyyy HH:mm')\r\n              : '--'}}</p>\r\n\r\n          </div>\r\n          <div class=\"col-md-2 col-sm-6\">\r\n            <h5 class=\"data-name\">Atualizada em</h5>\r\n            <p>{{anamnesisData.updated_at ? (anamnesisData.updated_at | date:'dd/MM/yyyy HH:mm')\r\n              : '--'}}</p>\r\n            <!-- <i class=\"edit-pencil fa fa-pencil\"></i> -->\r\n          </div>\r\n\r\n          <div class=\"col-md-3 col-sm-6\">\r\n            <h5 class=\"data-name\">Excluir Anamnese</h5>\r\n\r\n            <div class=\"input-group\">\r\n              <input style=\"color: var(--danger)!important;\" [(ngModel)]=\"anamnesisName\" class=\"form-control\" autofocus type=\"text\" placeholder=\"Digite o nome da Anamnese\">\r\n              <div class=\"input-group-append\">\r\n                <button (click)=\"deleteAnamnesis(edit)\" class=\"btn btn-danger\" type=\"button\" [disabled]=\"anamnesisName !== anamnesisData.name\">\r\n                  <i class=\"fa fa-trash\"></i>\r\n                </button>\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n\r\n  <div class=\"col-xl-12\">\r\n\r\n    <div class=\"panel\">\r\n\r\n      <h4 class=\"panel-title\">\r\n        Perguntas\r\n      </h4>\r\n\r\n      <div class=\"panel-body\">\r\n\r\n        <div class=\"tableStyles\">\r\n\r\n\r\n          <table class=\"display table table-condensed table-responsive-md\">\r\n            <thead>\r\n              <th>#</th>\r\n              <th>Pergunta</th>\r\n              <th>Opções</th>\r\n              <th>Linhas</th>\r\n              <th>Ação</th>\r\n            </thead>\r\n            <tbody>\r\n\r\n              <tr *ngFor=\"let question of anamnesisData.questions; let index = index;\">\r\n                <td>{{ (index + 1) }}</td>\r\n                <td>{{ question.title }}</td>\r\n                <td>{{ question.type === 1 ? 'Pergunta Aberta' : 'Nada' }}</td>\r\n                <td>{{ question.line_number }}</td>\r\n                <td>\r\n                  <button title=\"Excluir Pergunta\" (click)=\"deleteQuestion(question)\" class=\"btn btn-danger btn-sm\">\r\n                    <i class=\"fa fa-trash\"></i>\r\n                  </button>\r\n                </td>\r\n              </tr>\r\n\r\n            </tbody>\r\n            <tbody class=\"pointer add-new-question\">\r\n              <tr colspan=\"5\" *ngIf=\"!newQuestion\" (click)=\"newQuestion = true\">\r\n                <td colspan=\"6\" class=\"text-center\">\r\n                  <i class=\"fa fa-plus-circle\"></i>\r\n                </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n\r\n          <div *ngIf=\"newQuestion\" class=\"add-new-question row\">\r\n            <div class=\"col-xl-12\">\r\n              <form [formGroup]=\"questionsForm\" (submit)=\"submitQuestionData()\">\r\n\r\n                <div class=\"form-row\">\r\n\r\n                  <div class=\"col-md-4\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"\">Pergunta</label>\r\n                      <input formControlName=\"question\" type=\"text\" class=\"form-control\">\r\n                    </div>\r\n                  </div>\r\n\r\n                  <div class=\"col-md-4\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"\">Tipo</label>\r\n                      <input formControlName=\"type\" type=\"number\" class=\"form-control\" placeholder=\"Tipo\" />\r\n                    </div>\r\n                  </div>\r\n\r\n                  <div class=\"col-md-4\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"\">Número de Linhas</label>\r\n                      <input formControlName=\"line_number\" type=\"text\" class=\"form-control\">\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n\r\n                <button [disabled]=\"creatingQuestion\" type=\"submit\" class=\"btn btn-success pull-right\">{{creatingQuestion\r\n                  ? 'Criando' : 'Criar'}} <i *ngIf=\"creatingQuestion\" class=\"fa fa-spinner fa-spin\"></i></button>\r\n\r\n              </form>\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"row\" *ngIf=\"anamnesisData\">\r\n  <div class=\"col-xl-12\">\r\n\r\n    <div class=\"panel\">\r\n\r\n      <h4 class=\"panel-title\"><button routerLink=\"../..\" class=\"return-btn btn btn-primary\"><i class=\"fa fa-arrow-left\"></i></button>\r\n        Anamnese #{{anamnesisData.id}}\r\n      </h4>\r\n\r\n\r\n      <div class=\"panel-body\">\r\n        <div class=\"row\">\r\n          <div class=\"col-md-2 col-sm-6\">\r\n            <h5 class=\"data-name\">Nome <i [ngClass]=\"{'always-shown': openInput}\" class=\"edit-pencil fa fa-pencil\"></i></h5>\r\n            <p [hidden]=\"openInput\" (click)=\"openInputToEdit('name')\" class=\"click-for-edit\"> {{anamnesisData.name ?\r\n              anamnesisData.name : '--'}} </p>\r\n            <div *ngIf=\"openInput\" class=\"input-group\">\r\n              <input [(ngModel)]=\"edit\" class=\"form-control\" autofocus type=\"text\">\r\n              <div class=\"input-group-append\">\r\n                <button (click)=\"closeOrEditButton(edit)\" [ngClass]=\"{'btn-success': edit, 'btn-danger': !edit || edit === anamnesisData.name}\"\r\n                  class=\"btn btn-success\" type=\"button\">\r\n                  <i class=\"fa\" [ngClass]=\"{'fa-check': edit, 'fa-times': !edit || edit === anamnesisData.name}\"></i>\r\n                </button>\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n          <div class=\"col-md-2 col-sm-6\">\r\n            <h5 class=\"data-name\">Criada em</h5>\r\n            <p>{{anamnesisData.created_at ? (anamnesisData.created_at | date:'dd/MM/yyyy HH:mm')\r\n              : '--'}}</p>\r\n\r\n          </div>\r\n          <div class=\"col-md-2 col-sm-6\">\r\n            <h5 class=\"data-name\">Atualizada em</h5>\r\n            <p>{{anamnesisData.updated_at ? (anamnesisData.updated_at | date:'dd/MM/yyyy HH:mm')\r\n              : '--'}}</p>\r\n            <!-- <i class=\"edit-pencil fa fa-pencil\"></i> -->\r\n          </div>\r\n\r\n          <div class=\"col-md-3 col-sm-6\">\r\n            <h5 class=\"data-name\">Excluir Anamnese</h5>\r\n\r\n            <div class=\"input-group\">\r\n              <input style=\"color: var(--danger)!important;\" [(ngModel)]=\"anamnesisName\" class=\"form-control\" type=\"text\"\r\n                placeholder=\"Digite o nome da Anamnese\">\r\n              <div class=\"input-group-append\">\r\n                <button (click)=\"deleteAnamnesis(edit)\" class=\"btn btn-danger\" type=\"button\" [disabled]=\"anamnesisName !== anamnesisData.name\">\r\n                  <i class=\"fa fa-trash\"></i>\r\n                </button>\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n\r\n  <div class=\"col-xl-12\">\r\n\r\n    <div class=\"panel\">\r\n\r\n      <h4 class=\"panel-title\">\r\n        Perguntas\r\n      </h4>\r\n\r\n      <div class=\"panel-body\">\r\n\r\n        <div class=\"tableStyles\">\r\n\r\n\r\n          <table class=\"display table table-condensed table-responsive-md\">\r\n            <thead>\r\n              <th>#</th>\r\n              <th>Pergunta</th>\r\n              <th>Opções</th>\r\n              <th>Linhas</th>\r\n              <th>Ação</th>\r\n            </thead>\r\n            <tbody>\r\n\r\n              <tr *ngFor=\"let question of anamnesisData.questions; let index = index;\">\r\n                <td>{{ (index + 1) }}</td>\r\n                <td>{{ question.title }}</td>\r\n                <td [title]=\"question.type === 1 ? '' : getQuestionOptions(question)\">{{ question.type === 1 ? 'Pergunta Aberta' : 'Pergunta Fechada' }}</td>\r\n                <td>{{ question.line_number }}</td>\r\n                <td>\r\n                  <button title=\"Excluir Pergunta\" (click)=\"deleteQuestion(question)\" class=\"btn btn-danger btn-sm\">\r\n                    <i class=\"fa fa-trash\"></i>\r\n                  </button>\r\n                </td>\r\n              </tr>\r\n\r\n            </tbody>\r\n            <tbody class=\"pointer add-new-question\">\r\n              <tr colspan=\"5\" *ngIf=\"!newQuestion\" (click)=\"newQuestion = true\">\r\n                <td colspan=\"6\" class=\"text-center\">\r\n                  <i class=\"fa fa-plus-circle\"></i>\r\n                </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n\r\n          <div *ngIf=\"newQuestion\" class=\"add-new-question row\">\r\n            <div class=\"col-xl-12\">\r\n              <form [formGroup]=\"questionsForm\" (submit)=\"submitQuestionData()\">\r\n\r\n                <div class=\"form-row\">\r\n\r\n                  <div class=\"col-md-4\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"\">Pergunta</label>\r\n                      <input formControlName=\"question\" type=\"text\" class=\"form-control\">\r\n                    </div>\r\n                  </div>\r\n\r\n                  <div class=\"col-md-4\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"\">Tipo</label>\r\n                      <select formControlName=\"type\" type=\"number\" class=\"form-control\" placeholder=\"Tipo\">\r\n                        <option *ngFor=\"let type of questionTypes\" [value]=\"type.value\">{{type.title}}</option>\r\n                      </select>\r\n                    </div>\r\n                  </div>\r\n\r\n                  <div class=\"col-md-4\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"\">Número de Linhas</label>\r\n                      <input formControlName=\"line_number\" type=\"text\" class=\"form-control\">\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n\r\n                <div class=\"form-row\">\r\n\r\n                  <div class=\"col-md-12\">\r\n                    <div class=\"form-group\">\r\n                      <label for=\"\">Opções</label>\r\n                      <input formControlName=\"options\" type=\"text\" class=\"form-control\" placeholder=\"Opção, Opção, Opção...\">\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n\r\n                <button [disabled]=\"creatingQuestion\" type=\"submit\" class=\"btn btn-success pull-right\">{{creatingQuestion\r\n                  ? 'Criando' : 'Criar'}} <i *ngIf=\"creatingQuestion\" class=\"fa fa-spinner fa-spin\"></i></button>\r\n\r\n              </form>\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -823,11 +823,12 @@ module.exports = "<div class=\"row\" *ngIf=\"anamnesisData\">\r\n  <div class=\"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnamnesisEditComponent", function() { return AnamnesisEditComponent; });
-/* harmony import */ var _services_share_data_share_data_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../services/share-data/share-data.service */ "./src/app/services/share-data/share-data.service.ts");
-/* harmony import */ var src_app_services_entities_anamnesis_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/entities/anamnesis.service */ "./src/app/services/entities/anamnesis.service.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _helpers_consts_config_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../helpers/consts/config.helpers */ "./src/app/helpers/consts/config.helpers.ts");
+/* harmony import */ var _services_share_data_share_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../services/share-data/share-data.service */ "./src/app/services/share-data/share-data.service.ts");
+/* harmony import */ var src_app_services_entities_anamnesis_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/entities/anamnesis.service */ "./src/app/services/entities/anamnesis.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -842,6 +843,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AnamnesisEditComponent = /** @class */ (function () {
     function AnamnesisEditComponent(shareDataService, fb, anamnesisService, router, route, activatedRoute) {
         this.shareDataService = shareDataService;
@@ -851,6 +853,7 @@ var AnamnesisEditComponent = /** @class */ (function () {
         this.route = route;
         this.activatedRoute = activatedRoute;
         this.newQuestion = false;
+        this.questionTypes = _helpers_consts_config_helpers__WEBPACK_IMPORTED_MODULE_0__["QUESTION_TYPES"];
     }
     AnamnesisEditComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -864,21 +867,33 @@ var AnamnesisEditComponent = /** @class */ (function () {
             });
         });
         this.questionsForm = this.fb.group({
-            question: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-            type: [1, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
-            line_number: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            question: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]],
+            type: [1, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]],
+            line_number: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]],
+            options: [''],
         });
+    };
+    AnamnesisEditComponent.prototype.getQuestionOptions = function (question) {
+        var options = question.options.map(function (option) { return option.title; });
+        return options.join(', ');
     };
     AnamnesisEditComponent.prototype.submitQuestionData = function () {
         var _this = this;
         if (this.questionsForm.valid) {
             this.creatingQuestion = true;
             var formControls = this.questionsForm.controls;
+            var optionsArray_1 = [];
+            if (formControls.options.value) {
+                formControls.options.value.split(',').forEach(function (option) {
+                    optionsArray_1.push({ title: option });
+                });
+            }
             var questionData = {
                 id: this.anamnesisData.id,
                 question: formControls.question.value,
                 type: formControls.type.value,
                 line_number: formControls.line_number.value,
+                options: optionsArray_1
             };
             this.anamnesisService.createAnamnesisQuestion(questionData)
                 .subscribe(function (res) {
@@ -905,17 +920,17 @@ var AnamnesisEditComponent = /** @class */ (function () {
         });
     };
     AnamnesisEditComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
             selector: 'app-anamnesis-edit',
             template: __webpack_require__(/*! ./anamnesis-edit.component.html */ "./src/app/components/pages/anamnesis/anamnesis-edit/anamnesis-edit.component.html"),
             styles: [__webpack_require__(/*! ./anamnesis-edit.component.css */ "./src/app/components/pages/anamnesis/anamnesis-edit/anamnesis-edit.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_share_data_share_data_service__WEBPACK_IMPORTED_MODULE_0__["ShareDataService"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"],
-            src_app_services_entities_anamnesis_service__WEBPACK_IMPORTED_MODULE_1__["AnamnesisService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_services_share_data_share_data_service__WEBPACK_IMPORTED_MODULE_1__["ShareDataService"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"],
+            src_app_services_entities_anamnesis_service__WEBPACK_IMPORTED_MODULE_2__["AnamnesisService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"]])
     ], AnamnesisEditComponent);
     return AnamnesisEditComponent;
 }());
@@ -942,7 +957,7 @@ module.exports = "\r\n  .paper-stack {\r\n    padding: 10px;\r\n    background: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel\">\r\n    <h3 class=\"page-title\">Anamneses</h3>\r\n\r\n    <div class=\"row  mb-3\">\r\n        <div class=\"col-md-3\">\r\n            <div class=\"input-group\">\r\n                <input [(ngModel)]=\"newAnamnesis\" type=\"text\" class=\"form-control\" placeholder=\"Nova Anamnese\">\r\n                <div class=\"input-group-append\">\r\n                    <button (click)=\"create(newAnamnesis)\" class=\"btn btn-success\" type=\"button\">\r\n                        <i class=\"fa\" [ngClass]=\"{'fa-check': !creatingAnamnesis, 'fa-spinner': creatingAnamnesis, 'fa-spin': creatingAnamnesis}\"></i>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"panel-body\">\r\n        <div class=\"table-wrapper\">\r\n            <div class=\"row\">\r\n                <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12\" *ngFor=\"let anamnesis of tableData; let i = index;\">\r\n                    <div class=\"paper-stack\">\r\n                        <h2 class=\"custom-label\" style=\"font-size: 17px;\">Anamnese {{anamnesis.name}}</h2>\r\n\r\n                        <button (click)=\"edit(anamnesis.id)\" class=\"btn btn-primary actions\">\r\n                            <i class=\"fa fa-pencil\"></i>\r\n                        </button>\r\n\r\n                        <p><span class=\"custom-label\">Tipo de Paciente:</span> {{ anamnesis.name }}</p>\r\n                        <p><span class=\"custom-label\">Criada em: </span>\r\n                            {{ anamnesis.created_at | date:'dd/MM/yy' }} - {{ anamnesis.created_at | date:'HH:mm' }}</p>\r\n                        <p><span class=\"custom-label\">Atualizada em: </span>\r\n                            {{ anamnesis.updated_at | date:'dd/MM/yy' }} - {{ anamnesis.updated_at | date:'HH:mm' }}</p>\r\n\r\n                        <button (click)=\"download(anamnesis)\" class=\"btn btn-info btn-block\"> \r\n                            Download\r\n                            <i style=\"position: absolute; right: 20px; line-height: 25px;\" class=\"fa fa-spin fa-spinner\" *ngIf=\"anamnesis.downloading\"></i>\r\n                         </button>\r\n\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"panel\">\r\n    <h3 class=\"page-title\">Anamneses</h3>\r\n\r\n    <div class=\"row  mb-3\">\r\n        <div class=\"col-md-3\">\r\n            <div class=\"input-group\">\r\n                <input [(ngModel)]=\"newAnamnesis\" type=\"text\" class=\"form-control\" placeholder=\"Nova Anamnese\">\r\n                <div class=\"input-group-append\">\r\n                    <button (click)=\"create(newAnamnesis)\" class=\"btn btn-success\" type=\"button\">\r\n                        <i class=\"fa\" [ngClass]=\"{'fa-check': !creatingAnamnesis, 'fa-spinner': creatingAnamnesis, 'fa-spin': creatingAnamnesis}\"></i>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"panel-body\">\r\n        <div class=\"table-wrapper\">\r\n            <div class=\"row\">\r\n                <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12\" *ngFor=\"let anamnesis of tableData; let i = index;\">\r\n                    <div class=\"paper-stack\">\r\n                        <h2 class=\"custom-label\" style=\"font-size: 17px;\">Anamnese #{{anamnesis.id}}</h2>\r\n\r\n                        <button (click)=\"edit(anamnesis.id)\" class=\"btn btn-primary actions\">\r\n                            <i class=\"fa fa-pencil\"></i>\r\n                        </button>\r\n\r\n                        <p><span class=\"custom-label\">Título:</span> {{ anamnesis.name }}</p>\r\n                        <p><span class=\"custom-label\">Criada em: </span>\r\n                            {{ anamnesis.created_at | date:'dd/MM/yy' }} - {{ anamnesis.created_at | date:'HH:mm' }}</p>\r\n                        <p><span class=\"custom-label\">Atualizada em: </span>\r\n                            {{ anamnesis.updated_at | date:'dd/MM/yy' }} - {{ anamnesis.updated_at | date:'HH:mm' }}</p>\r\n\r\n                        <button (click)=\"download(anamnesis)\" class=\"btn btn-info btn-block\"> \r\n                            Download\r\n                            <i style=\"position: absolute; right: 20px; line-height: 25px;\" class=\"fa fa-spin fa-spinner\" *ngIf=\"anamnesis.downloading\"></i>\r\n                         </button>\r\n\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -2264,6 +2279,24 @@ var showCreateInput = Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["t
         Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["animate"])(250, Object(_angular_animations__WEBPACK_IMPORTED_MODULE_0__["style"])({ transform: 'translateX(-120%)' }))
     ])
 ]);
+
+
+/***/ }),
+
+/***/ "./src/app/helpers/consts/config.helpers.ts":
+/*!**************************************************!*\
+  !*** ./src/app/helpers/consts/config.helpers.ts ***!
+  \**************************************************/
+/*! exports provided: QUESTION_TYPES */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QUESTION_TYPES", function() { return QUESTION_TYPES; });
+var QUESTION_TYPES = [
+    { value: 0, title: 'Fechada' },
+    { value: 1, title: 'Aberta' },
+];
 
 
 /***/ }),
