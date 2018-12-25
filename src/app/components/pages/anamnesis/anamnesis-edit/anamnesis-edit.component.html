@@ -121,7 +121,7 @@
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="">Tipo</label>
-                      <select formControlName="type" type="number" class="form-control" placeholder="Tipo">
+                      <select formControlName="type" type="number" class="form-control" placeholder="Tipo" (change)="showOptionsInput()">
                         <option *ngFor="let type of questionTypes" [value]="type.value">{{type.title}}</option>
                       </select>
                     </div>
@@ -135,7 +135,7 @@
                   </div>
                 </div>
 
-                <div class="form-row">
+                <div class="form-row" [hidden]="!showOptions">
 
                   <div class="col-md-12">
                     <div class="form-group">
@@ -143,6 +143,7 @@
                       <input formControlName="options" type="text" class="form-control" placeholder="Opção, Opção, Opção...">
                     </div>
                   </div>
+
                 </div>
 
                 <button [disabled]="creatingQuestion" type="submit" class="btn btn-success pull-right">{{creatingQuestion

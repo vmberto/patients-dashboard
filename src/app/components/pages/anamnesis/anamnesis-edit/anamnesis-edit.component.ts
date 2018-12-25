@@ -24,6 +24,8 @@ export class AnamnesisEditComponent implements OnInit {
 
   public questionTypes = QUESTION_TYPES;
 
+  public showOptions: boolean;
+
 
   constructor(
     private shareDataService: ShareDataService,
@@ -62,7 +64,7 @@ export class AnamnesisEditComponent implements OnInit {
   }
 
   public getQuestionOptions(question) {
-    const options = question.options.map((option) => option.title );
+    const options = question.options.map((option) => option.title);
     return options.join(', ');
   }
 
@@ -78,7 +80,7 @@ export class AnamnesisEditComponent implements OnInit {
       const optionsArray = [];
       if (formControls.options.value) {
         formControls.options.value.split(',').forEach(option => {
-          optionsArray.push({title: option});
+          optionsArray.push({ title: option });
         });
       }
 
@@ -128,7 +130,13 @@ export class AnamnesisEditComponent implements OnInit {
 
   }
 
+  public showOptionsInput() {
+    console.log(this.questionsForm.controls.type.value);
+    if (this.questionsForm.controls.type.value === 0 || this.questionsForm.controls.type.value === '0') {
+      this.showOptions = true;
+    } else {
+      this.showOptions = false;
+    }
 
-
-
+  }
 }
