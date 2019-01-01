@@ -99,6 +99,7 @@ export class AnamnesisEditComponent implements OnInit {
             this.anamnesisData.questions.push(res);
             this.creatingQuestion = false;
             this.questionsForm.reset();
+            this.questionsForm.controls.type.setValue(1);
             this.newQuestion = false;
 
           },
@@ -111,7 +112,7 @@ export class AnamnesisEditComponent implements OnInit {
   }
 
 
-  deleteAnamnesis() {
+  public deleteAnamnesis() {
     this.anamnesisService.delete(this.anamnesisData.id).subscribe(
       () => {
         this.router.navigate(['../..'], { relativeTo: this.route });
@@ -119,7 +120,7 @@ export class AnamnesisEditComponent implements OnInit {
     );
   }
 
-  deleteQuestion(question: any) {
+  public deleteQuestion(question: any) {
 
     this.anamnesisService.deleteAnamnesisQuestion(question.id).subscribe(
       () => {
@@ -131,7 +132,6 @@ export class AnamnesisEditComponent implements OnInit {
   }
 
   public showOptionsInput() {
-    console.log(this.questionsForm.controls.type.value);
     if (this.questionsForm.controls.type.value === 0 || this.questionsForm.controls.type.value === '0') {
       this.showOptions = true;
     } else {
