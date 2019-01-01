@@ -2,7 +2,7 @@
     cursor: pointer;
 }
 
-.custom-label {
+.data-title-label {
   border: none!important;
   color: var(--font-subcolor)!important;
   font-weight: 700!important;
@@ -12,6 +12,18 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+.data-name,
+.data-name-address {
+    border: none!important;
+    color: var(--font-subcolor)!important;
+    font-weight: 700!important;
+    font-size: 1rem;
+    padding-top: .75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 
 @media only screen and (max-width: 468px) {
     .full-width-mobile {
