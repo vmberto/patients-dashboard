@@ -13,14 +13,14 @@
 
           <div class="col-md-4">
             <div class="form-group">
-              <label for="">Nome</label>
+              <label>Nome</label>
               <input formControlName="name" type="text" class="form-control" placeholder="Umberto Barros">
             </div>
           </div>
 
           <div class="col-md-4">
             <div class="form-group">
-              <label for="">Plano de Saúde</label>
+              <label>Plano de Saúde</label>
               <select formControlName="health_insurance" type="text" class="form-control" placeholder="Umberto Barros">
                 <option value=""></option>
                 <option *ngFor="let healthInsurance of healthInsurances" [value]="healthInsurance.id">{{healthInsurance.name}}</option>
@@ -30,7 +30,7 @@
 
           <div class="col-md-4">
             <div class="form-group">
-              <label for="">Celular</label>
+              <label>Celular</label>
               <input formControlName="phone" type="text" class="form-control" placeholder="+55 (81) 99818-1213">
             </div>
           </div>
@@ -41,14 +41,14 @@
 
           <div class="col-md-4">
             <div class="form-group">
-              <label for="">Email</label>
+              <label>Email</label>
               <input formControlName="email" type="text" class="form-control" placeholder="email@email.com">
             </div>
           </div>
 
           <div class="col-md-2">
             <div class="form-group">
-              <label for="">Paciente Particular</label>
+              <label>Particular</label>
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
                   <button (click)="setPatientType()" type="button" class="btn" [ngClass]="{'btn-danger': isPrivateValue === 'Não', 'btn-success': isPrivateValue === 'Sim'}" id="inlineFormInputGroup">
@@ -69,21 +69,21 @@
 
           <div class="col-md-7">
             <div class="form-group">
-              <label for="">Rua</label>
+              <label>Rua</label>
               <input formControlName="street" type="text" class="form-control" placeholder="Av. Caxangá">
             </div>
           </div>
 
           <div class="col-md-2">
             <div class="form-group">
-              <label for="">Número</label>
+              <label>Número</label>
               <input formControlName="number" type="text" class="form-control" placeholder="000">
             </div>
           </div>
 
           <div class="col-md-3">
             <div class="form-group">
-              <label for="">Complemento</label>
+              <label>Complemento</label>
               <input formControlName="complement" type="text" class="form-control" placeholder="Aptº 0000">
             </div>
           </div>
@@ -95,7 +95,7 @@
 
           <div class="col-md-3">
             <div class="form-group">
-              <label for="">CEP</label>
+              <label>CEP</label>
               <input formControlName="zip_code" type="text" class="form-control" placeholder="00000-000" maxlength="8">
             </div>
           </div>
@@ -103,14 +103,14 @@
 
           <div class="col-md-4">
             <div class="form-group">
-              <label for="">Bairro</label>
+              <label>Bairro</label>
               <input formControlName="district" type="text" class="form-control" placeholder="Barro">
             </div>
           </div>
 
           <div class="col-md-5">
             <div class="form-group">
-              <label for="">Cidade</label>
+              <label>Cidade</label>
               <input formControlName="city" type="text" class="form-control" placeholder="Recife">
             </div>
           </div>
