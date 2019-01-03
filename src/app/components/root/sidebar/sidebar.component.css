@@ -1,3 +1,26 @@
+.title {
+  background-color: var(--primary);
+  box-shadow: var(--box-shadow);
+  padding: 10px 8px 10px 8px;
+  border-bottom: 2px solid var(--background-line);
+  margin-bottom: 15px;
+}
+.title-logo {
+  width: 35px;
+  display: linear;
+  float: left;
+}
+.title h3 {
+  margin-bottom: 0;
+  font-weight: 700!important;
+  font-size: 22px;
+  line-height: 39px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+
 ul > li {
   list-style: none;
 }
@@ -7,7 +30,7 @@ hr {
 }
 
 
-.title{
+.username{
   padding-top: 15px;
   font-size: 18px;
   text-align: center;
