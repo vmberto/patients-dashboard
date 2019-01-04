@@ -1,6 +1,5 @@
-import { HealthInsurancesService } from '../../../../services/entities/health-insurances.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { PatientsService } from './../../../../services/entities/patients.service.';
+import { PatientsService, HealthInsurancesService } from 'src/app/services';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 

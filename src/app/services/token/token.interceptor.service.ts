@@ -1,4 +1,3 @@
-import { environment } from './../../../environments/environment';
 import {Injectable} from '@angular/core';
 import {
   HttpRequest,
@@ -8,8 +7,8 @@ import {
   HttpResponse,
   HttpErrorResponse
 } from '@angular/common/http';
-import { AuthService } from '../auth/auth.service';
-import { Observable, throwError } from 'rxjs';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 

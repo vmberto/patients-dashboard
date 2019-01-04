@@ -1,10 +1,9 @@
 import { HttpHeaders } from '@angular/common/http';
-import { AnamnesisService } from './../../../../services/entities/anamnesis.service';
+import { AnamnesisService, ShareDataService } from 'src/app/services';
 import { FilterCriteria } from 'src/app/helpers/crud/filter-criteria';
 import { ListComponent } from 'src/app/helpers/crud/list-components.helpers';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ShareDataService } from 'src/app/services/share-data/share-data.service';
 import { collapse } from 'src/app/helpers/animations/animations';
 import saveAs from 'node_modules/file-saver';
 

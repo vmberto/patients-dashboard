@@ -1,8 +1,7 @@
-import { PatientsService } from 'src/app/services/entities/patients.service.';
+import { PatientsService, ShareDataService} from 'src/app/services';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { showup, fade } from 'src/app/helpers/animations/animations';
-import { ShareDataService } from 'src/app/services/share-data/share-data.service';
 
 @Component({
   selector: 'app-show',
@@ -40,7 +39,9 @@ export class PatientsShowComponent implements OnInit {
   }
 
   public updatePatientData($event) {
-    this.patientsService.update($event).subscribe();
+    this.patientsService.update($event).subscribe(() => {
+      this.patientData.updated_at = new Date();
+    });
   }
 
 }
