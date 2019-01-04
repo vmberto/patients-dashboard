@@ -1,6 +1,4 @@
 <div class="panel">
-    <h3 class="page-title">Anamneses</h3>
-
     <div class="row  mb-3">
         <div class="col-md-3">
             <div class="input-group">
@@ -33,8 +31,8 @@
                             {{ anamnesis.updated_at | date:'dd/MM/yy' }} - {{ anamnesis.updated_at | date:'HH:mm' }}</p>
 
                         <button (click)="download(anamnesis)" class="btn btn-info btn-block"> 
+                            <i class="mr-2 fa" [ngClass]="{'fa-download': !anamnesis.downloading, 'fa-spin': anamnesis.downloading, 'fa-spinner': anamnesis.downloading}"></i>
                             Download
-                            <i style="position: absolute; right: 20px; line-height: 25px;" class="fa fa-spin fa-spinner" *ngIf="anamnesis.downloading"></i>
                          </button>
 
 

@@ -20,17 +20,18 @@ const routes: Routes = [
   {
     path: 'home', canActivate: [AuthGuardService], component: RootComponent, children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent },
 
-      { path: 'patients', component: PatientsListComponent },
+      { path: 'dashboard', component: DashboardComponent, data: {title: 'dashboard'}},
+
+      { path: 'patients', component: PatientsListComponent, data: {title: 'pacientes'} },
       { path: 'patients/create', component: PatientsCreateComponent },
       { path: 'patients/show/:id', component: PatientsShowComponent },
 
-      { path: 'health-insurances', component: HealthInsurancesListComponent },
+      { path: 'health-insurances', component: HealthInsurancesListComponent, data: {title: 'planos de saúde'} },
       { path: 'health-insurances/create', component: HealthInsurancesCreateComponent },
       { path: 'health-insurances/show/:id', component: HealthInsurancesShowComponent },
 
-      { path: 'anamnesis', component: AnamnesisListComponent },
+      { path: 'anamnesis', component: AnamnesisListComponent, data: {title: 'anamneses'} },
       { path: 'anamnesis/edit/:id', component: AnamnesisEditComponent },
 
     ]

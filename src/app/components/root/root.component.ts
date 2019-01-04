@@ -1,4 +1,4 @@
-import { Router, NavigationStart, Event } from '@angular/router';
+import { Router, NavigationStart, Event, ActivatedRoute } from '@angular/router';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Observable } from 'rxjs';
 import { showSidebar } from '../../helpers/animations/animations';
@@ -15,14 +15,21 @@ export class RootComponent implements OnInit {
 
   public windowSize: number = window.screen.width;
   public sidebarOpened = false;
-  public navIsFixed;
 
   public showLoadingScreen: Observable<boolean>;
 
-  constructor(private router: Router, private shareData: ShareDataService) {
+  public pageTitle: string;
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private shareData: ShareDataService) {
 
     router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) this.sidebarOpened = false;
+
+      this.activatedRoute.children[0].data
+        .subscribe(
+          res => {
+          this.pageTitle = res.title;
+        });
     });
 
   }
@@ -31,6 +38,7 @@ export class RootComponent implements OnInit {
   ngOnInit() {
 
     this.showLoadingScreen = this.shareData.loadingScreenEvent;
+
 
   }
 

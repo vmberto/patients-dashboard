@@ -50,8 +50,11 @@ input {
   /* ----- Classes ----- */
 
 .page-title {
-  font-weight: 300;
-  padding-bottom: 20px;
+  font-size: 1.1375rem;
+  font-weight: 600!important;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1.01px;
 }
 
 
