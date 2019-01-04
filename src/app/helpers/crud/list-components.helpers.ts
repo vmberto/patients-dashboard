@@ -44,7 +44,7 @@ export class ListComponent {
 
         this.shareDataService.activateLoadingScreen(true);
 
-        return this.resource[this.resourceFunction ? this.resourceFunction : 'query'](this.filterCriteria.params ? this.filterCriteria.params : {}).subscribe(
+        return this.resource[this.resourceFunction ? this.resourceFunction : 'get'](undefined, this.filterCriteria ? this.filterCriteria.params : {}).subscribe(
             (res) => {
                 if (res.data) this.tableData = res.data;
                 if (res.meta) this.tableMetaData = res.meta;

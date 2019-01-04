@@ -1,6 +1,6 @@
 import { environment } from './../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { CrudServices } from '../../helpers/crud/crud-service';
+import { CrudMethods } from '../../helpers/crud/crud-methods';
 import { Injectable, PipeTransform } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AnamnesisService extends CrudServices {
+export class AnamnesisService extends CrudMethods {
 
 
   constructor(public http: HttpClient) {

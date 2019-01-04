@@ -5,9 +5,6 @@ export class FilterCriteria {
         return this._params;
     }
 
-
-
-
     /**
      * @param paramName
      * @param value
