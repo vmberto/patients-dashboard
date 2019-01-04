@@ -1,9 +1,7 @@
-import { collapse } from './../../../helpers/animations/animations';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services';
-import { AfterViewInit, Component, OnInit, OnDestroy } from '@angular/core';
-// import {SettingsService} from '../services/settings.service';
 import { ROUTES } from './sidebar-routes.config';
-import { listObjShow } from '../../../helpers/animations/animations';
+import { collapse } from 'src/app/helpers/animations/animations';
 
 @Component({
   selector: 'app-sidebar',

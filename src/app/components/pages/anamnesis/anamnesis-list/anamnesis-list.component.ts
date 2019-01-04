@@ -1,4 +1,3 @@
-import { HttpHeaders } from '@angular/common/http';
 import { AnamnesisService, ShareDataService } from 'src/app/services';
 import { FilterCriteria } from 'src/app/helpers/crud/filter-criteria';
 import { ListComponent } from 'src/app/helpers/crud/list-components.helpers';

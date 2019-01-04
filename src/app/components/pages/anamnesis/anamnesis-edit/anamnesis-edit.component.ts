@@ -1,6 +1,5 @@
-import { QUESTION_TYPES } from './../../../../helpers/consts/config.helpers';
-import { ShareDataService } from 'src/app/services';
-import { AnamnesisService } from 'src/app/services/entities/anamnesis.service';
+import { QUESTION_TYPES } from 'src/app/helpers/consts/config.helpers';
+import { ShareDataService, AnamnesisService } from 'src/app/services';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';

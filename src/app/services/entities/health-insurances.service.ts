@@ -1,8 +1,8 @@
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { CrudMethods } from '../../helpers/crud/crud-methods';
 import { Injectable } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { CrudMethods } from 'src/app/helpers/crud/crud-methods';
+import { Observable } from 'rxjs';
 
 
 @Injectable({

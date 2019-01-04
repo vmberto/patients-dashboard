@@ -1,6 +1,3 @@
-import { subscribeOn } from 'rxjs/operators';
-import { ShareDataService } from './../../services/share-data/share-data.service';
-import { FilterCriteria } from 'src/app/helpers/crud/filter-criteria';
 import { MatPaginator, PageEvent } from '@angular/material';
 import { ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -38,7 +35,7 @@ export class ListComponent {
 
 
     /**
-     * Adicionar comentário
+     * @TODO Adicionar comentário
      */
     loadData(): Observable<any> {
 

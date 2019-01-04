@@ -1,7 +1,7 @@
 import { PatientsService, ShareDataService} from 'src/app/services';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { showup, fade } from 'src/app/helpers/animations/animations';
+import { showup } from 'src/app/helpers/animations/animations';
 
 @Component({
   selector: 'app-show',

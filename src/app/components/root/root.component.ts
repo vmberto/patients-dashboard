@@ -1,8 +1,8 @@
-import { Router, NavigationStart, NavigationEnd, NavigationError, Event } from '@angular/router';
-import { Component, OnInit, HostListener, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
-import { showSidebar, collapse } from '../../helpers/animations/animations';
-import { ShareDataService } from 'src/app/services/share-data/share-data.service';
+import { Router, NavigationStart, Event } from '@angular/router';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { Observable } from 'rxjs';
+import { showSidebar } from '../../helpers/animations/animations';
+import { ShareDataService } from 'src/app/services';
 
 @Component({
   selector: 'app-root',

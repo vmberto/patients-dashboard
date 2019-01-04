@@ -1,7 +1,7 @@
-import { environment } from './../../../environments/environment';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { CrudMethods } from '../../helpers/crud/crud-methods';
-import { Injectable, PipeTransform } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { CrudMethods } from 'src/app/helpers/crud/crud-methods';
 import { Observable } from 'rxjs';
 
 
