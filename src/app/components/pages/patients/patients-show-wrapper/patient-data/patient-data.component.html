@@ -92,7 +92,7 @@
           <p style="display: inline-block"><strong class="data-name">Cadastrado em: </strong>{{patientData.created_at |
             date:'dd/MM/yyyy
             HH:mm'}}&emsp;</p>
-          <p style="display: inline-block"><strong class="data-name"> Atualizado em: </strong>{{patientData.updated_at
+          <p *ngIf="patientData.created_at !== patientData.updated_at" style="display: inline-block"><strong class="data-name"> Atualizado em: </strong>{{patientData.updated_at
             | date:'dd/MM/yyyy
             HH:mm'}}</p>
         </div>

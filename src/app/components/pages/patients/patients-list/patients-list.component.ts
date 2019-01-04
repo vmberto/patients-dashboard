@@ -1,6 +1,5 @@
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { ShareDataService } from 'src/app/services/share-data/share-data.service';
-import { PatientsService } from 'src/app/services/entities/patients.service.';
+import { ShareDataService, PatientsService } from 'src/app/services';
 import { FilterCriteria } from 'src/app/helpers/crud/filter-criteria';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';

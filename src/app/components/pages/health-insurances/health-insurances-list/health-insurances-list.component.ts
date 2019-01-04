@@ -1,9 +1,8 @@
 import { collapse, showCreateInput } from './../../../../helpers/animations/animations';
 import { listObjShow } from 'src/app/helpers/animations/animations';
-import { ShareDataService } from './../../../../services/share-data/share-data.service';
+import { ShareDataService, HealthInsurancesService } from 'src/app/services';
 import { ListComponent } from 'src/app/helpers/crud/list-components.helpers';
 import { FilterCriteria } from '../../../../helpers/crud/filter-criteria';
-import { HealthInsurancesService } from '../../../../services/entities/health-insurances.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

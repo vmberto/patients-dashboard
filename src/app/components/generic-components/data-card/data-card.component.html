@@ -3,7 +3,7 @@
         <h5 class="card-title">{{cardTitle}}</h5>
         <i class="fa background-icon" [ngClass]="{'fa-spinner': validateCardData() , 'fa-spin': validateCardData()}" [class]="cardIcon"></i>
         <span style="font-weight: 400; font-size: 30px;">
-            {{cardData ? cardData : ' -- '}}
+            {{cardData || ' -- '}}
         </span>
     </div>
 </a>

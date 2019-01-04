@@ -1,5 +1,5 @@
 import { collapse } from './../../../helpers/animations/animations';
-import { AuthService } from './../../../services/auth/auth.service';
+import { AuthService } from 'src/app/services';
 import { AfterViewInit, Component, OnInit, OnDestroy } from '@angular/core';
 // import {SettingsService} from '../services/settings.service';
 import { ROUTES } from './sidebar-routes.config';

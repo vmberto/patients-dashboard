@@ -1,15 +1,15 @@
+import { NgModule } from '@angular/core';
 import { routing } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './services/token/token.interceptor.service';
-import { AuthGuardService } from './services/auth/auth-guard.service';
+
+import { TokenInterceptor, AuthGuardService } from './services';
 
 import { WordWrapPipe } from './pipes/word-wrap.pipe';
 
+// Components
 import {
   AppComponent,
   SidebarComponent,
@@ -30,6 +30,8 @@ import {
 } from './components';
 
 // Directives
+import { ModalDirective } from './directives/modal.directive';
+
 
 @NgModule({
   declarations: [

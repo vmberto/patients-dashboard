@@ -1,5 +1,4 @@
-import { HealthInsurancesService } from './../../../services/entities/health-insurances.service';
-import { PatientsService } from 'src/app/services/entities/patients.service.';
+import { HealthInsurancesService, PatientsService} from 'src/app/services';
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
 import { map } from 'rxjs/operators';
