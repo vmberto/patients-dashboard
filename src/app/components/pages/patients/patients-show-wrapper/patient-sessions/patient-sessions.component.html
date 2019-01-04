@@ -26,7 +26,7 @@
         </div>
   
         <div class="col-sm-4" [ngClass]="{'offset-sm-4': patientSessions[patientSessions.length - 1] != session}"> <!--offset-md-4-->
-          <h4 id="created_at">{{ (session.created_at | date:'dd/MM/yyyy') + ' - ' + (session.created_at | date:'HH:mm') }}</h4>
+          <h4 id="attendance_at">{{ (session.attendance_at | date:'dd/MM/yyyy') + ' - ' + (session.attendance_at | date:'HH:mm') }}</h4>
         </div>
 
       </div>
