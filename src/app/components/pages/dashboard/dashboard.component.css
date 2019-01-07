@@ -18,11 +18,12 @@
   background: var(--darker-color);
 }
 .card-title {
-  font-weight: 300;
-  font-size: 17px;
+  font-weight: 600;
+  font-size: 15px;
   padding: 11px;
   margin: 0;
   border-bottom: 2px solid var(--primary);
   text-align: center;
+  letter-spacing: 1px;
 }
 

@@ -5,6 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Ng2OdometerModule } from 'ng2-odometer';
+
 
 import { TokenInterceptor, AuthGuardService } from './services';
 
@@ -66,6 +68,7 @@ import { ModalDirective } from './directives/modal.directive';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    Ng2OdometerModule.forRoot()
   ],
   providers: [
     AuthGuardService,

@@ -1,9 +1,41 @@
 <a [routerLink]="routerLink">
     <div class="card info-card card-hover">
         <h5 class="card-title">{{cardTitle}}</h5>
-        <i class="fa background-icon" [ngClass]="{'fa-spinner': validateCardData() , 'fa-spin': validateCardData()}" [class]="cardIcon"></i>
+        <i class="fa background-icon" [ngClass]="{'fa-spinner': validateCardData() , 'fa-spin': validateCardData()}"
+            [class]="cardIcon"></i>
         <span style="font-weight: 400; font-size: 30px;">
-            {{cardData || ' -- '}}
+            <ng2-odometer [format]="'d'" [number]="cardData"></ng2-odometer>
         </span>
     </div>
 </a>
+
+<!-- <div class="card card-stats">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-5">
+                <div class="info-icon text-center icon-primary">
+                    <i class="fa fa-user"></i>
+                </div>
+            </div>
+            <div class="col-7">
+                <div class="numbers">
+                    <p class="card-category">{{cardTitle}}</p>
+                    <h3 class="card-title">
+                        <ng2-odometer [format]="'d'" [number]="cardData"></ng2-odometer>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="stats">
+            <div>
+                <p class="card-footer-title">
+                    <i class="text-primary fa fa-check mr-2"></i>
+                    <ng2-odometer [format]="'d'" [number]="cardData"></ng2-odometer>
+                     pacientes ativos
+                </p>
+            </div>
+        </div>
+    </div>
+</div> -->
