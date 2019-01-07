@@ -5,8 +5,6 @@ import { getObjectCookie, getCookie, eraseCookie } from '../../app.utils';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import * as moment from 'moment';
-import { isEmpty } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {

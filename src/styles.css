@@ -1,6 +1,6 @@
-@import './general-styles/table.css';
-@import './general-styles/panel.css';
-@import './general-styles//utils.css';
+@import './assets/all-styles/table.css';
+@import './assets/all-styles/panel.css';
+@import './assets/all-styles//utils.css';
 
 :root {
   --main-color: #383F48;
@@ -49,10 +49,3 @@ input {
 
   /* ----- Classes ----- */
 
-.page-title {
-  font-weight: 300;
-  padding-bottom: 20px;
-}
-
-
-  

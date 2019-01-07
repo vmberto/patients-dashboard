@@ -1,4 +1,3 @@
-import { HttpHeaders } from '@angular/common/http';
 import { AnamnesisService, ShareDataService } from 'src/app/services';
 import { FilterCriteria } from 'src/app/helpers/crud/filter-criteria';
 import { ListComponent } from 'src/app/helpers/crud/list-components.helpers';
@@ -32,11 +31,13 @@ export class AnamnesisListComponent extends ListComponent implements OnInit {
   }
 
   public create(newAnamnesis) {
-    this.creatingAnamnesis = true;
-    this.anamnesisService.post({ name: newAnamnesis }).subscribe(res => {
-      this.creatingAnamnesis = false;
-      this.router.navigate([`home/anamnesis/edit/${res.id}`]);
-    });
+    if (newAnamnesis) {
+      this.creatingAnamnesis = true;
+      this.anamnesisService.post({ name: newAnamnesis }).subscribe(res => {
+        this.creatingAnamnesis = false;
+        this.router.navigate([`home/anamnesis/edit/${res.id}`]);
+      });
+    }
   }
 
   /**

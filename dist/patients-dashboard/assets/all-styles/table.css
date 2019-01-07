@@ -1,0 +1,54 @@
+.table-wrapper{
+    margin-top: 10px;
+  }
+  
+  .tableStyles{
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  thead { background-color: var(--darker-color); }
+  .table thead th {
+    border: none!important;
+    color: var(--font-subcolor)!important;
+    font-weight: 700!important;
+    font-size: .65rem;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  
+  .table>tbody>tr>td {
+    background-color: var(--secondary-color);
+    border-color: var(--lighter-color);
+    font-weight: 300;
+  }
+  .table>tbody>tr:first-child>td { border: none; }
+  
+  .table {
+    width: 100%;
+  }
+  
+  
+  .tablePagination{
+    border-radius: 20px;
+  }
+  
+  
+  .tablePagination select,
+  .tablePagination input{
+    border-left: none!important;
+  }
+  
+  
+  .tablePagination label {
+    background: var(--darker-color)!important;
+    color: var(--font-color)!important;
+  
+    border: 1px solid var(--font-subcolor)!important;
+    border-right: none;
+  }
+  .tablePagination .btn-group {
+    height: 50%;
+  }

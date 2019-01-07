@@ -1,6 +1,3 @@
-import { subscribeOn } from 'rxjs/operators';
-import { ShareDataService } from './../../services/share-data/share-data.service';
-import { FilterCriteria } from 'src/app/helpers/crud/filter-criteria';
 import { MatPaginator, PageEvent } from '@angular/material';
 import { ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -38,13 +35,13 @@ export class ListComponent {
 
 
     /**
-     * Adicionar comentário
+     * @TODO Adicionar comentário
      */
     loadData(): Observable<any> {
 
         this.shareDataService.activateLoadingScreen(true);
 
-        return this.resource[this.resourceFunction ? this.resourceFunction : 'query'](this.filterCriteria.params ? this.filterCriteria.params : {}).subscribe(
+        return this.resource[this.resourceFunction ? this.resourceFunction : 'get'](undefined, this.filterCriteria ? this.filterCriteria.params : {}).subscribe(
             (res) => {
                 if (res.data) this.tableData = res.data;
                 if (res.meta) this.tableMetaData = res.meta;

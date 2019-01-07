@@ -1,3 +1,4 @@
+import { AnamnesisIndexComponent } from './components/pages/anamnesis/anamnesis-index.component';
 import { NgModule } from '@angular/core';
 import { routing } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
@@ -26,7 +27,9 @@ import {
   AnamnesisListComponent,
   PatientDataComponent,
   PatientSessionsComponent,
-  AnamnesisEditComponent
+  AnamnesisEditComponent,
+  PatientsIndexComponent,
+  HealthInsuranceIndexComponent
 } from './components';
 
 // Directives
@@ -44,6 +47,7 @@ import { ModalDirective } from './directives/modal.directive';
     WordWrapPipe,
     PatientsCreateComponent,
     PatientsShowComponent,
+    HealthInsuranceIndexComponent,
     HealthInsurancesListComponent,
     HealthInsurancesCreateComponent,
     HealthInsurancesShowComponent,
@@ -51,7 +55,9 @@ import { ModalDirective } from './directives/modal.directive';
     AnamnesisListComponent,
     PatientDataComponent,
     PatientSessionsComponent,
-    AnamnesisEditComponent
+    AnamnesisEditComponent,
+    AnamnesisIndexComponent,
+    PatientsIndexComponent
   ],
   imports: [
     BrowserModule,

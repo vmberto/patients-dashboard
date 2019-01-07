@@ -32,6 +32,14 @@
   padding: 20px 20px 20px 220px; /*top right bottom left*/
 }
 
+.page-title {
+  font-size: 1.1375rem;
+  font-weight: 600!important;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1.01px;
+}
+
 
 @media only screen and (max-width: 768px) {
   .responsive {
@@ -40,6 +48,10 @@
 
   .main-panel{
     padding: 20px 20px 20px 20px; /*top right bottom left*/
+  }
+
+  .page-title {
+    text-align: center;
   }
 
 }

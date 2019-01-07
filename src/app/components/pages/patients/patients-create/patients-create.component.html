@@ -1,134 +1,141 @@
-<div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
+<div class="row">
+  <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
 
-  <div class="panel">
+    <div class="panel">
 
-    <h4 class="panel-title"><button routerLink=".." class="return-btn btn btn-primary"><i class="fa fa-arrow-left"></i></button>Adicionar
-      Paciente</h4>
+      <h4 class="panel-title">
+        <button routerLink=".." class="return-btn btn btn-primary">
+          <i class="fa fa-arrow-left"></i>
+        </button>
+        Adicionar Paciente
+      </h4>
 
 
-    <div class="panel-body">
-      <form [formGroup]="patientForm" (submit)="submitPatientData()">
+      <div class="panel-body">
+        <form [formGroup]="patientForm" (submit)="submitPatientData()">
 
-        <div class="form-row">
+          <div class="form-row">
 
-          <div class="col-md-4">
-            <div class="form-group">
-              <label>Nome</label>
-              <input formControlName="name" type="text" class="form-control" placeholder="Umberto Barros">
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="form-group">
-              <label>Plano de Saúde</label>
-              <select formControlName="health_insurance" type="text" class="form-control" placeholder="Umberto Barros">
-                <option value=""></option>
-                <option *ngFor="let healthInsurance of healthInsurances" [value]="healthInsurance.id">{{healthInsurance.name}}</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="form-group">
-              <label>Celular<small> &mdash; Opcional</small></label>
-              <input formControlName="phone" type="text" class="form-control" placeholder="+55 (81) 99818-1213">
-            </div>
-          </div>
-
-        </div>
-
-        <div class="form-row">
-
-          <div class="col-md-4">
-            <div class="form-group">
-              <label>Email<small> &mdash; Opcional</small></label>
-              <input formControlName="email" type="text" class="form-control" placeholder="email@email.com">
-            </div>
-          </div>
-
-          <div class="col-md-2">
-            <div class="form-group">
-              <label>Particular</label>
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <button (click)="setPatientType()" type="button" class="btn" [ngClass]="{'btn-danger': isPrivateValue === 'Não', 'btn-success': isPrivateValue === 'Sim'}" id="inlineFormInputGroup">
-                    <div class="fa" [ngClass]="{'fa-times': isPrivateValue === 'Não', 'fa-check': isPrivateValue === 'Sim'}"></div>
-                  </button>
-                </div>
-                <input type="text" class="form-control" disabled [(ngModel)]="isPrivateValue" [ngModelOptions]="{standalone: true}">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Nome</label>
+                <input formControlName="name" type="text" class="form-control" placeholder="Umberto Barros">
               </div>
             </div>
-          </div>
 
-
-        </div>
-
-        <h5>Endereço</h5>
-
-        <div class="form-row">
-
-          <div class="col-md-7">
-            <div class="form-group">
-              <label>Rua</label>
-              <input formControlName="street" type="text" class="form-control" placeholder="Av. Caxangá">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Plano de Saúde</label>
+                <select formControlName="health_insurance" type="text" class="form-control" placeholder="Umberto Barros">
+                  <option value=""></option>
+                  <option *ngFor="let healthInsurance of healthInsurances" [value]="healthInsurance.id">{{healthInsurance.name}}</option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div class="col-md-2">
-            <div class="form-group">
-              <label>Número</label>
-              <input formControlName="number" type="text" class="form-control" placeholder="000">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Celular<small> &mdash; Opcional</small></label>
+                <input formControlName="phone" type="text" class="form-control" placeholder="+55 (81) 99818-1213">
+              </div>
             </div>
+
           </div>
 
-          <div class="col-md-3">
-            <div class="form-group">
-              <label>Complemento<small> &mdash; Opcional</small></label>
-              <input formControlName="complement" type="text" class="form-control" placeholder="Aptº 0000">
+          <div class="form-row">
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Email<small> &mdash; Opcional</small></label>
+                <input formControlName="email" type="text" class="form-control" placeholder="email@email.com">
+              </div>
             </div>
-          </div>
 
-        </div>
-
-        <div class="row">
-
-
-          <div class="col-md-3">
-            <div class="form-group">
-              <label>CEP</label>
-              <input formControlName="zip_code" type="text" class="form-control" placeholder="00000-000" maxlength="8">
+            <div class="col-md-2">
+              <div class="form-group">
+                <label>Particular</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <button (click)="setPatientType()" type="button" class="btn" [ngClass]="{'btn-danger': isPrivateValue === 'Não', 'btn-success': isPrivateValue === 'Sim'}"
+                      id="inlineFormInputGroup">
+                      <div class="fa" [ngClass]="{'fa-times': isPrivateValue === 'Não', 'fa-check': isPrivateValue === 'Sim'}"></div>
+                    </button>
+                  </div>
+                  <input type="text" class="form-control" disabled [(ngModel)]="isPrivateValue" [ngModelOptions]="{standalone: true}">
+                </div>
+              </div>
             </div>
+
+
           </div>
 
+          <h5>Endereço</h5>
 
-          <div class="col-md-4">
-            <div class="form-group">
-              <label>Bairro</label>
-              <input formControlName="district" type="text" class="form-control" placeholder="Barro">
+          <div class="form-row">
+
+            <div class="col-md-7">
+              <div class="form-group">
+                <label>Rua</label>
+                <input formControlName="street" type="text" class="form-control" placeholder="Av. Caxangá">
+              </div>
             </div>
-          </div>
 
-          <div class="col-md-5">
-            <div class="form-group">
-              <label>Cidade</label>
-              <input formControlName="city" type="text" class="form-control" placeholder="Recife">
+            <div class="col-md-2">
+              <div class="form-group">
+                <label>Número</label>
+                <input formControlName="number" type="text" class="form-control" placeholder="000">
+              </div>
             </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label>Complemento<small> &mdash; Opcional</small></label>
+                <input formControlName="complement" type="text" class="form-control" placeholder="Aptº 0000">
+              </div>
+            </div>
+
           </div>
 
+          <div class="row">
 
 
-        </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label>CEP</label>
+                <input formControlName="zip_code" type="text" class="form-control" placeholder="00000-000" maxlength="8">
+              </div>
+            </div>
 
-        <button [disabled]="creatingPatient" type="submit" class="btn btn-success pull-right">{{creatingPatient ?
-          'Criando' : 'Criar'}} <i *ngIf="creatingPatient" class="fa fa-spinner fa-spin"></i></button>
 
-      </form>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Bairro</label>
+                <input formControlName="district" type="text" class="form-control" placeholder="Barro">
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <div class="form-group">
+                <label>Cidade</label>
+                <input formControlName="city" type="text" class="form-control" placeholder="Recife">
+              </div>
+            </div>
+
+
+
+          </div>
+
+          <button [disabled]="creatingPatient" type="submit" class="btn btn-success pull-right">{{creatingPatient ?
+            'Criando' : 'Criar'}} <i *ngIf="creatingPatient" class="fa fa-spinner fa-spin"></i></button>
+
+        </form>
+
+      </div>
+
+
 
     </div>
 
 
-
   </div>
-
-
 </div>

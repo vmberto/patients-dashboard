@@ -1,4 +1,4 @@
-import { trigger, animate, style, group, query, stagger, transition, keyframes, state } from '@angular/animations';
+import { trigger, animate, style, query, stagger, transition, keyframes } from '@angular/animations';
 
 export const showup = trigger('showup', [
     transition('void => *', [

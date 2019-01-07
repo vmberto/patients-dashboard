@@ -1,14 +1,14 @@
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { CrudServices } from '../../helpers/crud/crud-service';
 import { Injectable } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { CrudMethods } from 'src/app/helpers/crud/crud-methods';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class HealthInsurancesService extends CrudServices {
+export class HealthInsurancesService extends CrudMethods {
 
 
   constructor(public http: HttpClient) {

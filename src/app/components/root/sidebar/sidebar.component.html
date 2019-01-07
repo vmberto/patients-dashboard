@@ -1,6 +1,6 @@
 <div class="title">
   <img class="title-logo" src="assets/img/logo-white.png">
-  <h3>Psicologia</h3>
+  <h3 style="color: white!important;">Psicologia</h3> <!--@REFACTOR STYLE INLINE-->
 </div>
 
 <div class="nav-container">
@@ -8,12 +8,12 @@
   <ul class="nav">
     <li *ngFor="let menuItem of menuItems">
 
-      <a *ngIf="!menuItem.children" [routerLink]="menuItem.path" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:true}">
+      <a *ngIf="!menuItem.children" [routerLink]="menuItem.path" routerLinkActive="selected">
         <i [class]="menuItem.icon" style="padding: 15px;"></i>{{menuItem.title}}
       </a>
 
 
-      <a *ngIf="menuItem.children" (click)="menuItem.subMenuOpen = !menuItem.subMenuOpen" class="pointer" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:true}">
+      <a *ngIf="menuItem.children" (click)="menuItem.subMenuOpen = !menuItem.subMenuOpen" class="pointer" routerLinkActive="selected">
           <i [class]="menuItem.icon" style="padding: 15px;"></i>
             {{menuItem.title}}
           <i class="fa fa-caret-right subMenu-arrow" [ngClass]="{'subMenu-open': menuItem.subMenuOpen}"></i>
@@ -22,7 +22,7 @@
 
       <ul [@collapse] *ngIf="menuItem.subMenuOpen" class="subMenu">
         <li *ngFor="let subMenuItem of menuItem.children">
-            <a  [routerLink]="subMenuItem.path" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:true}">
+            <a  [routerLink]="subMenuItem.path" routerLinkActive="selected">
                 <i [class]="subMenuItem.icon" style="padding: 15px;"></i>{{subMenuItem.title}}
             </a>
         </li>

@@ -1,3 +1,4 @@
+import { HealthInsuranceIndexComponent } from './components/pages/health-insurances/health-insurance-index.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from './services/auth/auth-guard.service';
 import {
@@ -10,8 +11,10 @@ import {
   HealthInsurancesListComponent,
   HealthInsurancesCreateComponent,
   HealthInsurancesShowComponent,
+  AnamnesisIndexComponent,
   AnamnesisListComponent,
-  AnamnesisEditComponent
+  AnamnesisEditComponent,
+  PatientsIndexComponent
 } from './components';
 
 
@@ -20,18 +23,30 @@ const routes: Routes = [
   {
     path: 'home', canActivate: [AuthGuardService], component: RootComponent, children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent },
 
-      { path: 'patients', component: PatientsListComponent },
-      { path: 'patients/create', component: PatientsCreateComponent },
-      { path: 'patients/show/:id', component: PatientsShowComponent },
+      { path: 'dashboard', component: DashboardComponent, data: { title: 'dashboard' } },
 
-      { path: 'health-insurances', component: HealthInsurancesListComponent },
-      { path: 'health-insurances/create', component: HealthInsurancesCreateComponent },
-      { path: 'health-insurances/show/:id', component: HealthInsurancesShowComponent },
 
-      { path: 'anamnesis', component: AnamnesisListComponent },
-      { path: 'anamnesis/edit/:id', component: AnamnesisEditComponent },
+      {
+        path: 'patients', component: PatientsIndexComponent, data: { title: 'pacientes' }, children: [
+          { path: '', component: PatientsListComponent },
+          { path: 'create', component: PatientsCreateComponent },
+          { path: 'show/:id', component: PatientsShowComponent },
+        ]
+      },
+
+      {
+        path: 'health-insurances', component: HealthInsuranceIndexComponent, data: { title: 'planos de saúde' }, children: [
+          { path: '', component: HealthInsurancesListComponent },
+        ]
+      },
+
+      {
+        path: 'anamnesis', component: AnamnesisIndexComponent, data: { title: 'anamneses' }, children: [
+          { path: '', component: AnamnesisListComponent },
+          { path: 'edit/:id', component: AnamnesisEditComponent },
+        ]
+      },
 
     ]
   }
