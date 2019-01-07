@@ -10,8 +10,6 @@ ul li {
     letter-spacing: 1px;
 }
 
-.tab-name:visited,
-.tab-name:active,
 .tab-name {
     border-bottom: 4px transparent;
     border-radius: 5px 5px 0 0;
@@ -20,9 +18,10 @@ ul li {
     cursor: pointer;
     transition: all .5s;
     font-weight: 600;
+    font-size: 1.035rem;
 }
 
-.tab-name:hover, {
+.tab-name:hover {
     background: rgba(175, 175, 175, 0.411);
     color: var(--font-color)!important;
 }
