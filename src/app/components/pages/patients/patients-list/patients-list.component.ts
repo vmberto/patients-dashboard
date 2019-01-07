@@ -14,6 +14,8 @@ export class PatientsListComponent extends ListComponent implements OnInit {
 
   public filterForm: FormGroup;
   public clearFiltersBtn: boolean;
+  public currentListStatus: number;
+
   public selectedSize = 15;
 
   public tableHeaders = [
@@ -47,8 +49,10 @@ export class PatientsListComponent extends ListComponent implements OnInit {
     });
 
     this.filterCriteria.addListParams();
-    this.loadData();
+    this.filterCriteria.addParam('patient_status', 1);
+    this.currentListStatus = 1;
 
+    this.loadData();
   }
 
   public submitFilters() {
@@ -100,7 +104,18 @@ export class PatientsListComponent extends ListComponent implements OnInit {
   }
 
 
+  changeListStatus(status: number): void {
+    if (this.currentListStatus !== status) {
+      this.currentListStatus = status;
+      switch (status) {
+        case 1: this.filterCriteria.addParam('patient_status', 1); break;
+        case 2: this.filterCriteria.addParam('patient_status', 2); break;
+        case 3: this.filterCriteria.addParam('patient_status', 3); break;
+      }
 
+      this.loadData();
+    }
+  }
 
   /**
    * Direciona para a rota de detalhes do paciente

@@ -25,6 +25,9 @@
 .no-top-radius {
   border-radius: 0 0 10px 10px!important;
 }
+
+.expansive-panel:visited,
+.expansive-panel:active,
 .expansive-panel,
 .expansive-panel-no-session {
   transition: 100ms;

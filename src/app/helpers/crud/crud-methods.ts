@@ -15,7 +15,7 @@ export abstract class CrudMethods {
     */
     public get(id: number | boolean = false, queryParams: any = false): Observable<any> {
         return this.http.get(`${environment.API_URL}/api/${this.entity}${id ? `/${id}` : ''}`, { params: queryParams } || {});
-    };
+    }
 
     /**
     * Posts data to an ApiRoute
@@ -23,7 +23,7 @@ export abstract class CrudMethods {
     */
     public post(data): Observable<any> {
         return this.http.post(`${environment.API_URL}/api/${this.entity}`, data);
-    };
+    }
 
     /**
     * Deletes entities data with a specified Id
@@ -31,7 +31,7 @@ export abstract class CrudMethods {
     */
     public delete(id: number): Observable<any> {
         return this.http.delete(`${environment.API_URL}/api/${this.entity}/${id}/delete`);
-    };
+    }
 
     /**
     * Changes entity data with a specified Id
@@ -39,6 +39,6 @@ export abstract class CrudMethods {
     */
     public update(data: { id: number, [attributes: string]: any }): Observable<any> {
         return this.http.put(`${environment.API_URL}/api/${this.entity}/${data.id}/edit`, data);
-    };
+    }
 
 }

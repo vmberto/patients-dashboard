@@ -31,11 +31,13 @@ export class AnamnesisListComponent extends ListComponent implements OnInit {
   }
 
   public create(newAnamnesis) {
-    this.creatingAnamnesis = true;
-    this.anamnesisService.post({ name: newAnamnesis }).subscribe(res => {
-      this.creatingAnamnesis = false;
-      this.router.navigate([`home/anamnesis/edit/${res.id}`]);
-    });
+    if (newAnamnesis) {
+      this.creatingAnamnesis = true;
+      this.anamnesisService.post({ name: newAnamnesis }).subscribe(res => {
+        this.creatingAnamnesis = false;
+        this.router.navigate([`home/anamnesis/edit/${res.id}`]);
+      });
+    }
   }
 
   /**
