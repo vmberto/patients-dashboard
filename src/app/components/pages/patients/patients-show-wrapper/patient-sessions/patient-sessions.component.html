@@ -25,10 +25,14 @@
         </div>
   
         <div class="col-sm-4" *ngIf="patientSessions[patientSessions.length - 1] == session">
-          <h4 id="first-session">Primeira Sessão</h4>
+          <h4 id="first-session" style="text-align: center">Primeira Sessão</h4>
+        </div>
+
+        <div class="col-sm-4" *ngIf="patientSessions[0] == session">
+          <h4 id="first-session" style="text-align: center">Mais Recente</h4>
         </div>
   
-        <div class="col-sm-4" [ngClass]="{'offset-sm-4': patientSessions[patientSessions.length - 1] != session}"> <!--offset-md-4-->
+        <div class="col-sm-4" [ngClass]="{'offset-sm-4': patientSessions[0] != session && patientSessions[patientSessions.length - 1] != session}"> <!--offset-md-4-->
           <h4 id="attendance_at">{{ (session.attendance_at | date:'dd/MM/yyyy') + ' - ' + (session.attendance_at | date:'HH:mm') }}</h4>
         </div>
 

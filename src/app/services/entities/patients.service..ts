@@ -18,4 +18,8 @@ export class PatientsService extends CrudMethods {
     return this.http.get(`${environment.API_URL}/api/${this.entity}/counter`);
   }
 
+  public postCreateSession(session): Observable<any> {
+    return this.http.post(`${environment.API_URL}/api/${this.entity}/${session.patients_id}/create-session`, session)
+  }
+
 }

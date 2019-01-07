@@ -27,7 +27,6 @@ export class PatientsShowComponent implements OnInit {
           this.shareData.activateLoadingScreen(false);
           this.patientData = res;
           this.patientSessions = res.Sessions;
-
         },
         () => {
           this.shareData.activateLoadingScreen(false);

@@ -2,7 +2,7 @@
 .details-modal {
     height: auto;
     background: var(--secondary-color);
-    width: 60%;;
+    width: 50%;;
     border-radius: 12px;
     box-shadow: var(--box-shadow);
     position: absolute;
@@ -31,8 +31,9 @@
 }
 
 .modal-body {
-    margin-top: 20px;
-    padding: 0 20px 50px 20px;
+    border-radius: 0 0 12px 12px;
+    padding: 20px 20px 55px 20px;
+    background: var(--lighter-color)!important;
 }
 
 .modal-body p {

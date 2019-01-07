@@ -2,6 +2,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { PatientsService, HealthInsurancesService } from 'src/app/services';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { emailValidator, nameValidator, cepValidator } from 'src/app/helpers/validators';
 
 @Component({
   selector: 'app-create',
@@ -31,12 +32,12 @@ export class PatientsCreateComponent implements OnInit {
     });
 
     this.patientForm = this.fb.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, nameValidator]],
       is_private: [false, [Validators.required]],
 
       health_insurance: [''],
 
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, emailValidator]],
       phone: ['', [Validators.required]],
 
       street: ['', [Validators.required]],
@@ -58,7 +59,6 @@ export class PatientsCreateComponent implements OnInit {
 
 
   submitPatientData() {
-
 
     if (this.patientForm.valid) {
 
@@ -93,8 +93,6 @@ export class PatientsCreateComponent implements OnInit {
           },
           () => {
             this.creatingPatient = false;
-
-
 
           }
         );

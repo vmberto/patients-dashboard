@@ -5,13 +5,13 @@
     <div class="modal-head">
       <h4 class="modal-title">
         Registrar Sessão
-        <button (click)="close()" class="close-btn btn btn-primary btn-sm" style="text-align:text-right;"><i class="fa fa-times"></i></button>
+        <button (click)="close()" class="close-btn btn btn-primary btn-sm"><i class="fa fa-times"></i></button>
       </h4>
     </div>
 
     <div class="modal-body">
 
-      <form [formGroup]="sessionForm" (submit)="submitPatientData()">
+      <form [formGroup]="sessionForm" (submit)="submitSessionData()">
 
         <div class="form-row">
 
@@ -26,11 +26,11 @@
             <div class="form-group">
               <label>Humor</label>
               <select formControlName="humour" type="text" class="form-control">
-                <option value="">Animado</option>
-                <option value="">Triste</option>
-                <option value="">Ansioso</option>
-                <option value="">Irritado</option>
-                <option value="">Angustiado</option>
+                <option value="1">Animado</option>
+                <option value="2">Triste</option>
+                <option value="3">Ansioso</option>
+                <option value="4">Irritado</option>
+                <option value="5">Angustiado</option>
               </select>
             </div>
           </div>
@@ -39,7 +39,7 @@
           <div class="col-md-4">
             <div class="form-group">
               <label>Data do Atendimento</label>
-              <input formControlName="attedance_at" type="text" class="form-control" placeholder="01/01/2019">
+              <input formControlName="attendance_at" type="text" class="form-control" placeholder="01/01/2019">
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@
           <div class="col-md-12">
             <div class="form-group">
               <label>Descrição</label>
-              <textarea formControlName="description" type="text" rows="5" class="form-control"></textarea>
+              <textarea formControlName="description" type="text" rows="5" class="form-control" maxlength="255"></textarea>
             </div>
           </div>
 
