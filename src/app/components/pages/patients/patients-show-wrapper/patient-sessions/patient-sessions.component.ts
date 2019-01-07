@@ -12,6 +12,7 @@ export class PatientSessionsComponent implements OnInit {
 
   @Input() patientSessions;
 
+  public modalState: string;
   public date = new Date();
 
   constructor() { }
@@ -22,6 +23,10 @@ export class PatientSessionsComponent implements OnInit {
     });
 
     this.patientSessions = sortByKey(this.patientSessions, 'created_at');
+  }
+
+  public changeModalState(state: string) {
+    this.modalState = state;
   }
 
 }

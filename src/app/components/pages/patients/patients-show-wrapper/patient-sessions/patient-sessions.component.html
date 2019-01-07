@@ -1,6 +1,9 @@
 <div class="panel" style="padding: 0;">
   <div class="panel-head">
-    <h4 class="panel-title">Sessões</h4>
+    <h4 class="panel-title">
+      Sessões
+      <button (click)="changeModalState('open')" class="btn btn-primary btn-sm">Registrar</button>
+    </h4>
   </div>
   <div class="panel-body" style="padding: 25px;">
 
@@ -45,6 +48,7 @@
     <div *ngIf="patientSessions.length === 0" style="text-align: center">
       <span>Não houve sessões com este paciente</span>
     </div>
-
   </div>
+
+  <app-create-session *ngIf="modalState === 'open'" (closeModal)="changeModalState($event)"></app-create-session>
 </div>

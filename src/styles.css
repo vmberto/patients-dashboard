@@ -40,7 +40,8 @@ p {
 }
 
 select,
-input {
+input,
+textarea {
   background: var(--lighter-color)!important;
   display: inline;
   color: var(--font-color)!important;

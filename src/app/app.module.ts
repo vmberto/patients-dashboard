@@ -36,6 +36,7 @@ import {
 
 // Directives
 import { ModalDirective } from './directives/modal.directive';
+import { CreateSessionComponent } from './components/pages/patients/patients-show-wrapper/patient-sessions/create-session/create-session.component';
 
 
 @NgModule({
@@ -59,7 +60,9 @@ import { ModalDirective } from './directives/modal.directive';
     PatientSessionsComponent,
     AnamnesisEditComponent,
     AnamnesisIndexComponent,
-    PatientsIndexComponent
+    PatientsIndexComponent,
+    CreateSessionComponent,
+    ModalDirective
   ],
   imports: [
     BrowserModule,
