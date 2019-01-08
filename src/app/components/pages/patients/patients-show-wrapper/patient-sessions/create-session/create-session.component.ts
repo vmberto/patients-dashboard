@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { PatientsService } from 'src/app/services';
+import { log } from 'util';
 
 @Component({
   selector: 'app-create-session',
@@ -33,7 +34,8 @@ export class CreateSessionComponent implements OnInit {
 
     this.sessionForm = this.fb.group({
       humour: ['', [Validators.required]],
-      attendance_at: ['', [Validators.required]],
+      attendance_at_date: ['', [Validators.required]],
+      attendance_at_time: ['', [Validators.required]],
       description: ['', [Validators.required]],
 
     });
@@ -56,8 +58,8 @@ export class CreateSessionComponent implements OnInit {
 
       const sessionData = {
         description: formControls.description.value,
-        humour_id: 1,
-        attendance_at: new Date(),
+        humour_id: formControls.humour.value,
+        attendance_at: new Date(`${formControls.attendance_at_date.value} ${formControls.attendance_at_time.value}`).toJSON(),
         patients_id: this.patientId
       };
 

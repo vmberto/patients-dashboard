@@ -17,32 +17,39 @@
 
           <div class="col-md-4">
             <div class="form-group">
-              <label>Paciente</label>
-              <input disabled type="text" class="form-control" placeholder="Gustavo">
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="form-group">
               <label>Humor</label>
               <select formControlName="humour" type="text" class="form-control">
-                <option value="1">Animado</option>
-                <option value="2">Triste</option>
-                <option value="3">Ansioso</option>
-                <option value="4">Irritado</option>
-                <option value="5">Angustiado</option>
+                <option value="1">Triste</option>
+                <option value="2">Raiva</option>
+                <option value="3">Medo</option>
+                <option value="4">Feliz</option>
+                <option value="5">Ansioso</option>
               </select>
             </div>
           </div>
 
-
-          <div class="col-md-4">
-            <div class="form-group">
-              <label>Data do Atendimento</label>
-              <input formControlName="attendance_at" type="text" class="form-control" placeholder="01/01/2019">
+          <div class="col-md-8">
+            <div class="form-row">
+              <div class="col-md-12">
+                <label>Atendimento</label>
+              </div>
             </div>
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input formControlName="attendance_at_date" type="date" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input formControlName="attendance_at_time" type="time" class="form-control">
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
+        
 
         <div class="form-row">
 
