@@ -26,6 +26,12 @@ export class PatientsListComponent extends ListComponent implements OnInit {
     { title: 'Atualizado', value: 'updated_at' }
   ];
 
+  public TABS = [
+    { title: 'Ativo', value: 1 },
+    { title: 'Inativo', value: 2 },
+    { title: 'De Alta', value: 3 },
+  ]
+
   // public tableRowActions = [
   //   { title: 'Ver Paciente', icon: 'fa-search', color: 'btn-primary', emits: 'show-action'},
   //   { title: 'Excluir Paciente', icon: 'fa-trash', color: 'btn-danger', emits: 'delete-action'}
@@ -104,7 +110,8 @@ export class PatientsListComponent extends ListComponent implements OnInit {
   }
 
 
-  changeListStatus(status: number): void {
+  changeListStatus(status): void {
+    status = parseInt(status);
     if (this.currentListStatus !== status) {
       this.currentListStatus = status;
       switch (status) {
