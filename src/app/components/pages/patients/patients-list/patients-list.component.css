@@ -5,10 +5,13 @@ ul {
 }
 
 ul li {
-    display: inline;
     list-style: none;
     margin-right: 45px;
     letter-spacing: 1px;
+}
+
+.single-tab {
+    display: inline;
 }
 
 .tab-name {
@@ -20,6 +23,18 @@ ul li {
     transition: all .5s;
     font-weight: 600;
     font-size: 1.035rem;
+}
+
+.responsive-tabs {
+    display: none;
+}
+.responsive-tabs select {
+    background-color: var(--main-color)!important;
+    border-bottom: 4px solid var(--primary)!important;
+    color: var(--font-color)!important;
+    border-left: none!important;
+    border-right: none!important;
+    border-top: none!important;
 }
 
 .tab-name:hover {
@@ -34,28 +49,16 @@ ul li {
 
 @media only screen and (max-width: 768px) {
 
+    .responsive-tabs  {
+        display: inline;
+    }
+
+    .single-tab {
+        display: none;
+    }
+
     .tab-name {
         font-size: .9rem
     }
 
-}
-@media only screen and (max-width: 576px) {
-    ul {
-        transform: translateY(68%);
-    }
-    .tab-name {
-        font-size: .75rem
-    }
-}
-
-@media only screen and (max-width: 368px) {
-
-    .tab-name {
-        font-size: .65rem;
-        padding-bottom: 5px;
-    }
-    
-    .tab-active {
-        border-bottom: 2px solid var(--primary);
-    }
 }

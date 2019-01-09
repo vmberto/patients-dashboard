@@ -1,21 +1,16 @@
 <div class="row">
   <ul>
-    <li> <!--@REFACTOR ADAPTAR AO QUE HOUVER NO BACKEND -->
-      <a class="tab-name" [ngClass]="{'tab-active': currentListStatus === 1}" (click)="changeListStatus(1)">Ativos</a>
+    <li class="single-tab" *ngFor="let tab of TABS"> <!--@REFACTOR ADAPTAR AO QUE HOUVER NO BACKEND -->
+      <a class="tab-name" [ngClass]="{'tab-active': currentListStatus === tab.value}" (click)="changeListStatus(tab.value)">{{tab.title}}</a>
     </li>
-    <li>
-      <a class="tab-name" [ngClass]="{'tab-active': currentListStatus === 2}" (click)="changeListStatus(2)">Inativos</a>
-    </li>
-    <li>
-      <a class="tab-name" [ngClass]="{'tab-active': currentListStatus === 3}" (click)="changeListStatus(3)">De Alta</a>
+    <li class="responsive-tabs">
+      <select class="tab-name" (change)="changeListStatus(currentListStatus)" [(ngModel)]="currentListStatus">
+        <option *ngFor="let tab of TABS" [value]="tab.value">{{tab.title}}</option>
+      </select>
     </li>
   </ul>
 
-  <!-- <select class="responsive-tabs">
-    option ativos
-    option inativos
-    option de alta
-  </select> --> <!--@TODO-->
+
 </div>
 
 <div class="panel">
@@ -33,14 +28,14 @@
             <input type="text" class="form-control" placeholder="Buscar" formControlName="search">
           </div>
 
-          <div class="col-md-3 mb-3 mt-3">
+          <div class="col-md-3 mb-3 mt-1">
             <select type="text" class="custom-select" formControlName="health_insurance">
               <option value="" disabled selected>Plano de Saúde</option>
               <option *ngFor="let filter of tableMetaData.filterConfig.health_insurances" [value]="filter.id">{{filter.name}}</option>
             </select>
           </div>
 
-          <div class="col-md-3 mb-3 mt-3">
+          <div class="col-md-3 mb-3 mt-2">
             <button class="btn full-width-mobile btn-primary mr-2 mb-1" type="submit"><i class="fa fa-search"></i></button>
             <button *ngIf="clearFiltersBtn" class="btn full-width-mobile btn-warning mr-2 mb-1" type="button" (click)="clearFilters()"><i class="fa fa-times"></i></button>
           </div>
@@ -52,7 +47,7 @@
       <div class="tableStyles">
 
 
-        <table class="display table table-condensed table-responsive-md">
+        <table class="display table table-condensed table-responsive-sm">
           <thead>
             <th *ngFor="let tableHead of tableHeaders"><a class="pointer" (click)="changeSort(tableHead)">{{tableHead.title}}
                 <i class="fa" [ngClass]="{'fa-caret-up': tableHead.sorted === 'asc', 'fa-caret-down': tableHead.sorted === 'desc'}"></i>
