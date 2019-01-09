@@ -84,7 +84,6 @@ registerLocaleData(localePt);
     },
     { provide: LOCALE_ID, useValue: 'pt'}
 
-    
   ],
   bootstrap: [AppComponent]
 })

@@ -1,14 +1,14 @@
 import { Router, NavigationStart, Event, ActivatedRoute } from '@angular/router';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Observable } from 'rxjs';
-import { showSidebar } from '../../helpers/animations/animations';
+import { showSidebar, fade } from '../../helpers/animations/animations';
 import { ShareDataService } from 'src/app/services';
 
 @Component({
   selector: 'app-root',
   templateUrl: './root.component.html',
   styleUrls: ['./root.component.css'],
-  animations: [showSidebar]
+  animations: [showSidebar, fade]
 })
 
 export class RootComponent implements OnInit {

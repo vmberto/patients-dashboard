@@ -52,6 +52,13 @@
     <div *ngIf="patientSessions.length === 0" style="text-align: center">
       <span>Não houve sessões com este paciente</span>
     </div>
+
+
+    <div *ngIf="patientSessions.length === firstListedSessions" class="mt-4" style="text-align: center">
+      <button class="btn btn-primary btn-md" (click)="showAllSessions()">Carregar todas as Sessões</button>
+    </div>
+
+
   </div>
 
 </div>

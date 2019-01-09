@@ -13,7 +13,7 @@ export class CreateSessionComponent implements OnInit {
 
   public patientId: number;
   public creatingSession: boolean;
-  public sessionForm: FormGroup
+  public sessionForm: FormGroup;
 
   @Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 
@@ -24,7 +24,6 @@ export class CreateSessionComponent implements OnInit {
 
   ngOnInit() {
 
-    
     this.activatedRoute.params
       .subscribe(
         res => {
@@ -67,8 +66,7 @@ export class CreateSessionComponent implements OnInit {
         .subscribe(
           () => {
             window.location.reload();
-          }
-        )
+          });
 
     }
 
