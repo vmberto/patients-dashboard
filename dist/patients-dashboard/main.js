@@ -349,14 +349,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var _components_pages_anamnesis_anamnesis_index_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/pages/anamnesis/anamnesis-index.component */ "./src/app/components/pages/anamnesis/anamnesis-index.component.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_routing__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.routing */ "./src/app/app.routing.ts");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services */ "./src/app/services/index.ts");
-/* harmony import */ var _pipes_word_wrap_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pipes/word-wrap.pipe */ "./src/app/pipes/word-wrap.pipe.ts");
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components */ "./src/app/components/index.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_common_locales_pt__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/locales/pt */ "./node_modules/@angular/common/locales/pt.js");
+/* harmony import */ var _angular_common_locales_pt__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_angular_common_locales_pt__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _app_routing__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.routing */ "./src/app/app.routing.ts");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var ng2_odometer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ng2-odometer */ "./node_modules/ng2-odometer/dist/index.js");
+/* harmony import */ var ng2_odometer__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(ng2_odometer__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services */ "./src/app/services/index.ts");
+/* harmony import */ var _pipes_word_wrap_pipe__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pipes/word-wrap.pipe */ "./src/app/pipes/word-wrap.pipe.ts");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components */ "./src/app/components/index.ts");
+/* harmony import */ var _directives_modal_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./directives/modal.directive */ "./src/app/directives/modal.directive.ts");
+/* harmony import */ var _components_pages_patients_patients_show_wrapper_patient_sessions_create_session_create_session_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/pages/patients/patients-show-wrapper/patient-sessions/create-session/create-session.component */ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/create-session/create-session.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -372,52 +379,63 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
 // Components
 
+// Directives
+
+
+Object(_angular_common__WEBPACK_IMPORTED_MODULE_2__["registerLocaleData"])(_angular_common_locales_pt__WEBPACK_IMPORTED_MODULE_3___default.a);
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _components__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["SidebarComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["RootComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["DashboardComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["PatientsListComponent"],
-                _pipes_word_wrap_pipe__WEBPACK_IMPORTED_MODULE_8__["WordWrapPipe"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["PatientsCreateComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["PatientsShowComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["HealthInsuranceIndexComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["HealthInsurancesListComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["HealthInsurancesCreateComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["HealthInsurancesShowComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["DataCardComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["AnamnesisListComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["PatientDataComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["PatientSessionsComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["AnamnesisEditComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["AppComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["SidebarComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["RootComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["DashboardComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["PatientsListComponent"],
+                _pipes_word_wrap_pipe__WEBPACK_IMPORTED_MODULE_11__["WordWrapPipe"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["PatientsCreateComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["PatientsShowComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["HealthInsuranceIndexComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["HealthInsurancesListComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["HealthInsurancesCreateComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["HealthInsurancesShowComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["DataCardComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["AnamnesisListComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["PatientDataComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["PatientSessionsComponent"],
+                _components__WEBPACK_IMPORTED_MODULE_12__["AnamnesisEditComponent"],
                 _components_pages_anamnesis_anamnesis_index_component__WEBPACK_IMPORTED_MODULE_0__["AnamnesisIndexComponent"],
-                _components__WEBPACK_IMPORTED_MODULE_9__["PatientsIndexComponent"]
+                _components__WEBPACK_IMPORTED_MODULE_12__["PatientsIndexComponent"],
+                _components_pages_patients_patients_show_wrapper_patient_sessions_create_session_create_session_component__WEBPACK_IMPORTED_MODULE_14__["CreateSessionComponent"],
+                _directives_modal_directive__WEBPACK_IMPORTED_MODULE_13__["ModalDirective"]
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["BrowserModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
-                _app_routing__WEBPACK_IMPORTED_MODULE_2__["routing"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["BrowserModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"],
+                _app_routing__WEBPACK_IMPORTED_MODULE_4__["routing"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["BrowserAnimationsModule"],
+                ng2_odometer__WEBPACK_IMPORTED_MODULE_9__["Ng2OdometerModule"].forRoot()
             ],
             providers: [
-                _services__WEBPACK_IMPORTED_MODULE_7__["AuthGuardService"],
+                _services__WEBPACK_IMPORTED_MODULE_10__["AuthGuardService"],
                 {
-                    provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HTTP_INTERCEPTORS"],
-                    useClass: _services__WEBPACK_IMPORTED_MODULE_7__["TokenInterceptor"],
+                    provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HTTP_INTERCEPTORS"],
+                    useClass: _services__WEBPACK_IMPORTED_MODULE_10__["TokenInterceptor"],
                     multi: true
                 },
+                { provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["LOCALE_ID"], useValue: 'pt' }
             ],
-            bootstrap: [_components__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
+            bootstrap: [_components__WEBPACK_IMPORTED_MODULE_12__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -481,7 +499,7 @@ var routing = _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRo
 /*!******************************!*\
   !*** ./src/app/app.utils.ts ***!
   \******************************/
-/*! exports provided: eraseCookie, getObjectCookie, getCookie, generateRandomColor, sortByKey, isObjectEmpty */
+/*! exports provided: eraseCookie, getObjectCookie, getCookie, generateRandomColor, sortByKey, isObjectEmpty, EMAIL_REGEX, NAME_REGEX, VIA_CEP_REGEX */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -492,6 +510,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateRandomColor", function() { return generateRandomColor; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByKey", function() { return sortByKey; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isObjectEmpty", function() { return isObjectEmpty; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EMAIL_REGEX", function() { return EMAIL_REGEX; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NAME_REGEX", function() { return NAME_REGEX; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VIA_CEP_REGEX", function() { return VIA_CEP_REGEX; });
 function eraseCookie() {
     var name = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -540,6 +561,9 @@ var isObjectEmpty = function (obj) {
     }
     return true;
 };
+var EMAIL_REGEX = /^(([^<>()\[\]\.,;:\s@\']+(\.[^<>()\[\]\.,;:\s@\']+)*)|(\'.+\'))@(([^<>()[\]\.,;:\s@\']+\.)+[^<>()[\]\.,;:\s@\']{2,})/;
+var NAME_REGEX = /^(?!\s)[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\s]{2,25}$/;
+var VIA_CEP_REGEX = /^https:\/\/viacep.com.br(\/[(a-zA-z?=0-9?=\/)]+)+$/;
 
 
 /***/ }),
@@ -551,7 +575,7 @@ var isObjectEmpty = function (obj) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "a{text-decoration: none}\r\n\r\n.card {\r\n  color: white;\r\n  padding: 10px 15px;\r\n  margin: 10px;\r\n  overflow: hidden;\r\n  min-height: 98px;\r\n  transition: all 500ms;\r\n\r\n}\r\n\r\n.card-title {\r\n  font-weight: 300;\r\n}\r\n\r\n.success-card {\r\n  background: var(--success-color);\r\n}\r\n\r\n.danger-card {\r\n  background: var(--danger-color);\r\n}\r\n\r\n.warning-card {\r\n    background: var(--warning);\r\n}\r\n\r\n.info-card {\r\n    background: var(--info-color);\r\n}\r\n\r\n.card-hover:hover{\r\n  opacity: 0.8;\r\n  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);\r\n  cursor: pointer;\r\n}\r\n\r\n.background-icon {\r\n  position: absolute;\r\n  font-size: 100px;\r\n  opacity: 0.4;\r\n  right: 0;\r\n  top: 10px;\r\n}\r\n\r\n.fa-spinner {\r\n  color: var(--dark-font-color);\r\n}"
+module.exports = "a{text-decoration: none}\r\n\r\n.card {\r\n  color: white;\r\n  padding: 10px 15px;\r\n  margin: 10px;\r\n  overflow: hidden;\r\n  min-height: 98px;\r\n  transition: all 500ms;\r\n\r\n}\r\n\r\n.card-title {\r\n  font-weight: 300;\r\n}\r\n\r\n.success-card {\r\n  background: var(--success-color);\r\n}\r\n\r\n.danger-card {\r\n  background: var(--danger-color);\r\n}\r\n\r\n.warning-card {\r\n    background: var(--warning);\r\n}\r\n\r\n.info-card {\r\n    background: var(--info-color);\r\n}\r\n\r\n.card-hover:hover{\r\n  opacity: 0.8;\r\n  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);\r\n  cursor: pointer;\r\n}\r\n\r\n.background-icon {\r\n  position: absolute;\r\n  font-size: 100px;\r\n  opacity: 0.4;\r\n  right: 0;\r\n  top: 10px;\r\n}\r\n\r\n.fa-spinner {\r\n  color: var(--dark-font-color);\r\n}\r\n\r\n/* .card {\r\n  cursor: pointer;\r\n  background: var(--darker-color);\r\n  margin: 10px;\r\n  overflow: hidden;\r\n  min-height: 98px;\r\n  box-shadow: var(--box-shadow);\r\n  transition: all .9s;\r\n}\r\n\r\n.card:hover {\r\n  box-shadow: 0 10px 30px 4px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);;\r\n}\r\n\r\n.card-body {\r\n  padding: .79rem;\r\n}\r\n.card-category {\r\n  font-weight: 700!important;\r\n  letter-spacing: 1px;\r\n  text-transform: uppercase;\r\n  color: var(--font-subcolor)!important;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.info-icon {\r\n  margin: 10px;\r\n  background: #0066ff;\r\n  background-image: -webkit-gradient(linear,right top,left bottom,from(#0066ff),color-stop(#0052ce),to(#0066ff));\r\n  background-image: linear-gradient(to bottom left,#0066ff,#0052ce,#0066ff);\r\n  background-size: 210% 210%;\r\n  background-position: 100% 0;\r\n  height: 60px;\r\n  width: 60px;\r\n  border-radius: 50%;\r\n  background: #0066ff;\r\n  background-image: -webkit-gradient(linear,right top,left bottom,from(#0066ff),color-stop(#0052ce),to(#0066ff));\r\n  background-image: linear-gradient(to bottom left,#0066ff,#0052ce,#0066ff);\r\n  background-size: 210% 210%;\r\n  background-position: 100% 0;\r\n}\r\n\r\n.info-icon i {\r\n  color: #fff;\r\n  font-size: 1.7em;\r\n  padding: 14.2px 13px;\r\n}\r\n.card-footer{\r\n  padding: .55rem .55rem .55rem 1.2rem;\r\n}\r\n.card-footer-title {\r\n  margin: 0;\r\n  letter-spacing: 1px;\r\n} */\r\n"
 
 /***/ }),
 
@@ -562,7 +586,7 @@ module.exports = "a{text-decoration: none}\r\n\r\n.card {\r\n  color: white;\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<a [routerLink]=\"routerLink\">\r\n    <div class=\"card info-card card-hover\">\r\n        <h5 class=\"card-title\">{{cardTitle}}</h5>\r\n        <i class=\"fa background-icon\" [ngClass]=\"{'fa-spinner': validateCardData() , 'fa-spin': validateCardData()}\" [class]=\"cardIcon\"></i>\r\n        <span style=\"font-weight: 400; font-size: 30px;\">\r\n            {{cardData || ' -- '}}\r\n        </span>\r\n    </div>\r\n</a>"
+module.exports = "<a [routerLink]=\"routerLink\">\r\n    <div class=\"card info-card card-hover\">\r\n        <h5 class=\"card-title\">{{cardTitle}}</h5>\r\n        <i class=\"fa background-icon\" [ngClass]=\"{'fa-spinner': validateCardData() , 'fa-spin': validateCardData()}\"\r\n            [class]=\"cardIcon\"></i>\r\n        <span style=\"font-weight: 400; font-size: 30px;\">\r\n            <ng2-odometer [format]=\"'d'\" [number]=\"cardData\"></ng2-odometer>\r\n        </span>\r\n    </div>\r\n</a>\r\n\r\n<!-- <div class=\"card card-stats\">\r\n    <div class=\"card-body\">\r\n        <div class=\"row\">\r\n            <div class=\"col-5\">\r\n                <div class=\"info-icon text-center icon-primary\">\r\n                    <i class=\"fa fa-user\"></i>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-7\">\r\n                <div class=\"numbers\">\r\n                    <p class=\"card-category\">{{cardTitle}}</p>\r\n                    <h3 class=\"card-title\">\r\n                        <ng2-odometer [format]=\"'d'\" [number]=\"cardData\"></ng2-odometer>\r\n                    </h3>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"card-footer\">\r\n        <div class=\"stats\">\r\n            <div>\r\n                <p class=\"card-footer-title\">\r\n                    <i class=\"text-primary fa fa-check mr-2\"></i>\r\n                    <ng2-odometer [format]=\"'d'\" [number]=\"cardData\"></ng2-odometer>\r\n                     pacientes ativos\r\n                </p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div> -->"
 
 /***/ }),
 
@@ -630,40 +654,40 @@ var DataCardComponent = /** @class */ (function () {
 /*!*************************************!*\
   !*** ./src/app/components/index.ts ***!
   \*************************************/
-/*! exports provided: HealthInsuranceIndexComponent, AppComponent, RootComponent, SidebarComponent, LoginComponent, DashboardComponent, HealthInsurancesListComponent, HealthInsurancesCreateComponent, HealthInsurancesShowComponent, DataCardComponent, AnamnesisIndexComponent, AnamnesisListComponent, AnamnesisEditComponent, PatientsListComponent, PatientDataComponent, PatientsShowComponent, PatientsIndexComponent, PatientSessionsComponent, PatientsCreateComponent */
+/*! exports provided: AppComponent, RootComponent, SidebarComponent, LoginComponent, DashboardComponent, DataCardComponent, HealthInsuranceIndexComponent, HealthInsurancesListComponent, HealthInsurancesCreateComponent, HealthInsurancesShowComponent, AnamnesisIndexComponent, AnamnesisListComponent, AnamnesisEditComponent, PatientsIndexComponent, PatientsListComponent, PatientsCreateComponent, PatientsShowComponent, PatientDataComponent, PatientSessionsComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _pages_health_insurances_health_insurance_index_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/health-insurances/health-insurance-index.component */ "./src/app/components/pages/health-insurances/health-insurance-index.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HealthInsuranceIndexComponent", function() { return _pages_health_insurances_health_insurance_index_component__WEBPACK_IMPORTED_MODULE_0__["HealthInsuranceIndexComponent"]; });
+/* harmony import */ var src_app_app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/app.component */ "./src/app/app.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return src_app_app_component__WEBPACK_IMPORTED_MODULE_0__["AppComponent"]; });
 
-/* harmony import */ var src_app_app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/app.component */ "./src/app/app.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return src_app_app_component__WEBPACK_IMPORTED_MODULE_1__["AppComponent"]; });
+/* harmony import */ var _root_root_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./root/root.component */ "./src/app/components/root/root.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RootComponent", function() { return _root_root_component__WEBPACK_IMPORTED_MODULE_1__["RootComponent"]; });
 
-/* harmony import */ var _root_root_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./root/root.component */ "./src/app/components/root/root.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RootComponent", function() { return _root_root_component__WEBPACK_IMPORTED_MODULE_2__["RootComponent"]; });
+/* harmony import */ var _root_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./root/sidebar/sidebar.component */ "./src/app/components/root/sidebar/sidebar.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return _root_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_2__["SidebarComponent"]; });
 
-/* harmony import */ var _root_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./root/sidebar/sidebar.component */ "./src/app/components/root/sidebar/sidebar.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return _root_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_3__["SidebarComponent"]; });
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./login/login.component */ "./src/app/components/login/login.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return _login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"]; });
 
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./login/login.component */ "./src/app/components/login/login.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return _login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"]; });
+/* harmony import */ var _pages_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/dashboard/dashboard.component */ "./src/app/components/pages/dashboard/dashboard.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return _pages_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_4__["DashboardComponent"]; });
 
-/* harmony import */ var _pages_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/dashboard/dashboard.component */ "./src/app/components/pages/dashboard/dashboard.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return _pages_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_5__["DashboardComponent"]; });
+/* harmony import */ var _generic_components_data_card_data_card_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./generic-components/data-card/data-card.component */ "./src/app/components/generic-components/data-card/data-card.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DataCardComponent", function() { return _generic_components_data_card_data_card_component__WEBPACK_IMPORTED_MODULE_5__["DataCardComponent"]; });
 
-/* harmony import */ var _pages_health_insurances_health_insurances_list_health_insurances_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/health-insurances/health-insurances-list/health-insurances-list.component */ "./src/app/components/pages/health-insurances/health-insurances-list/health-insurances-list.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HealthInsurancesListComponent", function() { return _pages_health_insurances_health_insurances_list_health_insurances_list_component__WEBPACK_IMPORTED_MODULE_6__["HealthInsurancesListComponent"]; });
+/* harmony import */ var _pages_health_insurances_health_insurance_index_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/health-insurances/health-insurance-index.component */ "./src/app/components/pages/health-insurances/health-insurance-index.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HealthInsuranceIndexComponent", function() { return _pages_health_insurances_health_insurance_index_component__WEBPACK_IMPORTED_MODULE_6__["HealthInsuranceIndexComponent"]; });
 
-/* harmony import */ var _pages_health_insurances_health_insurances_create_health_insurances_create_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/health-insurances/health-insurances-create/health-insurances-create.component */ "./src/app/components/pages/health-insurances/health-insurances-create/health-insurances-create.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HealthInsurancesCreateComponent", function() { return _pages_health_insurances_health_insurances_create_health_insurances_create_component__WEBPACK_IMPORTED_MODULE_7__["HealthInsurancesCreateComponent"]; });
+/* harmony import */ var _pages_health_insurances_health_insurances_list_health_insurances_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/health-insurances/health-insurances-list/health-insurances-list.component */ "./src/app/components/pages/health-insurances/health-insurances-list/health-insurances-list.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HealthInsurancesListComponent", function() { return _pages_health_insurances_health_insurances_list_health_insurances_list_component__WEBPACK_IMPORTED_MODULE_7__["HealthInsurancesListComponent"]; });
 
-/* harmony import */ var _pages_health_insurances_health_insurances_show_health_insurances_show_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/health-insurances/health-insurances-show/health-insurances-show.component */ "./src/app/components/pages/health-insurances/health-insurances-show/health-insurances-show.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HealthInsurancesShowComponent", function() { return _pages_health_insurances_health_insurances_show_health_insurances_show_component__WEBPACK_IMPORTED_MODULE_8__["HealthInsurancesShowComponent"]; });
+/* harmony import */ var _pages_health_insurances_health_insurances_create_health_insurances_create_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/health-insurances/health-insurances-create/health-insurances-create.component */ "./src/app/components/pages/health-insurances/health-insurances-create/health-insurances-create.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HealthInsurancesCreateComponent", function() { return _pages_health_insurances_health_insurances_create_health_insurances_create_component__WEBPACK_IMPORTED_MODULE_8__["HealthInsurancesCreateComponent"]; });
 
-/* harmony import */ var _generic_components_data_card_data_card_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./generic-components/data-card/data-card.component */ "./src/app/components/generic-components/data-card/data-card.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DataCardComponent", function() { return _generic_components_data_card_data_card_component__WEBPACK_IMPORTED_MODULE_9__["DataCardComponent"]; });
+/* harmony import */ var _pages_health_insurances_health_insurances_show_health_insurances_show_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/health-insurances/health-insurances-show/health-insurances-show.component */ "./src/app/components/pages/health-insurances/health-insurances-show/health-insurances-show.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HealthInsurancesShowComponent", function() { return _pages_health_insurances_health_insurances_show_health_insurances_show_component__WEBPACK_IMPORTED_MODULE_9__["HealthInsurancesShowComponent"]; });
 
 /* harmony import */ var _pages_anamnesis_anamnesis_index_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/anamnesis/anamnesis-index.component */ "./src/app/components/pages/anamnesis/anamnesis-index.component.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnamnesisIndexComponent", function() { return _pages_anamnesis_anamnesis_index_component__WEBPACK_IMPORTED_MODULE_10__["AnamnesisIndexComponent"]; });
@@ -674,23 +698,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_anamnesis_anamnesis_edit_anamnesis_edit_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/anamnesis/anamnesis-edit/anamnesis-edit.component */ "./src/app/components/pages/anamnesis/anamnesis-edit/anamnesis-edit.component.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AnamnesisEditComponent", function() { return _pages_anamnesis_anamnesis_edit_anamnesis_edit_component__WEBPACK_IMPORTED_MODULE_12__["AnamnesisEditComponent"]; });
 
-/* harmony import */ var _pages_patients_patients_list_patients_list_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/patients/patients-list/patients-list.component */ "./src/app/components/pages/patients/patients-list/patients-list.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PatientsListComponent", function() { return _pages_patients_patients_list_patients_list_component__WEBPACK_IMPORTED_MODULE_13__["PatientsListComponent"]; });
+/* harmony import */ var _pages_patients_patients_index_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/patients/patients-index.component */ "./src/app/components/pages/patients/patients-index.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PatientsIndexComponent", function() { return _pages_patients_patients_index_component__WEBPACK_IMPORTED_MODULE_13__["PatientsIndexComponent"]; });
 
-/* harmony import */ var _pages_patients_patients_show_wrapper_patient_data_patient_data_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/patients/patients-show-wrapper/patient-data/patient-data.component */ "./src/app/components/pages/patients/patients-show-wrapper/patient-data/patient-data.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PatientDataComponent", function() { return _pages_patients_patients_show_wrapper_patient_data_patient_data_component__WEBPACK_IMPORTED_MODULE_14__["PatientDataComponent"]; });
+/* harmony import */ var _pages_patients_patients_list_patients_list_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/patients/patients-list/patients-list.component */ "./src/app/components/pages/patients/patients-list/patients-list.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PatientsListComponent", function() { return _pages_patients_patients_list_patients_list_component__WEBPACK_IMPORTED_MODULE_14__["PatientsListComponent"]; });
 
-/* harmony import */ var _pages_patients_patients_show_wrapper_patients_show_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/patients/patients-show-wrapper/patients-show.component */ "./src/app/components/pages/patients/patients-show-wrapper/patients-show.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PatientsShowComponent", function() { return _pages_patients_patients_show_wrapper_patients_show_component__WEBPACK_IMPORTED_MODULE_15__["PatientsShowComponent"]; });
+/* harmony import */ var _pages_patients_patients_create_patients_create_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/patients/patients-create/patients-create.component */ "./src/app/components/pages/patients/patients-create/patients-create.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PatientsCreateComponent", function() { return _pages_patients_patients_create_patients_create_component__WEBPACK_IMPORTED_MODULE_15__["PatientsCreateComponent"]; });
 
-/* harmony import */ var _pages_patients_patients_index_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/patients/patients-index.component */ "./src/app/components/pages/patients/patients-index.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PatientsIndexComponent", function() { return _pages_patients_patients_index_component__WEBPACK_IMPORTED_MODULE_16__["PatientsIndexComponent"]; });
+/* harmony import */ var _pages_patients_patients_show_wrapper_patients_show_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/patients/patients-show-wrapper/patients-show.component */ "./src/app/components/pages/patients/patients-show-wrapper/patients-show.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PatientsShowComponent", function() { return _pages_patients_patients_show_wrapper_patients_show_component__WEBPACK_IMPORTED_MODULE_16__["PatientsShowComponent"]; });
 
-/* harmony import */ var _pages_patients_patients_show_wrapper_patient_sessions_patient_sessions_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/patients/patients-show-wrapper/patient-sessions/patient-sessions.component */ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/patient-sessions.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PatientSessionsComponent", function() { return _pages_patients_patients_show_wrapper_patient_sessions_patient_sessions_component__WEBPACK_IMPORTED_MODULE_17__["PatientSessionsComponent"]; });
+/* harmony import */ var _pages_patients_patients_show_wrapper_patient_data_patient_data_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/patients/patients-show-wrapper/patient-data/patient-data.component */ "./src/app/components/pages/patients/patients-show-wrapper/patient-data/patient-data.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PatientDataComponent", function() { return _pages_patients_patients_show_wrapper_patient_data_patient_data_component__WEBPACK_IMPORTED_MODULE_17__["PatientDataComponent"]; });
 
-/* harmony import */ var _pages_patients_patients_create_patients_create_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pages/patients/patients-create/patients-create.component */ "./src/app/components/pages/patients/patients-create/patients-create.component.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PatientsCreateComponent", function() { return _pages_patients_patients_create_patients_create_component__WEBPACK_IMPORTED_MODULE_18__["PatientsCreateComponent"]; });
+/* harmony import */ var _pages_patients_patients_show_wrapper_patient_sessions_patient_sessions_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pages/patients/patients-show-wrapper/patient-sessions/patient-sessions.component */ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/patient-sessions.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PatientSessionsComponent", function() { return _pages_patients_patients_show_wrapper_patient_sessions_patient_sessions_component__WEBPACK_IMPORTED_MODULE_18__["PatientSessionsComponent"]; });
 
 
 
@@ -1025,7 +1049,7 @@ module.exports = "\r\n  .paper-stack {\r\n    padding: 10px;\r\n    background: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel\">\r\n    <div class=\"row  mb-3\">\r\n        <div class=\"col-md-3\">\r\n            <div class=\"input-group\">\r\n                <input [(ngModel)]=\"newAnamnesis\" type=\"text\" class=\"form-control\" placeholder=\"Nova Anamnese\">\r\n                <div class=\"input-group-append\">\r\n                    <button (click)=\"create(newAnamnesis)\" class=\"btn btn-success\" type=\"button\">\r\n                        <i class=\"fa\" [ngClass]=\"{'fa-check': !creatingAnamnesis, 'fa-spinner': creatingAnamnesis, 'fa-spin': creatingAnamnesis}\"></i>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"panel-body\">\r\n        <div class=\"table-wrapper\">\r\n            <div class=\"row\">\r\n                <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12\" *ngFor=\"let anamnesis of tableData; let i = index;\">\r\n                    <div class=\"paper-stack\">\r\n                        <h2 class=\"data-title-label\" style=\"font-size: 17px;\">Anamnese #{{anamnesis.id}}</h2>\r\n\r\n                        <button (click)=\"edit(anamnesis.id)\" class=\"btn btn-primary actions\">\r\n                            <i class=\"fa fa-pencil\"></i>\r\n                        </button>\r\n\r\n                        <p><span class=\"data-title-label\">Título:</span> {{ anamnesis.name }}</p>\r\n                        <p><span class=\"data-title-label\">Criada em: </span>\r\n                            {{ anamnesis.created_at | date:'dd/MM/yy' }} - {{ anamnesis.created_at | date:'HH:mm' }}</p>\r\n                        <p><span class=\"data-title-label\">Atualizada em: </span>\r\n                            {{ anamnesis.updated_at | date:'dd/MM/yy' }} - {{ anamnesis.updated_at | date:'HH:mm' }}</p>\r\n\r\n                        <button (click)=\"download(anamnesis)\" class=\"btn btn-info btn-block\"> \r\n                            <i class=\"mr-2 fa\" [ngClass]=\"{'fa-download': !anamnesis.downloading, 'fa-spin': anamnesis.downloading, 'fa-spinner': anamnesis.downloading}\"></i>\r\n                            Download\r\n                         </button>\r\n\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"panel\">\r\n    <div class=\"row  mb-3\">\r\n        <div class=\"col-xl-3 col-md-6 col-12\">\r\n            <div class=\"input-group\">\r\n                <input [(ngModel)]=\"newAnamnesis\" type=\"text\" class=\"form-control\" placeholder=\"Nova Anamnese\">\r\n                <div class=\"input-group-append\">\r\n                    <button (click)=\"create(newAnamnesis)\" class=\"btn btn-success\" type=\"button\">\r\n                        <i class=\"fa\" [ngClass]=\"{'fa-check': !creatingAnamnesis, 'fa-spinner': creatingAnamnesis, 'fa-spin': creatingAnamnesis}\"></i>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n\r\n    <div class=\"panel-body\">\r\n        <div class=\"table-wrapper\">\r\n            <div class=\"row\">\r\n                <div class=\"col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12\" *ngFor=\"let anamnesis of tableData; let i = index;\">\r\n                    <div class=\"paper-stack\">\r\n                        <h2 class=\"data-title-label\" style=\"font-size: 17px;\">Anamnese #{{anamnesis.id}}</h2>\r\n\r\n                        <button (click)=\"edit(anamnesis.id)\" class=\"btn btn-primary actions\">\r\n                            <i class=\"fa fa-pencil\"></i>\r\n                        </button>\r\n\r\n                        <p><span class=\"data-title-label\">Título:</span> {{ anamnesis.name }}</p>\r\n                        <p><span class=\"data-title-label\">Criada em: </span>\r\n                            {{ anamnesis.created_at | date:'dd/MM/yy' }} - {{ anamnesis.created_at | date:'HH:mm' }}</p>\r\n                        <p><span class=\"data-title-label\">Atualizada em: </span>\r\n                            {{ anamnesis.updated_at | date:'dd/MM/yy' }} - {{ anamnesis.updated_at | date:'HH:mm' }}</p>\r\n\r\n                        <button (click)=\"download(anamnesis)\" class=\"btn btn-info btn-block\"> \r\n                            <i class=\"mr-2 fa\" [ngClass]=\"{'fa-download': !anamnesis.downloading, 'fa-spin': anamnesis.downloading, 'fa-spinner': anamnesis.downloading}\"></i>\r\n                            Download\r\n                         </button>\r\n\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1153,7 +1177,7 @@ var AnamnesisListComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@media only screen and (max-width: 768px) {\r\n  .page-title {\r\n    margin-left: 50px;\r\n    font-size: 22px!important;\r\n    line-height: 35px;\r\n  }\r\n}\r\n\r\n.card {\r\n  background: var(--lighter-color);\r\n\r\n  margin: 10px;\r\n  overflow: hidden;\r\n  min-height: 98px;\r\n  box-shadow: var(--box-shadow)\r\n}\r\n\r\n.card-head {\r\n  background: var(--darker-color);\r\n}\r\n\r\n.card-title {\r\n  font-weight: 300;\r\n  font-size: 17px;\r\n  padding: 11px;\r\n  margin: 0;\r\n  border-bottom: 2px solid var(--primary);\r\n  text-align: center;\r\n}\r\n\r\n"
+module.exports = "@media only screen and (max-width: 768px) {\r\n  .page-title {\r\n    margin-left: 50px;\r\n    font-size: 22px!important;\r\n    line-height: 35px;\r\n  }\r\n}\r\n\r\n.card {\r\n  background: var(--lighter-color);\r\n\r\n  margin: 10px;\r\n  overflow: hidden;\r\n  min-height: 98px;\r\n  box-shadow: var(--box-shadow)\r\n}\r\n\r\n.card-head {\r\n  background: var(--darker-color);\r\n}\r\n\r\n.card-title {\r\n  font-weight: 600;\r\n  font-size: 15px;\r\n  padding: 11px;\r\n  margin: 0;\r\n  border-bottom: 2px solid var(--primary);\r\n  text-align: center;\r\n  letter-spacing: 1px;\r\n}\r\n\r\n"
 
 /***/ }),
 
@@ -1164,7 +1188,7 @@ module.exports = "@media only screen and (max-width: 768px) {\r\n  .page-title {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12\">\r\n        <app-data-card [cardTitle]=\"'Pacientes'\" [cardIcon]=\"'fa-users'\" [cardData]=\"patientsCounter | async\" [routerLink]=\"'/patients'\"></app-data-card>\r\n    </div>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12\">\r\n        <div class=\"card\">\r\n            <div class=\"card-head\">\r\n                <h5 class=\"card-title\">Relação Pacientes x Planos de Saúde</h5>\r\n            </div>\r\n            <div class=\"card-body\">\r\n                <canvas id=\"myChart\"></canvas>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"row\">\r\n    <div class=\"col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12\">\r\n        <app-data-card [cardTitle]=\"'Pacientes'\" [cardIcon]=\"'fa-users'\" [cardData]=\"patientsCounter | async\" [routerLink]=\"'/home/patients'\"></app-data-card>\r\n    </div>\r\n</div>\r\n<div class=\"row\">\r\n    <div class=\"col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12\">\r\n        <div class=\"card\">\r\n            <div class=\"card-head\">\r\n                <h5 class=\"card-title\">Relação Pacientes x Planos de Saúde</h5>\r\n            </div>\r\n            <div class=\"card-body\">\r\n                <canvas id=\"myChart\"></canvas>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -1372,7 +1396,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel\">\r\n\r\n  <div class=\"row  mb-3\">\r\n    <div class=\"col-md-3\">\r\n      <div class=\"input-group\">\r\n        <input [(ngModel)]=\"newHealthInsurance\" type=\"text\" class=\"form-control\" placeholder=\"Adicionar Plano de Saúde\">\r\n        <div class=\"input-group-append\">\r\n          <button (click)=\"create(newHealthInsurance)\" class=\"btn btn-success\" type=\"button\">\r\n            <i class=\"fa fa-check\"></i>\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n\r\n  <div class=\"panel-body\">\r\n\r\n\r\n    <div class=\"table-wrapper\">\r\n\r\n\r\n\r\n      <div class=\"tableStyles\">\r\n\r\n        <table class=\"display table table-condensed table-responsive-md\">\r\n          <thead>\r\n            <th>#</th>\r\n            <th>Nome</th>\r\n            <th>Quantidade de Pacientes</th>\r\n            <th>Adicionado</th>\r\n            <th>Ação</th>\r\n          </thead>\r\n          <tbody>\r\n\r\n            <tr *ngFor=\"let data of tableData\">\r\n              <td>{{data.id}}</td>\r\n              <td>{{data.name}}</td>\r\n              <td>{{data.Patients.length}}</td>\r\n              <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>\r\n              <td>\r\n                <button [title]=\"data.Patients.length > 0 ? 'Planos de Saúde com pacientes cadastrados não podem ser excluídos' : 'Excluir Plano de Saúde'\"\r\n                  [disabled]=\"data.Patients.length > 0\" (click)=\"delete(data.id)\" class=\"btn btn-danger btn-sm\">\r\n                  <i class=\"fa fa-trash\"></i>\r\n                </button>\r\n              </td>\r\n            </tr>\r\n\r\n            <tr *ngIf=\"!tableData || tableData.length <= 0\">\r\n              <td colspan=\"6\" class=\"text-center\">\r\n                Nenhum Dado Encontrado\r\n              </td>\r\n            </tr>\r\n\r\n          </tbody>\r\n\r\n        </table>\r\n\r\n\r\n        <!-- <nav style=\"float: right\">\r\n                  <select [(ngModel)]=\"limitPerPage\" (change)=\"limitChange(limitPerPage)\" style=\"display: inline;\">\r\n                    <option value=\"15\">15</option>\r\n                    <option value=\"20\">20</option>\r\n                    <option value=\"30\">30</option>\r\n                    <option value=\"45\">45</option>\r\n                    <option value=\"55\">55</option>\r\n                  </select>\r\n              \r\n                  <ul class=\"pagination\">\r\n                    <li class=\"page-item\">\r\n                      <a class=\"page-link\" (click)=\"paginationChange(pagination.current_page - 1)\"><</a> </li>\r\n              \r\n                    <li *ngIf=\"pagination.links.previous && pagination.links.next\" class=\"page-item\"><a class=\"page-link\" href=\"#\">{{pagination.current_page\r\n                        - 1}}</a></li>\r\n                    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">{{pagination.current_page}}</a></li>\r\n              \r\n              \r\n                    <li class=\"page-item\">\r\n                      <a class=\"page-link\" (click)=\"paginationChange(pagination.current_page + 1)\">></a>\r\n                    </li>\r\n                  </ul>\r\n                </nav> -->\r\n\r\n\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n\r\n\r\n</div>"
+module.exports = "<div class=\"panel\">\r\n\r\n  <div class=\"row  mb-3\">\r\n    <div class=\"col-xl-3 col-md-6 col-12\">\r\n      <div class=\"input-group\">\r\n        <input [(ngModel)]=\"newHealthInsurance\" type=\"text\" class=\"form-control\" placeholder=\"Adicionar Plano de Saúde\">\r\n        <div class=\"input-group-append\">\r\n          <button (click)=\"create(newHealthInsurance)\" class=\"btn btn-success\" type=\"button\">\r\n            <i class=\"fa fa-check\"></i>\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n\r\n  <div class=\"panel-body\">\r\n\r\n\r\n    <div class=\"table-wrapper\">\r\n\r\n      <div class=\"tableStyles\">\r\n\r\n        <table class=\"display table table-condensed table-responsive-md\">\r\n          <thead>\r\n            <th>#</th>\r\n            <th>Nome</th>\r\n            <th>Quantidade de Pacientes</th>\r\n            <th>Adicionado</th>\r\n            <th>Ação</th>\r\n          </thead>\r\n          <tbody>\r\n\r\n            <tr *ngFor=\"let data of tableData\">\r\n              <td>{{data.id}}</td>\r\n              <td>{{data.name}}</td>\r\n              <td>{{data.Patients.length}}</td>\r\n              <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>\r\n              <td>\r\n                <button [title]=\"data.Patients.length > 0 ? 'Planos de Saúde com pacientes cadastrados não podem ser excluídos' : 'Excluir Plano de Saúde'\"\r\n                  [disabled]=\"data.Patients.length > 0\" (click)=\"delete(data.id)\" class=\"btn btn-danger btn-sm\">\r\n                  <i class=\"fa fa-trash\"></i>\r\n                </button>\r\n              </td>\r\n            </tr>\r\n\r\n            <tr *ngIf=\"!tableData || tableData.length <= 0\">\r\n              <td colspan=\"6\" class=\"text-center\">\r\n                Nenhum Dado Encontrado\r\n              </td>\r\n            </tr>\r\n\r\n          </tbody>\r\n\r\n        </table>\r\n\r\n\r\n        <!-- <nav style=\"float: right\">\r\n                  <select [(ngModel)]=\"limitPerPage\" (change)=\"limitChange(limitPerPage)\" style=\"display: inline;\">\r\n                    <option value=\"15\">15</option>\r\n                    <option value=\"20\">20</option>\r\n                    <option value=\"30\">30</option>\r\n                    <option value=\"45\">45</option>\r\n                    <option value=\"55\">55</option>\r\n                  </select>\r\n              \r\n                  <ul class=\"pagination\">\r\n                    <li class=\"page-item\">\r\n                      <a class=\"page-link\" (click)=\"paginationChange(pagination.current_page - 1)\"><</a> </li>\r\n              \r\n                    <li *ngIf=\"pagination.links.previous && pagination.links.next\" class=\"page-item\"><a class=\"page-link\" href=\"#\">{{pagination.current_page\r\n                        - 1}}</a></li>\r\n                    <li class=\"page-item active\"><a class=\"page-link\" href=\"#\">{{pagination.current_page}}</a></li>\r\n              \r\n              \r\n                    <li class=\"page-item\">\r\n                      <a class=\"page-link\" (click)=\"paginationChange(pagination.current_page + 1)\">></a>\r\n                    </li>\r\n                  </ul>\r\n                </nav> -->\r\n\r\n\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n\r\n\r\n</div>"
 
 /***/ }),
 
@@ -1554,7 +1578,7 @@ module.exports = "small {\r\n    font-size: 60%;\r\n}"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n  <div class=\"col-xl-8 col-lg-12 col-md-12 col-sm-12\">\r\n\r\n    <div class=\"panel\">\r\n\r\n      <h4 class=\"panel-title\">\r\n        <button routerLink=\"..\" class=\"return-btn btn btn-primary\">\r\n          <i class=\"fa fa-arrow-left\"></i>\r\n        </button>\r\n        Adicionar Paciente\r\n      </h4>\r\n\r\n\r\n      <div class=\"panel-body\">\r\n        <form [formGroup]=\"patientForm\" (submit)=\"submitPatientData()\">\r\n\r\n          <div class=\"form-row\">\r\n\r\n            <div class=\"col-md-4\">\r\n              <div class=\"form-group\">\r\n                <label>Nome</label>\r\n                <input formControlName=\"name\" type=\"text\" class=\"form-control\" placeholder=\"Umberto Barros\">\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4\">\r\n              <div class=\"form-group\">\r\n                <label>Plano de Saúde</label>\r\n                <select formControlName=\"health_insurance\" type=\"text\" class=\"form-control\" placeholder=\"Umberto Barros\">\r\n                  <option value=\"\"></option>\r\n                  <option *ngFor=\"let healthInsurance of healthInsurances\" [value]=\"healthInsurance.id\">{{healthInsurance.name}}</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4\">\r\n              <div class=\"form-group\">\r\n                <label>Celular<small> &mdash; Opcional</small></label>\r\n                <input formControlName=\"phone\" type=\"text\" class=\"form-control\" placeholder=\"+55 (81) 99818-1213\">\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n\r\n          <div class=\"form-row\">\r\n\r\n            <div class=\"col-md-4\">\r\n              <div class=\"form-group\">\r\n                <label>Email<small> &mdash; Opcional</small></label>\r\n                <input formControlName=\"email\" type=\"text\" class=\"form-control\" placeholder=\"email@email.com\">\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-2\">\r\n              <div class=\"form-group\">\r\n                <label>Particular</label>\r\n                <div class=\"input-group mb-2\">\r\n                  <div class=\"input-group-prepend\">\r\n                    <button (click)=\"setPatientType()\" type=\"button\" class=\"btn\" [ngClass]=\"{'btn-danger': isPrivateValue === 'Não', 'btn-success': isPrivateValue === 'Sim'}\"\r\n                      id=\"inlineFormInputGroup\">\r\n                      <div class=\"fa\" [ngClass]=\"{'fa-times': isPrivateValue === 'Não', 'fa-check': isPrivateValue === 'Sim'}\"></div>\r\n                    </button>\r\n                  </div>\r\n                  <input type=\"text\" class=\"form-control\" disabled [(ngModel)]=\"isPrivateValue\" [ngModelOptions]=\"{standalone: true}\">\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n\r\n          </div>\r\n\r\n          <h5>Endereço</h5>\r\n\r\n          <div class=\"form-row\">\r\n\r\n            <div class=\"col-md-7\">\r\n              <div class=\"form-group\">\r\n                <label>Rua</label>\r\n                <input formControlName=\"street\" type=\"text\" class=\"form-control\" placeholder=\"Av. Caxangá\">\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-2\">\r\n              <div class=\"form-group\">\r\n                <label>Número</label>\r\n                <input formControlName=\"number\" type=\"text\" class=\"form-control\" placeholder=\"000\">\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-3\">\r\n              <div class=\"form-group\">\r\n                <label>Complemento<small> &mdash; Opcional</small></label>\r\n                <input formControlName=\"complement\" type=\"text\" class=\"form-control\" placeholder=\"Aptº 0000\">\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n\r\n          <div class=\"row\">\r\n\r\n\r\n            <div class=\"col-md-3\">\r\n              <div class=\"form-group\">\r\n                <label>CEP</label>\r\n                <input formControlName=\"zip_code\" type=\"text\" class=\"form-control\" placeholder=\"00000-000\" maxlength=\"8\">\r\n              </div>\r\n            </div>\r\n\r\n\r\n            <div class=\"col-md-4\">\r\n              <div class=\"form-group\">\r\n                <label>Bairro</label>\r\n                <input formControlName=\"district\" type=\"text\" class=\"form-control\" placeholder=\"Barro\">\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-5\">\r\n              <div class=\"form-group\">\r\n                <label>Cidade</label>\r\n                <input formControlName=\"city\" type=\"text\" class=\"form-control\" placeholder=\"Recife\">\r\n              </div>\r\n            </div>\r\n\r\n\r\n\r\n          </div>\r\n\r\n          <button [disabled]=\"creatingPatient\" type=\"submit\" class=\"btn btn-success pull-right\">{{creatingPatient ?\r\n            'Criando' : 'Criar'}} <i *ngIf=\"creatingPatient\" class=\"fa fa-spinner fa-spin\"></i></button>\r\n\r\n        </form>\r\n\r\n      </div>\r\n\r\n\r\n\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"row\">\r\n  <div class=\"col-xl-8 col-lg-12 col-md-12 col-sm-12\">\r\n\r\n    <div class=\"panel\">\r\n\r\n      <h4 class=\"panel-title\">\r\n        <button routerLink=\"..\" class=\"return-btn btn btn-primary\">\r\n          <i class=\"fa fa-arrow-left\"></i>\r\n        </button>\r\n        Adicionar Paciente\r\n      </h4>\r\n\r\n\r\n      <div class=\"panel-body\">\r\n        <form [formGroup]=\"patientForm\" (submit)=\"submitPatientData()\">\r\n\r\n          <div class=\"form-row\">\r\n\r\n            <div class=\"col-md-4\">\r\n              <div class=\"form-group\">\r\n                <label>Nome</label>\r\n                <input formControlName=\"name\" type=\"text\" class=\"form-control\" placeholder=\"Umberto Barros\">\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4\">\r\n              <div class=\"form-group\">\r\n                <label>Plano de Saúde</label>\r\n                <select formControlName=\"health_insurance\" type=\"text\" class=\"form-control\" placeholder=\"Umberto Barros\">\r\n                  <option value=\"\">Não Possui</option>\r\n                  <option *ngFor=\"let healthInsurance of healthInsurances\" [value]=\"healthInsurance.id\">{{healthInsurance.name}}</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-4\">\r\n              <div class=\"form-group\">\r\n                <label>Celular<small> &mdash; Opcional</small></label>\r\n                <input formControlName=\"phone\" type=\"text\" class=\"form-control\" placeholder=\"+55 (81) 99818-1213\">\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n\r\n          <div class=\"form-row\">\r\n\r\n            <div class=\"col-md-4\">\r\n              <div class=\"form-group\">\r\n                <label>Email<small> &mdash; Opcional</small></label>\r\n                <input formControlName=\"email\" type=\"text\" class=\"form-control\" placeholder=\"email@email.com\">\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-2\">\r\n              <div class=\"form-group\">\r\n                <label>Particular</label>\r\n                <div class=\"input-group mb-2\">\r\n                  <div class=\"input-group-prepend\">\r\n                    <button (click)=\"setPatientType()\" type=\"button\" class=\"btn\" [ngClass]=\"{'btn-danger': isPrivateValue === 'Não', 'btn-success': isPrivateValue === 'Sim'}\"\r\n                      id=\"inlineFormInputGroup\">\r\n                      <div class=\"fa\" [ngClass]=\"{'fa-times': isPrivateValue === 'Não', 'fa-check': isPrivateValue === 'Sim'}\"></div>\r\n                    </button>\r\n                  </div>\r\n                  <input type=\"text\" class=\"form-control\" disabled [(ngModel)]=\"isPrivateValue\" [ngModelOptions]=\"{standalone: true}\">\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n\r\n          </div>\r\n\r\n          <h5>Endereço</h5>\r\n\r\n          <div class=\"form-row\">\r\n\r\n            <div class=\"col-md-7\">\r\n              <div class=\"form-group\">\r\n                <label>Rua</label>\r\n                <input formControlName=\"street\" type=\"text\" class=\"form-control\" placeholder=\"Av. Caxangá\">\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-2\">\r\n              <div class=\"form-group\">\r\n                <label>Número</label>\r\n                <input formControlName=\"number\" type=\"text\" class=\"form-control\" placeholder=\"000\">\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-3\">\r\n              <div class=\"form-group\">\r\n                <label>Complemento<small> &mdash; Opcional</small></label>\r\n                <input formControlName=\"complement\" type=\"text\" class=\"form-control\" placeholder=\"Aptº 0000\">\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n\r\n          <div class=\"row\">\r\n\r\n\r\n            <div class=\"col-md-3\">\r\n              <div class=\"form-group\">\r\n                <label>CEP</label>\r\n                <input formControlName=\"zip_code\" type=\"text\" class=\"form-control\" placeholder=\"00000-000\" maxlength=\"8\">\r\n              </div>\r\n            </div>\r\n\r\n\r\n            <div class=\"col-md-4\">\r\n              <div class=\"form-group\">\r\n                <label>Bairro</label>\r\n                <input formControlName=\"district\" type=\"text\" class=\"form-control\" placeholder=\"Barro\">\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-md-5\">\r\n              <div class=\"form-group\">\r\n                <label>Cidade</label>\r\n                <input formControlName=\"city\" type=\"text\" class=\"form-control\" placeholder=\"Recife\">\r\n              </div>\r\n            </div>\r\n\r\n\r\n\r\n          </div>\r\n\r\n          <button [disabled]=\"creatingPatient\" type=\"submit\" class=\"btn btn-success pull-right\">{{creatingPatient ?\r\n            'Criando' : 'Criar'}} <i *ngIf=\"creatingPatient\" class=\"fa fa-spinner fa-spin\"></i></button>\r\n\r\n        </form>\r\n\r\n      </div>\r\n\r\n\r\n\r\n    </div>\r\n\r\n\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -1572,6 +1596,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services */ "./src/app/services/index.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_helpers_validators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/helpers/validators */ "./src/app/helpers/validators.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1581,6 +1606,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1600,10 +1626,10 @@ var PatientsCreateComponent = /** @class */ (function () {
             _this.healthInsurances = res.data;
         });
         this.patientForm = this.fb.group({
-            name: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            name: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, src_app_helpers_validators__WEBPACK_IMPORTED_MODULE_4__["nameValidator"]]],
             is_private: [false, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             health_insurance: [''],
-            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
+            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, src_app_helpers_validators__WEBPACK_IMPORTED_MODULE_4__["emailValidator"]]],
             phone: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             street: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             number: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -1707,7 +1733,7 @@ var PatientsIndexComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ul {\r\n    margin: 0;\r\n    -webkit-transform: translateY(48%);\r\n            transform: translateY(48%);\r\n}\r\n\r\nul li {\r\n    display: inline;\r\n    list-style: none;\r\n    margin-right: 45px;\r\n    letter-spacing: 1px;\r\n}\r\n\r\n.tab-name {\r\n    border-bottom: 4px transparent;\r\n    border-radius: 5px 5px 0 0;\r\n    color: var(--font-subcolor)!important;\r\n    padding: 5px 10px 5px 10px;\r\n    cursor: pointer;\r\n    transition: all .5s;\r\n    font-weight: 600;\r\n    font-size: 1.035rem;\r\n}\r\n\r\n.tab-name:hover {\r\n    background: rgba(175, 175, 175, 0.411);\r\n    color: var(--font-color)!important;\r\n}\r\n\r\n.tab-active {\r\n    border-bottom: 4px solid var(--primary);\r\n    color: var(--font-color)!important;\r\n}\r\n\r\n@media only screen and (max-width: 768px) {\r\n\r\n    .tab-name {\r\n        font-size: .9rem\r\n    }\r\n\r\n}\r\n\r\n@media only screen and (max-width: 576px) {\r\n    ul {\r\n        -webkit-transform: translateY(54%);\r\n                transform: translateY(54%);\r\n    }\r\n    .tab-name {\r\n        font-size: .75rem\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 386px) {\r\n    ul {\r\n        -webkit-transform: translateY(76%);\r\n                transform: translateY(76%);\r\n    }\r\n    .tab-name {\r\n        font-size: .65rem;\r\n        padding: 0;\r\n    }\r\n    \r\n    .tab-active {\r\n        border-bottom: 2px solid var(--primary);\r\n    }\r\n}"
+module.exports = "ul {\r\n    margin: 0;\r\n    -webkit-transform: translateY(44%);\r\n            transform: translateY(44%);\r\n\r\n}\r\n\r\nul li {\r\n    display: inline;\r\n    list-style: none;\r\n    margin-right: 45px;\r\n    letter-spacing: 1px;\r\n}\r\n\r\n.tab-name {\r\n    border-bottom: 4px transparent;\r\n    border-radius: 5px 5px 0 0;\r\n    color: var(--font-subcolor)!important;\r\n    padding: 10px 10px 5px 10px;\r\n    cursor: pointer;\r\n    transition: all .5s;\r\n    font-weight: 600;\r\n    font-size: 1.035rem;\r\n}\r\n\r\n.tab-name:hover {\r\n    background: rgba(175, 175, 175, 0.411);\r\n    color: var(--font-color)!important;\r\n}\r\n\r\n.tab-active {\r\n    border-bottom: 4px solid var(--primary);\r\n    color: var(--font-color)!important;\r\n}\r\n\r\n@media only screen and (max-width: 768px) {\r\n\r\n    .tab-name {\r\n        font-size: .9rem\r\n    }\r\n\r\n}\r\n\r\n@media only screen and (max-width: 576px) {\r\n    ul {\r\n        -webkit-transform: translateY(68%);\r\n                transform: translateY(68%);\r\n    }\r\n    .tab-name {\r\n        font-size: .75rem\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 368px) {\r\n\r\n    .tab-name {\r\n        font-size: .65rem;\r\n        padding-bottom: 5px;\r\n    }\r\n    \r\n    .tab-active {\r\n        border-bottom: 2px solid var(--primary);\r\n    }\r\n}"
 
 /***/ }),
 
@@ -1718,7 +1744,7 @@ module.exports = "ul {\r\n    margin: 0;\r\n    -webkit-transform: translateY(48
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n  <ul>\r\n    <li> <!--@REFACTOR ADAPTAR AO QUE HOUVER NO BACKEND -->\r\n      <a class=\"tab-name\" [ngClass]=\"{'tab-active': currentListStatus === 1}\" (click)=\"changeListStatus(1)\">Ativos</a>\r\n    </li>\r\n    <li>\r\n      <a class=\"tab-name\" [ngClass]=\"{'tab-active': currentListStatus === 2}\" (click)=\"changeListStatus(2)\">Inativos</a>\r\n    </li>\r\n    <li>\r\n      <a class=\"tab-name\" [ngClass]=\"{'tab-active': currentListStatus === 3}\" (click)=\"changeListStatus(3)\">De Alta</a>\r\n    </li>\r\n  </ul>\r\n</div>\r\n\r\n<div class=\"panel\">\r\n\r\n  <button routerLink=\"create\" class=\"btn btn-primary\">Adicionar Paciente</button>\r\n\r\n  <div class=\"panel-body\">\r\n    <div class=\"table-wrapper\" style=\"margin: 0\">\r\n\r\n      <form *ngIf=\"tableMetaData\" [formGroup]=\"filterForm\" (submit)=\"submitFilters()\">\r\n        <div class=\"tableFilters row\">\r\n\r\n\r\n          <div class=\"col-md-3 mb-3 mt-3\">\r\n            <input type=\"text\" class=\"form-control\" placeholder=\"Buscar\" formControlName=\"search\">\r\n          </div>\r\n\r\n          <div class=\"col-md-3 mb-3 mt-3\">\r\n            <select type=\"text\" class=\"custom-select\" formControlName=\"health_insurance\">\r\n              <option value=\"\" disabled selected>Plano de Saúde</option>\r\n              <option *ngFor=\"let filter of tableMetaData.filterConfig.health_insurances\" [value]=\"filter.id\">{{filter.name}}</option>\r\n            </select>\r\n          </div>\r\n\r\n          <div class=\"col-md-3 mb-3 mt-3\">\r\n            <button class=\"btn full-width-mobile btn-primary mr-2 mb-1\" type=\"submit\"><i class=\"fa fa-search\"></i></button>\r\n            <button *ngIf=\"clearFiltersBtn\" class=\"btn full-width-mobile btn-warning mr-2 mb-1\" type=\"button\" (click)=\"clearFilters()\"><i class=\"fa fa-times\"></i></button>\r\n          </div>\r\n\r\n\r\n        </div>\r\n      </form>\r\n\r\n      <div class=\"tableStyles\">\r\n\r\n\r\n        <table class=\"display table table-condensed table-responsive-md\">\r\n          <thead>\r\n            <th *ngFor=\"let tableHead of tableHeaders\"><a class=\"pointer\" (click)=\"changeSort(tableHead)\">{{tableHead.title}}\r\n                <i class=\"fa\" [ngClass]=\"{'fa-caret-up': tableHead.sorted === 'asc', 'fa-caret-down': tableHead.sorted === 'desc'}\"></i>\r\n              </a>\r\n            </th>\r\n            <th>Ação</th>\r\n          </thead>\r\n          <tbody>\r\n\r\n            <tr *ngFor=\"let data of tableData\">\r\n              <td>{{data.id}}</td>\r\n              <td>{{data.name}}</td>\r\n              <td>{{data.HealthInsurance ? data.HealthInsurance.name : 'Nenhum'}}</td>\r\n              <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>\r\n              <td>{{data.updated_at | date:'dd/MM/yyyy HH:mm'}}</td>\r\n              <td>\r\n                <button title=\"Ver Paciente\" (click)=\"show(data.id)\" class=\"mr-2 btn btn-primary btn-sm\">\r\n                  <i class=\"fa fa-search\"></i>\r\n                </button>\r\n                <button title=\"Excluir Paciente\" (click)=\"delete(data.id)\" class=\"btn btn-danger btn-sm\">\r\n                  <i class=\"fa fa-trash\"></i>\r\n                </button>\r\n              </td>\r\n            </tr>\r\n\r\n            <tr *ngIf=\"!tableData || tableData.length <= 0\">\r\n              <td colspan=\"6\" class=\"text-center\">\r\n                Nenhum Paciente {{ currentListStatus === 1 ? 'Ativo' : (currentListStatus === 2 ? 'Inativo' : 'de Alta') }} {{ clearFiltersBtn ? ' com os filtros selecionados' : '' }} <!-- @REFACTOR MULTIPLE TERNARY IF-->\r\n              </td>\r\n            </tr>\r\n\r\n\r\n\r\n          </tbody>\r\n\r\n        </table>\r\n\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"tableMetaData\" class=\"row tablePagination\">\r\n\r\n\r\n        <div class=\"input-group col-xl-2 col-lg-4 col-md-4 col-sm-6 col-12 mb-3\">\r\n          <div class=\"input-group-prepend\">\r\n            <label class=\"input-group-text\" for=\"inputGroupSelect01\">Limite</label>\r\n          </div>\r\n          <select [(ngModel)]=\"selectedSize\" (change)=\"limitChange(selectedSize)\" class=\"custom-select\" id=\"inputGroupSelect01\">\r\n            <option *ngFor=\"let pageSize of pageSizeOptions\" [value]=\"pageSize\">{{pageSize}}</option>\r\n          </select>\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"btn-group col-xl-4 col-lg-8 col-md-8 col-sm-12 col-12\" role=\"group\" aria-label=\"Basic example\">\r\n          <button type=\"button\" [disabled]=\"tableMetaData.paginationConfig.current_page === 1\" class=\"btn btn-secondary\"\r\n            (click)=\"paginationChange(tableMetaData.paginationConfig.current_page - 1)\">\r\n            <i class=\"fa fa-angle-left\"></i>\r\n          </button>\r\n          <button type=\"button\" class=\"btn btn-primary\">{{tableMetaData.paginationConfig.current_page}}</button>\r\n          <button type=\"button\" [disabled]=\"tableMetaData.paginationConfig.current_page === tableMetaData.paginationConfig.total_pages\"\r\n            class=\"btn btn-secondary\" (click)=\"paginationChange(tableMetaData.paginationConfig.current_page + 1)\">\r\n            <i class=\"fa fa-angle-right\"></i>\r\n          </button>\r\n        </div>\r\n\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n\r\n  </div>\r\n\r\n\r\n</div>"
+module.exports = "<div class=\"row\">\r\n  <ul>\r\n    <li> <!--@REFACTOR ADAPTAR AO QUE HOUVER NO BACKEND -->\r\n      <a class=\"tab-name\" [ngClass]=\"{'tab-active': currentListStatus === 1}\" (click)=\"changeListStatus(1)\">Ativos</a>\r\n    </li>\r\n    <li>\r\n      <a class=\"tab-name\" [ngClass]=\"{'tab-active': currentListStatus === 2}\" (click)=\"changeListStatus(2)\">Inativos</a>\r\n    </li>\r\n    <li>\r\n      <a class=\"tab-name\" [ngClass]=\"{'tab-active': currentListStatus === 3}\" (click)=\"changeListStatus(3)\">De Alta</a>\r\n    </li>\r\n  </ul>\r\n\r\n  <!-- <select class=\"responsive-tabs\">\r\n    option ativos\r\n    option inativos\r\n    option de alta\r\n  </select> --> <!--@TODO-->\r\n</div>\r\n\r\n<div class=\"panel\">\r\n\r\n  <button routerLink=\"create\" class=\"btn btn-primary\">Adicionar Paciente</button>\r\n\r\n  <div class=\"panel-body\">\r\n    <div class=\"table-wrapper\" style=\"margin: 0\">\r\n\r\n      <form *ngIf=\"tableMetaData\" [formGroup]=\"filterForm\" (submit)=\"submitFilters()\">\r\n        <div class=\"tableFilters row\">\r\n\r\n\r\n          <div class=\"col-md-3 mb-3 mt-3\">\r\n            <input type=\"text\" class=\"form-control\" placeholder=\"Buscar\" formControlName=\"search\">\r\n          </div>\r\n\r\n          <div class=\"col-md-3 mb-3 mt-3\">\r\n            <select type=\"text\" class=\"custom-select\" formControlName=\"health_insurance\">\r\n              <option value=\"\" disabled selected>Plano de Saúde</option>\r\n              <option *ngFor=\"let filter of tableMetaData.filterConfig.health_insurances\" [value]=\"filter.id\">{{filter.name}}</option>\r\n            </select>\r\n          </div>\r\n\r\n          <div class=\"col-md-3 mb-3 mt-3\">\r\n            <button class=\"btn full-width-mobile btn-primary mr-2 mb-1\" type=\"submit\"><i class=\"fa fa-search\"></i></button>\r\n            <button *ngIf=\"clearFiltersBtn\" class=\"btn full-width-mobile btn-warning mr-2 mb-1\" type=\"button\" (click)=\"clearFilters()\"><i class=\"fa fa-times\"></i></button>\r\n          </div>\r\n\r\n\r\n        </div>\r\n      </form>\r\n\r\n      <div class=\"tableStyles\">\r\n\r\n\r\n        <table class=\"display table table-condensed table-responsive-md\">\r\n          <thead>\r\n            <th *ngFor=\"let tableHead of tableHeaders\"><a class=\"pointer\" (click)=\"changeSort(tableHead)\">{{tableHead.title}}\r\n                <i class=\"fa\" [ngClass]=\"{'fa-caret-up': tableHead.sorted === 'asc', 'fa-caret-down': tableHead.sorted === 'desc'}\"></i>\r\n              </a>\r\n            </th>\r\n            <th>Ação</th>\r\n          </thead>\r\n          <tbody>\r\n\r\n            <tr *ngFor=\"let data of tableData\">\r\n              <td>{{data.id}}</td>\r\n              <td>{{data.name}}</td>\r\n              <td>{{data.HealthInsurance ? data.HealthInsurance.name : 'Nenhum'}}</td>\r\n              <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>\r\n              <td>{{data.updated_at | date:'dd/MM/yyyy HH:mm'}}</td>\r\n              <td>\r\n                <button title=\"Ver Paciente\" (click)=\"show(data.id)\" class=\"mr-2 btn btn-primary btn-sm\">\r\n                  <i class=\"fa fa-search\"></i>\r\n                </button>\r\n                <button title=\"Excluir Paciente\" (click)=\"delete(data.id)\" class=\"btn btn-danger btn-sm\">\r\n                  <i class=\"fa fa-trash\"></i>\r\n                </button>\r\n              </td>\r\n            </tr>\r\n\r\n            <tr *ngIf=\"!tableData || tableData.length <= 0\">\r\n              <td colspan=\"6\" class=\"text-center\">\r\n                Nenhum Paciente {{ currentListStatus === 1 ? 'Ativo' : (currentListStatus === 2 ? 'Inativo' : 'de Alta') }} {{ clearFiltersBtn ? ' com os filtros selecionados' : '' }} <!-- @REFACTOR MULTIPLE TERNARY IF-->\r\n              </td>\r\n            </tr>\r\n\r\n\r\n\r\n          </tbody>\r\n\r\n        </table>\r\n\r\n\r\n      </div>\r\n\r\n      <div *ngIf=\"tableMetaData\" class=\"row tablePagination\">\r\n\r\n\r\n        <div class=\"input-group col-xl-2 col-lg-4 col-md-4 col-sm-6 col-12 mb-3\">\r\n          <div class=\"input-group-prepend\">\r\n            <label class=\"input-group-text\" for=\"inputGroupSelect01\">Limite</label>\r\n          </div>\r\n          <select [(ngModel)]=\"selectedSize\" (change)=\"limitChange(selectedSize)\" class=\"custom-select\" id=\"inputGroupSelect01\">\r\n            <option *ngFor=\"let pageSize of pageSizeOptions\" [value]=\"pageSize\">{{pageSize}}</option>\r\n          </select>\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"btn-group col-xl-4 col-lg-8 col-md-8 col-sm-12 col-12\" role=\"group\" aria-label=\"Basic example\">\r\n          <button type=\"button\" [disabled]=\"tableMetaData.paginationConfig.current_page === 1\" class=\"btn btn-secondary\"\r\n            (click)=\"paginationChange(tableMetaData.paginationConfig.current_page - 1)\">\r\n            <i class=\"fa fa-angle-left\"></i>\r\n          </button>\r\n          <button type=\"button\" class=\"btn btn-primary\">{{tableMetaData.paginationConfig.current_page}}</button>\r\n          <button type=\"button\" [disabled]=\"tableMetaData.paginationConfig.current_page === tableMetaData.paginationConfig.total_pages\"\r\n            class=\"btn btn-secondary\" (click)=\"paginationChange(tableMetaData.paginationConfig.current_page + 1)\">\r\n            <i class=\"fa fa-angle-right\"></i>\r\n          </button>\r\n        </div>\r\n\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n\r\n  </div>\r\n\r\n\r\n</div>"
 
 /***/ }),
 
@@ -1975,6 +2001,115 @@ var PatientDataComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/create-session/create-session.component.css":
+/*!******************************************************************************************************************************!*\
+  !*** ./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/create-session/create-session.component.css ***!
+  \******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n.details-modal {\r\n    height: auto;\r\n    background: var(--secondary-color);\r\n    width: 50%;;\r\n    border-radius: 12px;\r\n    box-shadow: var(--box-shadow);\r\n    position: absolute;\r\n    -webkit-animation: showup .5s;\r\n            animation: showup .5s;\r\n    top: 50px;\r\n    margin-bottom: 30px;\r\n}\r\n\r\n.modal-head {\r\n    padding: 10px;\r\n    border-radius: 12px 12px 0 0;\r\n    background: var(--darker-background-color);\r\n    border-bottom: 2px solid var(--primary);\r\n    text-align: center;\r\n}\r\n\r\n.data-name{\r\n    border: none!important;\r\n    color: var(--font-subcolor)!important;\r\n    font-weight: 700!important;\r\n    font-size: 1rem;\r\n    padding-top: .75rem;\r\n    letter-spacing: 1px;\r\n    text-transform: uppercase;\r\n}\r\n\r\n.modal-body {\r\n    border-radius: 0 0 12px 12px;\r\n    padding: 20px 20px 55px 20px;\r\n    background: var(--lighter-color)!important;\r\n}\r\n\r\n.modal-body p {\r\n    word-break: break-all;\r\n}\r\n\r\n.footer p,\r\n.footer strong {\r\n    font-size: 0.75rem;\r\n}\r\n\r\nul li {\r\n    display: inline;\r\n    list-style: none;\r\n    margin-right: 5px;\r\n}\r\n\r\n.close-btn {\r\n    float: right;\r\n}\r\n\r\n@media only screen and (max-width: 516px) {\r\n    .close-btn {\r\n        float: none;\r\n    }\r\n}\r\n\r\n@-webkit-keyframes showup {\r\n    from {\r\n        top: -450px;\r\n    }\r\n    to {\r\n        top: 50px;\r\n    }\r\n}\r\n\r\n@keyframes showup {\r\n    from {\r\n        top: -450px;\r\n    }\r\n    to {\r\n        top: 50px;\r\n    }\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/create-session/create-session.component.html":
+/*!*******************************************************************************************************************************!*\
+  !*** ./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/create-session/create-session.component.html ***!
+  \*******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div appModal>\r\n\r\n  <div class=\"details-modal\">\r\n\r\n    <div class=\"modal-head\">\r\n      <h4 class=\"modal-title\">\r\n        Registrar Sessão\r\n        <button (click)=\"close()\" class=\"close-btn btn btn-primary btn-sm\"><i class=\"fa fa-times\"></i></button>\r\n      </h4>\r\n    </div>\r\n\r\n    <div class=\"modal-body\">\r\n\r\n      <form [formGroup]=\"sessionForm\" (submit)=\"submitSessionData()\">\r\n\r\n        <div class=\"form-row\">\r\n\r\n          <div class=\"col-md-4\">\r\n            <div class=\"form-group\">\r\n              <label>Humor</label>\r\n              <select formControlName=\"humour\" type=\"text\" class=\"form-control\">\r\n                <option value=\"1\">Triste</option>\r\n                <option value=\"2\">Raiva</option>\r\n                <option value=\"3\">Medo</option>\r\n                <option value=\"4\">Feliz</option>\r\n                <option value=\"5\">Ansioso</option>\r\n              </select>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-md-8\">\r\n            <div class=\"form-row\">\r\n              <div class=\"col-md-12\">\r\n                <label>Atendimento</label>\r\n              </div>\r\n            </div>\r\n            <div class=\"form-row\">\r\n              <div class=\"col-md-6\">\r\n                <div class=\"form-group\">\r\n                  <input formControlName=\"attendance_at_date\" type=\"date\" class=\"form-control\">\r\n                </div>\r\n              </div>\r\n              <div class=\"col-md-6\">\r\n                <div class=\"form-group\">\r\n                  <input formControlName=\"attendance_at_time\" type=\"time\" class=\"form-control\">\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n        \r\n\r\n        <div class=\"form-row\">\r\n\r\n          <div class=\"col-md-12\">\r\n            <div class=\"form-group\">\r\n              <label>Descrição</label>\r\n              <textarea formControlName=\"description\" type=\"text\" rows=\"5\" class=\"form-control\" maxlength=\"255\"></textarea>\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n\r\n        <button [disabled]=\"creatingSession\" type=\"submit\" class=\"btn btn-success pull-right\">{{creatingSession ?\r\n          'Criando' : 'Criar'}} <i *ngIf=\"creatingSession\" class=\"fa fa-spinner fa-spin\"></i></button>\r\n\r\n      </form>\r\n\r\n\r\n    </div>\r\n\r\n\r\n  </div>\r\n\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/create-session/create-session.component.ts":
+/*!*****************************************************************************************************************************!*\
+  !*** ./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/create-session/create-session.component.ts ***!
+  \*****************************************************************************************************************************/
+/*! exports provided: CreateSessionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateSessionComponent", function() { return CreateSessionComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var src_app_services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services */ "./src/app/services/index.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var CreateSessionComponent = /** @class */ (function () {
+    function CreateSessionComponent(fb, activatedRoute, patientsService) {
+        this.fb = fb;
+        this.activatedRoute = activatedRoute;
+        this.patientsService = patientsService;
+        this.closeModal = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+    }
+    CreateSessionComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.activatedRoute.params
+            .subscribe(function (res) {
+            _this.patientId = res.id;
+        });
+        this.sessionForm = this.fb.group({
+            humour: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            attendance_at_date: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            attendance_at_time: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+            description: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]],
+        });
+    };
+    CreateSessionComponent.prototype.close = function () {
+        this.closeModal.emit('close');
+    };
+    CreateSessionComponent.prototype.submitSessionData = function () {
+        if (this.sessionForm.valid) {
+            this.creatingSession = true;
+            var formControls = this.sessionForm.controls;
+            var sessionData = {
+                description: formControls.description.value,
+                humour_id: formControls.humour.value,
+                attendance_at: new Date(formControls.attendance_at_date.value + " " + formControls.attendance_at_time.value).toJSON(),
+                patients_id: this.patientId
+            };
+            this.patientsService.postCreateSession(sessionData)
+                .subscribe(function () {
+                window.location.reload();
+            });
+        }
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
+    ], CreateSessionComponent.prototype, "closeModal", void 0);
+    CreateSessionComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-create-session',
+            template: __webpack_require__(/*! ./create-session.component.html */ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/create-session/create-session.component.html"),
+            styles: [__webpack_require__(/*! ./create-session.component.css */ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/create-session/create-session.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            src_app_services__WEBPACK_IMPORTED_MODULE_3__["PatientsService"]])
+    ], CreateSessionComponent);
+    return CreateSessionComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/patient-sessions.component.css":
 /*!*****************************************************************************************************************!*\
   !*** ./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/patient-sessions.component.css ***!
@@ -1993,7 +2128,7 @@ module.exports = ".panel-head {\r\n  background: var(--darker-color);\r\n}\r\n.p
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel\" style=\"padding: 0;\">\r\n  <div class=\"panel-head\">\r\n    <h4 class=\"panel-title\">Sessões</h4>\r\n  </div>\r\n  <div class=\"panel-body\" style=\"padding: 25px;\">\r\n\r\n    <div class=\"expansive-panel pointer\" (click)=\"session.opened = !session.opened\" *ngFor=\"let session of patientSessions\"\r\n      [ngClass]=\"\r\n      {\r\n        'full-radius': patientSessions.length === 1,\r\n        'no-top-radius': patientSessions[patientSessions.length - 1] === session && patientSessions.length > 1,\r\n        'no-bottom-radius': patientSessions[0] === session && patientSessions.length > 1,\r\n        'no-radius': patientSessions[patientSessions.length - 1] !== session && patientSessions[0] !== session && patientSessions.length > 1,\r\n        'selected-panel': session.opened,\r\n        'expansive-panel-good': session.humour_id === 4,\r\n        'expansive-panel-medium': session.humour_id === 5,\r\n        'expansive-panel-bad': session.humour_id === 1 || session.humour_id === 2 || session.humour_id === 3\r\n      }\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-4\">\r\n          <h4 id=\"humour\">{{session.Humour.title}}</h4>\r\n        </div>\r\n  \r\n        <div class=\"col-sm-4\" *ngIf=\"patientSessions[patientSessions.length - 1] == session\">\r\n          <h4 id=\"first-session\">Primeira Sessão</h4>\r\n        </div>\r\n  \r\n        <div class=\"col-sm-4\" [ngClass]=\"{'offset-sm-4': patientSessions[patientSessions.length - 1] != session}\"> <!--offset-md-4-->\r\n          <h4 id=\"attendance_at\">{{ (session.attendance_at | date:'dd/MM/yyyy') + ' - ' + (session.attendance_at | date:'HH:mm') }}</h4>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div [@collapse] *ngIf=\"session.opened\" class=\"expanded\">\r\n\r\n        <p>\r\n          {{session.description}}\r\n        </p>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n\r\n    <div *ngIf=\"patientSessions.length === 0\" style=\"text-align: center\">\r\n      <span>Não houve sessões com este paciente</span>\r\n    </div>\r\n\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"panel\" style=\"padding: 0;\">\r\n  <div class=\"panel-head\">\r\n    <h4 class=\"panel-title\">\r\n      Sessões\r\n      <button (click)=\"changeModalState('open')\" class=\"btn btn-primary btn-sm\">Registrar</button>\r\n    </h4>\r\n  </div>\r\n  <div class=\"panel-body\" style=\"padding: 25px;\">\r\n\r\n    <div class=\"expansive-panel pointer\" (click)=\"session.opened = !session.opened\" *ngFor=\"let session of patientSessions\"\r\n      [ngClass]=\"\r\n      {\r\n        'full-radius': patientSessions.length === 1,\r\n        'no-top-radius': patientSessions[patientSessions.length - 1] === session && patientSessions.length > 1,\r\n        'no-bottom-radius': patientSessions[0] === session && patientSessions.length > 1,\r\n        'no-radius': patientSessions[patientSessions.length - 1] !== session && patientSessions[0] !== session && patientSessions.length > 1,\r\n        'selected-panel': session.opened,\r\n        'expansive-panel-good': session.humour_id === 4,\r\n        'expansive-panel-medium': session.humour_id === 5,\r\n        'expansive-panel-bad': session.humour_id === 1 || session.humour_id === 2 || session.humour_id === 3\r\n      }\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-2\">\r\n          <h4 id=\"humour\">{{session.Humour.title}}</h4>\r\n        </div>\r\n\r\n\r\n\r\n        <div class=\"col-sm-5\">\r\n          <h4 id=\"first-session\" style=\"text-align: center\">{{(session.attendance_at | date:'EEEE')}}</h4>\r\n        </div>\r\n\r\n        <div class=\"col-sm-5\">\r\n          <!--offset-md-4-->\r\n          <h4 id=\"attendance_at\">{{ (session.attendance_at | date:'dd/MM/yyyy') + ' ' + (session.attendance_at |\r\n            date:'HH:mm') }}</h4>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div [@collapse] *ngIf=\"session.opened\" class=\"expanded\">\r\n\r\n        <p>\r\n          {{session.description}}\r\n        </p>\r\n\r\n      </div>\r\n\r\n    </div>\r\n\r\n\r\n    <div *ngIf=\"patientSessions.length === 0\" style=\"text-align: center\">\r\n      <span>Não houve sessões com este paciente</span>\r\n    </div>\r\n\r\n\r\n    <div *ngIf=\"patientSessions.length === firstListedSessions\" class=\"mt-4\" style=\"text-align: center\">\r\n      <button class=\"btn btn-primary btn-md\" (click)=\"showAllSessions()\">Carregar todas as Sessões</button>\r\n    </div>\r\n\r\n\r\n  </div>\r\n\r\n</div>\r\n\r\n\r\n<app-create-session *ngIf=\"modalState === 'open'\" (closeModal)=\"changeModalState($event)\"></app-create-session>"
 
 /***/ }),
 
@@ -2007,9 +2142,10 @@ module.exports = "<div class=\"panel\" style=\"padding: 0;\">\r\n  <div class=\"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientSessionsComponent", function() { return PatientSessionsComponent; });
-/* harmony import */ var src_app_app_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/app.utils */ "./src/app/app.utils.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/helpers/animations/animations */ "./src/app/helpers/animations/animations.ts");
+/* harmony import */ var src_app_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/services */ "./src/app/services/index.ts");
+/* harmony import */ var src_app_app_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/app.utils */ "./src/app/app.utils.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/helpers/animations/animations */ "./src/app/helpers/animations/animations.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2022,28 +2158,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var PatientSessionsComponent = /** @class */ (function () {
-    function PatientSessionsComponent() {
-        this.date = new Date();
+    function PatientSessionsComponent(shareDataService) {
+        this.shareDataService = shareDataService;
     }
     PatientSessionsComponent.prototype.ngOnInit = function () {
         this.patientSessions.map(function (patient) {
             patient.opened = false;
         });
-        this.patientSessions = Object(src_app_app_utils__WEBPACK_IMPORTED_MODULE_0__["sortByKey"])(this.patientSessions, 'created_at');
+        this.patientSessions = Object(src_app_app_utils__WEBPACK_IMPORTED_MODULE_1__["sortByKey"])(this.patientSessions, 'created_at');
+    };
+    PatientSessionsComponent.prototype.changeModalState = function (state) {
+        this.modalState = state;
+    };
+    PatientSessionsComponent.prototype.showAllSessions = function () {
+        this.shareDataService.watchSessionLimit(true);
     };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
         __metadata("design:type", Object)
     ], PatientSessionsComponent.prototype, "patientSessions", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
+        __metadata("design:type", Object)
+    ], PatientSessionsComponent.prototype, "firstListedSessions", void 0);
     PatientSessionsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
             selector: 'app-patient-sessions',
             template: __webpack_require__(/*! ./patient-sessions.component.html */ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/patient-sessions.component.html"),
             styles: [__webpack_require__(/*! ./patient-sessions.component.css */ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/patient-sessions.component.css")],
-            animations: [src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_2__["collapse"]]
+            animations: [src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_3__["collapse"]]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [src_app_services__WEBPACK_IMPORTED_MODULE_0__["ShareDataService"]])
     ], PatientSessionsComponent);
     return PatientSessionsComponent;
 }());
@@ -2070,7 +2217,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n\r\n  <div class=\"col-xl-8 col-lg-12 col-md-12 col-sm-12\">\r\n\r\n    <app-patient-data *ngIf=\"patientData\" [patientData]=\"patientData\" (editPatientData)=\"updatePatientData($event)\"></app-patient-data>\r\n\r\n  </div>\r\n\r\n  <div class=\"col-xl-4 col-lg-12 col-md-12 col-sm-12\">\r\n\r\n    <app-patient-sessions *ngIf=\"patientSessions\" [patientSessions]=\"patientSessions\"></app-patient-sessions>\r\n\r\n  </div>\r\n\r\n</div>"
+module.exports = "<div class=\"row\">\r\n\r\n  <div class=\"col-xl-7 col-lg-12 col-md-12 col-sm-12\">\r\n\r\n    <app-patient-data *ngIf=\"patientData\" [patientData]=\"patientData\" (editPatientData)=\"updatePatientData($event)\"></app-patient-data>\r\n\r\n  </div>\r\n\r\n  <div class=\"col-xl-5 col-lg-12 col-md-12 col-sm-12\">\r\n\r\n    <app-patient-sessions *ngIf=\"patientSessions\" [patientSessions]=\"patientSessions\" [firstListedSessions]=\"firstListedSessions\"></app-patient-sessions>\r\n\r\n  </div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -2106,12 +2253,22 @@ var PatientsShowComponent = /** @class */ (function () {
         this.activatedRoute = activatedRoute;
         this.patientsService = patientsService;
         this.shareData = shareData;
+        this.firstListedSessions = 8;
     }
     PatientsShowComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.shareData.sessionLimitEvent
+            .subscribe(function (res) {
+            if (res)
+                _this.loadData(null);
+        });
+        this.loadData(this.firstListedSessions);
+    };
+    PatientsShowComponent.prototype.loadData = function (sessions_limit) {
+        var _this = this;
         this.shareData.activateLoadingScreen(true);
         this.activatedRoute.params.subscribe(function (res) {
-            _this.patientsService.get(res.id).subscribe(function (res) {
+            _this.patientsService.get(res.id, { sessions_limit: sessions_limit }).subscribe(function (res) {
                 _this.shareData.activateLoadingScreen(false);
                 _this.patientData = res;
                 _this.patientSessions = res.Sessions;
@@ -2133,7 +2290,9 @@ var PatientsShowComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./patients-show.component.css */ "./src/app/components/pages/patients/patients-show-wrapper/patients-show.component.css")],
             animations: [src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_3__["showup"]]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], src_app_services__WEBPACK_IMPORTED_MODULE_0__["PatientsService"], src_app_services__WEBPACK_IMPORTED_MODULE_0__["ShareDataService"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
+            src_app_services__WEBPACK_IMPORTED_MODULE_0__["PatientsService"],
+            src_app_services__WEBPACK_IMPORTED_MODULE_0__["ShareDataService"]])
     ], PatientsShowComponent);
     return PatientsShowComponent;
 }());
@@ -2149,7 +2308,7 @@ var PatientsShowComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".wrapper {\r\n  position: relative;\r\n  width: 100%;\r\n}\r\n\r\n.responsive {\r\n  display: none;\r\n}\r\n\r\n.sidebar-panel{\r\n  overflow-x: hidden;\r\n  background-color: var(--secondary-color);\r\n  width: 200px;\r\n  position: absolute;\r\n  height: 100%;\r\n  min-height: 100vh;\r\n  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);\r\n  transition: all 500ms;\r\n  z-index: 998;\r\n}\r\n\r\n.main-panel{\r\n  width: 100%;\r\n  flex: 1;\r\n  padding: 20px 20px 20px 220px; /*top right bottom left*/\r\n}\r\n\r\n.page-title {\r\n  font-size: 1.1375rem;\r\n  font-weight: 600!important;\r\n  line-height: 1.5;\r\n  text-transform: uppercase;\r\n  letter-spacing: 1.01px;\r\n}\r\n\r\n@media only screen and (max-width: 768px) {\r\n  .responsive {\r\n    display: block;\r\n  }\r\n\r\n  .main-panel{\r\n    padding: 20px 20px 20px 20px; /*top right bottom left*/\r\n  }\r\n\r\n  .page-title {\r\n    text-align: center;\r\n  }\r\n\r\n}\r\n\r\n#sidebarBtn {\r\n  position: fixed;\r\n  top: 10px;\r\n  left: 10px;\r\n  z-index: 99;\r\n  font-size: 18px;\r\n  border: none;\r\n  outline: none;\r\n  background-color: var(--secondary-color);\r\n  border-radius: 100%;\r\n  color: white;\r\n  cursor: pointer;\r\n  padding: 10px 15px;\r\n  box-shadow: 0 8px 10px -1px rgba(0, 0, 0, 0.42);\r\n\r\n  transition: all 500ms;\r\n}\r\n\r\n.btnChangePosition {\r\n  left: 11.5em!important;\r\n}\r\n\r\n/*-------LoadingScreen-------*/\r\n\r\n.loading {\r\n  position: fixed;\r\n  z-index: 999;\r\n  height: 2em;\r\n  width: 2em;\r\n  overflow: show;\r\n  margin: auto;\r\n  top: 0;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n}\r\n\r\n/* Transparent Overlay */\r\n\r\n.loading:before {\r\n  content: '';\r\n  display: block;\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n    background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));\r\n\r\n  background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));\r\n}\r\n\r\n/* :not(:required) hides these rules from IE9 and below */\r\n\r\n.loading:not(:required) {\r\n  /* hide \"loading...\" text */\r\n  font: 0/0 a;\r\n  color: transparent;\r\n  text-shadow: none;\r\n  background-color: transparent;\r\n  border: 0;\r\n}\r\n\r\n.loading:not(:required):after {\r\n  content: '';\r\n  display: block;\r\n  font-size: 10px;\r\n  width: 1em;\r\n  height: 1em;\r\n  margin-top: -0.5em;\r\n  -webkit-animation: spinner 1500ms infinite linear;\r\n  animation: spinner 1500ms infinite linear;\r\n  border-radius: 0.5em;\r\nbox-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;\r\n}\r\n\r\n/* Animation */\r\n\r\n@-webkit-keyframes spinner {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(360deg);\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n\r\n@keyframes spinner {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(360deg);\r\n    transform: rotate(360deg);\r\n  }\r\n}"
+module.exports = ".wrapper {\r\n  position: relative;\r\n  width: 100%;\r\n}\r\n\r\n.responsive {\r\n  display: none;\r\n}\r\n\r\n.sidebar-panel{\r\n  overflow-x: hidden;\r\n  background-color: var(--secondary-color);\r\n  width: 200px;\r\n  position: absolute;\r\n  height: 100%;\r\n  min-height: 100vh;\r\n  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);\r\n  transition: all 500ms;\r\n  z-index: 998;\r\n}\r\n\r\n.main-panel{\r\n  width: 100%;\r\n  flex: 1;\r\n  padding: 20px 20px 20px 220px; /*top right bottom left*/\r\n}\r\n\r\n.page-title {\r\n  font-size: 1.1375rem;\r\n  font-weight: 600!important;\r\n  line-height: 1.5;\r\n  text-transform: uppercase;\r\n  letter-spacing: 1.01px;\r\n}\r\n\r\n@media only screen and (max-width: 768px) {\r\n  .responsive {\r\n    display: block;\r\n  }\r\n\r\n  .main-panel{\r\n    padding: 20px 20px 20px 20px; /*top right bottom left*/\r\n  }\r\n\r\n  .page-title {\r\n    text-align: center;\r\n  }\r\n\r\n}\r\n\r\n#sidebarBtn {\r\n  position: fixed;\r\n  top: 10px;\r\n  left: 10px;\r\n  z-index: 99;\r\n  font-size: 18px;\r\n  border: none;\r\n  outline: none;\r\n  background-color: var(--secondary-color);\r\n  border-radius: 100%;\r\n  color: white;\r\n  cursor: pointer;\r\n  padding: 10px 15px;\r\n  box-shadow: 0 8px 10px -1px rgba(0, 0, 0, 0.42);\r\n\r\n  transition: all 500ms;\r\n}\r\n\r\n.btnChangePosition {\r\n  left: 11.5em!important;\r\n}\r\n\r\n/*-------LoadingScreen-------*/\r\n\r\n.loading {\r\n  position: fixed;\r\n  z-index: 999;\r\n  height: 2em;\r\n  width: 2em;\r\n  overflow: show;\r\n  margin: auto;\r\n  top: 0;\r\n  left: 0;\r\n  bottom: 0;\r\n  right: 0;\r\n}\r\n\r\n/* Transparent Overlay */\r\n\r\n.loading:before {\r\n  content: '';\r\n  display: block;\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n    background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));\r\n\r\n  background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));\r\n}\r\n\r\n@keyframes lds-eclipse {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  50% {\r\n    -webkit-transform: rotate(180deg);\r\n    transform: rotate(180deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(360deg);\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n\r\n@-webkit-keyframes lds-eclipse {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  50% {\r\n    -webkit-transform: rotate(180deg);\r\n    transform: rotate(180deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(360deg);\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n\r\n.lds-eclipse {\r\n  position: relative;\r\n}\r\n\r\n.lds-eclipse div {\r\n  position: absolute;\r\n  -webkit-animation: lds-eclipse 0.7s linear infinite;\r\n  animation: lds-eclipse 0.7s linear infinite;\r\n  width: 160px;\r\n  height: 160px;\r\n  top: 20px;\r\n  left: 20px;\r\n  border-radius: 50%;\r\n  box-shadow: 0 4px 0 0 #6e6e6e;\r\n  -webkit-transform-origin: 80px 82px;\r\n  transform-origin: 80px 82px;\r\n}\r\n\r\n.lds-eclipse {\r\n  width: 84px !important;\r\n  height: 84px !important;\r\n  -webkit-transform: translate(-100px, -110px) scale(0.42) translate(42px, 42px);\r\n  transform: translate(-100px, -110px) scale(0.42) translate(42px, 42px);\r\n}"
 
 /***/ }),
 
@@ -2160,7 +2319,7 @@ module.exports = ".wrapper {\r\n  position: relative;\r\n  width: 100%;\r\n}\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\r\n\r\n    <button *ngIf=\"windowSize < 768\" (click)=\"sidebarOpened = !sidebarOpened\" [ngClass]=\"{'btnChangePosition': sidebarOpened}\"\r\n        class=\"btn\" id=\"sidebarBtn\"><i class=\"fa fa-bars\"></i></button>\r\n\r\n    <div [@showSidebar] *ngIf=\"sidebarOpened || windowSize > 768\" class=\"sidebar-panel\" id=\"sidebar\">\r\n        <app-sidebar></app-sidebar>\r\n    </div>\r\n\r\n    <div class=\"main-panel\" id=\"main-panel\">\r\n        <h4 class=\"page-title\">{{pageTitle}}</h4>\r\n\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n\r\n    <div *ngIf=\"showLoadingScreen | async\" class=\"loading\">Loading&#8230;</div>\r\n\r\n</div>"
+module.exports = "<div class=\"wrapper\">\r\n\r\n    <button *ngIf=\"windowSize < 768\" (click)=\"sidebarOpened = !sidebarOpened\" [ngClass]=\"{'btnChangePosition': sidebarOpened}\"\r\n        class=\"btn\" id=\"sidebarBtn\"><i class=\"fa fa-bars\"></i></button>\r\n\r\n    <div [@showSidebar] *ngIf=\"sidebarOpened || windowSize > 768\" class=\"sidebar-panel\" id=\"sidebar\">\r\n        <app-sidebar></app-sidebar>\r\n    </div>\r\n\r\n    <div class=\"main-panel\" id=\"main-panel\">\r\n        <h4 class=\"page-title\">{{pageTitle}}</h4>\r\n\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n\r\n    <div [@fade] *ngIf=\"showLoadingScreen | async\" class=\"lds-css ng-scope loading\">\r\n        <div style=\"width:50%;height:50%\" class=\"lds-eclipse\">\r\n            <div></div>\r\n        </div>\r\n    </div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -2234,7 +2393,7 @@ var RootComponent = /** @class */ (function () {
             selector: 'app-root',
             template: __webpack_require__(/*! ./root.component.html */ "./src/app/components/root/root.component.html"),
             styles: [__webpack_require__(/*! ./root.component.css */ "./src/app/components/root/root.component.css")],
-            animations: [_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_2__["showSidebar"]]
+            animations: [_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_2__["showSidebar"], _helpers_animations_animations__WEBPACK_IMPORTED_MODULE_2__["fade"]]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_0__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_0__["ActivatedRoute"], src_app_services__WEBPACK_IMPORTED_MODULE_3__["ShareDataService"]])
     ], RootComponent);
@@ -2340,6 +2499,118 @@ var SidebarComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [src_app_services__WEBPACK_IMPORTED_MODULE_1__["AuthService"]])
     ], SidebarComponent);
     return SidebarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/directives/modal.directive.ts":
+/*!***********************************************!*\
+  !*** ./src/app/directives/modal.directive.ts ***!
+  \***********************************************/
+/*! exports provided: ModalDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalDirective", function() { return ModalDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ModalDirective = /** @class */ (function () {
+    function ModalDirective() {
+        this.alignItems = 'center';
+        this.justifyContent = 'center';
+        this.verticalAlign = 'middle';
+        this.minHeight = '100%';
+        this.maxWidth = '100%';
+        this.width = '100%';
+        this.position = 'fixed';
+        this.zIndex = '999';
+        this.background = 'rgba(0, 0, 0, .6)';
+        this.left = '0';
+        this.top = '0';
+        this.bottom = '0';
+        this.right = '0';
+        this.display = 'flex';
+        this.overflowY = 'scroll';
+    }
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.align-items'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "alignItems", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.justify-content'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "justifyContent", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.vertical-align'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "verticalAlign", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.min-height'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "minHeight", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.max-width'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "maxWidth", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.width'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "width", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.position'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "position", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.z-index'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "zIndex", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.background'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "background", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.left'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "left", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.top'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "top", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.bottom'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "bottom", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.right'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "right", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.display'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "display", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostBinding"])('style.overflow-y'),
+        __metadata("design:type", Object)
+    ], ModalDirective.prototype, "overflowY", void 0);
+    ModalDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: '[appModal]'
+        }),
+        __metadata("design:paramtypes", [])
+    ], ModalDirective);
+    return ModalDirective;
 }());
 
 
@@ -2627,6 +2898,59 @@ var ListComponent = /** @class */ (function () {
     return ListComponent;
 }());
 
+
+
+/***/ }),
+
+/***/ "./src/app/helpers/validators.ts":
+/*!***************************************!*\
+  !*** ./src/app/helpers/validators.ts ***!
+  \***************************************/
+/*! exports provided: PasswordValidation, emailValidator, nameValidator, cepValidator */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PasswordValidation", function() { return PasswordValidation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "emailValidator", function() { return emailValidator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nameValidator", function() { return nameValidator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cepValidator", function() { return cepValidator; });
+/* harmony import */ var src_app_app_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/app.utils */ "./src/app/app.utils.ts");
+
+var PasswordValidation = /** @class */ (function () {
+    function PasswordValidation() {
+    }
+    PasswordValidation.MatchPassword = function (AC) {
+        var password = AC.get('password').value;
+        var confirmPassword = AC.get('confirmPassword').value;
+        if (password != confirmPassword) {
+            AC.get('confirmPassword').setErrors({ MatchPassword: true });
+        }
+        else {
+            return null;
+        }
+    };
+    return PasswordValidation;
+}());
+
+var validEmail = function (email) {
+    return (!email) ? true : src_app_app_utils__WEBPACK_IMPORTED_MODULE_0__["EMAIL_REGEX"].test(email);
+};
+var validName = function (name) {
+    return (!name) ? true : src_app_app_utils__WEBPACK_IMPORTED_MODULE_0__["NAME_REGEX"].test(name);
+};
+var validCep = function (name) {
+    return (!name) ? true : src_app_app_utils__WEBPACK_IMPORTED_MODULE_0__["VIA_CEP_REGEX"].test(name);
+};
+function emailValidator(control) {
+    return validEmail(control.value) ? null : { 'emailValidator': true };
+}
+function nameValidator(control) {
+    return validName(control.value) ? null : { 'nameValidator': true };
+}
+function cepValidator(control) {
+    return validCep(control.value) ? null : { 'cepValidator': true };
+}
 
 
 /***/ }),
@@ -3027,6 +3351,9 @@ var PatientsService = /** @class */ (function (_super) {
     PatientsService.prototype.getPatientsTotalCount = function () {
         return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].API_URL + "/api/" + this.entity + "/counter");
     };
+    PatientsService.prototype.postCreateSession = function (session) {
+        return this.http.post(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].API_URL + "/api/" + this.entity + "/" + session.patients_id + "/create-session", session);
+    };
     PatientsService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
@@ -3174,10 +3501,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var ShareDataService = /** @class */ (function () {
     function ShareDataService() {
         this.loadingScreenEvent = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
+        this.sessionLimitEvent = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subject"]();
     }
     ShareDataService.prototype.activateLoadingScreen = function (activate) {
         var _this = this;
         setTimeout(function () { _this.loadingScreenEvent.next(activate); });
+    };
+    ShareDataService.prototype.watchSessionLimit = function (changed) {
+        this.sessionLimitEvent.next(changed);
     };
     ShareDataService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
