@@ -58,9 +58,9 @@
 }
 
 #sidebarBtn {
-  position: fixed;
-  top: 10px;
-  left: 10px;
+  position: absolute;
+  top: 6.5px;
+  left: 6.5px;
   z-index: 99;
   font-size: 18px;
   border: none;
