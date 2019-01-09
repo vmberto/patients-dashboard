@@ -13,21 +13,38 @@ export class PatientsShowComponent implements OnInit {
 
   public patientData: any;
   public patientSessions: any;
+  public firstListedSessions = 8;
 
-  constructor(private activatedRoute: ActivatedRoute, private patientsService: PatientsService, private shareData: ShareDataService) { }
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private patientsService: PatientsService,
+    private shareData: ShareDataService) { }
 
   ngOnInit() {
+
+    this.shareData.sessionLimitEvent
+      .subscribe(
+        res => {
+          if (res) this.loadData(null);
+        }
+      );
+
+    this.loadData(this.firstListedSessions);
+
+  }
+
+  loadData(sessions_limit: number): void {
 
     this.shareData.activateLoadingScreen(true);
 
     this.activatedRoute.params.subscribe(res => {
 
-      this.patientsService.get(res.id).subscribe(
+      this.patientsService.get(res.id, { sessions_limit }).subscribe(
         (res) => {
           this.shareData.activateLoadingScreen(false);
           this.patientData = res;
           this.patientSessions = res.Sessions;
-
         },
         () => {
           this.shareData.activateLoadingScreen(false);
@@ -35,7 +52,6 @@ export class PatientsShowComponent implements OnInit {
         });
 
     });
-
   }
 
   public updatePatientData($event) {

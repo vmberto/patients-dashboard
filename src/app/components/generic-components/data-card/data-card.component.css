@@ -47,3 +47,58 @@ a{text-decoration: none}
 .fa-spinner {
   color: var(--dark-font-color);
 }
+
+/* .card {
+  cursor: pointer;
+  background: var(--darker-color);
+  margin: 10px;
+  overflow: hidden;
+  min-height: 98px;
+  box-shadow: var(--box-shadow);
+  transition: all .9s;
+}
+
+.card:hover {
+  box-shadow: 0 10px 30px 4px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);;
+}
+
+.card-body {
+  padding: .79rem;
+}
+.card-category {
+  font-weight: 700!important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--font-subcolor)!important;
+  margin-bottom: 4px;
+}
+
+.info-icon {
+  margin: 10px;
+  background: #0066ff;
+  background-image: -webkit-gradient(linear,right top,left bottom,from(#0066ff),color-stop(#0052ce),to(#0066ff));
+  background-image: linear-gradient(to bottom left,#0066ff,#0052ce,#0066ff);
+  background-size: 210% 210%;
+  background-position: 100% 0;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background: #0066ff;
+  background-image: -webkit-gradient(linear,right top,left bottom,from(#0066ff),color-stop(#0052ce),to(#0066ff));
+  background-image: linear-gradient(to bottom left,#0066ff,#0052ce,#0066ff);
+  background-size: 210% 210%;
+  background-position: 100% 0;
+}
+
+.info-icon i {
+  color: #fff;
+  font-size: 1.7em;
+  padding: 14.2px 13px;
+}
+.card-footer{
+  padding: .55rem .55rem .55rem 1.2rem;
+}
+.card-footer-title {
+  margin: 0;
+  letter-spacing: 1px;
+} */

@@ -1,6 +1,7 @@
 ul {
     margin: 0;
-    transform: translateY(48%);
+    transform: translateY(44%);
+
 }
 
 ul li {
@@ -14,7 +15,7 @@ ul li {
     border-bottom: 4px transparent;
     border-radius: 5px 5px 0 0;
     color: var(--font-subcolor)!important;
-    padding: 5px 10px 5px 10px;
+    padding: 10px 10px 5px 10px;
     cursor: pointer;
     transition: all .5s;
     font-weight: 600;
@@ -40,20 +41,18 @@ ul li {
 }
 @media only screen and (max-width: 576px) {
     ul {
-        transform: translateY(54%);
+        transform: translateY(68%);
     }
     .tab-name {
         font-size: .75rem
     }
 }
 
-@media only screen and (max-width: 386px) {
-    ul {
-        transform: translateY(76%);
-    }
+@media only screen and (max-width: 368px) {
+
     .tab-name {
         font-size: .65rem;
-        padding: 0;
+        padding-bottom: 5px;
     }
     
     .tab-active {

@@ -1,0 +1,76 @@
+<div appModal>
+
+  <div class="details-modal">
+
+    <div class="modal-head">
+      <h4 class="modal-title">
+        Registrar Sessão
+        <button (click)="close()" class="close-btn btn btn-primary btn-sm"><i class="fa fa-times"></i></button>
+      </h4>
+    </div>
+
+    <div class="modal-body">
+
+      <form [formGroup]="sessionForm" (submit)="submitSessionData()">
+
+        <div class="form-row">
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Humor</label>
+              <select formControlName="humour" type="text" class="form-control">
+                <option value="1">Triste</option>
+                <option value="2">Raiva</option>
+                <option value="3">Medo</option>
+                <option value="4">Feliz</option>
+                <option value="5">Ansioso</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="form-row">
+              <div class="col-md-12">
+                <label>Atendimento</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input formControlName="attendance_at_date" type="date" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input formControlName="attendance_at_time" type="time" class="form-control">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        
+
+        <div class="form-row">
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Descrição</label>
+              <textarea formControlName="description" type="text" rows="5" class="form-control" maxlength="255"></textarea>
+            </div>
+          </div>
+
+        </div>
+
+        <button [disabled]="creatingSession" type="submit" class="btn btn-success pull-right">{{creatingSession ?
+          'Criando' : 'Criar'}} <i *ngIf="creatingSession" class="fa fa-spinner fa-spin"></i></button>
+
+      </form>
+
+
+    </div>
+
+
+  </div>
+
+</div>

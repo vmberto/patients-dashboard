@@ -13,6 +13,10 @@
         <router-outlet></router-outlet>
     </div>
 
-    <div *ngIf="showLoadingScreen | async" class="loading">Loading&#8230;</div>
+    <div [@fade] *ngIf="showLoadingScreen | async" class="lds-css ng-scope loading">
+        <div style="width:50%;height:50%" class="lds-eclipse">
+            <div></div>
+        </div>
+    </div>
 
 </div>

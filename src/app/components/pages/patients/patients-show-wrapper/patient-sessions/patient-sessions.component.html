@@ -1,6 +1,9 @@
 <div class="panel" style="padding: 0;">
   <div class="panel-head">
-    <h4 class="panel-title">Sessões</h4>
+    <h4 class="panel-title">
+      Sessões
+      <button (click)="changeModalState('open')" class="btn btn-primary btn-sm">Registrar</button>
+    </h4>
   </div>
   <div class="panel-body" style="padding: 25px;">
 
@@ -17,16 +20,20 @@
         'expansive-panel-bad': session.humour_id === 1 || session.humour_id === 2 || session.humour_id === 3
       }">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-2">
           <h4 id="humour">{{session.Humour.title}}</h4>
         </div>
-  
-        <div class="col-sm-4" *ngIf="patientSessions[patientSessions.length - 1] == session">
-          <h4 id="first-session">Primeira Sessão</h4>
+
+
+
+        <div class="col-sm-5">
+          <h4 id="first-session" style="text-align: center">{{(session.attendance_at | date:'EEEE')}}</h4>
         </div>
-  
-        <div class="col-sm-4" [ngClass]="{'offset-sm-4': patientSessions[patientSessions.length - 1] != session}"> <!--offset-md-4-->
-          <h4 id="attendance_at">{{ (session.attendance_at | date:'dd/MM/yyyy') + ' - ' + (session.attendance_at | date:'HH:mm') }}</h4>
+
+        <div class="col-sm-5">
+          <!--offset-md-4-->
+          <h4 id="attendance_at">{{ (session.attendance_at | date:'dd/MM/yyyy') + ' ' + (session.attendance_at |
+            date:'HH:mm') }}</h4>
         </div>
 
       </div>
@@ -46,5 +53,15 @@
       <span>Não houve sessões com este paciente</span>
     </div>
 
+
+    <div *ngIf="patientSessions.length === firstListedSessions" class="mt-4" style="text-align: center">
+      <button class="btn btn-primary btn-md" (click)="showAllSessions()">Carregar todas as Sessões</button>
+    </div>
+
+
   </div>
+
 </div>
+
+
+<app-create-session *ngIf="modalState === 'open'" (closeModal)="changeModalState($event)"></app-create-session>

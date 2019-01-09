@@ -1,10 +1,14 @@
 import { AnamnesisIndexComponent } from './components/pages/anamnesis/anamnesis-index.component';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 import { routing } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Ng2OdometerModule } from 'ng2-odometer';
+
 
 import { TokenInterceptor, AuthGuardService } from './services';
 
@@ -34,8 +38,9 @@ import {
 
 // Directives
 import { ModalDirective } from './directives/modal.directive';
+import { CreateSessionComponent } from './components/pages/patients/patients-show-wrapper/patient-sessions/create-session/create-session.component';
 
-
+registerLocaleData(localePt);
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +62,9 @@ import { ModalDirective } from './directives/modal.directive';
     PatientSessionsComponent,
     AnamnesisEditComponent,
     AnamnesisIndexComponent,
-    PatientsIndexComponent
+    PatientsIndexComponent,
+    CreateSessionComponent,
+    ModalDirective
   ],
   imports: [
     BrowserModule,
@@ -66,6 +73,7 @@ import { ModalDirective } from './directives/modal.directive';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    Ng2OdometerModule.forRoot()
   ],
   providers: [
     AuthGuardService,
@@ -74,6 +82,8 @@ import { ModalDirective } from './directives/modal.directive';
       useClass: TokenInterceptor,
       multi: true
     },
+    { provide: LOCALE_ID, useValue: 'pt'}
+
   ],
   bootstrap: [AppComponent]
 })

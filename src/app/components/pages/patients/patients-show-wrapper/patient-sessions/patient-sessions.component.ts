@@ -1,3 +1,4 @@
+import { ShareDataService } from 'src/app/services';
 import { sortByKey } from 'src/app/app.utils';
 import { Component, OnInit, Input } from '@angular/core';
 import { collapse } from 'src/app/helpers/animations/animations';
@@ -11,10 +12,11 @@ import { collapse } from 'src/app/helpers/animations/animations';
 export class PatientSessionsComponent implements OnInit {
 
   @Input() patientSessions;
+  @Input() firstListedSessions;
 
-  public date = new Date();
+  public modalState: string;
 
-  constructor() { }
+  constructor(private shareDataService: ShareDataService) { }
 
   ngOnInit() {
     this.patientSessions.map(patient => {
@@ -22,6 +24,14 @@ export class PatientSessionsComponent implements OnInit {
     });
 
     this.patientSessions = sortByKey(this.patientSessions, 'created_at');
+  }
+
+  public changeModalState(state: string): void {
+    this.modalState = state;
+  }
+
+  public showAllSessions(): void {
+    this.shareDataService.watchSessionLimit(true);
   }
 
 }

@@ -45,3 +45,7 @@ export const isObjectEmpty = (obj) => {
   }
   return true;
 };
+
+export const EMAIL_REGEX = /^(([^<>()\[\]\.,;:\s@\']+(\.[^<>()\[\]\.,;:\s@\']+)*)|(\'.+\'))@(([^<>()[\]\.,;:\s@\']+\.)+[^<>()[\]\.,;:\s@\']{2,})/;
+export const NAME_REGEX = /^(?!\s)[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\s]{2,25}$/;
+export const VIA_CEP_REGEX = /^https:\/\/viacep.com.br(\/[(a-zA-z?=0-9?=\/)]+)+$/;
