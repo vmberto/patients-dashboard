@@ -7,7 +7,7 @@
         <app-sidebar></app-sidebar>
     </div>
 
-    <div id="main-panel" class="main-panel" [ngClass]="{'mobile-blur': sidebarOpened && windowSize < 768}">
+    <div id="main-panel" class="main-panel">
         <h4 class="page-title">{{pageTitle}}</h4>
         <router-outlet></router-outlet>
     </div>
