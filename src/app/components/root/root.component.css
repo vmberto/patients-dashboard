@@ -30,6 +30,20 @@
   width: 100%;
   flex: 1;
   padding: 20px 20px 20px 220px; /*top right bottom left*/
+  transition: all .5s;
+  -webkit-filter: blur(0);
+  -moz-filter: blur(0);
+  -o-filter: blur(0);
+  -ms-filter: blur(0);
+  filter: blur(0); 
+}
+
+.mobile-blur {
+  -webkit-filter: blur(.15rem);
+  -moz-filter: blur(.15rem);
+  -o-filter: blur(.15rem);
+  -ms-filter: blur(.15rem);
+  filter: blur(.15rem); 
 }
 
 .page-title {

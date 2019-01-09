@@ -1,4 +1,4 @@
-# Angular 7 Dashboard Boilerplate
+# Patients Dashboard - Angular 7
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 

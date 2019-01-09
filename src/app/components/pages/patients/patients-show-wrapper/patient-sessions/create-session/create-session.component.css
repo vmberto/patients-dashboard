@@ -2,7 +2,7 @@
 .details-modal {
     height: auto;
     background: var(--secondary-color);
-    width: 50%;;
+    width: 50%;
     border-radius: 12px;
     box-shadow: var(--box-shadow);
     position: absolute;
@@ -53,6 +53,15 @@ ul li {
 .close-btn {
     float: right;
 }
+
+
+@media only screen and (max-width: 1000px) {
+
+    .details-modal {
+        width: 80%;
+    }
+}
+
 
 @media only screen and (max-width: 516px) {
     .close-btn {
