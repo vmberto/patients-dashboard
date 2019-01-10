@@ -13,12 +13,10 @@ import { ShareDataService } from 'src/app/services';
 
 export class RootComponent implements OnInit {
 
-  public windowSize: number = window.screen.width;
-  public sidebarOpened = false;
-
-  public showLoadingScreen: Observable<boolean>;
-
   public pageTitle: string;
+  public showLoadingScreen: Observable<boolean>;
+  public windowSize = window.screen.width;
+  public sidebarOpened = false;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private shareData: ShareDataService) {
 
@@ -34,28 +32,22 @@ export class RootComponent implements OnInit {
 
   }
 
-
   ngOnInit() {
-
     this.showLoadingScreen = this.shareData.loadingScreenEvent;
-
-
-  }
-
-  public openSidebar() {
-    this.sidebarOpened = !this.sidebarOpened;
   }
 
   @HostListener('window:resize', ['$event'])
   onresize() {
     this.windowSize = window.innerWidth;
-
     if (this.windowSize > 768) {
       this.sidebarOpened = true;
     } else if (this.windowSize <= 768) {
       this.sidebarOpened = false;
     }
+  }
 
+  public openSidebar(): void {
+    this.sidebarOpened = !this.sidebarOpened;
   }
 
 

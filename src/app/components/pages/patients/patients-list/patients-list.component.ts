@@ -27,15 +27,10 @@ export class PatientsListComponent extends ListComponent implements OnInit {
   ];
 
   public TABS = [
-    { title: 'Ativo', value: 1 },
-    { title: 'Inativo', value: 2 },
-    { title: 'De Alta', value: 3 },
+    { title: 'Ativos',   value: 1 },
+    { title: 'Inativos', value: 2 },
+    { title: 'De Alta',  value: 3 },
   ]
-
-  // public tableRowActions = [
-  //   { title: 'Ver Paciente', icon: 'fa-search', color: 'btn-primary', emits: 'show-action'},
-  //   { title: 'Excluir Paciente', icon: 'fa-trash', color: 'btn-danger', emits: 'delete-action'}
-  // ];
 
   constructor(private patientsService: PatientsService,
     private shareData: ShareDataService,

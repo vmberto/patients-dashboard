@@ -1,21 +1,18 @@
 <div class="wrapper">
 
-    <button *ngIf="windowSize < 768" (click)="sidebarOpened = !sidebarOpened" [ngClass]="{'btnChangePosition': sidebarOpened}"
+    <button *ngIf="windowSize < 768" (click)="openSidebar()" [ngClass]="{'btnChangePosition': sidebarOpened}"
         class="btn" id="sidebarBtn"><i class="fa fa-bars"></i></button>
 
     <div [@showSidebar] *ngIf="sidebarOpened || windowSize > 768" class="sidebar-panel" id="sidebar">
         <app-sidebar></app-sidebar>
     </div>
 
-    <div id="main-panel" class="main-panel">
+    <div class="main-panel" id="main-panel">
         <h4 class="page-title">{{pageTitle}}</h4>
+
         <router-outlet></router-outlet>
     </div>
 
-    <div [@fade] *ngIf="showLoadingScreen | async" class="lds-css ng-scope loading">
-        <div style="width:50%;height:50%" class="lds-eclipse">
-            <div></div>
-        </div>
-    </div>
+    <div [@fade] *ngIf="showLoadingScreen | async" class="loading">Loading&#8230;</div>
 
 </div>

@@ -15,7 +15,7 @@
 
 <div class="panel">
 
-  <button routerLink="create" class="btn btn-primary">Adicionar Paciente</button>
+  <button routerLink="create" class="btn btn-primary">Cadastrar Paciente</button>
 
   <div class="panel-body">
     <div class="table-wrapper" style="margin: 0">
@@ -28,14 +28,14 @@
             <input type="text" class="form-control" placeholder="Buscar" formControlName="search">
           </div>
 
-          <div class="col-md-3 mb-3 mt-1">
+          <div class="col-md-3 mb-3 mt-3">
             <select type="text" class="custom-select" formControlName="health_insurance">
               <option value="" disabled selected>Plano de Saúde</option>
               <option *ngFor="let filter of tableMetaData.filterConfig.health_insurances" [value]="filter.id">{{filter.name}}</option>
             </select>
           </div>
 
-          <div class="col-md-3 mb-3 mt-2">
+          <div class="col-md-3 mb-3 mt-3">
             <button class="btn full-width-mobile btn-primary mr-2 mb-1" type="submit"><i class="fa fa-search"></i></button>
             <button *ngIf="clearFiltersBtn" class="btn full-width-mobile btn-warning mr-2 mb-1" type="button" (click)="clearFilters()"><i class="fa fa-times"></i></button>
           </div>
