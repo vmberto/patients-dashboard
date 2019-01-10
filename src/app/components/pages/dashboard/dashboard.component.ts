@@ -21,6 +21,8 @@ export class DashboardComponent implements OnInit {
     public chartData: number[] = [];
     public colors: string[] = [];
 
+    public totalHoursWorked;
+
     constructor(private patientsService: PatientsService, private healthInsuranceService: HealthInsurancesService) { }
 
 
@@ -29,56 +31,54 @@ export class DashboardComponent implements OnInit {
 
         this.patientsCounter = this.patientsService.getPatientsTotalCount().pipe(map(res => res.data));
 
-        this.healthInsuranceService.getPatientsRelation().subscribe(
-            res => {
-                this.labels = res.data.map(data => data.name);
-                res.data.forEach((data) => {
-                    this.chartData.push(data.Patients.length);
-                });
-                this.labels.forEach(() => {
-                    this.colors.push(generateRandomColor());
-                });
+        this.healthInsuranceService.getPatientsRelation()
+            .subscribe(
+                res => {
+                    this.labels = res.data.map(data => data.name);
+                    res.data.forEach((data) => {
+                        this.chartData.push(data.Patients.length);
+                    });
+                    this.labels.forEach(() => {
+                        this.colors.push(generateRandomColor());
+                    });
 
-                this.myChart = new Chart('myChart', {
-                    type: 'doughnut',
-                    data: {
-                        labels: this.labels,
-                        datasets: [{
-                            data: this.chartData,
-                            backgroundColor: this.colors,
-                            borderColor: this.colors,
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        legend: {
-                            fullWidth: true,
-                            display: true,
-                            poisition: 'right',
-                            labels: {
-                                fontColor: 'white',
-                                fontSize: 15
-                            }
+                    this.myChart = new Chart('myChart', {
+                        type: 'doughnut',
+                        data: {
+                            labels: this.labels,
+                            datasets: [{
+                                data: this.chartData,
+                                backgroundColor: this.colors,
+                                borderColor: this.colors,
+                                borderWidth: 1
+                            }]
                         },
-                    }
+                        options: {
+                            legend: {
+                                fullWidth: true,
+                                display: true,
+                                poisition: 'right',
+                                labels: {
+                                    fontColor: 'white',
+                                    fontSize: 15
+                                }
+                            },
+                        }
+                    });
                 });
-            });
 
 
         let startDate: any = moment().startOf('week').subtract(1, 'week');
         let endDate: any = moment().endOf('week').subtract(1, 'week');
-
-
         const lastWeek = {
             min_date: moment(startDate).format('YYYY-MM-DD'),
             max_date: moment(endDate).format('YYYY-MM-DD')
         }
 
-
         this.patientsService.getLastWeekSessions(lastWeek).subscribe(
             res => {
-                const sessionsNumber = this.enumerateDaysBetweenDates(startDate, endDate).map(day => day = this.getNumbers(res.sessions, day));
-
+                const sessionsNumber = this.enumerateDaysBetweenDates(startDate, endDate).map(day => day = this.getNumbers(res.data, day));
+                
                 this.lastWeekSessionsChart = new Chart('lastWeekSessionsChart', {
                     type: 'line',
                     data: {

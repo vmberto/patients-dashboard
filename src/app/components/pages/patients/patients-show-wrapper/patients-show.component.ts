@@ -46,7 +46,7 @@ export class PatientsShowComponent implements OnInit {
           this.shareData.activateLoadingScreen(false);
           this.patientData = res;
           this.patientSessions = res.Sessions;
-          this.patientSessions = sortByKey(this.patientSessions, 'created_at');
+          sortByKey(this.patientSessions, 'created_at');
 
         },
         () => {
