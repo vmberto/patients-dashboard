@@ -1,7 +1,8 @@
-import { PatientsService, ShareDataService} from 'src/app/services';
+import { PatientsService, ShareDataService } from 'src/app/services';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { showup } from 'src/app/helpers/animations/animations';
+import { sortByKey } from 'src/app/app.utils';
 
 @Component({
   selector: 'app-show',
@@ -45,6 +46,8 @@ export class PatientsShowComponent implements OnInit {
           this.shareData.activateLoadingScreen(false);
           this.patientData = res;
           this.patientSessions = res.Sessions;
+          this.patientSessions = sortByKey(this.patientSessions, 'created_at');
+
         },
         () => {
           this.shareData.activateLoadingScreen(false);

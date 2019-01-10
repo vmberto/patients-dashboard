@@ -23,7 +23,6 @@ export class PatientSessionsComponent implements OnInit {
       patient.opened = false;
     });
 
-    this.patientSessions = sortByKey(this.patientSessions, 'created_at');
   }
 
   public changeModalState(state: string): void {

@@ -8,4 +8,10 @@ export const ROUTES = [
 
         ]
     },
+    // {
+    //     id: 'system', title: 'Sistema', icon: 'fa fa-tv', subMenuOpen: false, children: [
+    //         { path: '/home/users', id: 'users', title: 'Usuários', icon: 'fa fa-users' },
+
+    //     ]
+    // },
 ];

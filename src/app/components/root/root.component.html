@@ -13,6 +13,6 @@
         <router-outlet></router-outlet>
     </div>
 
-    <div *ngIf="showLoadingScreen | async" class="loading">Loading&#8230;</div>
+    <div [@fade] *ngIf="showLoadingScreen | async" class="loading">Loading&#8230;</div>
 
 </div>
