@@ -1188,7 +1188,7 @@ module.exports = "@media only screen and (max-width: 768px) {\n  .page-title {\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n    <div class=\"col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12\">\n        <app-data-card [cardTitle]=\"'Pacientes'\" [cardIcon]=\"'fa-users'\" [cardData]=\"patientsCounter | async\" [routerLink]=\"'/home/patients'\"></app-data-card>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12\">\n        <div class=\"card\">\n            <div class=\"card-head\">\n                <h5 class=\"card-title\">Relação Pacientes x Planos de Saúde</h5>\n            </div>\n            <div class=\"card-body\">\n                <canvas id=\"myChart\"></canvas>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"row\">\n    <div class=\"col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12\">\n        <app-data-card [cardTitle]=\"'Pacientes'\" [cardIcon]=\"'fa-users'\" [cardData]=\"patientsCounter | async\" [routerLink]=\"'/home/patients'\"></app-data-card>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12\">\n        <div class=\"card\">\n            <div class=\"card-head\">\n                <h5 class=\"card-title\">Relação Pacientes x Planos de Saúde</h5>\n            </div>\n            <div class=\"card-body\">\n                <canvas id=\"myChart\"></canvas>\n            </div>\n        </div>\n    </div>\n    <div class=\"col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12\">\n        <div class=\"card\">\n            <div class=\"card-head\">\n                <h5 class=\"card-title\">Total de Antendimentos na Última Semana</h5>\n            </div>\n            <div class=\"card-body\">\n                <canvas id=\"lastWeekSessionsChart\"></canvas>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -1204,10 +1204,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return DashboardComponent; });
 /* harmony import */ var src_app_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/services */ "./src/app/services/index.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/src/chart.js");
-/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(chart_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var src_app_app_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/app.utils */ "./src/app/app.utils.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var src_app_app_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/app.utils */ "./src/app/app.utils.ts");
+/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/src/chart.js");
+/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(chart_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_5__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1222,26 +1224,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var DashboardComponent = /** @class */ (function () {
     function DashboardComponent(patientsService, healthInsuranceService) {
         this.patientsService = patientsService;
         this.healthInsuranceService = healthInsuranceService;
         this.myChart = [];
+        this.lastWeekSessionsChart = [];
         this.chartData = [];
         this.colors = [];
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.patientsCounter = this.patientsService.getPatientsTotalCount().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.data; }));
+        this.patientsCounter = this.patientsService.getPatientsTotalCount().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.data; }));
         this.healthInsuranceService.getPatientsRelation().subscribe(function (res) {
             _this.labels = res.data.map(function (data) { return data.name; });
             res.data.forEach(function (data) {
                 _this.chartData.push(data.Patients.length);
             });
             _this.labels.forEach(function () {
-                _this.colors.push(Object(src_app_app_utils__WEBPACK_IMPORTED_MODULE_4__["generateRandomColor"])());
+                _this.colors.push(Object(src_app_app_utils__WEBPACK_IMPORTED_MODULE_3__["generateRandomColor"])());
             });
-            _this.myChart = new chart_js__WEBPACK_IMPORTED_MODULE_2___default.a('myChart', {
+            _this.myChart = new chart_js__WEBPACK_IMPORTED_MODULE_4___default.a('myChart', {
                 type: 'doughnut',
                 data: {
                     labels: _this.labels,
@@ -1265,7 +1269,49 @@ var DashboardComponent = /** @class */ (function () {
                 }
             });
         });
+        var startDate = moment__WEBPACK_IMPORTED_MODULE_5__().startOf('week').subtract(1, 'week');
+        var endDate = moment__WEBPACK_IMPORTED_MODULE_5__().endOf('week').subtract(1, 'week');
+        var lastWeek = {
+            min_date: moment__WEBPACK_IMPORTED_MODULE_5__(startDate).format('YYYY-MM-DD'),
+            max_date: moment__WEBPACK_IMPORTED_MODULE_5__(endDate).format('YYYY-MM-DD')
+        };
+        this.patientsService.getLastWeekSessions(lastWeek).subscribe(function (res) {
+            var sessionsNumber = _this.enumerateDaysBetweenDates(startDate, endDate).map(function (day) { return day = _this.getNumbers(res.sessions, day); });
+            _this.lastWeekSessionsChart = new chart_js__WEBPACK_IMPORTED_MODULE_4___default.a('lastWeekSessionsChart', {
+                type: 'line',
+                data: {
+                    labels: _this.enumerateDaysBetweenDates(startDate, endDate).map(function (date) { return moment__WEBPACK_IMPORTED_MODULE_5__(date).format('DD/MM/YYYY'); }),
+                    datasets: [{
+                            data: sessionsNumber,
+                            borderColor: 'white',
+                            borderWidth: 1
+                        }]
+                },
+                options: {
+                    legend: {
+                        display: false,
+                    },
+                }
+            });
+        });
     };
+    DashboardComponent.prototype.getNumbers = function (sessions, day) {
+        return sessions.filter(function (session) { return moment__WEBPACK_IMPORTED_MODULE_5__(session.attendance_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_5__(day).format('YYYY-MM-DD'); }).length;
+    };
+    ;
+    DashboardComponent.prototype.enumerateDaysBetweenDates = function (startDate, endDate) {
+        var dates = [], currentDate = startDate, addDays = function (days) {
+            var date = new Date(this.valueOf());
+            date.setDate(date.getDate() + days);
+            return date;
+        };
+        while (currentDate <= endDate) {
+            dates.push(currentDate);
+            currentDate = addDays.call(currentDate, 1);
+        }
+        return dates;
+    };
+    ;
     DashboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-dashboard',
@@ -1744,7 +1790,7 @@ module.exports = "ul {\n    margin: 0;\n    -webkit-transform: translateY(44%);\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <ul>\n    <li class=\"single-tab\" *ngFor=\"let tab of TABS\"> <!--@REFACTOR ADAPTAR AO QUE HOUVER NO BACKEND -->\n      <a class=\"tab-name\" [ngClass]=\"{'tab-active': currentListStatus === tab.value}\" (click)=\"changeListStatus(tab.value)\">{{tab.title}}</a>\n    </li>\n    <li class=\"responsive-tabs\">\n      <select class=\"tab-name\" (change)=\"changeListStatus(currentListStatus)\" [(ngModel)]=\"currentListStatus\">\n        <option *ngFor=\"let tab of TABS\" [value]=\"tab.value\">{{tab.title}}</option>\n      </select>\n    </li>\n  </ul>\n\n\n</div>\n\n<div class=\"panel\">\n\n  <button routerLink=\"create\" class=\"btn btn-primary\">Adicionar Paciente</button>\n\n  <div class=\"panel-body\">\n    <div class=\"table-wrapper\" style=\"margin: 0\">\n\n      <form *ngIf=\"tableMetaData\" [formGroup]=\"filterForm\" (submit)=\"submitFilters()\">\n        <div class=\"tableFilters row\">\n\n\n          <div class=\"col-md-3 mb-3 mt-3\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Buscar\" formControlName=\"search\">\n          </div>\n\n          <div class=\"col-md-3 mb-3 mt-1\">\n            <select type=\"text\" class=\"custom-select\" formControlName=\"health_insurance\">\n              <option value=\"\" disabled selected>Plano de Saúde</option>\n              <option *ngFor=\"let filter of tableMetaData.filterConfig.health_insurances\" [value]=\"filter.id\">{{filter.name}}</option>\n            </select>\n          </div>\n\n          <div class=\"col-md-3 mb-3 mt-2\">\n            <button class=\"btn full-width-mobile btn-primary mr-2 mb-1\" type=\"submit\"><i class=\"fa fa-search\"></i></button>\n            <button *ngIf=\"clearFiltersBtn\" class=\"btn full-width-mobile btn-warning mr-2 mb-1\" type=\"button\" (click)=\"clearFilters()\"><i class=\"fa fa-times\"></i></button>\n          </div>\n\n\n        </div>\n      </form>\n\n      <div class=\"tableStyles\">\n\n\n        <table class=\"display table table-condensed table-responsive-sm\">\n          <thead>\n            <th *ngFor=\"let tableHead of tableHeaders\"><a class=\"pointer\" (click)=\"changeSort(tableHead)\">{{tableHead.title}}\n                <i class=\"fa\" [ngClass]=\"{'fa-caret-up': tableHead.sorted === 'asc', 'fa-caret-down': tableHead.sorted === 'desc'}\"></i>\n              </a>\n            </th>\n            <th>Ação</th>\n          </thead>\n          <tbody>\n\n            <tr *ngFor=\"let data of tableData\">\n              <td>{{data.id}}</td>\n              <td>{{data.name}}</td>\n              <td>{{data.HealthInsurance ? data.HealthInsurance.name : 'Nenhum'}}</td>\n              <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>\n              <td>{{data.updated_at | date:'dd/MM/yyyy HH:mm'}}</td>\n              <td>\n                <button title=\"Ver Paciente\" (click)=\"show(data.id)\" class=\"mr-2 btn btn-primary btn-sm\">\n                  <i class=\"fa fa-search\"></i>\n                </button>\n                <button title=\"Excluir Paciente\" (click)=\"delete(data.id)\" class=\"btn btn-danger btn-sm\">\n                  <i class=\"fa fa-trash\"></i>\n                </button>\n              </td>\n            </tr>\n\n            <tr *ngIf=\"!tableData || tableData.length <= 0\">\n              <td colspan=\"6\" class=\"text-center\">\n                Nenhum Paciente {{ currentListStatus === 1 ? 'Ativo' : (currentListStatus === 2 ? 'Inativo' : 'de Alta') }} {{ clearFiltersBtn ? ' com os filtros selecionados' : '' }} <!-- @REFACTOR MULTIPLE TERNARY IF-->\n              </td>\n            </tr>\n\n\n\n          </tbody>\n\n        </table>\n\n\n      </div>\n\n      <div *ngIf=\"tableMetaData\" class=\"row tablePagination\">\n\n\n        <div class=\"input-group col-xl-2 col-lg-4 col-md-4 col-sm-6 col-12 mb-3\">\n          <div class=\"input-group-prepend\">\n            <label class=\"input-group-text\" for=\"inputGroupSelect01\">Limite</label>\n          </div>\n          <select [(ngModel)]=\"selectedSize\" (change)=\"limitChange(selectedSize)\" class=\"custom-select\" id=\"inputGroupSelect01\">\n            <option *ngFor=\"let pageSize of pageSizeOptions\" [value]=\"pageSize\">{{pageSize}}</option>\n          </select>\n        </div>\n\n\n\n        <div class=\"btn-group col-xl-4 col-lg-8 col-md-8 col-sm-12 col-12\" role=\"group\" aria-label=\"Basic example\">\n          <button type=\"button\" [disabled]=\"tableMetaData.paginationConfig.current_page === 1\" class=\"btn btn-secondary\"\n            (click)=\"paginationChange(tableMetaData.paginationConfig.current_page - 1)\">\n            <i class=\"fa fa-angle-left\"></i>\n          </button>\n          <button type=\"button\" class=\"btn btn-primary\">{{tableMetaData.paginationConfig.current_page}}</button>\n          <button type=\"button\" [disabled]=\"tableMetaData.paginationConfig.current_page === tableMetaData.paginationConfig.total_pages\"\n            class=\"btn btn-secondary\" (click)=\"paginationChange(tableMetaData.paginationConfig.current_page + 1)\">\n            <i class=\"fa fa-angle-right\"></i>\n          </button>\n        </div>\n\n\n      </div>\n\n    </div>\n\n\n  </div>\n\n\n</div>"
+module.exports = "<div class=\"row\">\n  <ul>\n    <li class=\"single-tab\" *ngFor=\"let tab of TABS\"> <!--@REFACTOR ADAPTAR AO QUE HOUVER NO BACKEND -->\n      <a class=\"tab-name\" [ngClass]=\"{'tab-active': currentListStatus === tab.value}\" (click)=\"changeListStatus(tab.value)\">{{tab.title}}</a>\n    </li>\n    <li class=\"responsive-tabs\">\n      <select class=\"tab-name\" (change)=\"changeListStatus(currentListStatus)\" [(ngModel)]=\"currentListStatus\">\n        <option *ngFor=\"let tab of TABS\" [value]=\"tab.value\">{{tab.title}}</option>\n      </select>\n    </li>\n  </ul>\n\n\n</div>\n\n<div class=\"panel\">\n\n  <button routerLink=\"create\" class=\"btn btn-primary\">Cadastrar Paciente</button>\n\n  <div class=\"panel-body\">\n    <div class=\"table-wrapper\" style=\"margin: 0\">\n\n      <form *ngIf=\"tableMetaData\" [formGroup]=\"filterForm\" (submit)=\"submitFilters()\">\n        <div class=\"tableFilters row\">\n\n\n          <div class=\"col-md-3 mb-3 mt-3\">\n            <input type=\"text\" class=\"form-control\" placeholder=\"Buscar\" formControlName=\"search\">\n          </div>\n\n          <div class=\"col-md-3 mb-3 mt-3\">\n            <select type=\"text\" class=\"custom-select\" formControlName=\"health_insurance\">\n              <option value=\"\" disabled selected>Plano de Saúde</option>\n              <option *ngFor=\"let filter of tableMetaData.filterConfig.health_insurances\" [value]=\"filter.id\">{{filter.name}}</option>\n            </select>\n          </div>\n\n          <div class=\"col-md-3 mb-3 mt-3\">\n            <button class=\"btn full-width-mobile btn-primary mr-2 mb-1\" type=\"submit\"><i class=\"fa fa-search\"></i></button>\n            <button *ngIf=\"clearFiltersBtn\" class=\"btn full-width-mobile btn-warning mr-2 mb-1\" type=\"button\" (click)=\"clearFilters()\"><i class=\"fa fa-times\"></i></button>\n          </div>\n\n\n        </div>\n      </form>\n\n      <div class=\"tableStyles\">\n\n\n        <table class=\"display table table-condensed table-responsive-sm\">\n          <thead>\n            <th *ngFor=\"let tableHead of tableHeaders\"><a class=\"pointer\" (click)=\"changeSort(tableHead)\">{{tableHead.title}}\n                <i class=\"fa\" [ngClass]=\"{'fa-caret-up': tableHead.sorted === 'asc', 'fa-caret-down': tableHead.sorted === 'desc'}\"></i>\n              </a>\n            </th>\n            <th>Ação</th>\n          </thead>\n          <tbody>\n\n            <tr *ngFor=\"let data of tableData\">\n              <td>{{data.id}}</td>\n              <td>{{data.name}}</td>\n              <td>{{data.HealthInsurance ? data.HealthInsurance.name : 'Nenhum'}}</td>\n              <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>\n              <td>{{data.updated_at | date:'dd/MM/yyyy HH:mm'}}</td>\n              <td>\n                <button title=\"Ver Paciente\" (click)=\"show(data.id)\" class=\"mr-2 btn btn-primary btn-sm\">\n                  <i class=\"fa fa-search\"></i>\n                </button>\n                <button title=\"Excluir Paciente\" (click)=\"delete(data.id)\" class=\"btn btn-danger btn-sm\">\n                  <i class=\"fa fa-trash\"></i>\n                </button>\n              </td>\n            </tr>\n\n            <tr *ngIf=\"!tableData || tableData.length <= 0\">\n              <td colspan=\"6\" class=\"text-center\">\n                Nenhum Paciente {{ currentListStatus === 1 ? 'Ativo' : (currentListStatus === 2 ? 'Inativo' : 'de Alta') }} {{ clearFiltersBtn ? ' com os filtros selecionados' : '' }} <!-- @REFACTOR MULTIPLE TERNARY IF-->\n              </td>\n            </tr>\n\n\n\n          </tbody>\n\n        </table>\n\n\n      </div>\n\n      <div *ngIf=\"tableMetaData\" class=\"row tablePagination\">\n\n\n        <div class=\"input-group col-xl-2 col-lg-4 col-md-4 col-sm-6 col-12 mb-3\">\n          <div class=\"input-group-prepend\">\n            <label class=\"input-group-text\" for=\"inputGroupSelect01\">Limite</label>\n          </div>\n          <select [(ngModel)]=\"selectedSize\" (change)=\"limitChange(selectedSize)\" class=\"custom-select\" id=\"inputGroupSelect01\">\n            <option *ngFor=\"let pageSize of pageSizeOptions\" [value]=\"pageSize\">{{pageSize}}</option>\n          </select>\n        </div>\n\n\n\n        <div class=\"btn-group col-xl-4 col-lg-8 col-md-8 col-sm-12 col-12\" role=\"group\" aria-label=\"Basic example\">\n          <button type=\"button\" [disabled]=\"tableMetaData.paginationConfig.current_page === 1\" class=\"btn btn-secondary\"\n            (click)=\"paginationChange(tableMetaData.paginationConfig.current_page - 1)\">\n            <i class=\"fa fa-angle-left\"></i>\n          </button>\n          <button type=\"button\" class=\"btn btn-primary\">{{tableMetaData.paginationConfig.current_page}}</button>\n          <button type=\"button\" [disabled]=\"tableMetaData.paginationConfig.current_page === tableMetaData.paginationConfig.total_pages\"\n            class=\"btn btn-secondary\" (click)=\"paginationChange(tableMetaData.paginationConfig.current_page + 1)\">\n            <i class=\"fa fa-angle-right\"></i>\n          </button>\n        </div>\n\n\n      </div>\n\n    </div>\n\n\n  </div>\n\n\n</div>"
 
 /***/ }),
 
@@ -1794,10 +1840,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var PatientsListComponent = /** @class */ (function (_super) {
     __extends(PatientsListComponent, _super);
-    // public tableRowActions = [
-    //   { title: 'Ver Paciente', icon: 'fa-search', color: 'btn-primary', emits: 'show-action'},
-    //   { title: 'Excluir Paciente', icon: 'fa-trash', color: 'btn-danger', emits: 'delete-action'}
-    // ];
     function PatientsListComponent(patientsService, shareData, router, fb) {
         var _this = _super.call(this) || this;
         _this.patientsService = patientsService;
@@ -1813,8 +1855,8 @@ var PatientsListComponent = /** @class */ (function (_super) {
             { title: 'Atualizado', value: 'updated_at' }
         ];
         _this.TABS = [
-            { title: 'Ativo', value: 1 },
-            { title: 'Inativo', value: 2 },
+            { title: 'Ativos', value: 1 },
+            { title: 'Inativos', value: 2 },
             { title: 'De Alta', value: 3 },
         ];
         _this.filterCriteria = new src_app_helpers_crud_filter_criteria__WEBPACK_IMPORTED_MODULE_2__["FilterCriteria"]();
@@ -2149,9 +2191,8 @@ module.exports = "<div class=\"panel\" style=\"padding: 0;\">\n  <div class=\"pa
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PatientSessionsComponent", function() { return PatientSessionsComponent; });
 /* harmony import */ var src_app_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/services */ "./src/app/services/index.ts");
-/* harmony import */ var src_app_app_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/app.utils */ "./src/app/app.utils.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/helpers/animations/animations */ "./src/app/helpers/animations/animations.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/helpers/animations/animations */ "./src/app/helpers/animations/animations.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2164,7 +2205,6 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var PatientSessionsComponent = /** @class */ (function () {
     function PatientSessionsComponent(shareDataService) {
         this.shareDataService = shareDataService;
@@ -2173,7 +2213,6 @@ var PatientSessionsComponent = /** @class */ (function () {
         this.patientSessions.map(function (patient) {
             patient.opened = false;
         });
-        this.patientSessions = Object(src_app_app_utils__WEBPACK_IMPORTED_MODULE_1__["sortByKey"])(this.patientSessions, 'created_at');
     };
     PatientSessionsComponent.prototype.changeModalState = function (state) {
         this.modalState = state;
@@ -2182,19 +2221,19 @@ var PatientSessionsComponent = /** @class */ (function () {
         this.shareDataService.watchSessionLimit(true);
     };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         __metadata("design:type", Object)
     ], PatientSessionsComponent.prototype, "patientSessions", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"])(),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
         __metadata("design:type", Object)
     ], PatientSessionsComponent.prototype, "firstListedSessions", void 0);
     PatientSessionsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-patient-sessions',
             template: __webpack_require__(/*! ./patient-sessions.component.html */ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/patient-sessions.component.html"),
             styles: [__webpack_require__(/*! ./patient-sessions.component.css */ "./src/app/components/pages/patients/patients-show-wrapper/patient-sessions/patient-sessions.component.css")],
-            animations: [src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_3__["collapse"]]
+            animations: [src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_2__["collapse"]]
         }),
         __metadata("design:paramtypes", [src_app_services__WEBPACK_IMPORTED_MODULE_0__["ShareDataService"]])
     ], PatientSessionsComponent);
@@ -2241,6 +2280,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_helpers_animations_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/helpers/animations/animations */ "./src/app/helpers/animations/animations.ts");
+/* harmony import */ var src_app_app_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/app.utils */ "./src/app/app.utils.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2250,6 +2290,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -2278,6 +2319,7 @@ var PatientsShowComponent = /** @class */ (function () {
                 _this.shareData.activateLoadingScreen(false);
                 _this.patientData = res;
                 _this.patientSessions = res.Sessions;
+                _this.patientSessions = Object(src_app_app_utils__WEBPACK_IMPORTED_MODULE_4__["sortByKey"])(_this.patientSessions, 'created_at');
             }, function () {
                 _this.shareData.activateLoadingScreen(false);
             });
@@ -2314,7 +2356,7 @@ var PatientsShowComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".wrapper {\n  position: relative;\n  width: 100%;\n}\n\n.responsive {\n  display: none;\n}\n\n.sidebar-panel{\n  overflow-x: hidden;\n  background-color: var(--secondary-color);\n  width: 200px;\n  position: absolute;\n  height: 100%;\n  min-height: 100vh;\n  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);\n  transition: all 500ms;\n  z-index: 998;\n}\n\n.main-panel{\n  width: 100%;\n  flex: 1;\n  padding: 20px 20px 20px 220px; /*top right bottom left*/\n  transition: all .5s;\n}\n\n.page-title {\n  font-size: 1.1375rem;\n  font-weight: 600!important;\n  line-height: 1.5;\n  text-transform: uppercase;\n  letter-spacing: 1.01px;\n}\n\n@media only screen and (max-width: 768px) {\n  .responsive {\n    display: block;\n  }\n\n  .main-panel{\n    padding: 20px 20px 20px 20px; /*top right bottom left*/\n  }\n\n  .page-title {\n    text-align: center;\n  }\n\n}\n\n#sidebarBtn {\n  position: fixed;\n  top: 10px;\n  left: 10px;\n  z-index: 99;\n  font-size: 18px;\n  border: none;\n  outline: none;\n  background-color: var(--secondary-color);\n  border-radius: 100%;\n  color: white;\n  cursor: pointer;\n  padding: 10px 15px;\n  box-shadow: 0 8px 10px -1px rgba(0, 0, 0, 0.42);\n\n  transition: all 500ms;\n}\n\n.btnChangePosition {\n  left: 11.5em!important;\n}\n\n/*-------LoadingScreen-------*/\n\n.loading {\n  position: fixed;\n  z-index: 999;\n  height: 2em;\n  width: 2em;\n  overflow: show;\n  margin: auto;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n}\n\n/* Transparent Overlay */\n\n.loading:before {\n  content: '';\n  display: block;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n    background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));\n\n  background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));\n}\n\n@keyframes lds-eclipse {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n    transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@-webkit-keyframes lds-eclipse {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  50% {\n    -webkit-transform: rotate(180deg);\n    transform: rotate(180deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n.lds-eclipse {\n  position: relative;\n}\n\n.lds-eclipse div {\n  position: absolute;\n  -webkit-animation: lds-eclipse 0.7s linear infinite;\n  animation: lds-eclipse 0.7s linear infinite;\n  width: 160px;\n  height: 160px;\n  top: 20px;\n  left: 20px;\n  border-radius: 50%;\n  box-shadow: 0 4px 0 0 #6e6e6e;\n  -webkit-transform-origin: 80px 82px;\n  transform-origin: 80px 82px;\n}\n\n.lds-eclipse {\n  width: 84px !important;\n  height: 84px !important;\n  -webkit-transform: translate(-100px, -110px) scale(0.42) translate(42px, 42px);\n  transform: translate(-100px, -110px) scale(0.42) translate(42px, 42px);\n}"
+module.exports = ".wrapper {\n  position: relative;\n  width: 100%;\n}\n\n.responsive {\n  display: none;\n}\n\n.sidebar-panel{\n  overflow-x: hidden;\n  background-color: var(--secondary-color);\n  width: 200px;\n  position: absolute;\n  height: 100%;\n  min-height: 100vh;\n  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);\n  transition: all 500ms;\n  z-index: 998;\n}\n\n.main-panel{\n  width: 100%;\n  flex: 1;\n  padding: 20px 20px 20px 220px; /*top right bottom left*/\n  transition: all .5s;\n}\n\n.page-title {\n  font-size: 1.1375rem;\n  font-weight: 600!important;\n  line-height: 1.5;\n  text-transform: uppercase;\n  letter-spacing: 1.01px;\n}\n\n@media only screen and (max-width: 768px) {\n  .responsive {\n    display: block;\n  }\n\n  .main-panel{\n    padding: 20px 20px 20px 20px; /*top right bottom left*/\n  }\n\n  .page-title {\n    text-align: center;\n  }\n\n}\n\n#sidebarBtn {\n  position: absolute;\n  top: 6.5px;\n  left: 6.5px;\n  z-index: 99;\n  font-size: 18px;\n  border: none;\n  outline: none;\n  background-color: var(--secondary-color);\n  border-radius: 100%;\n  color: white;\n  cursor: pointer;\n  padding: 10px 15px;\n  box-shadow: 0 8px 10px -1px rgba(0, 0, 0, 0.42);\n\n  transition: all 500ms;\n}\n\n.btnChangePosition {\n  left: 11.5em!important;\n}\n\n/*-------Loading-Screen------*/\n\n.loading {\n  position: fixed;\n  z-index: 999;\n  height: 2em;\n  width: 2em;\n  overflow: show;\n  margin: auto;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n}\n\n/* Transparent Overlay */\n\n.loading:before {\n  content: '';\n  display: block;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n    background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));\n\n  background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));\n}\n\n/* :not(:required) hides these rules from IE9 and below */\n\n.loading:not(:required) {\n  /* hide \"loading...\" text */\n  font: 0/0 a;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n  border: 0;\n}\n\n.loading:not(:required):after {\n  content: '';\n  display: block;\n  font-size: 10px;\n  width: 1em;\n  height: 1em;\n  margin-top: -0.5em;\n  -webkit-animation: spinner 1500ms infinite linear;\n  animation: spinner 1500ms infinite linear;\n  border-radius: 0.5em;\nbox-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;\n}\n\n/* Animation */\n\n@-webkit-keyframes spinner {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes spinner {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}"
 
 /***/ }),
 
@@ -2325,7 +2367,7 @@ module.exports = ".wrapper {\n  position: relative;\n  width: 100%;\n}\n\n.respo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n\n    <button *ngIf=\"windowSize < 768\" (click)=\"sidebarOpened = !sidebarOpened\" [ngClass]=\"{'btnChangePosition': sidebarOpened}\"\n        class=\"btn\" id=\"sidebarBtn\"><i class=\"fa fa-bars\"></i></button>\n\n    <div [@showSidebar] *ngIf=\"sidebarOpened || windowSize > 768\" class=\"sidebar-panel\" id=\"sidebar\">\n        <app-sidebar></app-sidebar>\n    </div>\n\n    <div id=\"main-panel\" class=\"main-panel\">\n        <h4 class=\"page-title\">{{pageTitle}}</h4>\n        <router-outlet></router-outlet>\n    </div>\n\n    <div [@fade] *ngIf=\"showLoadingScreen | async\" class=\"lds-css ng-scope loading\">\n        <div style=\"width:50%;height:50%\" class=\"lds-eclipse\">\n            <div></div>\n        </div>\n    </div>\n\n</div>"
+module.exports = "<div class=\"wrapper\">\n\n    <button *ngIf=\"windowSize < 768\" (click)=\"openSidebar()\" [ngClass]=\"{'btnChangePosition': sidebarOpened}\"\n        class=\"btn\" id=\"sidebarBtn\"><i class=\"fa fa-bars\"></i></button>\n\n    <div [@showSidebar] *ngIf=\"sidebarOpened || windowSize > 768\" class=\"sidebar-panel\" id=\"sidebar\">\n        <app-sidebar></app-sidebar>\n    </div>\n\n    <div class=\"main-panel\" id=\"main-panel\">\n        <h4 class=\"page-title\">{{pageTitle}}</h4>\n\n        <router-outlet></router-outlet>\n    </div>\n\n    <div [@fade] *ngIf=\"showLoadingScreen | async\" class=\"loading\">Loading&#8230;</div>\n\n</div>"
 
 /***/ }),
 
@@ -2376,9 +2418,6 @@ var RootComponent = /** @class */ (function () {
     RootComponent.prototype.ngOnInit = function () {
         this.showLoadingScreen = this.shareData.loadingScreenEvent;
     };
-    RootComponent.prototype.openSidebar = function () {
-        this.sidebarOpened = !this.sidebarOpened;
-    };
     RootComponent.prototype.onresize = function () {
         this.windowSize = window.innerWidth;
         if (this.windowSize > 768) {
@@ -2387,6 +2426,9 @@ var RootComponent = /** @class */ (function () {
         else if (this.windowSize <= 768) {
             this.sidebarOpened = false;
         }
+    };
+    RootComponent.prototype.openSidebar = function () {
+        this.sidebarOpened = !this.sidebarOpened;
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('window:resize', ['$event']),
@@ -3356,6 +3398,9 @@ var PatientsService = /** @class */ (function (_super) {
     }
     PatientsService.prototype.getPatientsTotalCount = function () {
         return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].API_URL + "/api/" + this.entity + "/counter");
+    };
+    PatientsService.prototype.getLastWeekSessions = function (queryParams) {
+        return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].API_URL + "/api/" + this.entity + "/all-sessions", { params: queryParams });
     };
     PatientsService.prototype.postCreateSession = function (session) {
         return this.http.post(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].API_URL + "/api/" + this.entity + "/" + session.patients_id + "/create-session", session);
