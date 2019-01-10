@@ -15,7 +15,7 @@
 
         <div class="form-row">
 
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="form-group">
               <label>Humor</label>
               <select formControlName="humour" type="text" class="form-control">
@@ -28,26 +28,20 @@
             </div>
           </div>
 
-          <div class="col-md-8">
-            <div class="form-row">
-              <div class="col-md-12">
-                <label>Atendimento</label>
-              </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>Duração</label>
+              <input formControlName="duration" type="time" class="form-control"/>
             </div>
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input formControlName="attendance_at_date" type="date" class="form-control">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input formControlName="attendance_at_time" type="time" class="form-control">
-                </div>
-              </div>
-            </div>
-
           </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Atendimento</label>
+              <input formControlName="attendance_at" type="datetime-local" class="form-control">
+            </div>
+          </div>
+
         </div>
         
 

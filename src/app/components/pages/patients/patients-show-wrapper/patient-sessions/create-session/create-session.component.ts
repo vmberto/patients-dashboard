@@ -33,8 +33,8 @@ export class CreateSessionComponent implements OnInit {
 
     this.sessionForm = this.fb.group({
       humour: ['', [Validators.required]],
-      attendance_at_date: ['', [Validators.required]],
-      attendance_at_time: ['', [Validators.required]],
+      attendance_at: ['', [Validators.required]],
+      duration: ['', [Validators.required]],
       description: ['', [Validators.required]],
 
     });
@@ -58,7 +58,8 @@ export class CreateSessionComponent implements OnInit {
       const sessionData = {
         description: formControls.description.value,
         humour_id: formControls.humour.value,
-        attendance_at: new Date(`${formControls.attendance_at_date.value} ${formControls.attendance_at_time.value}`).toJSON(),
+        attendance_at: formControls.attendance_at.value,
+        duration: formControls.duration.value,
         patients_id: this.patientId
       };
 
