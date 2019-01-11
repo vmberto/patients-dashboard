@@ -1,4 +1,4 @@
-import { HealthInsurancesService, PatientsService } from 'src/app/services';
+import { HealthInsurancesService, PatientsService, SessionsService } from 'src/app/services';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -13,43 +13,60 @@ import * as moment from 'moment';
     styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-    public patientsCounter: Observable<any>;
-    public myChart = [];
+    
+    // Counters
+    public patientsCounter: Observable<number>;
+
+    public sessionsDurationCounter: Observable<String>;
+
+    // Chart patients x health-insurance relation
+    public patientsHealthInsuranceChart = [];
+    public healthInsuranceLabels: string[];
+    public patientsHealthInsuranceData: number[] = [];
+    public randomColors: string[] = [];
+
+    // Chart total sessions last week
     public lastWeekSessionsChart = [];
+    public totalHoursWorked: any;
+    public totalSessions: number;
 
-    public labels: string[];
-    public chartData: number[] = [];
-    public colors: string[] = [];
-
-    public totalHoursWorked;
-
-    constructor(private patientsService: PatientsService, private healthInsuranceService: HealthInsurancesService) { }
+    constructor(
+        private patientsService: PatientsService,
+        private sessionsService: SessionsService,
+        private healthInsuranceService: HealthInsurancesService) { }
 
 
 
     ngOnInit() {
 
-        this.patientsCounter = this.patientsService.getPatientsTotalCount().pipe(map(res => res.data));
+        this.patientsCounter = this.patientsService.get({ url: 'counter' }).pipe(map(res => res.data));
+        this.sessionsDurationCounter = this.sessionsService.get({ url: 'total-hours' }).pipe(map(res => res.data));
 
-        this.healthInsuranceService.getPatientsRelation()
+        this.patientsHealthInsuranceRelationChart();
+
+        this.totalSessionsLastWeekChart();
+
+    }
+
+    private patientsHealthInsuranceRelationChart() {
+
+        this.healthInsuranceService.get({ url: 'patients' })
             .subscribe(
                 res => {
-                    this.labels = res.data.map(data => data.name);
-                    res.data.forEach((data) => {
-                        this.chartData.push(data.Patients.length);
-                    });
-                    this.labels.forEach(() => {
-                        this.colors.push(generateRandomColor());
-                    });
+                    this.healthInsuranceLabels = res.data.map(data => data.name);
 
-                    this.myChart = new Chart('myChart', {
+                    this.patientsHealthInsuranceData = res.data.map(data => data.Patients.length);
+
+                    this.randomColors = this.healthInsuranceLabels.map(_data => _data = generateRandomColor());
+                    
+                    this.patientsHealthInsuranceChart = new Chart('patientsHealthInsuranceChart', {
                         type: 'doughnut',
                         data: {
-                            labels: this.labels,
+                            labels: this.healthInsuranceLabels,
                             datasets: [{
-                                data: this.chartData,
-                                backgroundColor: this.colors,
-                                borderColor: this.colors,
+                                data: this.patientsHealthInsuranceData,
+                                backgroundColor: this.randomColors,
+                                borderColor: this.randomColors,
                                 borderWidth: 1
                             }]
                         },
@@ -67,20 +84,25 @@ export class DashboardComponent implements OnInit {
                     });
                 });
 
+    }
+
+    private totalSessionsLastWeekChart() {
 
         let startDate: any = moment().startOf('week').subtract(1, 'week');
         let endDate: any = moment().endOf('week').subtract(1, 'week');
         const lastWeek = {
-            min_date: moment(startDate).format('YYYY-MM-DD'),
-            max_date: moment(endDate).format('YYYY-MM-DD')
+            min_date: moment(startDate).format('YYYY-MM-DD HH:mm'),
+            max_date: moment(endDate).format('YYYY-MM-DD HH:mm')
         }
 
-        this.patientsService.getLastWeekSessions(lastWeek).subscribe(
+        this.sessionsService.get({ query: lastWeek }).subscribe(
             res => {
                 const sessionsNumber = this.enumerateDaysBetweenDates(startDate, endDate).map(day => day = this.getNumbers(res.data, day));
-                
+                this.totalSessions = res.data.length;
+
                 this.lastWeekSessionsChart = new Chart('lastWeekSessionsChart', {
                     type: 'line',
+                    beginAtZero: true,
                     data: {
                         labels: this.enumerateDaysBetweenDates(startDate, endDate).map(date => moment(date).format('DD/MM/YYYY')),
                         datasets: [{
@@ -90,21 +112,30 @@ export class DashboardComponent implements OnInit {
                         }]
                     },
                     options: {
+                        responsive: true,
                         legend: {
                             display: false,
                         },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                    callback: function (value) { if (Number.isInteger(value) && value >= 0) { return value; } },
+                                    stepSize: 1
+                                }
+                            }]
+                        }
                     }
                 });
             }
         )
-
     }
 
-    public getNumbers(sessions, day) {
+    private getNumbers(sessions, day) {
         return sessions.filter(session => moment(session.attendance_at).format('YYYY-MM-DD') === moment(day).format('YYYY-MM-DD')).length;
     };
 
-    public enumerateDaysBetweenDates(startDate, endDate) {
+    private enumerateDaysBetweenDates(startDate, endDate) {
         var dates = [],
             currentDate = startDate,
             addDays = function (days) {

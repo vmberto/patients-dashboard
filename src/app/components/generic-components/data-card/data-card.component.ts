@@ -17,8 +17,8 @@ export class DataCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  public validateCardData(): boolean {
-    return typeof this.cardData !== 'number';
+  public checkIfNumber() {
+    return typeof this.cardData === 'number';
   }
 
 }

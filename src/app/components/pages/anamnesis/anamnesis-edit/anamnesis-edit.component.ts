@@ -40,7 +40,7 @@ export class AnamnesisEditComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(res => {
 
-      this.anamnesisService.get(res.id).subscribe(
+      this.anamnesisService.get({ id: res.id }).subscribe(
         (res) => {
           this.shareDataService.activateLoadingScreen(false);
           this.anamnesisData = res;

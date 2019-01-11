@@ -2,6 +2,9 @@
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
         <app-data-card [cardTitle]="'Pacientes'" [cardIcon]="'fa-users'" [cardData]="patientsCounter | async" [routerLink]="'/home/patients'"></app-data-card>
     </div>
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+        <app-data-card [cardTitle]="'Total de Horas'" [cardIcon]="'fa-clock-o'" [cardData]="sessionsDurationCounter | async"></app-data-card>
+    </div>
 </div>
 <div class="row">
     <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12">
@@ -10,14 +13,14 @@
                 <h5 class="card-title">Relação Pacientes x Planos de Saúde</h5>
             </div>
             <div class="card-body">
-                <canvas id="myChart"></canvas>
+                <canvas id="patientsHealthInsuranceChart"></canvas>
             </div>
         </div>
     </div>
     <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12">
         <div class="card">
             <div class="card-head">
-                <h5 class="card-title">Total de Antendimentos na Última Semana</h5>
+                <h5 class="card-title">Total de Antendimentos na Última Semana ({{totalSessions || ' --'}} sessões)</h5>
             </div>
             <div class="card-body">
                 <canvas id="lastWeekSessionsChart"></canvas>

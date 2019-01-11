@@ -13,16 +13,16 @@ export abstract class CrudMethods {
     * @param id (OPTIONAL) {number | boolean} Get with specified Id
     * @param queryParams (OPTIONAL) {any} Get with query params
     */
-    public get(id: number | boolean = false, queryParams: any = false): Observable<any> {
-        return this.http.get(`${environment.API_URL}/api/${this.entity}${id ? `/${id}` : ''}`, { params: queryParams } || {});
+    public get(options: CrudOptions = {}): Observable<any> {
+        return this.http.get(`${environment.API_URL}/api/${this.entity}${options.id ? `/${options.id}` : ''}${options.url ? `/${options.url}` : ''}`, { params: options.query } || {});
     }
 
     /**
     * Posts data to an ApiRoute
     * @param data {any}
     */
-    public post(data): Observable<any> {
-        return this.http.post(`${environment.API_URL}/api/${this.entity}`, data);
+    public post(data: any, id: number | boolean = false): Observable<any> {
+        return this.http.post(`${environment.API_URL}/api/${this.entity}${id ? `/${id}` : ''}`, data);
     }
 
     /**
