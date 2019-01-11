@@ -41,7 +41,7 @@ export class PatientsShowComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(res => {
 
-      this.patientsService.get({ id: res.id, query: sessions_limit }).subscribe(
+      this.patientsService.get({ id: res.id, query: { sessions_limit } }).subscribe(
         (res) => {
           this.shareData.activateLoadingScreen(false);
           this.patientData = res;
