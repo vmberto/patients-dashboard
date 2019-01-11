@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
     // Counters
     public patientsCounter: Observable<number>;
 
+    public sessionsDurationCounter: Observable<String>;
+
     // Chart patients x health-insurance relation
     public patientsHealthInsuranceChart = [];
     public healthInsuranceLabels: string[];
@@ -37,6 +39,7 @@ export class DashboardComponent implements OnInit {
     ngOnInit() {
 
         this.patientsCounter = this.patientsService.getPatientsTotalCount().pipe(map(res => res.data));
+        this.sessionsDurationCounter = this.patientsService.getAllSessionsDuration().pipe(map(res => res.data));
 
         this.patientsHealthInsuranceRelationChart();
 

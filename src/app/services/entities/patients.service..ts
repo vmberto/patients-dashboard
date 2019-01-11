@@ -18,6 +18,10 @@ export class PatientsService extends CrudMethods {
     return this.http.get(`${environment.API_URL}/api/${this.entity}/counter`);
   }
 
+  public getAllSessionsDuration(): Observable<any> {
+    return this.http.get(`${environment.API_URL}/api/${this.entity}/session/total-hours`);
+  }
+
   public getLastWeekSessions(queryParams): Observable<any> {
     return this.http.get(`${environment.API_URL}/api/${this.entity}/all-sessions`, { params: queryParams });
   }

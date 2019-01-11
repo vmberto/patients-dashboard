@@ -1,10 +1,15 @@
 <a [routerLink]="routerLink">
     <div class="card info-card card-hover">
         <h5 class="card-title">{{cardTitle}}</h5>
-        <i class="fa background-icon" [ngClass]="{'fa-spinner': validateCardData() , 'fa-spin': validateCardData()}"
+        <i class="fa background-icon" [ngClass]="{'fa-spinner': !cardData , 'fa-spin': !cardData}"
             [class]="cardIcon"></i>
         <span style="font-weight: 400; font-size: 30px;">
-            <ng2-odometer [format]="'d'" [number]="cardData"></ng2-odometer>
+            <div *ngIf="checkIfNumber(); else string">
+                <ng2-odometer [format]="'dddd'" [number]="cardData"></ng2-odometer>
+            </div>
+            <ng-template #string>
+                {{cardData}}
+            </ng-template>
         </span>
     </div>
 </a>
