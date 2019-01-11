@@ -1,4 +1,4 @@
-import { HealthInsurancesService, PatientsService } from 'src/app/services';
+import { HealthInsurancesService, PatientsService, SessionsService } from 'src/app/services';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -32,14 +32,15 @@ export class DashboardComponent implements OnInit {
 
     constructor(
         private patientsService: PatientsService,
+        private sessionsService: SessionsService,
         private healthInsuranceService: HealthInsurancesService) { }
 
 
 
     ngOnInit() {
 
-        this.patientsCounter = this.patientsService.getPatientsTotalCount().pipe(map(res => res.data));
-        this.sessionsDurationCounter = this.patientsService.getAllSessionsDuration().pipe(map(res => res.data));
+        this.patientsCounter = this.patientsService.get(undefined, undefined, 'counter').pipe(map(res => res.data));
+        this.sessionsDurationCounter = this.sessionsService.get(undefined, undefined, 'total-hours').pipe(map(res => res.data));
 
         this.patientsHealthInsuranceRelationChart();
 
@@ -49,7 +50,7 @@ export class DashboardComponent implements OnInit {
 
     private patientsHealthInsuranceRelationChart() {
 
-        this.healthInsuranceService.getPatientsRelation()
+        this.healthInsuranceService.get(undefined, undefined, 'patients')
             .subscribe(
                 res => {
                     this.healthInsuranceLabels = res.data.map(data => data.name);
@@ -94,7 +95,7 @@ export class DashboardComponent implements OnInit {
             max_date: moment(endDate).format('YYYY-MM-DD')
         }
 
-        this.patientsService.getLastWeekSessions(lastWeek).subscribe(
+        this.sessionsService.get(undefined, lastWeek).subscribe(
             res => {
                 const sessionsNumber = this.enumerateDaysBetweenDates(startDate, endDate).map(day => day = this.getNumbers(res.data, day));
                 this.totalSessions = res.data.length;

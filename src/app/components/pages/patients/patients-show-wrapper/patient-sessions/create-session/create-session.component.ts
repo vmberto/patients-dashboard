@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { PatientsService } from 'src/app/services';
+import { SessionsService } from 'src/app/services';
 import { log } from 'util';
 
 @Component({
@@ -20,7 +20,7 @@ export class CreateSessionComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
-    private patientsService: PatientsService) { }
+    private sessionsService: SessionsService) { }
 
   ngOnInit() {
 
@@ -60,10 +60,9 @@ export class CreateSessionComponent implements OnInit {
         humour_id: formControls.humour.value,
         attendance_at: formControls.attendance_at.value,
         duration: formControls.duration.value,
-        patients_id: this.patientId
       };
 
-      this.patientsService.postCreateSession(sessionData)
+      this.sessionsService.post(sessionData, this.patientId)
         .subscribe(
           () => {
             window.location.reload();

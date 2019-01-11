@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 })
 export class AnamnesisService extends CrudMethods {
 
-
   constructor(public http: HttpClient) {
     super();
     this.entity = 'anamnesis';

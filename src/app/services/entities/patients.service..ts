@@ -14,20 +14,4 @@ export class PatientsService extends CrudMethods {
     this.entity = 'patients';
   }
 
-  public getPatientsTotalCount(): Observable<any> {
-    return this.http.get(`${environment.API_URL}/api/${this.entity}/counter`);
-  }
-
-  public getAllSessionsDuration(): Observable<any> {
-    return this.http.get(`${environment.API_URL}/api/${this.entity}/session/total-hours`);
-  }
-
-  public getLastWeekSessions(queryParams): Observable<any> {
-    return this.http.get(`${environment.API_URL}/api/${this.entity}/all-sessions`, { params: queryParams });
-  }
-
-  public postCreateSession(session): Observable<any> {
-    return this.http.post(`${environment.API_URL}/api/${this.entity}/${session.patients_id}/create-session`, session);
-  }
-
 }
