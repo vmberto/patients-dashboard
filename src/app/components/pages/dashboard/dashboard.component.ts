@@ -91,8 +91,8 @@ export class DashboardComponent implements OnInit {
         let startDate: any = moment().startOf('week').subtract(1, 'week');
         let endDate: any = moment().endOf('week').subtract(1, 'week');
         const lastWeek = {
-            min_date: moment(startDate).format('YYYY-MM-DD'),
-            max_date: moment(endDate).format('YYYY-MM-DD')
+            min_date: moment(startDate).format('YYYY-MM-DD HH:mm'),
+            max_date: moment(endDate).format('YYYY-MM-DD HH:mm')
         }
 
         this.sessionsService.get({ query: lastWeek }).subscribe(
