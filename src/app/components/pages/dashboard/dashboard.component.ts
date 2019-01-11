@@ -39,8 +39,8 @@ export class DashboardComponent implements OnInit {
 
     ngOnInit() {
 
-        this.patientsCounter = this.patientsService.get(undefined, undefined, 'counter').pipe(map(res => res.data));
-        this.sessionsDurationCounter = this.sessionsService.get(undefined, undefined, 'total-hours').pipe(map(res => res.data));
+        this.patientsCounter = this.patientsService.get({ url: 'counter' }).pipe(map(res => res.data));
+        this.sessionsDurationCounter = this.sessionsService.get({ url: 'total-hours' }).pipe(map(res => res.data));
 
         this.patientsHealthInsuranceRelationChart();
 
@@ -50,7 +50,7 @@ export class DashboardComponent implements OnInit {
 
     private patientsHealthInsuranceRelationChart() {
 
-        this.healthInsuranceService.get(undefined, undefined, 'patients')
+        this.healthInsuranceService.get({ url: 'patients' })
             .subscribe(
                 res => {
                     this.healthInsuranceLabels = res.data.map(data => data.name);
@@ -95,7 +95,7 @@ export class DashboardComponent implements OnInit {
             max_date: moment(endDate).format('YYYY-MM-DD')
         }
 
-        this.sessionsService.get(undefined, lastWeek).subscribe(
+        this.sessionsService.get({ query: lastWeek }).subscribe(
             res => {
                 const sessionsNumber = this.enumerateDaysBetweenDates(startDate, endDate).map(day => day = this.getNumbers(res.data, day));
                 this.totalSessions = res.data.length;
