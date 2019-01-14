@@ -13,7 +13,7 @@ export class PatientSessionsComponent implements OnInit {
 
   @Input() patientSessions;
   @Input() totalSessions: number;
-  @Input() firstListedSessions;
+  @Input() sessionsListLimit;
 
   public modalState: string;
 

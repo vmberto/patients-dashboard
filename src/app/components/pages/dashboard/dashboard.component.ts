@@ -98,7 +98,7 @@ export class DashboardComponent implements OnInit {
                 this.attendedPatients = res.totalPatients;
                 this.totalHoursWorked = res.totalHours;
 
-                if(this.lastWeekSessionsChart) this.lastWeekSessionsChart.destroy();
+                if (this.lastWeekSessionsChart) this.lastWeekSessionsChart.destroy();
                 this.lastWeekSessionsChart = new Chart('lastWeekSessionsChart', {
                     type: 'line',
                     beginAtZero: true,
