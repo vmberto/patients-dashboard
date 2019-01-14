@@ -1,9 +1,7 @@
 <div class="row">
     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-        <app-data-card [cardTitle]="'Pacientes'" [cardIcon]="'fa-users'" [cardData]="patientsCounter | async" [routerLink]="'/home/patients'"></app-data-card>
-    </div>
-    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-        <app-data-card [cardTitle]="'Total de Horas'" [cardIcon]="'fa-clock-o'" [cardData]="sessionsDurationCounter | async"></app-data-card>
+        <app-data-card [cardTitle]="'Pacientes'" [cardIcon]="'fa-users'" [cardData]="patientsCounter | async"
+            [routerLink]="'/home/patients'"></app-data-card>
     </div>
 </div>
 <div class="row">
@@ -20,10 +18,36 @@
     <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12">
         <div class="card">
             <div class="card-head">
-                <h5 class="card-title">Total de Antendimentos na Última Semana ({{totalSessions || ' --'}} sessões)</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="card-title">Total de Antendimentos</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <nav id="menu">
+                            <ul>
+                                <li><input type="date" [max]="endDate | date:'yyyy-MM-dd'" [ngModel]="startDate | date:'yyyy-MM-dd'"
+                                        (ngModelChange)="startDate = $event" (change)="recalculateSessions()"></li>
+                                <li><input type="date" [min]="startDate | date:'yyyy-MM-dd'" [ngModel]="endDate | date:'yyyy-MM-dd'"
+                                        (ngModelChange)="endDate = $event" (change)="recalculateSessions()"></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <canvas id="lastWeekSessionsChart"></canvas>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <h5 class="data-name">Total de Horas </h5>
+                        <p>{{ (sessionsDurationCounter | async) || ' -- ' }}</p>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <h5 class="data-name">Total de Pacientes </h5>
+                        <p>{{ totalPatients() || ' -- ' }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

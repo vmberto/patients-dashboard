@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { generateRandomColor } from 'src/app/app.utils';
 import Chart from 'chart.js';
+
 import * as moment from 'moment';
 
 
@@ -13,7 +14,10 @@ import * as moment from 'moment';
     styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-    
+
+    public startDate = moment().startOf('week').subtract(1, 'week');
+    public endDate = moment().endOf('week').subtract(1, 'week');
+
     // Counters
     public patientsCounter: Observable<number>;
 
@@ -28,7 +32,7 @@ export class DashboardComponent implements OnInit {
     // Chart total sessions last week
     public lastWeekSessionsChart = [];
     public totalHoursWorked: any;
-    public totalSessions: number;
+    public sessions: any;
 
     constructor(
         private patientsService: PatientsService,
@@ -58,9 +62,9 @@ export class DashboardComponent implements OnInit {
                     this.patientsHealthInsuranceData = res.data.map(data => data.Patients.length);
 
                     this.randomColors = this.healthInsuranceLabels.map(_data => _data = generateRandomColor());
-                    
+
                     this.patientsHealthInsuranceChart = new Chart('patientsHealthInsuranceChart', {
-                        type: 'doughnut',
+                        type: 'pie',
                         data: {
                             labels: this.healthInsuranceLabels,
                             datasets: [{
@@ -72,14 +76,12 @@ export class DashboardComponent implements OnInit {
                         },
                         options: {
                             legend: {
-                                fullWidth: true,
-                                display: true,
-                                poisition: 'right',
+                                position: 'left',
                                 labels: {
                                     fontColor: 'white',
-                                    fontSize: 15
+                                    fontSize: 11
                                 }
-                            },
+                            }
                         }
                     });
                 });
@@ -88,23 +90,21 @@ export class DashboardComponent implements OnInit {
 
     private totalSessionsLastWeekChart() {
 
-        let startDate: any = moment().startOf('week').subtract(1, 'week');
-        let endDate: any = moment().endOf('week').subtract(1, 'week');
         const lastWeek = {
-            min_date: moment(startDate).format('YYYY-MM-DD HH:mm'),
-            max_date: moment(endDate).format('YYYY-MM-DD HH:mm')
-        }
+            min_date: moment(this.startDate).format('YYYY-MM-DD HH:mm'),
+            max_date: moment(this.endDate).format('YYYY-MM-DD HH:mm')
+        };
 
         this.sessionsService.get({ query: lastWeek }).subscribe(
             res => {
-                const sessionsNumber = this.enumerateDaysBetweenDates(startDate, endDate).map(day => day = this.getNumbers(res.data, day));
-                this.totalSessions = res.data.length;
+                const sessionsNumber = this.enumerateDaysBetweenDates(this.startDate, this.endDate).map(day => day = this.getNumbers(res.data, day));
+                this.sessions = res.data;
 
                 this.lastWeekSessionsChart = new Chart('lastWeekSessionsChart', {
                     type: 'line',
                     beginAtZero: true,
                     data: {
-                        labels: this.enumerateDaysBetweenDates(startDate, endDate).map(date => moment(date).format('DD/MM/YYYY')),
+                        labels: this.enumerateDaysBetweenDates(this.startDate, this.endDate).map(date => moment(date).format('DD/MM/YYYY')),
                         datasets: [{
                             data: sessionsNumber,
                             borderColor: 'white',
@@ -128,27 +128,51 @@ export class DashboardComponent implements OnInit {
                     }
                 });
             }
-        )
+        );
     }
 
     private getNumbers(sessions, day) {
         return sessions.filter(session => moment(session.attendance_at).format('YYYY-MM-DD') === moment(day).format('YYYY-MM-DD')).length;
-    };
+    }
 
     private enumerateDaysBetweenDates(startDate, endDate) {
-        var dates = [],
-            currentDate = startDate,
-            addDays = function (days) {
-                var date = new Date(this.valueOf());
-                date.setDate(date.getDate() + days);
-                return date;
-            };
+        const dates = [];
+        let currentDate = startDate;
+        const addDays = function (days) {
+            const date = new Date(this.valueOf());
+            date.setDate(date.getDate() + days);
+            return date;
+        };
         while (currentDate <= endDate) {
             dates.push(currentDate);
             currentDate = addDays.call(currentDate, 1);
         }
         return dates;
-    };
+    }
+
+    public recalculateSessions() {
+        this.startDate = moment(this.startDate).set('hour', 0);
+        this.endDate = moment(this.endDate).set('hour', 23);
+        this.totalSessionsLastWeekChart();
+    }
+
+    public totalPatients() {
+        if (this.sessions) {
+            let counter = 0;
+            let patientsId = this.sessions.map(session => session.patients_id);
+            if (this.sessions) {
+                this.sessions.forEach((session) => {
+                    if (patientsId.indexOf(session.patients_id) !== -1) {
+                        counter += 1;
+                        patientsId = patientsId.filter(id => id !== session.patients_id);
+                    }
+                });
+                return counter;
+            }
+        }
+    }
+
+
 
 
 }
