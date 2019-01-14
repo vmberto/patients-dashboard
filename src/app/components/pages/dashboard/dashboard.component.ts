@@ -21,7 +21,6 @@ export class DashboardComponent implements OnInit {
     // Counters
     public patientsCounter: Observable<number>;
 
-    public sessionsDurationCounter: Observable<String>;
 
     // Chart patients x health-insurance relation
     public patientsHealthInsuranceChart = [];
@@ -32,7 +31,7 @@ export class DashboardComponent implements OnInit {
     // Chart total sessions last week
     public lastWeekSessionsChart = [];
     public totalHoursWorked: any;
-    public sessions: any;
+    public totalPatients: number;
 
     constructor(
         private patientsService: PatientsService,
@@ -44,7 +43,6 @@ export class DashboardComponent implements OnInit {
     ngOnInit() {
 
         this.patientsCounter = this.patientsService.get({ url: 'counter' }).pipe(map(res => res.data));
-        this.sessionsDurationCounter = this.sessionsService.get({ url: 'total-hours' }).pipe(map(res => res.data));
 
         this.patientsHealthInsuranceRelationChart();
 
@@ -95,18 +93,18 @@ export class DashboardComponent implements OnInit {
             max_date: moment(this.endDate).format('YYYY-MM-DD HH:mm')
         };
 
-        this.sessionsService.get({ query: lastWeek }).subscribe(
+        this.sessionsService.get({ query: lastWeek, url: 'statistics' }).subscribe(
             res => {
-                const sessionsNumber = this.enumerateDaysBetweenDates(this.startDate, this.endDate).map(day => day = this.getNumbers(res.data, day));
-                this.sessions = res.data;
+                this.totalPatients = res.totalPatients;
+                this.totalHoursWorked = res.totalHours;
 
                 this.lastWeekSessionsChart = new Chart('lastWeekSessionsChart', {
                     type: 'line',
                     beginAtZero: true,
                     data: {
-                        labels: this.enumerateDaysBetweenDates(this.startDate, this.endDate).map(date => moment(date).format('DD/MM/YYYY')),
+                        labels: res.dataLabels,
                         datasets: [{
-                            data: sessionsNumber,
+                            data: res.dataSets,
                             borderColor: 'white',
                             borderWidth: 1
                         }]
@@ -131,48 +129,10 @@ export class DashboardComponent implements OnInit {
         );
     }
 
-    private getNumbers(sessions, day) {
-        return sessions.filter(session => moment(session.attendance_at).format('YYYY-MM-DD') === moment(day).format('YYYY-MM-DD')).length;
-    }
-
-    private enumerateDaysBetweenDates(startDate, endDate) {
-        const dates = [];
-        let currentDate = startDate;
-        const addDays = function (days) {
-            const date = new Date(this.valueOf());
-            date.setDate(date.getDate() + days);
-            return date;
-        };
-        while (currentDate <= endDate) {
-            dates.push(currentDate);
-            currentDate = addDays.call(currentDate, 1);
-        }
-        return dates;
-    }
-
     public recalculateSessions() {
         this.startDate = moment(this.startDate).set('hour', 0);
         this.endDate = moment(this.endDate).set('hour', 23);
         this.totalSessionsLastWeekChart();
     }
-
-    public totalPatients() {
-        if (this.sessions) {
-            let counter = 0;
-            let patientsId = this.sessions.map(session => session.patients_id);
-            if (this.sessions) {
-                this.sessions.forEach((session) => {
-                    if (patientsId.indexOf(session.patients_id) !== -1) {
-                        counter += 1;
-                        patientsId = patientsId.filter(id => id !== session.patients_id);
-                    }
-                });
-                return counter;
-            }
-        }
-    }
-
-
-
 
 }
