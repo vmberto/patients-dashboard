@@ -14,6 +14,8 @@ export class PatientsShowComponent implements OnInit {
 
   public patientData: any;
   public patientSessions: any;
+  public totalSessions: number;
+  
   public firstListedSessions = 8;
 
 
@@ -44,9 +46,10 @@ export class PatientsShowComponent implements OnInit {
       this.patientsService.get({ id: res.id, query: { sessions_limit } }).subscribe(
         (res) => {
           this.shareData.activateLoadingScreen(false);
-          this.patientData = res;
-          this.patientSessions = res.Sessions;
-          sortByKey(this.patientSessions, 'created_at');
+          this.patientData = res.patient;
+          this.patientSessions = res.patient.Sessions;
+          this.totalSessions = res.meta.total_sessions;
+          sortByKey(this.patientSessions, 'attendance_at');
 
         },
         () => {

@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
     // Chart total sessions last week
     public lastWeekSessionsChart: Chart;
     public totalHoursWorked: any;
-    public totalPatients: number;
+    public attendedPatients: number;
 
     constructor(
         private patientsService: PatientsService,
@@ -95,7 +95,7 @@ export class DashboardComponent implements OnInit {
 
         this.sessionsService.get({ query: lastWeek, url: 'statistics' }).subscribe(
             res => {
-                this.totalPatients = res.totalPatients;
+                this.attendedPatients = res.totalPatients;
                 this.totalHoursWorked = res.totalHours;
 
                 if(this.lastWeekSessionsChart) this.lastWeekSessionsChart.destroy();

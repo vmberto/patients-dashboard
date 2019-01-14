@@ -12,6 +12,7 @@ import { collapse } from 'src/app/helpers/animations/animations';
 export class PatientSessionsComponent implements OnInit {
 
   @Input() patientSessions;
+  @Input() totalSessions: number;
   @Input() firstListedSessions;
 
   public modalState: string;

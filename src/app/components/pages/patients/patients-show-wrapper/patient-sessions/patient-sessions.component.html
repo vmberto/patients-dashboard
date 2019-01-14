@@ -54,7 +54,7 @@
     </div>
 
 
-    <div *ngIf="patientSessions.length === firstListedSessions" class="mt-4" style="text-align: center">
+    <div *ngIf="totalSessions > patientSessions.length" class="mt-4" style="text-align: center">
       <button class="btn btn-primary btn-md" (click)="showAllSessions()">Carregar todas as Sessões</button>
     </div>
 
