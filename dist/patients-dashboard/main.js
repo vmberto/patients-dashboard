@@ -1177,7 +1177,7 @@ var AnamnesisListComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@media only screen and (max-width: 768px) {\n  .page-title {\n    margin-left: 50px;\n    font-size: 22px!important;\n    line-height: 35px;\n  }\n}\n\n.card {\n  background: var(--lighter-color);\n\n  margin: 10px;\n  overflow: hidden;\n  min-height: 98px;\n  box-shadow: var(--box-shadow)\n}\n\n.card-head {\n  background: var(--darker-color);\n}\n\n.card-title {\n  font-weight: 600;\n  font-size: 15px;\n  padding: 11px;\n  margin: 0;\n  border-bottom: 2px solid var(--primary);\n  text-align: center;\n  letter-spacing: 1px;\n}\n\n"
+module.exports = "@media only screen and (max-width: 768px) {\n  .page-title {\n    margin-left: 50px;\n    font-size: 22px!important;\n    line-height: 35px;\n  }\n}\n\n.card {\n  background: var(--lighter-color);\n\n  margin: 10px;\n  overflow: hidden;\n  min-height: 98px;\n  box-shadow: var(--box-shadow)\n}\n\n.card-head {\n  background: var(--darker-color);\n  border-bottom: 2px solid var(--primary);\n}\n\n.card-title {\n  margin: 0;\n  padding: 10px;\n  font-weight: 600;\n  font-size: 15px;\n  letter-spacing: 1px;\n  text-align: center;\n}\n\n.card-footer h5,\n.card-footer p {\n  margin: 0;\n  display: inline;\n}\n\n.date-range li  {\n  display:inline;\n}\n\n#menu {\n  height: 100%;\n}\n\n#menu ul {\n  height: 100%;\n  padding:0px;\n  margin:0px;\n  list-style:none;\n}\n\n#menu ul li { display: inline; }\n\n#menu ul li button,\n#menu ul li input {\n  height: 100%;\n  padding: 2px 10px;\n  display: inline-block;\n  text-decoration: none;\n}\n\n#menu ul li input {\n  width: 50%;\n  background: var(--darker-color)!important;\n  border-bottom: 1px solid var(--primary)!important;\n  border-radius: 0 !important;\n\n}\n\n#menu ul li p {\n  margin: 0;\n}"
 
 /***/ }),
 
@@ -1188,7 +1188,7 @@ module.exports = "@media only screen and (max-width: 768px) {\n  .page-title {\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n    <div class=\"col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12\">\n        <app-data-card [cardTitle]=\"'Pacientes'\" [cardIcon]=\"'fa-users'\" [cardData]=\"patientsCounter | async\" [routerLink]=\"'/home/patients'\"></app-data-card>\n    </div>\n    <div class=\"col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12\">\n        <app-data-card [cardTitle]=\"'Total de Horas'\" [cardIcon]=\"'fa-clock-o'\" [cardData]=\"sessionsDurationCounter | async\"></app-data-card>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12\">\n        <div class=\"card\">\n            <div class=\"card-head\">\n                <h5 class=\"card-title\">Relação Pacientes x Planos de Saúde</h5>\n            </div>\n            <div class=\"card-body\">\n                <canvas id=\"patientsHealthInsuranceChart\"></canvas>\n            </div>\n        </div>\n    </div>\n    <div class=\"col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12\">\n        <div class=\"card\">\n            <div class=\"card-head\">\n                <h5 class=\"card-title\">Total de Antendimentos na Última Semana ({{totalSessions || ' --'}} sessões)</h5>\n            </div>\n            <div class=\"card-body\">\n                <canvas id=\"lastWeekSessionsChart\"></canvas>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"row\">\n    <div class=\"col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12\">\n        <app-data-card [cardTitle]=\"'Pacientes'\" [cardIcon]=\"'fa-users'\" [cardData]=\"patientsCounter | async\"\n            [routerLink]=\"'/home/patients'\"></app-data-card>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12\">\n        <div class=\"card\">\n            <div class=\"card-head\">\n                <h5 class=\"card-title\">Relação Pacientes x Planos de Saúde</h5>\n            </div>\n            <div class=\"card-body\">\n                <canvas id=\"patientsHealthInsuranceChart\"></canvas>\n            </div>\n        </div>\n    </div>\n    <div class=\"col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12\">\n        <div class=\"card\">\n            <div class=\"card-head\">\n                <div class=\"row\">\n                    <div class=\"col-md-6\">\n                        <h5 class=\"card-title\">Total de Antendimentos</h5>\n                    </div>\n                    <div class=\"col-md-6\">\n                        <nav id=\"menu\">\n                            <ul>\n                                <li><input type=\"date\" [max]=\"endDate | date:'yyyy-MM-dd'\" [ngModel]=\"startDate | date:'yyyy-MM-dd'\"\n                                        (ngModelChange)=\"startDate = $event\" (change)=\"recalculateSessions()\"></li>\n                                <li><input type=\"date\" [min]=\"startDate | date:'yyyy-MM-dd'\" [ngModel]=\"endDate | date:'yyyy-MM-dd'\"\n                                        (ngModelChange)=\"endDate = $event\" (change)=\"recalculateSessions()\"></li>\n                            </ul>\n                        </nav>\n                    </div>\n                </div>\n            </div>\n            <div class=\"card-body\">\n                <canvas id=\"lastWeekSessionsChart\"></canvas>\n            </div>\n            <div class=\"card-footer\">\n                <div class=\"row\">\n                    <div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12\">\n                        <h5 class=\"data-name\">Total de Horas </h5>\n                        <p>{{ totalHoursWorked || ' -- ' }}</p>\n                    </div>\n                    <div class=\"col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12\">\n                        <h5 class=\"data-name\">Total de Pacientes </h5>\n                        <p>{{ totalPatients || ' -- ' }}</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -1230,6 +1230,8 @@ var DashboardComponent = /** @class */ (function () {
         this.patientsService = patientsService;
         this.sessionsService = sessionsService;
         this.healthInsuranceService = healthInsuranceService;
+        this.startDate = moment__WEBPACK_IMPORTED_MODULE_5__().startOf('week').subtract(1, 'week');
+        this.endDate = moment__WEBPACK_IMPORTED_MODULE_5__().endOf('week').subtract(1, 'week');
         // Chart patients x health-insurance relation
         this.patientsHealthInsuranceChart = [];
         this.patientsHealthInsuranceData = [];
@@ -1239,7 +1241,6 @@ var DashboardComponent = /** @class */ (function () {
     }
     DashboardComponent.prototype.ngOnInit = function () {
         this.patientsCounter = this.patientsService.get({ url: 'counter' }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.data; }));
-        this.sessionsDurationCounter = this.sessionsService.get({ url: 'total-hours' }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.data; }));
         this.patientsHealthInsuranceRelationChart();
         this.totalSessionsLastWeekChart();
     };
@@ -1251,7 +1252,7 @@ var DashboardComponent = /** @class */ (function () {
             _this.patientsHealthInsuranceData = res.data.map(function (data) { return data.Patients.length; });
             _this.randomColors = _this.healthInsuranceLabels.map(function (_data) { return _data = Object(src_app_app_utils__WEBPACK_IMPORTED_MODULE_3__["generateRandomColor"])(); });
             _this.patientsHealthInsuranceChart = new chart_js__WEBPACK_IMPORTED_MODULE_4___default.a('patientsHealthInsuranceChart', {
-                type: 'doughnut',
+                type: 'pie',
                 data: {
                     labels: _this.healthInsuranceLabels,
                     datasets: [{
@@ -1263,36 +1264,32 @@ var DashboardComponent = /** @class */ (function () {
                 },
                 options: {
                     legend: {
-                        fullWidth: true,
-                        display: true,
-                        poisition: 'right',
+                        position: 'left',
                         labels: {
                             fontColor: 'white',
-                            fontSize: 15
+                            fontSize: 11
                         }
-                    },
+                    }
                 }
             });
         });
     };
     DashboardComponent.prototype.totalSessionsLastWeekChart = function () {
         var _this = this;
-        var startDate = moment__WEBPACK_IMPORTED_MODULE_5__().startOf('week').subtract(1, 'week');
-        var endDate = moment__WEBPACK_IMPORTED_MODULE_5__().endOf('week').subtract(1, 'week');
         var lastWeek = {
-            min_date: moment__WEBPACK_IMPORTED_MODULE_5__(startDate).format('YYYY-MM-DD HH:mm'),
-            max_date: moment__WEBPACK_IMPORTED_MODULE_5__(endDate).format('YYYY-MM-DD HH:mm')
+            min_date: moment__WEBPACK_IMPORTED_MODULE_5__(this.startDate).format('YYYY-MM-DD HH:mm'),
+            max_date: moment__WEBPACK_IMPORTED_MODULE_5__(this.endDate).format('YYYY-MM-DD HH:mm')
         };
-        this.sessionsService.get({ query: lastWeek }).subscribe(function (res) {
-            var sessionsNumber = _this.enumerateDaysBetweenDates(startDate, endDate).map(function (day) { return day = _this.getNumbers(res.data, day); });
-            _this.totalSessions = res.data.length;
+        this.sessionsService.get({ query: lastWeek, url: 'statistics' }).subscribe(function (res) {
+            _this.totalPatients = res.totalPatients;
+            _this.totalHoursWorked = res.totalHours;
             _this.lastWeekSessionsChart = new chart_js__WEBPACK_IMPORTED_MODULE_4___default.a('lastWeekSessionsChart', {
                 type: 'line',
                 beginAtZero: true,
                 data: {
-                    labels: _this.enumerateDaysBetweenDates(startDate, endDate).map(function (date) { return moment__WEBPACK_IMPORTED_MODULE_5__(date).format('DD/MM/YYYY'); }),
+                    labels: res.dataLabels,
                     datasets: [{
-                            data: sessionsNumber,
+                            data: res.dataSets,
                             borderColor: 'white',
                             borderWidth: 1
                         }]
@@ -1317,23 +1314,11 @@ var DashboardComponent = /** @class */ (function () {
             });
         });
     };
-    DashboardComponent.prototype.getNumbers = function (sessions, day) {
-        return sessions.filter(function (session) { return moment__WEBPACK_IMPORTED_MODULE_5__(session.attendance_at).format('YYYY-MM-DD') === moment__WEBPACK_IMPORTED_MODULE_5__(day).format('YYYY-MM-DD'); }).length;
+    DashboardComponent.prototype.recalculateSessions = function () {
+        this.startDate = moment__WEBPACK_IMPORTED_MODULE_5__(this.startDate).set('hour', 0);
+        this.endDate = moment__WEBPACK_IMPORTED_MODULE_5__(this.endDate).set('hour', 23);
+        this.totalSessionsLastWeekChart();
     };
-    ;
-    DashboardComponent.prototype.enumerateDaysBetweenDates = function (startDate, endDate) {
-        var dates = [], currentDate = startDate, addDays = function (days) {
-            var date = new Date(this.valueOf());
-            date.setDate(date.getDate() + days);
-            return date;
-        };
-        while (currentDate <= endDate) {
-            dates.push(currentDate);
-            currentDate = addDays.call(currentDate, 1);
-        }
-        return dates;
-    };
-    ;
     DashboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-dashboard',
