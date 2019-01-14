@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
     public randomColors: string[] = [];
 
     // Chart total sessions last week
-    public lastWeekSessionsChart = [];
+    public lastWeekSessionsChart: Chart;
     public totalHoursWorked: any;
     public totalPatients: number;
 
@@ -98,6 +98,7 @@ export class DashboardComponent implements OnInit {
                 this.totalPatients = res.totalPatients;
                 this.totalHoursWorked = res.totalHours;
 
+                if(this.lastWeekSessionsChart) this.lastWeekSessionsChart.destroy();
                 this.lastWeekSessionsChart = new Chart('lastWeekSessionsChart', {
                     type: 'line',
                     beginAtZero: true,
