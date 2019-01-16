@@ -23,11 +23,10 @@ export class AnamnesisService extends CrudMethods {
     return this.http.delete(`${environment.API_URL}/api/${this.entity}/delete-question/${id}`);
   }
 
-  public downloadAnamnesis(id): Promise<any> {
+  public downloadAnamnesis(id, patient = false): Promise<any> {
     let headers = new HttpHeaders();
     headers = headers.set('Accept', 'application/pdf');
-
-    return this.http.get(`${environment.API_URL}/api/${this.entity}/download/${id}`, {headers, responseType: 'blob' as 'json'}).toPromise();
+    return this.http.post(`${environment.API_URL}/api/${this.entity}/download/${id}`, patient || {},  {headers, responseType: 'blob' as 'json'}).toPromise();
   }
 
 

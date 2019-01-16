@@ -1,15 +1,23 @@
 <div class="panel">
 
-  <h4 class="panel-title"><button routerLink="../.." class="return-btn btn btn-primary">
-      <i class="fa fa-arrow-left"></i></button> Paciente #{{patientData.id}}
+  <h4 class="panel-title">
+    <button routerLink="../.." class="return-btn btn btn-primary">
+      <i class="fa fa-arrow-left"></i>
+    </button> Paciente #{{patientData.id}}
+
+    <button id="download-anamnesis" class="btn btn-success btn-sm" (click)="downloadPatientAnamnesis()">
+      <i class="fa" [ngClass]="{'fa-download': !downloadingAnamnesis, 'fa-spinner': downloadingAnamnesis, 'fa-spin': downloadingAnamnesis}"></i>
+      Anamnesis
+    </button>
   </h4>
 
   <div class="panel-body">
     <div class="row">
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Nome <i [ngClass]="{'always-shown': openInput}" class="edit-pencil fa fa-pencil"></i></h5>
-        <p [hidden]="openInput" (click)="openInputToEdit('name')" class="click-for-edit"> {{patientData.name ?
-          patientData.name : '--'}} </p>
+        <p [hidden]="openInput" (click)="openInputToEdit('name')" class="click-for-edit">
+          {{patientData.name ? patientData.name : '--'}}
+        </p>
         <div *ngIf="openInput" class="input-group">
           <input [(ngModel)]="edit" class="form-control" autofocus type="text">
           <div class="input-group-append">
@@ -92,7 +100,8 @@
           <p style="display: inline-block"><strong class="data-name">Cadastrado em: </strong>{{patientData.created_at |
             date:'dd/MM/yyyy
             HH:mm'}}&emsp;</p>
-          <p *ngIf="patientData.created_at !== patientData.updated_at" style="display: inline-block"><strong class="data-name"> Atualizado em: </strong>{{patientData.updated_at
+          <p *ngIf="patientData.created_at !== patientData.updated_at" style="display: inline-block"><strong class="data-name">
+              Atualizado em: </strong>{{patientData.updated_at
             | date:'dd/MM/yyyy
             HH:mm'}}</p>
         </div>

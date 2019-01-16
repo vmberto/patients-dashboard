@@ -33,12 +33,12 @@ import {
   PatientSessionsComponent,
   AnamnesisEditComponent,
   PatientsIndexComponent,
-  HealthInsuranceIndexComponent
+  HealthInsuranceIndexComponent,
+  CreateSessionComponent
 } from './components';
 
 // Directives
 import { ModalDirective } from './directives/modal.directive';
-import { CreateSessionComponent } from './components/pages/patients/patients-show-wrapper/patient-sessions/create-session/create-session.component';
 
 registerLocaleData(localePt);
 @NgModule({
