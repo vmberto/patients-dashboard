@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CrudMethods } from 'src/app/helpers/crud/crud-methods';
@@ -13,5 +13,12 @@ export class SessionsService extends CrudMethods {
     super();
     this.entity = 'sessions';
   }
+
+  public downloadPatientEvolution( { patient_id, last_sessions_number } ): Promise<any> {
+    let headers = new HttpHeaders();
+    headers = headers.set('Accept', 'application/pdf');
+
+    return this.http.post(`${environment.API_URL}/api/${this.entity}/download`, { patient_id, last_sessions_number }, {headers, responseType: 'blob' as 'json'}).toPromise();
+  } 
 
 }

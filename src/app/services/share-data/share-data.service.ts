@@ -7,8 +7,9 @@ import { Subject } from 'rxjs';
 export class ShareDataService {
 
     public loadingScreenEvent = new Subject<any>();
-
     public sessionLimitEvent = new Subject<any>();
+
+    private patientData: any;
 
     constructor() {}
 
@@ -20,7 +21,13 @@ export class ShareDataService {
       this.sessionLimitEvent.next(changed);
     }
 
+    get patient() {
+      return this.patientData;
+    }
 
+    set patient(patientData: any) {
+      this.patientData = patientData;
+    }
 
 
 }

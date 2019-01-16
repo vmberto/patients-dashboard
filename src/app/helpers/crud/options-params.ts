@@ -1,5 +1,11 @@
-interface CrudOptions {
+export interface GetOptions {
     id?: number;
     query?: any;
-    url?: any;
+    url?: string;
+}
+
+export interface PostOptions {
+    data: any;
+    id?: number;
+    url?: string;
 }

@@ -18,6 +18,7 @@ export { AnamnesisEditComponent } from './pages/anamnesis/anamnesis-edit/anamnes
 export { PatientsIndexComponent } from './pages/patients/patients-index.component';
 export { PatientsListComponent } from './pages/patients/patients-list/patients-list.component';
 export { PatientsCreateComponent } from './pages/patients/patients-create/patients-create.component';
-export { PatientsShowComponent } from './pages/patients/patients-show-wrapper/patients-show.component';
-export { PatientDataComponent } from './pages/patients/patients-show-wrapper/patient-data/patient-data.component';
-export { PatientSessionsComponent } from './pages/patients/patients-show-wrapper/patient-sessions/patient-sessions.component';
+export { PatientsShowComponent } from './pages/patients/patients-show/patients-show.component';
+export { PatientDataComponent } from './pages/patients/patients-show/patient-data/patient-data.component';
+export { PatientSessionsComponent } from './pages/patients/patients-show/patient-sessions/patient-sessions.component';
+export { CreateSessionComponent } from './pages/patients/patients-show/patient-sessions/create-session/create-session.component';
