@@ -1,6 +1,7 @@
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { GetOptions, PostOptions } from './options-params';
 
 export abstract class CrudMethods {
     protected http: HttpClient;
@@ -13,12 +14,13 @@ export abstract class CrudMethods {
     * @param id (OPTIONAL) {number | boolean} Get with specified Id
     * @param queryParams (OPTIONAL) {any} Get with query params
     */
-    public get(options: CrudOptions = {}): Observable<any> {
+    public get(options: GetOptions = {}): Observable<any> {
         return this.http.get(`${environment.API_URL}/api/${this.entity}${options.id ? `/${options.id}` : ''}${options.url ? `/${options.url}` : ''}`, { params: options.query } || {});
     }
 
     /**
     * Posts data to an ApiRoute
+    * @TODO Trocar os parametros pelo PostOptions já criado como interface
     * @param data {any}
     */
     public post(data: any, id: number | boolean = false): Observable<any> {

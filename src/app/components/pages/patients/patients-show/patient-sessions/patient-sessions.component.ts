@@ -1,7 +1,8 @@
-import { ShareDataService } from 'src/app/services';
+import { ShareDataService, SessionsService } from 'src/app/services';
 import { sortByKey } from 'src/app/app.utils';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { collapse } from 'src/app/helpers/animations/animations';
+
 
 @Component({
   selector: 'app-patient-sessions',
@@ -14,10 +15,12 @@ export class PatientSessionsComponent implements OnInit {
   @Input() patientSessions;
   @Input() totalSessions: number;
   @Input() sessionsListLimit;
+  @Output() download: EventEmitter<any> = new EventEmitter<any>();
+
 
   public modalState: string;
 
-  constructor(private shareDataService: ShareDataService) { }
+  constructor(private shareDataService: ShareDataService, private sessionsService: SessionsService) { }
 
   ngOnInit() {
     this.patientSessions.map(patient => {
@@ -32,6 +35,14 @@ export class PatientSessionsComponent implements OnInit {
 
   public showAllSessions(): void {
     this.shareDataService.watchSessionLimit(true);
+  }
+
+  public downloadPatientEvolution(): void {
+
+    const last_sessions_number = 4;
+
+    this.download.emit(last_sessions_number);
+
   }
 
 }

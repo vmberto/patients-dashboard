@@ -1,8 +1,10 @@
-import { PatientsService, ShareDataService } from 'src/app/services';
+import { PatientsService, ShareDataService, SessionsService } from 'src/app/services';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { showup } from 'src/app/helpers/animations/animations';
 import { sortByKey } from 'src/app/app.utils';
+import saveAs from 'node_modules/file-saver';
+
 
 @Component({
   selector: 'app-show',
@@ -21,6 +23,7 @@ export class PatientsShowComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private patientsService: PatientsService,
+    private sessionsService: SessionsService,
     private shareData: ShareDataService) { }
 
   ngOnInit() {
@@ -68,6 +71,22 @@ export class PatientsShowComponent implements OnInit {
     this.patientsService.update($event).subscribe(() => {
       this.patientData.updated_at = new Date();
     });
+  }
+
+  public downloadPatientEvolution(last_sessions_number): void {
+
+    this.sessionsService.downloadPatientEvolution({ last_sessions_number, patient_id: this.patientData.id })
+    .then((res) => {
+        const file = new Blob([res], {type: 'application/pdf'});
+        const patientEvolutionName = this.patientData.name.toLowerCase().split(' ').join('-');
+        const filename = `evolução-${patientEvolutionName}.pdf`;
+
+        saveAs(file, filename);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+
   }
 
 }
