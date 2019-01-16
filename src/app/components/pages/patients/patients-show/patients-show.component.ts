@@ -78,7 +78,7 @@ export class PatientsShowComponent implements OnInit {
     this.sessionsService.downloadPatientEvolution({ last_sessions_number, patient_id: this.patientData.id })
     .then((res) => {
         const file = new Blob([res], {type: 'application/pdf'});
-        const patientEvolutionName = 'test'.toLowerCase().split(' ').join('-');
+        const patientEvolutionName = this.patientData.name.toLowerCase().split(' ').join('-');
         const filename = `evolução-${patientEvolutionName}.pdf`;
 
         saveAs(file, filename);
