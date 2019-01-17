@@ -19,7 +19,9 @@ export class PatientDataComponent implements OnInit {
   constructor(private anamnesisService: AnamnesisService) { }
 
   ngOnInit() {
+    
     this.edit = this.patientData.name;
+
   }
 
   public openInputToEdit() {

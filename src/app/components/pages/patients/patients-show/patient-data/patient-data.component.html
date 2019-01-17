@@ -37,17 +37,14 @@
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Celular</h5>
         <p class="click-for-edit">{{patientData.Contact.phone ? patientData.Contact.phone : '--'}}</p>
-        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Email</h5>
         <p class="click-for-edit">{{patientData.Contact.email ? patientData.Contact.email : '--'}}</p>
-        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Particular</h5>
         <p class="click-for-edit">{{patientData.is_private ? 'Sim' : 'Não'}}</p>
-        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
       </div>
     </div>
     <hr class="details-separator">
@@ -57,40 +54,29 @@
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">CEP</h5>
-        <p class="click-for-edit">{{patientData.Addresses[0].zip_code ? patientData.Addresses[0].zip_code :
-          '--'}}</p>
-        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+        <p class="click-for-edit">{{patientData.Address.zip_code || '--'}}</p>
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Rua</h5>
-        <p class="click-for-edit">{{patientData.Addresses[0].street ? patientData.Addresses[0].street :
-          '--'}}</p>
-        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+        <p class="click-for-edit">{{patientData.Address.street || '--'}}</p>
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Número</h5>
-        <p class="click-for-edit">{{patientData.Addresses[0].number ? patientData.Addresses[0].number :
-          '--'}}</p>
-        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+        <p class="click-for-edit">{{patientData.Address.number || '--'}}</p>
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Complemento</h5>
-        <p class="click-for-edit">{{patientData.Addresses[0].complement ? patientData.Addresses[0].complement
-          : '--'}}</p>
-        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+        <p class="click-for-edit">{{patientData.Address.complement || '--'}}</p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Bairro</h5>
-        <p class="click-for-edit">{{patientData.Addresses[0].district ? patientData.Addresses[0].district :
-          '--'}}</p>
-        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+        <p class="click-for-edit">{{patientData.Address.district || '--'}}</p>
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Cidade</h5>
-        <p class="click-for-edit">{{patientData.Addresses[0].city ? patientData.Addresses[0].city : '--'}}</p>
-        <!-- <i class="edit-pencil fa fa-pencil"></i> -->
+        <p class="click-for-edit">{{patientData.Address.city || '--'}}</p>
       </div>
     </div>
     <hr class="details-separator">

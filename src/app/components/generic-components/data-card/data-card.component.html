@@ -1,7 +1,7 @@
 <a [routerLink]="routerLink">
     <div class="card info-card card-hover">
         <h5 class="card-title">{{cardTitle}}</h5>
-        <i class="fa background-icon" [ngClass]="{'fa-spinner': !cardData , 'fa-spin': !cardData}"
+        <i class="fa background-icon" [ngClass]="{'fa-spinner': !cardData && cardData !== 0, 'fa-spin': !cardData && cardData !== 0}"
             [class]="cardIcon"></i>
         <span style="font-weight: 400; font-size: 30px;">
             <div *ngIf="checkIfNumber(); else string">

@@ -14,6 +14,11 @@
     transition: all 500ms;
   }
 
+  .card-title h2 {
+    letter-spacing: 1px;
+    color: white;
+  }
+
   @keyframes showup {
       0% {opacity: 0;transform: translateY(-110%);}
       100% {opacity: 1;transform: translateY(0);}
