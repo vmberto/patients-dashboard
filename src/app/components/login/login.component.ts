@@ -9,6 +9,9 @@ import { AuthService } from 'src/app/services';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public currentYear = new Date();
+  public currentVersion = '1.0.0';
+
   public loginForm: FormGroup;
   public loadingLogin: boolean;
   public buttonLogin: string;
@@ -26,7 +29,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-
 
     this.loadingLogin = false;
     this.buttonLogin = 'Entrar';
