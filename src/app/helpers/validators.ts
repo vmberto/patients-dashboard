@@ -4,12 +4,12 @@ import { EMAIL_REGEX, NAME_REGEX, VIA_CEP_REGEX } from 'src/app/app.utils';
 export class PasswordValidation {
 
     static MatchPassword(AC: AbstractControl) {
-        let password = AC.get('password').value;
-        let confirmPassword = AC.get('confirmPassword').value;
+        const password = AC.get('password').value;
+        const confirmPassword = AC.get('confirmPassword').value;
         if (password != confirmPassword) {
             AC.get('confirmPassword').setErrors({ MatchPassword: true })
         } else {
-            return null
+            return null;
         }
     }
 
