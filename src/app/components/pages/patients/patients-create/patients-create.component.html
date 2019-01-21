@@ -100,7 +100,7 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label>CEP</label>
-                <input formControlName="zip_code" (blur)="findCep()" type="text" class="form-control" placeholder="00000-000"
+                <input id="address-zip_code" formControlName="zip_code" (blur)="findCep()" type="text" class="form-control" placeholder="00000-000"
                   maxlength="8">
                 <i [@fade] *ngIf="findingCep || cepFound" (click)="clearSelectedAddress()" class="pointer finding_cep fa" [ngClass]="{'fa-spinner': findingCep, 'fa-spin': findingCep, 'fa-times': cepFound}"></i>
               </div>
@@ -110,14 +110,14 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label>Cidade</label>
-                <input formControlName="city" type="text" class="form-control" placeholder="Recife">
+                <input id="address-city" formControlName="city" type="text" class="form-control" placeholder="Recife">
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="form-group">
                 <label>Bairro</label>
-                <input formControlName="district" type="text" class="form-control" placeholder="Barro">
+                <input id="address-district" formControlName="district" type="text" class="form-control" placeholder="Barro">
               </div>
             </div>
 
@@ -128,7 +128,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Rua</label>
-                <input formControlName="street" type="text" class="form-control" placeholder="Av. Caxangá">
+                <input id="address-street" formControlName="street" type="text" class="form-control" placeholder="Av. Caxangá">
               </div>
             </div>
 
