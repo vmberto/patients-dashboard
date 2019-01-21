@@ -102,6 +102,7 @@
                 <label>CEP</label>
                 <input formControlName="zip_code" (blur)="findCep()" type="text" class="form-control" placeholder="00000-000"
                   maxlength="8">
+                <i [@fade] *ngIf="findingCep || cepFound" (click)="clearSelectedAddress()" class="pointer finding_cep fa" [ngClass]="{'fa-spinner': findingCep, 'fa-spin': findingCep, 'fa-times': cepFound}"></i>
               </div>
             </div>
 

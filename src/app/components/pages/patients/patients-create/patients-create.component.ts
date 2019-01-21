@@ -5,11 +5,13 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { Component, OnInit } from '@angular/core';
 import { emailValidator, nameValidator, cepValidator } from 'src/app/helpers/validators';
 import { SeekerService } from 'src/app/services/seeker.service';
+import { fade } from 'src/app/helpers/animations/animations';
 
 @Component({
   selector: 'app-create',
   templateUrl: './patients-create.component.html',
-  styleUrls: ['./patients-create.component.css']
+  styleUrls: ['./patients-create.component.css'],
+  animations: [fade]
 })
 export class PatientsCreateComponent implements OnInit {
 
@@ -19,6 +21,8 @@ export class PatientsCreateComponent implements OnInit {
   public maritalStates = MARITAL_STATES;
 
   public creatingPatient: boolean;
+  public findingCep: boolean;
+  public cepFound: boolean;
 
 
   constructor(
@@ -75,33 +79,62 @@ export class PatientsCreateComponent implements OnInit {
   }
 
   public findCep() {
-    
-    if(this.patientForm.controls.zip_code.value.length === 8) {
-      this.seekerService.getCep(this.patientForm.controls.zip_code.value)
+
+    if (this.patientForm.controls.zip_code.value.length === 8) {
+
+      const formControls = this.patientForm.controls;
+      this.findingCep = true;
+
+      this.seekerService.getCep(formControls.zip_code.value)
         .subscribe(
           (res) => {
-            if(!res['erro']){
-              this.patientForm.controls.city.setValue(res['localidade'])
-              this.patientForm.controls.district.setValue(res['bairro'])
-              this.patientForm.controls.street.setValue(res['logradouro'])
-              this.patientForm.controls.city.disable();
-              this.patientForm.controls.district.disable();
-              this.patientForm.controls.street.disable();
+            this.findingCep = false;
+            if (!res['erro']) {
+              this.cepFound = true;
+              formControls.city.setValue(res['localidade'])
+              formControls.district.setValue(res['bairro'])
+              formControls.street.setValue(res['logradouro'])
+
+              /** @TODO Disable input only when there is value for it */
+              formControls.zip_code.disable();
+              if(res['localidade']) formControls.city.disable();
+              formControls.district.disable();
+              formControls.street.disable();
 
               document.getElementById('address-number').focus();
 
             } else {
               console.log('cep invalido');
-              
+
             }
           },
           (err) => {
+            this.findingCep = false;
             console.log(err);
-            
+
           }
         )
     }
 
+  }
+
+  public clearSelectedAddress() {
+    if (this.cepFound) {
+      const formControls = this.patientForm.controls;
+
+      formControls.zip_code.enable();
+      formControls.city.enable();
+      formControls.district.enable();
+      formControls.street.enable();
+
+
+      formControls.city.setValue('');
+      formControls.district.setValue('');
+      formControls.street.setValue('');
+      formControls.zip_code.setValue('');
+
+      this.cepFound = false;
+    }
   }
 
   submitPatientData() {
