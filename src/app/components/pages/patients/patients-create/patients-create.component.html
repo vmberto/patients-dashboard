@@ -97,17 +97,32 @@
 
           <div class="form-row">
 
-            <div class="col-md-3">
-              <label>CEP</label>
+            <div class="col-md-4">
               <div class="form-group">
-                <div class="input-group mb-3">
-                  <input formControlName="zip_code" type="text" class="form-control" placeholder="00000-000" maxlength="8">
-                  <div class="input-group-append">
-                    <button (click)="findCep()" class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
-                  </div>
-                </div>
+                <label>CEP</label>
+                <input formControlName="zip_code" (blur)="findCep()" type="text" class="form-control" placeholder="00000-000"
+                  maxlength="8">
               </div>
             </div>
+
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Cidade</label>
+                <input formControlName="city" type="text" class="form-control" placeholder="Recife">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Bairro</label>
+                <input formControlName="district" type="text" class="form-control" placeholder="Barro">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
 
             <div class="col-md-6">
               <div class="form-group">
@@ -119,32 +134,14 @@
             <div class="col-md-3">
               <div class="form-group">
                 <label>Número</label>
-                <input formControlName="number" type="text" class="form-control" placeholder="000">
+                <input id="address-number" formControlName="number" type="text" class="form-control" placeholder="000">
               </div>
             </div>
-
-          </div>
-
-          <div class="row">
 
             <div class="col-md-3">
               <div class="form-group">
                 <label>Complemento<small> &mdash; Opcional</small></label>
                 <input formControlName="complement" type="text" class="form-control" placeholder="Aptº 0000">
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="form-group">
-                <label>Bairro</label>
-                <input formControlName="district" type="text" class="form-control" placeholder="Barro">
-              </div>
-            </div>
-
-            <div class="col-md-5">
-              <div class="form-group">
-                <label>Cidade</label>
-                <input formControlName="city" type="text" class="form-control" placeholder="Recife">
               </div>
             </div>
 

@@ -75,16 +75,32 @@ export class PatientsCreateComponent implements OnInit {
   }
 
   public findCep() {
+    
+    if(this.patientForm.controls.zip_code.value.length === 8) {
+      this.seekerService.getCep(this.patientForm.controls.zip_code.value)
+        .subscribe(
+          (res) => {
+            if(!res['erro']){
+              this.patientForm.controls.city.setValue(res['localidade'])
+              this.patientForm.controls.district.setValue(res['bairro'])
+              this.patientForm.controls.street.setValue(res['logradouro'])
+              this.patientForm.controls.city.disable();
+              this.patientForm.controls.district.disable();
+              this.patientForm.controls.street.disable();
 
-    this.seekerService.getCep(this.patientForm.controls.zip_code.value)
-      .subscribe(
-        (res) => {
-          this.patientForm.controls.city.setValue(res['localidade'])
-          this.patientForm.controls.district.setValue(res['bairro'])
-          this.patientForm.controls.street.setValue(res['logradouro'])
+              document.getElementById('address-number').focus();
 
-        }
-      )
+            } else {
+              console.log('cep invalido');
+              
+            }
+          },
+          (err) => {
+            console.log(err);
+            
+          }
+        )
+    }
 
   }
 
