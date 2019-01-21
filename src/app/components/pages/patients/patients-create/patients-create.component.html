@@ -66,6 +66,30 @@
               </div>
             </div>
 
+            <div class="col-md-2">
+              <div class="form-group">
+                <label>Estado Civil</label>
+                <select formControlName="marital_status_type_id" type="text" class="form-control">
+                  <option *ngFor="let maritalState of maritalStates" [value]="maritalState.value">{{maritalState.title}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-2">
+              <div class="form-group">
+                <label>Filhos</label>
+                <input formControlName="childrens_number" type="number" class="form-control" placeholder="0" min="0">
+              </div>
+            </div>
+
+            <div class="col-md-2">
+              <div class="form-group">
+                <label>Tempo de União</label>
+                <input formControlName="union_time" type="number" class="form-control" placeholder="0" min="0">
+                <small style="font-size: 80%">&bull; Em Anos</small>
+              </div>
+            </div>
+
 
           </div>
 

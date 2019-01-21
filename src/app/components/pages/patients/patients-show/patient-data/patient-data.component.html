@@ -46,6 +46,18 @@
         <h5 class="data-name">Particular</h5>
         <p class="click-for-edit">{{patientData.is_private ? 'Sim' : 'Não'}}</p>
       </div>
+      <div class="col-md-3 col-sm-6">
+        <h5 class="data-name">Estado Civil</h5>
+        <p class="click-for-edit">{{ patientData.MaritalStatus.MaritalStatusType.name }}</p>
+      </div>
+      <div class="col-md-3 col-sm-6" *ngIf="patientData.MaritalStatus.MaritalStatusType.id !== 1">
+        <h5 class="data-name">Tempo de União</h5>
+        <p class="click-for-edit">{{ patientData.MaritalStatus.union_time }}</p>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h5 class="data-name">Filhos</h5>
+        <p class="click-for-edit">{{ patientData.MaritalStatus.childrens_number }}</p>
+      </div>
     </div>
     <hr class="details-separator">
     <div class="row">

@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+
+    "build:production": "git checkout production && git pull origin production && git pull origin master && ng build && git add ."
   },
   "private": true,
   "dependencies": {
