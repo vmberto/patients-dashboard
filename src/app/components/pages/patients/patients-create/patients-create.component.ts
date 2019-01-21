@@ -1,9 +1,10 @@
 import { MARITAL_STATES } from 'src/app/helpers/consts/config.helpers';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PatientsService, HealthInsurancesService } from 'src/app/services';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { emailValidator, nameValidator, cepValidator } from 'src/app/helpers/validators';
+import { SeekerService } from 'src/app/services/seeker.service';
 
 @Component({
   selector: 'app-create',
@@ -25,7 +26,8 @@ export class PatientsCreateComponent implements OnInit {
     private patientService: PatientsService,
     private healthInsuranceService: HealthInsurancesService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private seekerService: SeekerService) { }
 
   ngOnInit() {
 
@@ -42,8 +44,7 @@ export class PatientsCreateComponent implements OnInit {
       email: ['', [Validators.required, emailValidator]],
       phone: ['', [Validators.required]],
 
-      marital_status_type_id: ['', [Validators.required]],
-      union_time: ['', [Validators.required]],
+      marital_status_type_id: [1, [Validators.required]],
       childrens_number: ['', [Validators.required]],
 
       street: ['', [Validators.required]],
@@ -62,7 +63,30 @@ export class PatientsCreateComponent implements OnInit {
     this.patientForm.controls.is_private.setValue(currentValue === false ? true : false);
   }
 
+  public checkMaritalStatus() {
+    const formControls = this.patientForm.controls;
+    if (formControls.marital_status_type_id.value != 1) {
+      this.patientForm.addControl('union_time', new FormControl('', [Validators.required]));
+      return true;
+    } else {
+      this.patientForm.removeControl('union_time');
+      return false;
+    }
+  }
 
+  public findCep() {
+
+    this.seekerService.getCep(this.patientForm.controls.zip_code.value)
+      .subscribe(
+        (res) => {
+          this.patientForm.controls.city.setValue(res['localidade'])
+          this.patientForm.controls.district.setValue(res['bairro'])
+          this.patientForm.controls.street.setValue(res['logradouro'])
+
+        }
+      )
+
+  }
 
   submitPatientData() {
 
@@ -81,7 +105,7 @@ export class PatientsCreateComponent implements OnInit {
         health_insurance_id: formControls.health_insurance.value,
         marital_status_type_id: formControls.marital_status_type_id.value,
         childrens_number: formControls.childrens_number.value,
-        union_time: `${formControls.union_time.value} anos`,
+        union_time: formControls.union_time ? `${formControls.union_time.value} anos` : null,
         address: {
           street: formControls.street.value,
           number: formControls.number.value,

@@ -7,7 +7,7 @@
         <button routerLink=".." class="return-btn btn btn-primary">
           <i class="fa fa-arrow-left"></i>
         </button>
-        Adicionar Paciente
+        Cadastrar Paciente
       </h4>
 
 
@@ -75,14 +75,14 @@
               </div>
             </div>
 
-            <div class="col-md-2">
+            <div [ngClass]="{'col-md-2': checkMaritalStatus(), 'col-md-4': !checkMaritalStatus()}">
               <div class="form-group">
                 <label>Filhos</label>
                 <input formControlName="childrens_number" type="number" class="form-control" placeholder="0" min="0">
               </div>
             </div>
 
-            <div class="col-md-2">
+            <div *ngIf="checkMaritalStatus()" class="col-md-2">
               <div class="form-group">
                 <label>Tempo de União</label>
                 <input formControlName="union_time" type="number" class="form-control" placeholder="0" min="0">
@@ -97,24 +97,29 @@
 
           <div class="form-row">
 
-            <div class="col-md-7">
+            <div class="col-md-3">
+              <label>CEP</label>
+              <div class="form-group">
+                <div class="input-group mb-3">
+                  <input formControlName="zip_code" type="text" class="form-control" placeholder="00000-000" maxlength="8">
+                  <div class="input-group-append">
+                    <button (click)="findCep()" class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
               <div class="form-group">
                 <label>Rua</label>
                 <input formControlName="street" type="text" class="form-control" placeholder="Av. Caxangá">
               </div>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-3">
               <div class="form-group">
                 <label>Número</label>
                 <input formControlName="number" type="text" class="form-control" placeholder="000">
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="form-group">
-                <label>Complemento<small> &mdash; Opcional</small></label>
-                <input formControlName="complement" type="text" class="form-control" placeholder="Aptº 0000">
               </div>
             </div>
 
@@ -122,14 +127,12 @@
 
           <div class="row">
 
-
             <div class="col-md-3">
               <div class="form-group">
-                <label>CEP</label>
-                <input formControlName="zip_code" type="text" class="form-control" placeholder="00000-000" maxlength="8">
+                <label>Complemento<small> &mdash; Opcional</small></label>
+                <input formControlName="complement" type="text" class="form-control" placeholder="Aptº 0000">
               </div>
             </div>
-
 
             <div class="col-md-4">
               <div class="form-group">
@@ -144,8 +147,6 @@
                 <input formControlName="city" type="text" class="form-control" placeholder="Recife">
               </div>
             </div>
-
-
 
           </div>
 
