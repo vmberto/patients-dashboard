@@ -15,32 +15,43 @@ export class EventHandler {
 
   /**
    *
-   * @param {any} error
+   * @param {any} event
    */
-  private handleFailed(error: any): void {
-    this.toastService.show({ text: error.msg || 'Ocorreu um erro', type: 'danger' });
+  private handleFailed(event: any): void {
+    this.toastService.show({ text: event.msg || 'Ocorreu um erro', type: 'danger' });
+  }
+
+  /**
+ *
+ * @param {any} event
+ */
+  private handle200(event: any): void {
+    if (Object.keys(event.body)[0].substr(0, 3) === 'new') {
+      this.toastService.show({ text: 'Criado com sucesso!', type: 'success' });
+    }
+  }
+
+
+
+  /**
+   *
+   * @param {any} event
+   */
+  private handle400(event: any): void {
+    this.toastService.show({ text: event.msg || 'Ocorreu um erro', type: 'danger' });
   }
 
 
   /**
    *
-   * @param {any} error
+   * @param {any} event
    */
-  private handle400(error: any): void {
-    this.toastService.show({ text: error.msg || 'Ocorreu um erro', type: 'danger' });
-  }
-
-
-  /**
-   *
-   * @param {any} error
-   */
-  private handle401(error: any): void {
+  private handle401(event: any): void {
 
     if (this.auth.isLoggedIn()) {
       this.auth.logout();
     } else {
-      this.toastService.show({ text: error.error[0].msg, type: 'warning' });
+      this.toastService.show({ text: event.event[0].msg, type: 'warning' });
     }
 
   }
@@ -48,27 +59,27 @@ export class EventHandler {
 
   /**
    *
-   * @param {any} error
+   * @param {any} event
    */
-  private handle422(error: any): void {
-    this.toastService.show({ text: error.msg || 'Ocorreu um erro', type: 'danger' });
+  private handle422(event: any): void {
+    this.toastService.show({ text: event.msg || 'Ocorreu um erro', type: 'danger' });
   }
 
 
   /**
    *
-   * @param {any} error
+   * @param {any} event
    */
-  private handle500(error: any): void {
-    this.toastService.show({ text: error.msg || 'Ocorreu um erro interno', type: 'danger' });
+  private handle500(event: any): void {
+    this.toastService.show({ text: event.msg || 'Ocorreu um erro interno', type: 'danger' });
   }
 
   /**
  *
- * @param {any} error
+ * @param {any} event
  */
-  private handleValidationError(error: any): void {
-    this.toastService.show({ text: error.msg || 'Erro de Validação', type: 'warning' });
+  private handleValidationevent(event: any): void {
+    this.toastService.show({ text: event.msg || 'Erro de Validação', type: 'warning' });
   }
 
 
@@ -79,12 +90,16 @@ export class EventHandler {
   public handle(event: any): void {
 
     const otherCodes = {
-      'FORM_VALIDATOR_ERROR': 1
+      'FORM_VALIDATOR_event': 1
     };
 
     switch (event.status) {
       case 0:
         this.handleFailed(event);
+        return;
+
+      case 200:
+        this.handle200(event);
         return;
 
       case 400:
@@ -103,8 +118,8 @@ export class EventHandler {
         this.handle500(event);
         return;
 
-      case otherCodes.FORM_VALIDATOR_ERROR:
-        this.handleValidationError(event);
+      case otherCodes.FORM_VALIDATOR_event:
+        this.handleValidationevent(event);
         return;
     }
   }
