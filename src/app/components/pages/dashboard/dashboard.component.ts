@@ -1,3 +1,4 @@
+import { ToastService } from './../../generic-components/toast/toast.service';
 import { HealthInsurancesService, PatientsService, SessionsService } from 'src/app/services';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
@@ -41,6 +42,7 @@ export class DashboardComponent implements OnInit {
 
 
     ngOnInit() {
+
 
         this.patientsCounter = this.patientsService.get({ url: 'counter' }).pipe(map(res => res.data));
 
@@ -135,5 +137,6 @@ export class DashboardComponent implements OnInit {
         this.endDate = moment(this.endDate).set('hour', 23);
         this.totalSessionsLastWeekChart();
     }
+
 
 }

@@ -1,7 +1,7 @@
 <div class="wrapper">
 
-    <button *ngIf="windowSize <= 768" (click)="openSidebar()" [ngClass]="{'btnChangePosition': sidebarOpened}"
-        class="btn" id="sidebarBtn"><i class="fa fa-bars"></i></button>
+    <button *ngIf="windowSize <= 768" (click)="openSidebar()" [ngClass]="{'btnChangePosition': sidebarOpened}" class="btn"
+        id="sidebarBtn"><i class="fa fa-bars"></i></button>
 
     <div [@showSidebar] *ngIf="sidebarOpened || windowSize > 768" class="sidebar-panel" id="sidebar">
         <app-sidebar></app-sidebar>

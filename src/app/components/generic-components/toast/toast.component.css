@@ -1,0 +1,37 @@
+.toast {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 90%;
+    padding: 14px; 
+    width: auto;
+    word-wrap: none;
+    overflow: hidden;
+    background: var(--darker-color);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all .3s;
+    border-radius: 10px;
+}
+
+.success {
+    border: 3px solid var(--success)!important;
+}
+
+.danger {
+    border: 3px solid var(--danger)!important;
+}
+
+.warning {
+    border: 3px solid var(--warning)!important;
+}
+
+.toast:hover {
+    background: var(--darker-color-selected);
+}
+
+
+.toast p {
+    margin: 0;
+}

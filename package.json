@@ -8,13 +8,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-
     "build:production": "git checkout production && git pull origin production && git pull origin master && ng build && git add ."
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^7.0.0",
-    "@angular/cdk": "^6.4.3",
+    "@angular/cdk": "^6.4.7",
     "@angular/common": "^7.0.0",
     "@angular/compiler": "^7.0.0",
     "@angular/core": "^7.0.0",

@@ -1,11 +1,13 @@
 import { MARITAL_STATES } from 'src/app/helpers/consts/config.helpers';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PatientsService, HealthInsurancesService } from 'src/app/services';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, ValidationErrors } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { emailValidator, nameValidator, cepValidator } from 'src/app/helpers/validators';
+import { emailValidator, nameValidator, cepValidator } from 'src/app/helpers/validators/validators';
+import { getFormValidationErrors } from 'src/app/helpers/validators/errors.validators';
 import { SeekerService } from 'src/app/services/seeker.service';
 import { fade } from 'src/app/helpers/animations/animations';
+import { ToastService } from 'src/app/components/generic-components/toast';
 
 @Component({
   selector: 'app-create',
@@ -25,13 +27,15 @@ export class PatientsCreateComponent implements OnInit {
   public cepFound: boolean;
 
 
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
     private patientService: PatientsService,
     private healthInsuranceService: HealthInsurancesService,
-    private seekerService: SeekerService) { }
+    private seekerService: SeekerService,
+    private toastService: ToastService) { }
 
   ngOnInit() {
 
@@ -146,7 +150,18 @@ export class PatientsCreateComponent implements OnInit {
     }
   }
 
+
+
   submitPatientData(): void {
+
+    const validationErrors = getFormValidationErrors(this.patientForm);
+
+    if (validationErrors.length > 0) {
+      this.toastService.show({
+        text: validationErrors[0].message,
+        type: 'warning',
+      });
+    }
 
     if (this.patientForm.valid) {
 

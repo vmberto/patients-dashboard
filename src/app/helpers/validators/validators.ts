@@ -35,6 +35,6 @@ export function nameValidator(control: FormControl): { [key: string]: boolean } 
 }
 
 export function cepValidator(control: FormControl): { [key: string]: boolean } {
-    return validCep(control.value) ? null : { 'cepValidator': true }
-} 
+    return validCep(control.value) ? null : { 'cepValidator': true };
+}
 

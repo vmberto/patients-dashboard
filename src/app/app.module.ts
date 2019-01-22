@@ -1,3 +1,4 @@
+import { ToastModule } from './components/generic-components/toast/toast.module';
 import { AnamnesisIndexComponent } from './components/pages/anamnesis/anamnesis-index.component';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
@@ -64,7 +65,7 @@ registerLocaleData(localePt);
     AnamnesisIndexComponent,
     PatientsIndexComponent,
     CreateSessionComponent,
-    ModalDirective
+    ModalDirective,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +74,8 @@ registerLocaleData(localePt);
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    Ng2OdometerModule.forRoot()
+    Ng2OdometerModule.forRoot(),
+    ToastModule.forRoot(),
   ],
   providers: [
     AuthGuardService,
