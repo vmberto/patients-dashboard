@@ -4,6 +4,7 @@ import { AnimationEvent } from '@angular/animations';
 import { ToastData, TOAST_CONFIG_TOKEN, ToastConfig } from './toast-config';
 import { ToastRef } from './toast-ref';
 import { toastAnimations, ToastAnimationState } from './toast-animation';
+import { NavigationStart, Router, Event, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-toast',
@@ -19,12 +20,18 @@ export class ToastComponent implements OnInit, OnDestroy {
   constructor(
     readonly data: ToastData,
     readonly ref: ToastRef,
-    @Inject(TOAST_CONFIG_TOKEN) private toastConfig: ToastConfig
-    ) {
+    private router: Router,
+    @Inject(TOAST_CONFIG_TOKEN) private toastConfig: ToastConfig) {
+
   }
 
   ngOnInit() {
-    this.intervalId = setTimeout(() => this.animationState = 'closing', 3500);
+    this.intervalId = setTimeout(() => this.animationState = 'closing', 4000);
+
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart) this.forceClose();
+    });
+
   }
 
   ngOnDestroy() {
@@ -35,7 +42,7 @@ export class ToastComponent implements OnInit, OnDestroy {
     this.ref.close();
   }
 
-  clickToClose() {
+  forceClose() {
     clearTimeout(this.intervalId);
     this.animationState = 'closing';
   }

@@ -20,7 +20,7 @@ export class RootComponent implements OnInit {
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private shareData: ShareDataService) {
 
-    router.events.subscribe((event: Event) => {
+    this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) this.sidebarOpened = false;
 
       this.activatedRoute.children[0].data

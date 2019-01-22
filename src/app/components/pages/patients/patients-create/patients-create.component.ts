@@ -4,7 +4,7 @@ import { PatientsService, HealthInsurancesService } from 'src/app/services';
 import { FormBuilder, FormGroup, Validators, FormControl, ValidationErrors } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { emailValidator, nameValidator, cepValidator } from 'src/app/helpers/validators/validators';
-import { getFormValidationErrors } from 'src/app/helpers/validators/errors.validators';
+import { FormValidatorErrors } from 'src/app/helpers/validators/errors.validators';
 import { SeekerService } from 'src/app/services/seeker.service';
 import { fade } from 'src/app/helpers/animations/animations';
 import { ToastService } from 'src/app/components/generic-components/toast';
@@ -35,7 +35,7 @@ export class PatientsCreateComponent implements OnInit {
     private patientService: PatientsService,
     private healthInsuranceService: HealthInsurancesService,
     private seekerService: SeekerService,
-    private toastService: ToastService) { }
+    private FormValidationErrors: FormValidatorErrors) { }
 
   ngOnInit() {
 
@@ -154,14 +154,7 @@ export class PatientsCreateComponent implements OnInit {
 
   submitPatientData(): void {
 
-    const validationErrors = getFormValidationErrors(this.patientForm);
-
-    if (validationErrors.length > 0) {
-      this.toastService.show({
-        text: validationErrors[0].message,
-        type: 'warning',
-      });
-    }
+    this.FormValidationErrors.getFormValidationErrors(this.patientForm);
 
     if (this.patientForm.valid) {
 

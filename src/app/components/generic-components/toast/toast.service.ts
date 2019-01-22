@@ -18,6 +18,22 @@ export class ToastService {
         @Inject(TOAST_CONFIG_TOKEN) private toastConfig: ToastConfig
     ) { }
 
+    private getPositionStrategy() {
+        return this.overlay.position()
+            .global()
+            .centerHorizontally()
+            .bottom();
+    }
+
+    private getInjector(data: ToastData, toastRef: ToastRef, parentInjector: Injector) {
+        const tokens = new WeakMap();
+
+        tokens.set(ToastData, data);
+        tokens.set(ToastRef, toastRef);
+
+        return new PortalInjector(parentInjector, tokens);
+    }
+
     show(data: ToastData) {
         const overlayElement = document.querySelector('.cdk-overlay-container');
         if (overlayElement && overlayElement.hasChildNodes()) {
@@ -38,20 +54,4 @@ export class ToastService {
         return toastRef;
     }
 
-    getPositionStrategy() {
-        return this.overlay.position()
-            .global()
-            .centerHorizontally()
-            .bottom();
-    }
-
-
-    getInjector(data: ToastData, toastRef: ToastRef, parentInjector: Injector) {
-        const tokens = new WeakMap();
-
-        tokens.set(ToastData, data);
-        tokens.set(ToastRef, toastRef);
-
-        return new PortalInjector(parentInjector, tokens);
-    }
 }

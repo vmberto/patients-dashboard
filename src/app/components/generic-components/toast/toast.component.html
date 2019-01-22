@@ -1,6 +1,5 @@
-<div (click)="clickToClose()" class="toast" [ngClass]="{'success': data.type === 'success', 'warning': data.type === 'warning', 'danger': data.type === 'danger'}"
-  [@fadeAnimation]="{value: animationState, params:
-        { fadeIn: toastConfig.animation.fadeIn, fadeOut: toastConfig.animation.fadeOut }}"
+<div (click)="forceClose()" class="toast" [ngClass]="{'success': data.type === 'success', 'warning': data.type === 'warning', 'danger': data.type === 'danger'}"
+  [@fadeAnimation]="animationState"
   (@fadeAnimation.done)="onFadeFinished($event)">
 
   <p>{{ data.text }}</p>

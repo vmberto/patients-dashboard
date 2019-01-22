@@ -20,15 +20,5 @@ export interface ToastConfig {
     };
 }
 
-export const defaultToastConfig: ToastConfig = {
-    position: {
-        top: 20,
-        right: 20,
-    },
-    animation: {
-        fadeOut: 2500,
-        fadeIn: 300,
-    },
-};
 
 export const TOAST_CONFIG_TOKEN = new InjectionToken('toast-config');

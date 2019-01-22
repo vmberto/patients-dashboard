@@ -7,11 +7,4 @@ export class ToastRef {
     this.overlay.dispose();
   }
 
-  isVisible() {
-    return this.overlay && this.overlay.overlayElement;
-  }
-
-  getPosition() {
-    return this.overlay.overlayElement.getBoundingClientRect();
-  }
 }
