@@ -51,7 +51,7 @@ export class EventHandler {
     if (this.auth.isLoggedIn()) {
       this.auth.logout();
     } else {
-      this.toastService.show({ text: event.event[0].msg, type: 'warning' });
+      this.toastService.show({ text: event.error[0].msg, type: 'warning' });
     }
 
   }
@@ -92,6 +92,9 @@ export class EventHandler {
     const otherCodes = {
       'FORM_VALIDATOR_event': 1
     };
+
+    console.log(event);
+    
 
     switch (event.status) {
       case 0:

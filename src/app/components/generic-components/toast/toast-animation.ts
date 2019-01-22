@@ -9,11 +9,11 @@ import {
 
 export const toastAnimations: { readonly fadeToast: AnimationTriggerMetadata; } = {
     fadeToast: trigger('fadeAnimation', [
-        state('default', style({ transform: 'translateY(0px)', opacity: .8 })),
-        transition('void => *', [style({ opacity: 0, transform: 'translateY(100px)' }), animate('250ms')]),
+        state('default', style({ transform: 'translateY(0px)', opacity: 1 })),
+        transition('void => *', [style({ opacity: 0, transform: 'translateY(100px)' }), animate('450ms')]),
         transition(
             'default => closing',
-            animate('500ms', style({ opacity: 0, transform: 'translateY(100px)' })),
+            animate('700ms', style({ opacity: 0, transform: 'translateY(100px)' })),
         ),
     ]),
 };
