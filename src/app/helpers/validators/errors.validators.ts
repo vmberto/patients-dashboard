@@ -14,7 +14,7 @@ export class FormValidatorErrors {
         const validations = [];
 
         if (form.pristine) {
-            validations.push({ status: 1, message: 'Preencha o Formulário' });
+            validations.push({ status: 1, msg: 'Preencha o Formulário' });
         } else {
 
             Object.keys(form.controls).forEach(key => {
@@ -23,7 +23,7 @@ export class FormValidatorErrors {
 
                 if (controlErrors != null) {
                     Object.keys(controlErrors).forEach(keyError => {
-                        const error = { status: 1, key, keyError, message: this.validationMessages(key, keyError) };
+                        const error = { status: 1, key, keyError, msg: this.validationMessages(key, keyError) };
                         validations.push(error);
                     });
                 }
