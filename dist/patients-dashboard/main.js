@@ -4188,7 +4188,7 @@ var EventHandler = /** @class */ (function () {
    * @param {any} event
    */
     EventHandler.prototype.handle200 = function (event) {
-        if (Object.keys(event.body)[0].substr(0, 3) === 'new') {
+        if (typeof Object.keys(event.body)[0] === 'string' && Object.keys(event.body)[0].substr(0, 3) === 'new') {
             this.toastService.show({ text: 'Criado com sucesso!', type: 'success' });
         }
     };
