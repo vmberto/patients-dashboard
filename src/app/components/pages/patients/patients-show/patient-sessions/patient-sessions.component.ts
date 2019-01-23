@@ -1,7 +1,7 @@
 import { ShareDataService, SessionsService } from 'src/app/services';
-import { sortByKey } from 'src/app/app.utils';
+import { sortByKey } from 'src/app/utils/app.utils';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { collapse } from 'src/app/helpers/animations/animations';
+import { collapse } from 'src/app/utils/animations/animations';
 
 
 @Component({

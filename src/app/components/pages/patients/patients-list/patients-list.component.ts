@@ -1,9 +1,9 @@
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ShareDataService, PatientsService } from 'src/app/services';
-import { FilterCriteria } from 'src/app/helpers/crud/filter-criteria';
+import { FilterCriteria } from 'src/app/utils/crud/filter-criteria';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ListComponent } from 'src/app/helpers/crud/list-components.helpers';
+import { ListComponent } from 'src/app/utils/crud/list-components.utils';
 
 @Component({
   selector: 'app-test',

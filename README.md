@@ -1,5 +1,7 @@
 # Patients Dashboard - Angular 7
 
+![Dashboard](https://i.imgur.com/09tWLwN.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server

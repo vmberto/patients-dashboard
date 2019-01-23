@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { CrudMethods } from 'src/app/helpers/crud/crud-methods';
+import { CrudMethods } from 'src/app/utils/crud/crud-methods';
 import { Injectable } from '@angular/core';
 
 @Injectable({

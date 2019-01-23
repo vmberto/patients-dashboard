@@ -1,4 +1,4 @@
-import { FormValidatorErrors } from 'src/app/helpers/validators/errors.validators';
+import { FormValidatorErrors } from 'src/app/utils/validators/errors.validators';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';

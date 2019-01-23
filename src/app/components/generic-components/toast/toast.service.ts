@@ -37,6 +37,7 @@ export class ToastService {
     show(data: ToastData) {
         const overlayElement = document.querySelector('.cdk-overlay-container');
         if (overlayElement && overlayElement.hasChildNodes()) {
+            this.changeToastData(data);
             return;
         }
 
@@ -52,6 +53,10 @@ export class ToastService {
         overlayRef.attach(toastPortal);
 
         return toastRef;
+    }
+
+    changeToastData(data: ToastData) {
+        this.lastToast.changeData(data);
     }
 
 }
