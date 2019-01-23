@@ -1,9 +1,9 @@
 import { AnamnesisService, ShareDataService } from 'src/app/services';
-import { FilterCriteria } from 'src/app/helpers/crud/filter-criteria';
-import { ListComponent } from 'src/app/helpers/crud/list-components.helpers';
+import { FilterCriteria } from 'src/app/utils/crud/filter-criteria';
+import { ListComponent } from 'src/app/utils/crud/list-components.utils';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { collapse } from 'src/app/helpers/animations/animations';
+import { collapse } from 'src/app/utils/animations/animations';
 import saveAs from 'node_modules/file-saver';
 
 @Component({

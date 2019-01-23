@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         .subscribe(
           (res) => {
             this.toastService.show({
-              text: `Bem Vindo, ${res.user.name}`,
+              text: `Bem vindo, ${res.user.name}`,
               type: 'success'
             });
 

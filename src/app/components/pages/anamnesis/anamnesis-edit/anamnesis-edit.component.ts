@@ -1,4 +1,4 @@
-import { QUESTION_TYPES } from 'src/app/helpers/consts/config.helpers';
+import { QUESTION_TYPES } from 'src/app/utils/consts/config.utils';
 import { ShareDataService, AnamnesisService } from 'src/app/services';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';

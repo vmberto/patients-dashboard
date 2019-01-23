@@ -1,8 +1,8 @@
 import { PatientsService, ShareDataService, SessionsService } from 'src/app/services';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { showup } from 'src/app/helpers/animations/animations';
-import { sortByKey } from 'src/app/app.utils';
+import { showup } from 'src/app/utils/animations/animations';
+import { sortByKey } from 'src/app/utils/app.utils';
 import saveAs from 'node_modules/file-saver';
 
 

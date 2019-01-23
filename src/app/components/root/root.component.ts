@@ -1,7 +1,7 @@
 import { Router, NavigationStart, Event, ActivatedRoute } from '@angular/router';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Observable } from 'rxjs';
-import { showSidebar, fade } from '../../helpers/animations/animations';
+import { showSidebar, fade } from '../../utils/animations/animations';
 import { ShareDataService } from 'src/app/services';
 
 @Component({

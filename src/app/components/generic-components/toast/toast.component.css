@@ -13,6 +13,7 @@
     cursor: pointer;
     transition: all .3s;
     border-radius: 10px;
+    border: 3px transparent;
 }
 
 .success {

@@ -1,5 +1,5 @@
 import { AbstractControl, FormControl } from '@angular/forms';
-import { EMAIL_REGEX, NAME_REGEX, VIA_CEP_REGEX } from 'src/app/app.utils';
+import { EMAIL_REGEX, NAME_REGEX } from 'src/app/utils/app.utils';
 
 export class PasswordValidation {
 
@@ -22,9 +22,6 @@ const validEmail = (email: string): boolean => {
 const validName = (name: string): boolean => {
     return (!name) ? true : NAME_REGEX.test(name);
 };
-const validCep = (name: string): boolean => {
-    return (!name) ? true : VIA_CEP_REGEX.test(name);
-};
 
 export function emailValidator(control: FormControl): { [key: string]: boolean } {
     return validEmail(control.value) ? null : { 'emailValidator': true };
@@ -32,9 +29,5 @@ export function emailValidator(control: FormControl): { [key: string]: boolean }
 
 export function nameValidator(control: FormControl): { [key: string]: boolean } {
     return validName(control.value) ? null : { 'nameValidator': true };
-}
-
-export function cepValidator(control: FormControl): { [key: string]: boolean } {
-    return validCep(control.value) ? null : { 'cepValidator': true };
 }
 

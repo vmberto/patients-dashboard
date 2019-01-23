@@ -1,12 +1,12 @@
-import { MARITAL_STATES } from 'src/app/helpers/consts/config.helpers';
+import { MARITAL_STATES } from 'src/app/utils/consts/config.utils';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PatientsService, HealthInsurancesService } from 'src/app/services';
 import { FormBuilder, FormGroup, Validators, FormControl, ValidationErrors } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { emailValidator, nameValidator, cepValidator } from 'src/app/helpers/validators/validators';
-import { FormValidatorErrors } from 'src/app/helpers/validators/errors.validators';
+import { emailValidator, nameValidator } from 'src/app/utils/validators/validators';
+import { FormValidatorErrors } from 'src/app/utils/validators/errors.validators';
 import { SeekerService } from 'src/app/services/seeker.service';
-import { fade } from 'src/app/helpers/animations/animations';
+import { fade } from 'src/app/utils/animations/animations';
 import { ToastService } from 'src/app/components/generic-components/toast';
 
 @Component({
@@ -42,27 +42,27 @@ export class PatientsCreateComponent implements OnInit {
     this.healthInsuranceService.get().subscribe(res => {
       this.healthInsurances = res.data;
     });
-
+    
     this.patientForm = this.fb.group({
       name: ['', [Validators.required, nameValidator]],
-      is_private: [false, [Validators.required]],
-
+      
       health_insurance: [''],
-
-      email: ['', [Validators.required, emailValidator]],
-      phone: ['', [Validators.required]],
+      
+      phone: ['', []],
+      email: ['', [emailValidator]],
+      
+      is_private: [false, [Validators.required]],
 
       marital_status_type_id: ['1', [Validators.required]],
       childrens_number: ['', [Validators.required]],
 
+      zip_code: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      district: ['', [Validators.required]],
       street: ['', [Validators.required]],
       number: ['', [Validators.required]],
       complement: [''],
-      zip_code: ['', [Validators.required]],
-      district: ['', [Validators.required]],
-      city: ['', [Validators.required]],
     });
-
   }
 
   public setPatientType(): void {
