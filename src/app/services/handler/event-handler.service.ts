@@ -26,7 +26,7 @@ export class EventHandler {
  * @param {any} event
  */
   private handle200(event: any): void {
-    if (Object.keys(event.body)[0].substr(0, 3) === 'new') {
+    if (typeof Object.keys(event.body)[0] === 'string' && Object.keys(event.body)[0].substr(0, 3) === 'new') {
       this.toastService.show({ text: 'Criado com sucesso!', type: 'success' });
     }
   }
