@@ -1,7 +1,7 @@
-import { isObjectEmpty } from 'src/app/app.utils';
+import { isObjectEmpty } from 'src/app/utils/app.utils';
 import { Router } from '@angular/router';
 import { environment } from './../../../environments/environment';
-import { getObjectCookie, getCookie, eraseCookie } from '../../app.utils';
+import { getObjectCookie, getCookie, eraseCookie } from 'src/app/utils/app.utils';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';

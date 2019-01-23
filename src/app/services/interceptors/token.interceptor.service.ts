@@ -34,14 +34,14 @@ export class TokenInterceptor implements HttpInterceptor {
 
     return next.handle(request).pipe(tap(
     (event: HttpEvent<any>) => {
+      
+      this.eventHandler.handle(event);
 
       if (event instanceof HttpResponse) {
 
         if (event.body && event.body.error) {
           throw(event);
         }
-
-        this.eventHandler.handle(event);
 
       }
 

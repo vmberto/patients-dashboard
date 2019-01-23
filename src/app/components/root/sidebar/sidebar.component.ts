@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services';
 import { ROUTES } from './sidebar-routes.config';
-import { collapse } from 'src/app/helpers/animations/animations';
+import { collapse } from 'src/app/utils/animations/animations';
 
 @Component({
   selector: 'app-sidebar',

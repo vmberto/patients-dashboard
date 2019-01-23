@@ -1,7 +1,7 @@
-import { showCreateInput } from 'src/app/helpers/animations/animations';
+import { showCreateInput } from 'src/app/utils/animations/animations';
 import { ShareDataService, HealthInsurancesService } from 'src/app/services';
-import { ListComponent } from 'src/app/helpers/crud/list-components.helpers';
-import { FilterCriteria } from 'src/app/helpers/crud/filter-criteria';
+import { ListComponent } from 'src/app/utils/crud/list-components.utils';
+import { FilterCriteria } from 'src/app/utils/crud/filter-criteria';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

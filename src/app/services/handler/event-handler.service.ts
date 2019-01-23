@@ -7,6 +7,10 @@ import { ToastService } from '../../components/generic-components/toast';
 })
 export class EventHandler {
   private auth: AuthService;
+      
+  private otherCodes = {
+    'FORM_VALIDATOR_EVENT': 1
+  };
 
 
   constructor(private authService: AuthService, private toastService: ToastService) {
@@ -22,15 +26,24 @@ export class EventHandler {
   }
 
   /**
- *
+ * 1- If the first key in the response JSON starts with 'new', shows a toast to inform that the object was created.
+ * 2- If there is an key called error and has a message (msg), shows a toast to inform the error message.
+ * 3- If the event is a download, shows a toast to inform that the download was realized.
+ * 
  * @param {any} event
  */
   private handle200(event: any): void {
+
     if (typeof Object.keys(event.body)[0] === 'string' && Object.keys(event.body)[0].substr(0, 3) === 'new') {
       this.toastService.show({ text: 'Criado com sucesso!', type: 'success' });
+    } else if (event.body.error && event.body.msg) {
+      this.toastService.show({ text: event.body.msg, type: 'warning' });
+    } else if (event.body instanceof Blob) {
+      this.toastService.show({ text: 'Download com sucesso!', type: 'success'})
     }
-  }
+    
 
+  }
 
 
   /**
@@ -78,7 +91,7 @@ export class EventHandler {
  *
  * @param {any} event
  */
-  private handleValidationevent(event: any): void {
+  private handleValidationEvent(event: any): void {
     this.toastService.show({ text: event.msg || 'Erro de Validação', type: 'warning' });
   }
 
@@ -88,11 +101,6 @@ export class EventHandler {
    * @param event
    */
   public handle(event: any): void {
-
-    const otherCodes = {
-      'FORM_VALIDATOR_event': 1
-    };
-
 
     switch (event.status) {
       case 0:
@@ -119,8 +127,8 @@ export class EventHandler {
         this.handle500(event);
         return;
 
-      case otherCodes.FORM_VALIDATOR_event:
-        this.handleValidationevent(event);
+      case this.otherCodes.FORM_VALIDATOR_EVENT:
+        this.handleValidationEvent(event);
         return;
     }
   }

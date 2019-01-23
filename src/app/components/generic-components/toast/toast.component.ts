@@ -4,7 +4,7 @@ import { AnimationEvent } from '@angular/animations';
 import { ToastData, TOAST_CONFIG_TOKEN, ToastConfig } from './toast-config';
 import { ToastRef } from './toast-ref';
 import { toastAnimations, ToastAnimationState } from './toast-animation';
-import { NavigationStart, Router, Event, NavigationEnd } from '@angular/router';
+import { Router, Event, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-toast',
@@ -14,11 +14,12 @@ import { NavigationStart, Router, Event, NavigationEnd } from '@angular/router';
 })
 export class ToastComponent implements OnInit, OnDestroy {
   animationState: ToastAnimationState = 'default';
+  changedRecently: boolean = false;
 
   private intervalId: any;
 
   constructor(
-    readonly data: ToastData,
+    public data: ToastData,
     readonly ref: ToastRef,
     private router: Router,
     @Inject(TOAST_CONFIG_TOKEN) private toastConfig: ToastConfig) {
@@ -26,10 +27,22 @@ export class ToastComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+
     this.intervalId = setTimeout(() => this.animationState = 'closing', 4000);
 
     this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationStart) this.forceClose();
+      if (!this.changedRecently && event instanceof NavigationEnd) this.forceClose();
+    });
+
+    this.ref.dataChange.subscribe(changes => {
+        this.changedRecently = true;
+        this.animationState = 'default';
+        clearTimeout(this.intervalId);
+        this.data = changes;
+        this.intervalId = setTimeout(() => {
+          this.animationState = 'closing'
+          this.changedRecently = false;
+        }, 3500);
     });
 
   }

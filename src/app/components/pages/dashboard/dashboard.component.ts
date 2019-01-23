@@ -3,7 +3,7 @@ import { HealthInsurancesService, PatientsService, SessionsService } from 'src/a
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { generateRandomColor } from 'src/app/app.utils';
+import { generateRandomColor } from 'src/app/utils/app.utils';
 import Chart from 'chart.js';
 
 import * as moment from 'moment';
