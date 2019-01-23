@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services';
+import { ToastService } from '../generic-components/toast';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
     private route: Router,
-    private authService: AuthService, ) {
+    private authService: AuthService,
+    private toastService: ToastService) {
 
     if (this.authService.isLoggedIn()) {
       this.route.navigate(['home']);
@@ -48,6 +50,11 @@ export class LoginComponent implements OnInit {
       this.authService.loginUser(this.loginForm.value.email, this.loginForm.value.password)
         .subscribe(
           (res) => {
+            this.toastService.show({
+              text: `Bem Vindo, ${res.user.name}`,
+              type: 'success'
+            });
+
             this.loadingLogin = false;
             this.buttonLogin = 'Entrar';
 
@@ -60,7 +67,6 @@ export class LoginComponent implements OnInit {
           () => {
             this.loadingLogin = false;
             this.buttonLogin = 'Entrar';
-
           });
     }
   }

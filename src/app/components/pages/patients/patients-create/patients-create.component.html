@@ -7,7 +7,7 @@
         <button routerLink=".." class="return-btn btn btn-primary">
           <i class="fa fa-arrow-left"></i>
         </button>
-        Adicionar Paciente
+        Cadastrar Paciente
       </h4>
 
 
@@ -75,14 +75,14 @@
               </div>
             </div>
 
-            <div class="col-md-2">
+            <div [ngClass]="{'col-md-2': checkMaritalStatus(), 'col-md-4': !checkMaritalStatus()}">
               <div class="form-group">
                 <label>Filhos</label>
                 <input formControlName="childrens_number" type="number" class="form-control" placeholder="0" min="0">
               </div>
             </div>
 
-            <div class="col-md-2">
+            <div *ngIf="checkMaritalStatus()" class="col-md-2">
               <div class="form-group">
                 <label>Tempo de União</label>
                 <input formControlName="union_time" type="number" class="form-control" placeholder="0" min="0">
@@ -97,17 +97,47 @@
 
           <div class="form-row">
 
-            <div class="col-md-7">
+            <div class="col-md-4">
               <div class="form-group">
-                <label>Rua</label>
-                <input formControlName="street" type="text" class="form-control" placeholder="Av. Caxangá">
+                <label>CEP</label>
+                <input id="address-zip_code" formControlName="zip_code" (blur)="findCep()" type="text" class="form-control" placeholder="00000-000"
+                  maxlength="8">
+                <button [@fade] type="button" class="pointer finding-cep" *ngIf="findingCep || cepFound" (click)="clearSelectedAddress()">
+                  <i class="fa" [ngClass]="{'fa-spinner': findingCep, 'fa-spin': findingCep, 'fa-times': cepFound}"></i>
+                </button>
               </div>
             </div>
 
-            <div class="col-md-2">
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Cidade</label>
+                <input id="address-city" formControlName="city" type="text" class="form-control" placeholder="Recife">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Bairro</label>
+                <input id="address-district" formControlName="district" type="text" class="form-control" placeholder="Barro">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Rua</label>
+                <input id="address-street" formControlName="street" type="text" class="form-control" placeholder="Av. Caxangá">
+              </div>
+            </div>
+
+            <div class="col-md-3">
               <div class="form-group">
                 <label>Número</label>
-                <input formControlName="number" type="text" class="form-control" placeholder="000">
+                <input id="address-number" formControlName="number" type="text" class="form-control" placeholder="000">
               </div>
             </div>
 
@@ -117,35 +147,6 @@
                 <input formControlName="complement" type="text" class="form-control" placeholder="Aptº 0000">
               </div>
             </div>
-
-          </div>
-
-          <div class="row">
-
-
-            <div class="col-md-3">
-              <div class="form-group">
-                <label>CEP</label>
-                <input formControlName="zip_code" type="text" class="form-control" placeholder="00000-000" maxlength="8">
-              </div>
-            </div>
-
-
-            <div class="col-md-4">
-              <div class="form-group">
-                <label>Bairro</label>
-                <input formControlName="district" type="text" class="form-control" placeholder="Barro">
-              </div>
-            </div>
-
-            <div class="col-md-5">
-              <div class="form-group">
-                <label>Cidade</label>
-                <input formControlName="city" type="text" class="form-control" placeholder="Recife">
-              </div>
-            </div>
-
-
 
           </div>
 

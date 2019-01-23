@@ -1,14 +1,19 @@
 import { MARITAL_STATES } from 'src/app/helpers/consts/config.helpers';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PatientsService, HealthInsurancesService } from 'src/app/services';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, ValidationErrors } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { emailValidator, nameValidator, cepValidator } from 'src/app/helpers/validators';
+import { emailValidator, nameValidator, cepValidator } from 'src/app/helpers/validators/validators';
+import { FormValidatorErrors } from 'src/app/helpers/validators/errors.validators';
+import { SeekerService } from 'src/app/services/seeker.service';
+import { fade } from 'src/app/helpers/animations/animations';
+import { ToastService } from 'src/app/components/generic-components/toast';
 
 @Component({
   selector: 'app-create',
   templateUrl: './patients-create.component.html',
-  styleUrls: ['./patients-create.component.css']
+  styleUrls: ['./patients-create.component.css'],
+  animations: [fade]
 })
 export class PatientsCreateComponent implements OnInit {
 
@@ -18,14 +23,19 @@ export class PatientsCreateComponent implements OnInit {
   public maritalStates = MARITAL_STATES;
 
   public creatingPatient: boolean;
+  public findingCep: boolean;
+  public cepFound: boolean;
+
 
 
   constructor(
     private fb: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute,
     private patientService: PatientsService,
     private healthInsuranceService: HealthInsurancesService,
-    private router: Router,
-    private route: ActivatedRoute) { }
+    private seekerService: SeekerService,
+    private FormValidationErrors: FormValidatorErrors) { }
 
   ngOnInit() {
 
@@ -42,8 +52,7 @@ export class PatientsCreateComponent implements OnInit {
       email: ['', [Validators.required, emailValidator]],
       phone: ['', [Validators.required]],
 
-      marital_status_type_id: ['', [Validators.required]],
-      union_time: ['', [Validators.required]],
+      marital_status_type_id: ['1', [Validators.required]],
       childrens_number: ['', [Validators.required]],
 
       street: ['', [Validators.required]],
@@ -56,15 +65,96 @@ export class PatientsCreateComponent implements OnInit {
 
   }
 
-  public setPatientType() {
+  public setPatientType(): void {
     const currentValue = this.patientForm.controls.is_private.value;
     this.isPrivateValue = currentValue === false ? 'Sim' : 'Não';
     this.patientForm.controls.is_private.setValue(currentValue === false ? true : false);
   }
 
+  public checkMaritalStatus(): boolean {
+    const formControls = this.patientForm.controls;
+    if (formControls.marital_status_type_id.value !== '1') {
+      this.patientForm.addControl('union_time', new FormControl('', [Validators.required]));
+      return true;
+    } else {
+      this.patientForm.removeControl('union_time');
+      return false;
+    }
+  }
+
+  public findCep(): void {
+
+    if (this.patientForm.controls.zip_code.value.length === 8) {
+
+      const formControls = this.patientForm.controls;
+      this.findingCep = true;
+
+      this.seekerService.getCep(formControls.zip_code.value)
+        .subscribe(
+          (res) => {
+            this.findingCep = false;
+
+            if (!res['erro']) {
+              this.cepFound = true;
+              formControls.city.setValue(res['localidade']);
+              formControls.district.setValue(res['bairro']);
+              formControls.street.setValue(res['logradouro']);
+
+              formControls.zip_code.disable();
+              let focusInput = 'address-city';
+
+              if (res['localidade']) {
+                formControls.city.disable();
+                focusInput = 'address-district';
+              }
+              if (res['bairro']) {
+                formControls.district.disable();
+                focusInput = 'address-street';
+              }
+              if (res['logradouro']) {
+                formControls.street.disable();
+                focusInput = 'address-number';
+              }
+
+              document.getElementById(focusInput).focus();
+
+            } else {
+              console.log('cep invalido');
+            }
+
+          },
+          () => {
+            this.findingCep = false;
+          }
+        );
+    }
+
+  }
+
+  public clearSelectedAddress(): void {
+    if (this.cepFound) {
+      const formControls = this.patientForm.controls;
+
+      formControls.zip_code.enable();
+      formControls.city.enable();
+      formControls.district.enable();
+      formControls.street.enable();
 
 
-  submitPatientData() {
+      formControls.city.setValue('');
+      formControls.district.setValue('');
+      formControls.street.setValue('');
+      formControls.zip_code.setValue('');
+
+      this.cepFound = false;
+    }
+  }
+
+
+
+  submitPatientData(): void {
+
+    this.FormValidationErrors.getFormValidationErrors(this.patientForm);
 
     if (this.patientForm.valid) {
 
@@ -81,7 +171,7 @@ export class PatientsCreateComponent implements OnInit {
         health_insurance_id: formControls.health_insurance.value,
         marital_status_type_id: formControls.marital_status_type_id.value,
         childrens_number: formControls.childrens_number.value,
-        union_time: `${formControls.union_time.value} anos`,
+        union_time: formControls.union_time ? `${formControls.union_time.value} anos` : null,
         address: {
           street: formControls.street.value,
           number: formControls.number.value,

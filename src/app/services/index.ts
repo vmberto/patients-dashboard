@@ -13,4 +13,4 @@ export { SessionsService } from './entities/sessions.service';
 export { ShareDataService } from './share-data/share-data.service';
 
 // Token
-export { TokenInterceptor } from './token/token.interceptor.service';
+export { TokenInterceptor } from './interceptors/token.interceptor.service';

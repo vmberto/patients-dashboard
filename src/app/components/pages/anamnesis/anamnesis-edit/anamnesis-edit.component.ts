@@ -136,6 +136,5 @@ export class AnamnesisEditComponent implements OnInit {
     } else {
       this.showOptions = false;
     }
-
   }
 }

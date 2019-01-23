@@ -1,3 +1,12 @@
 small {
     font-size: 60%;
 }
+
+.finding-cep {
+    color: var(--font-color);
+    position: absolute;
+    right: 15px;
+    bottom: 23px;
+    background: none;
+    border: none;
+}
