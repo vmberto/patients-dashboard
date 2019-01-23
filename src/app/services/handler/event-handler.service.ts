@@ -93,8 +93,6 @@ export class EventHandler {
       'FORM_VALIDATOR_event': 1
     };
 
-    console.log(event);
-    
 
     switch (event.status) {
       case 0:

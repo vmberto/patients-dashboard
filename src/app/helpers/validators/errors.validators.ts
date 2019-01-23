@@ -57,9 +57,13 @@ export class FormValidatorErrors {
             case 'district': return `distrito`;
             case 'city': return `cidade`;
             case 'phone': return `fone`;
-            case 'union_time': return `tempo de união`
+            case 'union_time': return `tempo de união`;
+            case 'humour': return `humor`;
+            case 'attendance_at': return `atendimento`;
+            case 'duration': return `duração`;
+            case 'description': return `descrição`;
         }
     }
 
 
-}    
+}

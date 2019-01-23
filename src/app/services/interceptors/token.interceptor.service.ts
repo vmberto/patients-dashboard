@@ -40,7 +40,7 @@ export class TokenInterceptor implements HttpInterceptor {
         if (event.body && event.body.error) {
           throw(event);
         }
-        
+
         this.eventHandler.handle(event);
 
       }

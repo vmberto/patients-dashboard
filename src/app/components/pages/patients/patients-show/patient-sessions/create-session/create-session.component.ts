@@ -1,8 +1,8 @@
+import { FormValidatorErrors } from 'src/app/helpers/validators/errors.validators';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { SessionsService } from 'src/app/services';
-import { log } from 'util';
 
 @Component({
   selector: 'app-create-session',
@@ -20,7 +20,8 @@ export class CreateSessionComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
-    private sessionsService: SessionsService) { }
+    private sessionsService: SessionsService,
+    private FormValidationErrors: FormValidatorErrors) { }
 
   ngOnInit() {
 
@@ -33,8 +34,8 @@ export class CreateSessionComponent implements OnInit {
 
     this.sessionForm = this.fb.group({
       humour: ['', [Validators.required]],
-      attendance_at: ['', [Validators.required]],
       duration: ['', [Validators.required]],
+      attendance_at: ['', [Validators.required]],
       description: ['', [Validators.required]],
 
     });
@@ -47,6 +48,8 @@ export class CreateSessionComponent implements OnInit {
 
 
   public submitSessionData() {
+
+    this.FormValidationErrors.getFormValidationErrors(this.sessionForm);
 
     if (this.sessionForm.valid) {
 

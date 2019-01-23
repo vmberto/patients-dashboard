@@ -154,7 +154,6 @@ export class PatientsCreateComponent implements OnInit {
 
   submitPatientData(): void {
 
-    
     this.FormValidationErrors.getFormValidationErrors(this.patientForm);
 
     if (this.patientForm.valid) {
