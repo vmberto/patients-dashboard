@@ -51,7 +51,7 @@ export class EventHandler {
    * @param {any} event
    */
   private handle400(event: any): void {
-    this.toastService.show({ text: event.msg || 'Ocorreu um erro', type: 'danger' });
+    this.toastService.show({ text: event.error.msg || 'Ocorreu um erro', type: 'danger' });
   }
 
 
@@ -64,7 +64,7 @@ export class EventHandler {
     if (this.auth.isLoggedIn()) {
       this.auth.logout();
     } else {
-      this.toastService.show({ text: event.error[0].msg, type: 'warning' });
+      this.toastService.show({ text: event.error[0].msg || event.error.msg, type: 'warning' });
     }
 
   }
@@ -75,7 +75,7 @@ export class EventHandler {
    * @param {any} event
    */
   private handle422(event: any): void {
-    this.toastService.show({ text: event.msg || 'Ocorreu um erro', type: 'danger' });
+    this.toastService.show({ text: event.error.msg || 'Ocorreu um erro', type: 'danger' });
   }
 
 
@@ -84,7 +84,7 @@ export class EventHandler {
    * @param {any} event
    */
   private handle500(event: any): void {
-    this.toastService.show({ text: event.msg || 'Ocorreu um erro interno', type: 'danger' });
+    this.toastService.show({ text: event.error.msg || 'Estamos com problemas internos', type: 'danger' });
   }
 
   /**

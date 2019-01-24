@@ -4,11 +4,13 @@ import { FilterCriteria } from 'src/app/utils/crud/filter-criteria';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ListComponent } from 'src/app/utils/crud/list-components.utils';
+import { collapse } from 'src/app/utils/animations/animations';
 
 @Component({
   selector: 'app-test',
   templateUrl: './patients-list.component.html',
   styleUrls: ['./patients-list.component.css'],
+  animations: [collapse]
 })
 export class PatientsListComponent extends ListComponent implements OnInit {
 
@@ -17,7 +19,7 @@ export class PatientsListComponent extends ListComponent implements OnInit {
   public currentListStatus: number;
 
 
-  public filtersFormOpen: 'open' | 'close' = 'close';
+  public filtersFormOpen: boolean;
 
   public selectedSize = 15;
 
@@ -37,7 +39,8 @@ export class PatientsListComponent extends ListComponent implements OnInit {
 
   constructor(private patientsService: PatientsService,
     private shareData: ShareDataService,
-    private router: Router) {
+    private router: Router,
+    private fb: FormBuilder) {
     super();
 
     this.filterCriteria = new FilterCriteria();
@@ -47,6 +50,11 @@ export class PatientsListComponent extends ListComponent implements OnInit {
 
   ngOnInit() {
 
+    this.filterForm = this.fb.group({
+      search: [''],
+      health_insurance: ['']
+    });
+
     this.filterCriteria.addListParams();
     this.filterCriteria.addParam('patient_status', 1);
     this.currentListStatus = 1;
@@ -54,22 +62,25 @@ export class PatientsListComponent extends ListComponent implements OnInit {
     this.loadData();
   }
 
-  public submitFilters(filters) {
+  public submitFilters() {
 
-    const filterStringArray = [];
+    const controls = this.filterForm.controls;
     let countFilters = 0;
 
-    filters.forEach(filter => {
-      if (filter[Object.keys(filter)[0]]) {
-        this.filterCriteria.addParam(Object.keys(filter)[0], filter[Object.keys(filter)[0]]);
+    if (controls.health_insurance.value) {
+      this.filterCriteria.addParam('health_insurance', this.filterForm.controls.health_insurance.value);
+      countFilters += 1;
+    } else {
+      this.filterCriteria.removeParam('health_insurance');
+    }
 
-        filterStringArray.push(filter[Object.keys(filter)[0]]);
+    if (controls.search.value) {
+      this.filterCriteria.addParam('search', this.filterForm.controls.search.value);
+      countFilters += 1;
 
-        countFilters += 1;
-      } else {
-        this.filterCriteria.removeParam(Object.keys(filter)[0]);
-      }
-    });
+    } else {
+      this.filterCriteria.removeParam('search');
+    }
 
     if (countFilters > 0) this.clearFiltersBtn = true;
     else this.clearFiltersBtn = false;
@@ -115,8 +126,8 @@ export class PatientsListComponent extends ListComponent implements OnInit {
     }
   }
 
-  changeFiltersModalState(state) {
-    this.filtersFormOpen = state;
+  openFiltersRow() {
+    this.filtersFormOpen = !this.filtersFormOpen;
   }
 
   /**
