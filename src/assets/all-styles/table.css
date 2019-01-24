@@ -52,3 +52,7 @@
   .tablePagination .btn-group {
     height: 50%;
   }
+
+  .table-actions {
+    margin-bottom: 20px;
+  }

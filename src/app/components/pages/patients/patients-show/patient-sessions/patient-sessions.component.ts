@@ -18,7 +18,7 @@ export class PatientSessionsComponent implements OnInit {
   @Output() download: EventEmitter<any> = new EventEmitter<any>();
 
 
-  public modalState: string;
+  public modalState: 'open' | 'close';
 
   constructor(private shareDataService: ShareDataService, private sessionsService: SessionsService) { }
 
@@ -29,7 +29,7 @@ export class PatientSessionsComponent implements OnInit {
 
   }
 
-  public changeModalState(state: string): void {
+  public changeModalState(state: 'open' | 'close'): void {
     this.modalState = state;
   }
 

@@ -16,38 +16,37 @@ export class PatientsListComponent extends ListComponent implements OnInit {
   public clearFiltersBtn: boolean;
   public currentListStatus: number;
 
+
+  public filtersFormOpen: 'open' | 'close' = 'close';
+
   public selectedSize = 15;
 
   public tableHeaders = [
-    { title: '#', value: 'id' },
-    { title: 'Nome', value: 'name' },
-    { title: 'Plano', value: ['health_insurance', 'name'] },
-    { title: 'Criado', value: 'created_at' },
-    { title: 'Atualizado', value: 'updated_at' }
+    { title: '#', value: 'id', sort: true },
+    { title: 'Nome', value: 'name', sort: true },
+    { title: 'Plano', value: 'health_insurance', sort: true },
+    { title: 'Contato', value: 'contact', sort: false },
+    { title: 'Criado', value: 'created_at', sort: true }
   ];
 
   public TABS = [
     { title: 'Ativos',   value: 1 },
     { title: 'Inativos', value: 2 },
     { title: 'De Alta',  value: 3 },
-  ]
+  ];
 
   constructor(private patientsService: PatientsService,
     private shareData: ShareDataService,
     private router: Router,
     private fb: FormBuilder) {
     super();
+
     this.filterCriteria = new FilterCriteria();
     this.resource = this.patientsService;
     this.shareDataService = this.shareData;
   }
 
   ngOnInit() {
-
-    this.filterForm = this.fb.group({
-      search: [''],
-      health_insurance: ['']
-    });
 
     this.filterCriteria.addListParams();
     this.filterCriteria.addParam('patient_status', 1);
@@ -56,25 +55,22 @@ export class PatientsListComponent extends ListComponent implements OnInit {
     this.loadData();
   }
 
-  public submitFilters() {
+  public submitFilters(filters) {
 
-    const controls = this.filterForm.controls;
+    const filterStringArray = [];
     let countFilters = 0;
 
-    if (controls.health_insurance.value) {
-      this.filterCriteria.addParam('health_insurance', this.filterForm.controls.health_insurance.value);
-      countFilters += 1;
-    } else {
-      this.filterCriteria.removeParam('health_insurance');
-    }
+    filters.forEach(filter => {
+      if (filter[Object.keys(filter)[0]]) {
+        this.filterCriteria.addParam(Object.keys(filter)[0], filter[Object.keys(filter)[0]]);
 
-    if (controls.search.value) {
-      this.filterCriteria.addParam('search', this.filterForm.controls.search.value);
-      countFilters += 1;
+        filterStringArray.push(filter[Object.keys(filter)[0]]);
 
-    } else {
-      this.filterCriteria.removeParam('search');
-    }
+        countFilters += 1;
+      } else {
+        this.filterCriteria.removeParam(Object.keys(filter)[0]);
+      }
+    });
 
     if (countFilters > 0) this.clearFiltersBtn = true;
     else this.clearFiltersBtn = false;
@@ -86,6 +82,8 @@ export class PatientsListComponent extends ListComponent implements OnInit {
   public clearFilters() {
     this.filterCriteria.clearParams();
     this.filterCriteria.addListParams();
+
+    this.filterForm.reset();
 
     this.clearFiltersBtn = false;
 
@@ -106,7 +104,6 @@ export class PatientsListComponent extends ListComponent implements OnInit {
 
 
   changeListStatus(status): void {
-    status = parseInt(status);
     if (this.currentListStatus !== status) {
       this.currentListStatus = status;
       switch (status) {
@@ -117,6 +114,10 @@ export class PatientsListComponent extends ListComponent implements OnInit {
 
       this.loadData();
     }
+  }
+
+  changeFiltersModalState(state) {
+    this.filtersFormOpen = state;
   }
 
   /**

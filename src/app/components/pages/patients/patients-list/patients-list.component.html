@@ -1,6 +1,7 @@
 <div class="row">
   <ul>
-    <li class="single-tab" *ngFor="let tab of TABS"> <!--@REFACTOR ADAPTAR AO QUE HOUVER NO BACKEND -->
+    <li class="single-tab" *ngFor="let tab of TABS">
+      <!--@TODO ADAPTAR AO QUE HOUVER NO BACKEND -->
       <a class="tab-name" [ngClass]="{'tab-active': currentListStatus === tab.value}" (click)="changeListStatus(tab.value)">{{tab.title}}</a>
     </li>
     <li class="responsive-tabs">
@@ -9,49 +10,37 @@
       </select>
     </li>
   </ul>
-
-
 </div>
 
 <div class="panel">
 
-  <button routerLink="create" class="btn btn-primary">Cadastrar Paciente</button>
+  <div class="table-actions">
+    <button routerLink="create" class="btn btn-primary btn-sm mr-3"><i class="fa fa-user-plus"></i> Cadastrar Paciente</button>
+    <button (click)="changeFiltersModalState('open')" class="btn btn-primary btn-sm"><i class="fa fa-sliders"></i> Filtros</button>
+    <small>{{filterString}}</small>
+  </div>
 
   <div class="panel-body">
+
     <div class="table-wrapper" style="margin: 0">
 
-      <form *ngIf="tableMetaData" [formGroup]="filterForm" (submit)="submitFilters()">
-        <div class="tableFilters row">
-
-
-          <div class="col-md-3 mb-3 mt-3">
-            <input type="text" class="form-control" placeholder="Buscar" formControlName="search">
-          </div>
-
-          <div class="col-md-3 mb-3 mt-3">
-            <select type="text" class="custom-select" formControlName="health_insurance">
-              <option value="" disabled selected>Plano de Saúde</option>
-              <option *ngFor="let filter of tableMetaData.filterConfig.health_insurances" [value]="filter.id">{{filter.name}}</option>
-            </select>
-          </div>
-
-          <div class="col-md-3 mb-3 mt-3">
-            <button class="btn full-width-mobile btn-primary mr-2 mb-1" type="submit"><i class="fa fa-search"></i></button>
-            <button *ngIf="clearFiltersBtn" class="btn full-width-mobile btn-warning mr-2 mb-1" type="button" (click)="clearFilters()"><i class="fa fa-times"></i></button>
-          </div>
-
-
-        </div>
-      </form>
 
       <div class="tableStyles">
 
 
         <table class="display table table-condensed table-responsive-sm">
           <thead>
-            <th *ngFor="let tableHead of tableHeaders"><a class="pointer" (click)="changeSort(tableHead)">{{tableHead.title}}
+            <th *ngFor="let tableHead of tableHeaders">
+
+              <a *ngIf="tableHead.sort; else noSort" class="pointer" (click)="changeSort(tableHead)">
+                {{tableHead.title}}
                 <i class="fa" [ngClass]="{'fa-caret-up': tableHead.sorted === 'asc', 'fa-caret-down': tableHead.sorted === 'desc'}"></i>
               </a>
+
+              <ng-template #noSort>
+                {{tableHead.title}}
+              </ng-template>
+
             </th>
             <th>Ação</th>
           </thead>
@@ -61,8 +50,8 @@
               <td>{{data.id}}</td>
               <td>{{data.name}}</td>
               <td>{{data.HealthInsurance ? data.HealthInsurance.name : 'Nenhum'}}</td>
+              <td>{{data.Contact ? data.Contact.phone : '--'}}</td>
               <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>
-              <td>{{data.updated_at | date:'dd/MM/yyyy HH:mm'}}</td>
               <td>
                 <button title="Ver Paciente" (click)="show(data.id)" class="mr-2 btn btn-primary btn-sm">
                   <i class="fa fa-search"></i>
@@ -75,7 +64,9 @@
 
             <tr *ngIf="!tableData || tableData.length <= 0">
               <td colspan="6" class="text-center">
-                Nenhum Paciente {{ currentListStatus === 1 ? 'Ativo' : (currentListStatus === 2 ? 'Inativo' : 'de Alta') }} {{ clearFiltersBtn ? ' com os filtros selecionados' : '' }} <!-- @REFACTOR MULTIPLE TERNARY IF-->
+                Nenhum Paciente {{ currentListStatus === 1 ? 'Ativo' : (currentListStatus === 2 ? 'Inativo' : 'de
+                Alta') }} {{ clearFiltersBtn ? ' com os filtros selecionados' : '' }}
+                <!-- @REFACTOR MULTIPLE TERNARY IF-->
               </td>
             </tr>
 
@@ -124,3 +115,10 @@
 
 
 </div>
+
+<app-patients-list-filter  *ngIf="tableMetaData && tableMetaData.filterConfig"
+  [filterConfig]="tableMetaData.filterConfig"
+  [hidden]="!(filtersFormOpen === 'open')"
+  (closeModal)="changeFiltersModalState($event)"
+  (sendFilters)="submitFilters($event)">
+</app-patients-list-filter>
