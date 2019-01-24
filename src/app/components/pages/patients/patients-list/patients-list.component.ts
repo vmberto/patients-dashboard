@@ -22,11 +22,11 @@ export class PatientsListComponent extends ListComponent implements OnInit {
   public selectedSize = 15;
 
   public tableHeaders = [
-    { title: '#', value: 'id', sort: true },
-    { title: 'Nome', value: 'name', sort: true },
-    { title: 'Plano', value: 'health_insurance', sort: true },
-    { title: 'Contato', value: 'contact', sort: false },
-    { title: 'Criado', value: 'created_at', sort: true }
+    { title: '#', value: 'id', sortable: true },
+    { title: 'Nome', value: 'name', sortable: true },
+    { title: 'Plano', value: 'health_insurance', sortable: true },
+    { title: 'Contato', value: 'contact', sortable: false },
+    { title: 'Criado', value: 'created_at', sortable: true }
   ];
 
   public TABS = [
@@ -37,8 +37,7 @@ export class PatientsListComponent extends ListComponent implements OnInit {
 
   constructor(private patientsService: PatientsService,
     private shareData: ShareDataService,
-    private router: Router,
-    private fb: FormBuilder) {
+    private router: Router) {
     super();
 
     this.filterCriteria = new FilterCriteria();

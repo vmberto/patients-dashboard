@@ -1,20 +1,21 @@
 import { MatPaginator, PageEvent } from '@angular/material';
 import { ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
+import { TableHeaders, TableMetaData } from 'src/app/utils/typings/table.typing';
 
 
 export class ListComponent {
 
     @ViewChild(MatPaginator) pagination: MatPaginator;
 
-    protected resource;
+    protected resource: any;
     protected resourceFunction;
     protected filterCriteria;
     protected shareDataService;
 
-    protected tableData;
-    protected tableHeaders;
-    protected tableMetaData;
+    protected tableData: any[];
+    protected tableHeaders: TableHeaders[];
+    protected tableMetaData: TableMetaData;
 
     private sortedByHeader;
     private sortChanges = 0;
@@ -31,7 +32,6 @@ export class ListComponent {
 
 
     public constructor() { }
-
 
 
     /**

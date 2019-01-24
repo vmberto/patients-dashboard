@@ -32,7 +32,7 @@
           <thead>
             <th *ngFor="let tableHead of tableHeaders">
 
-              <a *ngIf="tableHead.sort; else noSort" class="pointer" (click)="changeSort(tableHead)">
+              <a *ngIf="tableHead.sortable; else noSort" class="pointer" (click)="changeSort(tableHead)">
                 {{tableHead.title}}
                 <i class="fa" [ngClass]="{'fa-caret-up': tableHead.sorted === 'asc', 'fa-caret-down': tableHead.sorted === 'desc'}"></i>
               </a>
@@ -79,7 +79,7 @@
 
       </div>
 
-      <div *ngIf="tableMetaData" class="row tablePagination">
+      <div class="row tablePagination">
 
 
         <div class="input-group col-xl-2 col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
