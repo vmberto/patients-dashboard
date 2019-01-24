@@ -24,8 +24,8 @@ export class ListComponent {
     // Pagination
     public status: string;
     public length: number;
-    public pageSize = 12;
     public page = 1;
+    public selectedSize = 15;
     public pageSizeOptions: number[] = [5, 10, 15, 25, 50];
     public searchableFields: string[];
     public pageEvent: PageEvent;
@@ -80,4 +80,17 @@ export class ListComponent {
 
         this.loadData();
     }
+
+
+  public limitChange(newLimit) {
+    this.selectedSize = newLimit;
+    this.filterCriteria.addParam('limit', newLimit);
+    this.loadData();
+  }
+
+  public paginationChange(newPage) {
+    this.filterCriteria.addParam('page', newPage);
+    this.loadData();
+  }
+  
 }

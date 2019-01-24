@@ -21,7 +21,6 @@ export class PatientsListComponent extends ListComponent implements OnInit {
 
   public filtersFormOpen: boolean;
 
-  public selectedSize = 15;
 
   public tableHeaders = [
     { title: '#', value: 'id', sortable: true },
@@ -99,19 +98,6 @@ export class PatientsListComponent extends ListComponent implements OnInit {
 
     this.loadData();
   }
-
-  public limitChange(newLimit) {
-    this.selectedSize = newLimit;
-    this.filterCriteria.addParam('limit', newLimit);
-    this.loadData();
-
-  }
-
-  public paginationChange(newPage) {
-    this.filterCriteria.addParam('page', newPage);
-    this.loadData();
-  }
-
 
   changeListStatus(status): void {
     if (this.currentListStatus !== status) {
