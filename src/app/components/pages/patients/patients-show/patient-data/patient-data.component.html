@@ -3,7 +3,7 @@
   <h4 class="panel-title">
     <button routerLink="../.." class="return-btn btn btn-primary">
       <i class="fa fa-arrow-left"></i>
-    </button> Paciente #{{patientData.id}}
+    </button> Paciente #{{patient.id}}
 
     <button id="download-anamnesis" class="btn btn-success btn-sm" (click)="downloadPatientAnamnesis()">
       <i class="fa" [ngClass]="{'fa-download': !downloadingAnamnesis, 'fa-spinner': downloadingAnamnesis, 'fa-spin': downloadingAnamnesis}"></i>
@@ -16,14 +16,14 @@
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Nome <i [ngClass]="{'always-shown': openInput}" class="edit-pencil fa fa-pencil"></i></h5>
         <p [hidden]="openInput" (click)="openInputToEdit('name')" class="click-for-edit">
-          {{patientData.name ? patientData.name : '--'}}
+          {{patient.name ? patient.name : '--'}}
         </p>
         <div *ngIf="openInput" class="input-group">
           <input [(ngModel)]="edit" class="form-control" autofocus type="text">
           <div class="input-group-append">
-            <button (click)="closeOrEditButton(edit)" [ngClass]="{'btn-success': edit, 'btn-danger': !edit || edit === patientData.name}"
+            <button (click)="closeOrEditButton(edit)" [ngClass]="{'btn-success': edit, 'btn-danger': !edit || edit === patient.name}"
               class="btn btn-success" type="button">
-              <i class="fa" [ngClass]="{'fa-check': edit, 'fa-times': !edit || edit === patientData.name}"></i>
+              <i class="fa" [ngClass]="{'fa-check': edit, 'fa-times': !edit || edit === patient.name}"></i>
             </button>
           </div>
         </div>
@@ -31,32 +31,32 @@
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Plano de Saúde</h5>
-        <p class="click-for-edit">{{patientData.HealthInsurance ? patientData.HealthInsurance.name : 'Nenhum'}}</p>
+        <p class="click-for-edit">{{patient.HealthInsurance ? patient.HealthInsurance.name : 'Nenhum'}}</p>
 
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Celular</h5>
-        <p class="click-for-edit">{{patientData.Contact.phone ? patientData.Contact.phone : '--'}}</p>
+        <p class="click-for-edit">{{patient.Contact.phone ? patient.Contact.phone : '--'}}</p>
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Email</h5>
-        <p class="click-for-edit">{{patientData.Contact.email ? patientData.Contact.email : '--'}}</p>
+        <p class="click-for-edit">{{patient.Contact.email ? patient.Contact.email : '--'}}</p>
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Particular</h5>
-        <p class="click-for-edit">{{patientData.is_private ? 'Sim' : 'Não'}}</p>
+        <p class="click-for-edit">{{patient.is_private ? 'Sim' : 'Não'}}</p>
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Estado Civil</h5>
-        <p class="click-for-edit">{{ patientData.MaritalStatus.MaritalStatusType.name }}</p>
+        <p class="click-for-edit">{{ patient.MaritalStatus.MaritalStatusType.name }}</p>
       </div>
-      <div class="col-md-3 col-sm-6" *ngIf="patientData.MaritalStatus.MaritalStatusType.id !== 1">
+      <div class="col-md-3 col-sm-6" *ngIf="patient.MaritalStatus.MaritalStatusType.id !== 1">
         <h5 class="data-name">Tempo de União</h5>
-        <p class="click-for-edit">{{ patientData.MaritalStatus.union_time }}</p>
+        <p class="click-for-edit">{{ patient.MaritalStatus.union_time }}</p>
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Filhos</h5>
-        <p class="click-for-edit">{{ patientData.MaritalStatus.childrens_number }}</p>
+        <p class="click-for-edit">{{ patient.MaritalStatus.childrens_number }}</p>
       </div>
     </div>
     <hr class="details-separator">
@@ -66,40 +66,40 @@
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">CEP</h5>
-        <p class="click-for-edit">{{patientData.Address.zip_code || '--'}}</p>
+        <p class="click-for-edit">{{patient.Address.zip_code || '--'}}</p>
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Rua</h5>
-        <p class="click-for-edit">{{patientData.Address.street || '--'}}</p>
+        <p class="click-for-edit">{{patient.Address.street || '--'}}</p>
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Número</h5>
-        <p class="click-for-edit">{{patientData.Address.number || '--'}}</p>
+        <p class="click-for-edit">{{patient.Address.number || '--'}}</p>
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Complemento</h5>
-        <p class="click-for-edit">{{patientData.Address.complement || '--'}}</p>
+        <p class="click-for-edit">{{patient.Address.complement || '--'}}</p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Bairro</h5>
-        <p class="click-for-edit">{{patientData.Address.district || '--'}}</p>
+        <p class="click-for-edit">{{patient.Address.district || '--'}}</p>
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Cidade</h5>
-        <p class="click-for-edit">{{patientData.Address.city || '--'}}</p>
+        <p class="click-for-edit">{{patient.Address.city || '--'}}</p>
       </div>
     </div>
     <hr class="details-separator">
     <div class="panel-footer">
       <div class="row">
         <div class="col-md-12">
-          <p style="display: inline-block"><strong class="data-name">Cadastrado em: </strong>{{patientData.created_at |
+          <p style="display: inline-block"><strong class="data-name">Cadastrado em: </strong>{{patient.created_at |
             date:'dd/MM/yyyy
             HH:mm'}}&emsp;</p>
-          <p *ngIf="patientData.created_at !== patientData.updated_at" style="display: inline-block"><strong class="data-name">
-              Atualizado em: </strong>{{patientData.updated_at
+          <p *ngIf="patient.created_at !== patient.updated_at" style="display: inline-block"><strong class="data-name">
+              Atualizado em: </strong>{{patient.updated_at
             | date:'dd/MM/yyyy
             HH:mm'}}</p>
         </div>

@@ -1,7 +1,8 @@
 import { ShareDataService, SessionsService } from 'src/app/services';
-import { sortByKey } from 'src/app/utils/app.utils';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { collapse } from 'src/app/utils/animations/animations';
+import saveAs from 'node_modules/file-saver';
+
 
 
 @Component({
@@ -12,20 +13,17 @@ import { collapse } from 'src/app/utils/animations/animations';
 })
 export class PatientSessionsComponent implements OnInit {
 
-  @Input() patientSessions;
-  @Input() totalSessions: number;
-  @Input() sessionsListLimit;
-  @Output() download: EventEmitter<any> = new EventEmitter<any>();
-
+  public sessions: any;
+  public downloadingEvolution: boolean;
 
   public modalState: 'open' | 'close';
 
-  constructor(private shareDataService: ShareDataService, private sessionsService: SessionsService) { }
+  constructor(private shareDataService: ShareDataService, private sessionsService: SessionsService) {
+  }
 
   ngOnInit() {
-    this.patientSessions.map(patient => {
-      patient.opened = false;
-    });
+
+    this.sessions = this.shareDataService.patient.Sessions;
 
   }
 
@@ -33,15 +31,25 @@ export class PatientSessionsComponent implements OnInit {
     this.modalState = state;
   }
 
-  public showAllSessions(): void {
-    this.shareDataService.watchSessionLimit(true);
-  }
+  public downloadPatientEvolution(last_sessions_number): void {
+    
+    const { id, name } = this.shareDataService.patient;
+    this.downloadingEvolution = true;
 
-  public downloadPatientEvolution(): void {
+    this.sessionsService.downloadPatientEvolution({ last_sessions_number, patient_id: id })
+      .then((res) => {
 
-    const last_sessions_number = 4;
+        this.downloadingEvolution = false;
 
-    this.download.emit(last_sessions_number);
+        const file = new Blob([res], { type: 'application/pdf' });
+        const patientEvolutionName = name.toLowerCase().split(' ').join('-');
+        const filename = `evolução-${patientEvolutionName}.pdf`;
+        saveAs(file, filename);
+
+      })
+      .catch(() => {
+        this.downloadingEvolution = false;
+      });
 
   }
 

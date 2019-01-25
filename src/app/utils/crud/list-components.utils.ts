@@ -85,6 +85,7 @@ export class ListComponent {
   public limitChange(newLimit) {
     this.selectedSize = newLimit;
     this.filterCriteria.addParam('limit', newLimit);
+    this.filterCriteria.addParam('page', 1);
     this.loadData();
   }
 

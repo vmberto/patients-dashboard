@@ -5,22 +5,23 @@
 
     </h4>
     <div class="sessions-action">
-        <button (click)="changeModalState('open')" class="btn btn-primary btn-sm">Registrar</button>
-        <button (click)="downloadPatientEvolution()" class="btn btn-success btn-sm ml-2" [disabled]="patientSessions.length < 1" [title]="patientSessions.length < 1 ? 'É necessário que o paciente tenha pelo menos uma sessão' : 'Baixar a evolução do paciente'">
-          <i class="fa fa-download"></i>
-           Download
-        </button>
-      </div>
+      <button (click)="changeModalState('open')" class="btn btn-primary btn-sm">Registrar</button>
+      <button (click)="downloadPatientEvolution(4)" class="btn btn-success btn-sm ml-2" [disabled]="sessions.length < 1"
+        [title]="sessions.length < 1 ? 'É necessário que o paciente tenha pelo menos uma sessão' : 'Baixar a evolução do paciente'">
+        <i class="fa" [ngClass]="{'fa-download': !downloadingEvolution, 'fa-spinner': downloadingEvolution, 'fa-spin': downloadingEvolution}"></i>
+        Evolução
+      </button>
+    </div>
   </div>
   <div class="panel-body" style="padding: 25px;">
 
-    <div class="expansive-panel pointer" (click)="session.opened = !session.opened" *ngFor="let session of patientSessions"
+    <div class="expansive-panel pointer" (click)="session.opened = !session.opened" *ngFor="let session of sessions; let i = index"
       [ngClass]="
       {
-        'full-radius': patientSessions.length === 1,
-        'no-top-radius': patientSessions[patientSessions.length - 1] === session && patientSessions.length > 1,
-        'no-bottom-radius': patientSessions[0] === session && patientSessions.length > 1,
-        'no-radius': patientSessions[patientSessions.length - 1] !== session && patientSessions[0] !== session && patientSessions.length > 1,
+        'full-radius': sessions.length === 1,
+        'no-top-radius': sessions[sessions.length - 1] === session && sessions.length > 1,
+        'no-bottom-radius': sessions[0] === session && sessions.length > 1,
+        'no-radius': sessions[sessions.length - 1] !== session && sessions[0] !== session && sessions.length > 1,
         'selected-panel': session.opened,
         'expansive-panel-good': session.humour_id === 4,
         'expansive-panel-medium': session.humour_id === 5,
@@ -38,7 +39,6 @@
         </div>
 
         <div class="col-sm-5">
-          <!--offset-md-4-->
           <h4 id="attendance_at">{{ (session.attendance_at | date:'dd/MM/yyyy') + ' ' + (session.attendance_at |
             date:'HH:mm') }}</h4>
         </div>
@@ -56,15 +56,9 @@
     </div>
 
 
-    <div *ngIf="patientSessions.length === 0" style="text-align: center">
+    <div *ngIf="sessions.length === 0" style="text-align: center">
       <span>Não houve sessões com este paciente</span>
     </div>
-
-
-    <div *ngIf="totalSessions > patientSessions.length" class="mt-4" style="text-align: center">
-      <button class="btn btn-primary btn-md" (click)="showAllSessions()">Carregar todas as Sessões</button>
-    </div>
-
 
   </div>
 

@@ -2,7 +2,7 @@ import { FormValidatorErrors } from 'src/app/utils/validators/errors.validators'
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { SessionsService } from 'src/app/services';
+import { SessionsService, ShareDataService } from 'src/app/services';
 
 @Component({
   selector: 'app-create-session',
@@ -66,10 +66,7 @@ export class CreateSessionComponent implements OnInit {
       };
 
       this.sessionsService.post(sessionData, this.patientId)
-        .subscribe(
-          () => {
-            window.location.reload();
-          });
+        .subscribe(() => { window.location.reload() });
 
     }
 
