@@ -32,7 +32,10 @@
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Plano de Saúde</h5>
         <p class="click-for-edit">{{patient.HealthInsurance ? patient.HealthInsurance.name : 'Nenhum'}}</p>
-
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <h5 class="data-name">Nascimento</h5>
+        <p class="click-for-edit">{{patient.birthday ? (patient.birthday | date:'dd/MM/yyyy') : 'Não Informado'}}</p>
       </div>
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Celular</h5>

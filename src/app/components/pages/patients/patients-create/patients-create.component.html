@@ -90,7 +90,15 @@
               </div>
             </div>
 
+          </div>
 
+          <div class="form-row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Data de Nascimento</label>
+                <input formControlName="birthday" type="date" onkeypress="return false" class="form-control" placeholder="01/01/2000">
+              </div>
+            </div>
           </div>
 
           <h5>Endereço</h5>
@@ -100,8 +108,8 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label>CEP</label>
-                <input id="address-zip_code" formControlName="zip_code" (blur)="findCep()" type="text" class="form-control" placeholder="00000-000"
-                  maxlength="8">
+                <input id="address-zip_code" formControlName="zip_code" (blur)="findCep()" type="text" class="form-control"
+                  placeholder="00000-000" maxlength="8">
                 <button [@fade] type="button" class="pointer finding-cep" *ngIf="findingCep || cepFound" (click)="clearSelectedAddress()">
                   <i class="fa" [ngClass]="{'fa-spinner': findingCep, 'fa-spin': findingCep, 'fa-times': cepFound}"></i>
                 </button>

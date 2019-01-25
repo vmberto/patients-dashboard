@@ -56,6 +56,7 @@ export class FormValidatorErrors {
             case 'zip_code': return `CEP`;
             case 'district': return `distrito`;
             case 'city': return `cidade`;
+            case 'birthday': return `data de nascimento`;
             case 'phone': return `fone`;
             case 'union_time': return `tempo de união`;
             case 'humour': return `humor`;
