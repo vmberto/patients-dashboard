@@ -22,7 +22,7 @@
         Cadastrar Paciente
       </button>
 
-      <button (click)="openFiltersRow()" class="btn btn-primary btn-sm">
+      <button (click)="openFiltersRow()" class="btn btn-primary btn-sm" [ngClass]="{'btn-primary': !filtersFormOpen, 'btn-selected': filtersFormOpen}">
         <i class="fa fa-sliders"></i>
         Filtros
       </button>
