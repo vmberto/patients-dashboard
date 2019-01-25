@@ -5,9 +5,8 @@ import { FormBuilder, FormGroup, Validators, FormControl, ValidationErrors } fro
 import { Component, OnInit } from '@angular/core';
 import { emailValidator, nameValidator } from 'src/app/utils/validators/validators';
 import { FormValidatorErrors } from 'src/app/utils/validators/errors.validators';
-import { SeekerService } from 'src/app/services/seeker.service';
+import { SeekerService } from 'src/app/services';
 import { fade } from 'src/app/utils/animations/animations';
-import { ToastService } from 'src/app/components/generic-components/toast';
 
 @Component({
   selector: 'app-create',
