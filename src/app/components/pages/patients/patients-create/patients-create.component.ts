@@ -5,9 +5,9 @@ import { FormBuilder, FormGroup, Validators, FormControl, ValidationErrors } fro
 import { Component, OnInit } from '@angular/core';
 import { emailValidator, nameValidator } from 'src/app/utils/validators/validators';
 import { FormValidatorErrors } from 'src/app/utils/validators/errors.validators';
-import { SeekerService } from 'src/app/services/seeker.service';
+import { SeekerService } from 'src/app/services';
 import { fade } from 'src/app/utils/animations/animations';
-import { ToastService } from 'src/app/components/generic-components/toast';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-create',
@@ -55,6 +55,8 @@ export class PatientsCreateComponent implements OnInit {
 
       marital_status_type_id: ['1', [Validators.required]],
       childrens_number: ['', [Validators.required]],
+
+      birthday: ['', [Validators.required]],
 
       zip_code: ['', [Validators.required]],
       city: ['', [Validators.required]],
@@ -118,8 +120,6 @@ export class PatientsCreateComponent implements OnInit {
 
               document.getElementById(focusInput).focus();
 
-            } else {
-              console.log('cep invalido');
             }
 
           },
@@ -153,11 +153,10 @@ export class PatientsCreateComponent implements OnInit {
 
 
   submitPatientData(): void {
-
     this.FormValidationErrors.getFormValidationErrors(this.patientForm);
-
+    
     if (this.patientForm.valid) {
-
+      
       this.creatingPatient = true;
 
 
@@ -171,7 +170,8 @@ export class PatientsCreateComponent implements OnInit {
         health_insurance_id: formControls.health_insurance.value,
         marital_status_type_id: formControls.marital_status_type_id.value,
         childrens_number: formControls.childrens_number.value,
-        union_time: formControls.union_time ? `${formControls.union_time.value} anos` : null,
+        union_time: formControls.union_time ? `${formControls.union_time.value} ano${formControls.union_time.value > 1 ? 's' : ''}` : null,
+        birthday: moment(formControls.birthday.value).add(1, 'hour'),
         address: {
           street: formControls.street.value,
           number: formControls.number.value,
@@ -181,7 +181,6 @@ export class PatientsCreateComponent implements OnInit {
           city: formControls.city.value,
         }
       };
-
 
       this.patientService.post(patientData)
         .subscribe(

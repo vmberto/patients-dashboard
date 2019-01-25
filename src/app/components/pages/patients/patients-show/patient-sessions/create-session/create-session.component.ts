@@ -2,7 +2,7 @@ import { FormValidatorErrors } from 'src/app/utils/validators/errors.validators'
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { SessionsService } from 'src/app/services';
+import { SessionsService, ShareDataService } from 'src/app/services';
 
 @Component({
   selector: 'app-create-session',
@@ -10,12 +10,12 @@ import { SessionsService } from 'src/app/services';
   styleUrls: ['./create-session.component.css']
 })
 export class CreateSessionComponent implements OnInit {
-
+  
+  @Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
+  
   public patientId: number;
   public creatingSession: boolean;
   public sessionForm: FormGroup;
-
-  @Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
     private fb: FormBuilder,
@@ -25,19 +25,13 @@ export class CreateSessionComponent implements OnInit {
 
   ngOnInit() {
 
-    this.activatedRoute.params
-      .subscribe(
-        res => {
-          this.patientId = res.id;
-        }
-      );
+    this.activatedRoute.params.subscribe(res => { this.patientId = res.id; });
 
     this.sessionForm = this.fb.group({
       humour: ['', [Validators.required]],
       duration: ['', [Validators.required]],
       attendance_at: ['', [Validators.required]],
       description: ['', [Validators.required]],
-
     });
 
   }
@@ -66,10 +60,7 @@ export class CreateSessionComponent implements OnInit {
       };
 
       this.sessionsService.post(sessionData, this.patientId)
-        .subscribe(
-          () => {
-            window.location.reload();
-          });
+        .subscribe(() => window.location.reload());
 
     }
 

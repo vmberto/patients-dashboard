@@ -2,19 +2,15 @@
 
   <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12">
 
-    <app-patient-data *ngIf="patientData" [patientData]="patientData" (editPatientData)="updatePatientData($event)"></app-patient-data>
+    <app-patient-data *ngIf="patientDataLoaded" (editPatientData)="updatePatientData($event)"></app-patient-data>
 
   </div>
 
   <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12">
 
-    <app-patient-sessions *ngIf="patientSessions"
-      [patientSessions]="patientSessions"
-      [totalSessions]="totalSessions"
-      [sessionsListLimit]="sessionsListLimit"
-      (download)="downloadPatientEvolution($event)">
-    </app-patient-sessions>
+    <app-patient-sessions *ngIf="patientDataLoaded"></app-patient-sessions>
 
   </div>
+
 
 </div>

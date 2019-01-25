@@ -1,6 +1,7 @@
 import { AnamnesisService } from './../../../../../services/entities/anamnesis.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import saveAs from 'node_modules/file-saver';
+import { ShareDataService } from 'src/app/services';
 
 @Component({
   selector: 'app-patient-data',
@@ -9,18 +10,19 @@ import saveAs from 'node_modules/file-saver';
 })
 export class PatientDataComponent implements OnInit {
 
-  @Input() patientData;
-  @Output() editPatientData: EventEmitter<any> = new EventEmitter<any>();
-
+  public patient: any;
+  
+  @Output() editpatient: EventEmitter<any> = new EventEmitter<any>();
   public downloadingAnamnesis: boolean;
-  public openInput = false;
   public edit: string;
+  public openInput = false;
 
-  constructor(private anamnesisService: AnamnesisService) { }
+  constructor(private anamnesisService: AnamnesisService, private shareDataService: ShareDataService) { }
 
   ngOnInit() {
 
-    this.edit = this.patientData.name;
+    this.patient = this.shareDataService.patient;
+    this.edit = this.patient.name;
 
   }
 
@@ -29,9 +31,9 @@ export class PatientDataComponent implements OnInit {
   }
 
   public closeOrEditButton(editField) {
-    if (editField && this.patientData.name !== editField) {
-      this.patientData.name = editField;
-      this.editPatientData.emit(this.patientData);
+    if (editField && this.patient.name !== editField) {
+      this.patient.name = editField;
+      this.editpatient.emit(this.patient);
     }
     this.openInput = false;
   }
@@ -41,18 +43,17 @@ export class PatientDataComponent implements OnInit {
     this.downloadingAnamnesis = true;
 
     /** @TODO colocar um seletor para definir a anamnese que será aplicado os dados do paciente */
-    this.anamnesisService.downloadAnamnesis(1, this.patientData)
+    this.anamnesisService.downloadAnamnesis(1, this.patient)
       .then((res) => {
         this.downloadingAnamnesis = false;
         const file = new Blob([res], { type: 'application/pdf' });
-        const anamnesisName = this.patientData.name.toLowerCase().split(' ').join('-');
+        const anamnesisName = this.patient.name.toLowerCase().split(' ').join('-');
         const filename = `anamnese-${anamnesisName}.pdf`;
 
         saveAs(file, filename);
       })
-      .catch((err) => {
+      .catch(() => {
         this.downloadingAnamnesis = false;
-        console.log(err);
       });
   }
 

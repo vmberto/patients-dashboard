@@ -29,7 +29,15 @@ export const generateRandomColor = () => {
     .join('');
 };
 
-export const sortByKey = (array, key) => {
+export const sortByKeyDesc = (array, key) => {
+  return array.sort(function (a, b) {
+    const x = a[key];
+    const y = b[key];
+    return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+  });
+};
+
+export const sortByKeyAsc = (array, key) => {
   return array.sort(function (a, b) {
     const x = a[key];
     const y = b[key];

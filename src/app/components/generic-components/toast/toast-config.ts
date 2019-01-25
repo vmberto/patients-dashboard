@@ -1,5 +1,6 @@
 import { InjectionToken, TemplateRef } from '@angular/core';
 
+/**@TODO add an optional attribute that can be a function to be executed on click (like click and focus an required input) */
 export class ToastData {
   type: ToastType;
   text?: string;
