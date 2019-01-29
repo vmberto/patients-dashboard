@@ -1,4 +1,4 @@
-a{text-decoration: none}
+/* a { text-decoration: none }
 
 .card {
   color: white;
@@ -46,9 +46,9 @@ a{text-decoration: none}
 
 .fa-spinner {
   color: var(--dark-font-color);
-}
+} */
 
-/* .card {
+.card {
   cursor: pointer;
   background: var(--darker-color);
   margin: 10px;
@@ -63,14 +63,15 @@ a{text-decoration: none}
 }
 
 .card-body {
-  padding: .79rem;
+  padding: .29rem;
+  text-align: center;
 }
 .card-category {
   font-weight: 700!important;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--font-subcolor)!important;
-  margin-bottom: 4px;
+  margin: 0;
 }
 
 .info-icon {
@@ -101,4 +102,8 @@ a{text-decoration: none}
 .card-footer-title {
   margin: 0;
   letter-spacing: 1px;
-} */
+}
+
+.card-title {
+  font-size: 60px;
+}

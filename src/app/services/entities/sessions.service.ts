@@ -14,11 +14,11 @@ export class SessionsService extends CrudMethods {
     this.entity = 'sessions';
   }
 
-  public downloadPatientEvolution( { patient_id, last_sessions_number } ): Promise<any> {
+  public downloadPatientEvolution( { patient, last_sessions_number } ): Promise<any> {
     let headers = new HttpHeaders();
     headers = headers.set('Accept', 'application/pdf');
 
-    return this.http.post(`${environment.API_URL}/api/${this.entity}/download`, { patient_id, last_sessions_number }, {headers, responseType: 'blob' as 'json'}).toPromise();
-  } 
+    return this.http.post(`${environment.API_URL}/api/${this.entity}/download`, { patient, last_sessions_number }, {headers, responseType: 'blob' as 'json'}).toPromise();
+  }
 
 }

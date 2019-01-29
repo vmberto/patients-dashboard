@@ -32,11 +32,11 @@ export class PatientSessionsComponent implements OnInit {
   }
 
   public downloadPatientEvolution(last_sessions_number): void {
-    
+
     const { id, name } = this.shareDataService.patient;
     this.downloadingEvolution = true;
 
-    this.sessionsService.downloadPatientEvolution({ last_sessions_number, patient_id: id })
+    this.sessionsService.downloadPatientEvolution({ last_sessions_number, patient: this.shareDataService.patient })
       .then((res) => {
 
         this.downloadingEvolution = false;

@@ -11,8 +11,8 @@ import { ShareDataService } from 'src/app/services';
 export class PatientDataComponent implements OnInit {
 
   public patient: any;
-  
-  @Output() editpatient: EventEmitter<any> = new EventEmitter<any>();
+
+  @Output() editPatientData: EventEmitter<any> = new EventEmitter<any>();
   public downloadingAnamnesis: boolean;
   public edit: string;
   public openInput = false;
@@ -33,7 +33,7 @@ export class PatientDataComponent implements OnInit {
   public closeOrEditButton(editField) {
     if (editField && this.patient.name !== editField) {
       this.patient.name = editField;
-      this.editpatient.emit(this.patient);
+      this.editPatientData.emit(this.patient);
     }
     this.openInput = false;
   }
