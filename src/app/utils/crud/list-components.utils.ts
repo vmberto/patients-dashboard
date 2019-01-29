@@ -1,20 +1,21 @@
 import { MatPaginator, PageEvent } from '@angular/material';
 import { ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
+import { TableHeaders, TableMetaData } from 'src/app/utils/typings/table.typing';
 
 
 export class ListComponent {
 
     @ViewChild(MatPaginator) pagination: MatPaginator;
 
-    public resource;
+    public resource: any;
     public resourceFunction;
     public filterCriteria;
     public shareDataService;
 
-    public tableData;
-    public tableHeaders;
-    public tableMetaData;
+    public tableData: any[];
+    public tableHeaders: TableHeaders[];
+    public tableMetaData: TableMetaData;
 
     private sortedByHeader;
     private sortChanges = 0;
@@ -23,15 +24,14 @@ export class ListComponent {
     // Pagination
     public status: string;
     public length: number;
-    public pageSize = 12;
     public page = 1;
+    public selectedSize = 15;
     public pageSizeOptions: number[] = [5, 10, 15, 25, 50];
     public searchableFields: string[];
     public pageEvent: PageEvent;
 
 
     public constructor() { }
-
 
 
     /**
@@ -80,4 +80,18 @@ export class ListComponent {
 
         this.loadData();
     }
+
+
+  public limitChange(newLimit) {
+    this.selectedSize = newLimit;
+    this.filterCriteria.addParam('limit', newLimit);
+    this.filterCriteria.addParam('page', 1);
+    this.loadData();
+  }
+
+  public paginationChange(newPage) {
+    this.filterCriteria.addParam('page', newPage);
+    this.loadData();
+  }
+  
 }

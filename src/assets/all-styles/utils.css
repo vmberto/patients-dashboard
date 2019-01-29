@@ -30,3 +30,10 @@
       width: 100%;
     }
   }
+
+
+.btn-selected {
+  color: var(--font-color);
+  background: var(--primary-selected);
+  border-color: var(--primary-selected);
+}

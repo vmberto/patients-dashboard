@@ -3,12 +3,17 @@
     <div class="card-title">
       <h2>PSICOLOGIA</h2>
     </div>
-    <form  [formGroup]="loginForm" (submit)="login()">
+    <form [formGroup]="loginForm" (submit)="login()">
 
       <div class="form-group">
-        <input  class="form-control form-control-lg"  type="text"     placeholder="Email" name="email"    formControlName="email"    autocomplete="off" autofocus>
-        <input  class="form-control form-control-lg"  type="password" placeholder="Senha" name="password" formControlName="password" autocomplete="off">
-        <button [disabled]="loadingLogin" class="btn btn-primary btn-lg btn-block">{{buttonLogin}} <i [hidden]="!loadingLogin" class="fa fa-spinner fa-spin"></i></button>
+        <input class="form-control form-control-lg" type="text" placeholder="Email" name="email" formControlName="email"
+          autocomplete="off" autofocus>
+        <input class="form-control form-control-lg" type="password" placeholder="Senha" name="password" formControlName="password"
+          autocomplete="off">
+        <button [disabled]="loadingLogin" class="btn btn-primary btn-lg btn-block">
+          {{ buttonLogin }}
+          <i [hidden]="!loadingLogin" class="fa fa-spinner fa-spin"></i>
+        </button>
       </div>
 
     </form>

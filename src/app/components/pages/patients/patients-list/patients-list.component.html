@@ -1,6 +1,6 @@
 <div class="row">
   <ul>
-    <li class="single-tab" *ngFor="let tab of TABS"> <!--@REFACTOR ADAPTAR AO QUE HOUVER NO BACKEND -->
+    <li class="single-tab" *ngFor="let tab of TABS">
       <a class="tab-name" [ngClass]="{'tab-active': currentListStatus === tab.value}" (click)="changeListStatus(tab.value)">{{tab.title}}</a>
     </li>
     <li class="responsive-tabs">
@@ -9,49 +9,79 @@
       </select>
     </li>
   </ul>
-
-
 </div>
 
-<div class="panel">
+<div class="panel" style="padding: 0;">
 
-  <button routerLink="create" class="btn btn-primary">Cadastrar Paciente</button>
+  <div class="panel-head" style="padding: 20px 20px 0 20px;">
 
-  <div class="panel-body">
-    <div class="table-wrapper" style="margin: 0">
+    <div class="table-actions">
 
-      <form *ngIf="tableMetaData" [formGroup]="filterForm" (submit)="submitFilters()">
-        <div class="tableFilters row">
+      <button routerLink="create" class="btn btn-primary btn-sm">
+        <i class="fa fa-user-plus"></i>
+        Cadastrar Paciente
+      </button>
 
+      <button (click)="openFiltersRow()" class="btn btn-primary btn-sm" [ngClass]="{'btn-primary': !filtersFormOpen, 'btn-selected': filtersFormOpen}">
+        <i class="fa fa-sliders"></i>
+        Filtros
+      </button>
 
-          <div class="col-md-3 mb-3 mt-3">
-            <input type="text" class="form-control" placeholder="Buscar" formControlName="search">
-          </div>
+      <button *ngIf="clearFiltersBtn" class="btn btn-warning btn-sm mr-2 mb-1" type="button" (click)="clearFilters()">
+        <i class="fa fa-times-circle"></i>
+        Desativar Filtros
+      </button>
 
-          <div class="col-md-3 mb-3 mt-3">
-            <select type="text" class="custom-select" formControlName="health_insurance">
-              <option value="" disabled selected>Plano de Saúde</option>
-              <option *ngFor="let filter of tableMetaData.filterConfig.health_insurances" [value]="filter.id">{{filter.name}}</option>
-            </select>
-          </div>
+    </div>
 
-          <div class="col-md-3 mb-3 mt-3">
-            <button class="btn full-width-mobile btn-primary mr-2 mb-1" type="submit"><i class="fa fa-search"></i></button>
-            <button *ngIf="clearFiltersBtn" class="btn full-width-mobile btn-warning mr-2 mb-1" type="button" (click)="clearFilters()"><i class="fa fa-times"></i></button>
-          </div>
+  </div>
 
+  <div [@collapse] *ngIf="filtersFormOpen" class="filters-row">
 
+    <form [formGroup]="filterForm" (submit)="submitFilters()">
+
+      <div class="row">
+
+        <div class="col-xl-2 col-md-4 col-sm-4 col-12 mb-3 mt-3">
+          <input type="text" class="form-control" placeholder="Buscar" formControlName="search">
         </div>
-      </form>
+
+        <div class="col-xl-2 col-md-4 col-sm-4 col-12 mb-3 mt-3">
+          <select type="text" class="custom-select" formControlName="health_insurance">
+            <option value="" selected>Plano de Saúde</option>
+            <option *ngFor="let filter of tableMetaData?.filterConfig.health_insurances" [value]="filter.id">{{filter.name}}</option>
+          </select>
+        </div>
+
+        <div class="col-md-1 col-sm-3 mb-3 mt-3">
+          <button class="btn btn-block full-width-mobile btn-success pull-right" type="submit"><i class="fa fa-search"></i></button>
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+
+  <div class="panel-body" style="padding: 0 20px 15px 20px;">
+
+    <div class="table-wrapper" style="margin: 20px 0 0 0">
+
 
       <div class="tableStyles">
 
 
         <table class="display table table-condensed table-responsive-sm">
           <thead>
-            <th *ngFor="let tableHead of tableHeaders"><a class="pointer" (click)="changeSort(tableHead)">{{tableHead.title}}
+            <th *ngFor="let tableHead of tableHeaders">
+
+              <a *ngIf="tableHead.sortable; else noSort" class="pointer" (click)="changeSort(tableHead)">
+                {{tableHead.title}}
                 <i class="fa" [ngClass]="{'fa-caret-up': tableHead.sorted === 'asc', 'fa-caret-down': tableHead.sorted === 'desc'}"></i>
               </a>
+              <ng-template #noSort>
+                {{tableHead.title}}
+              </ng-template>
             </th>
             <th>Ação</th>
           </thead>
@@ -61,8 +91,8 @@
               <td>{{data.id}}</td>
               <td>{{data.name}}</td>
               <td>{{data.HealthInsurance ? data.HealthInsurance.name : 'Nenhum'}}</td>
+              <td>{{data.Contact ? data.Contact.phone : '--'}}</td>
               <td>{{data.created_at | date:'dd/MM/yyyy HH:mm'}}</td>
-              <td>{{data.updated_at | date:'dd/MM/yyyy HH:mm'}}</td>
               <td>
                 <button title="Ver Paciente" (click)="show(data.id)" class="mr-2 btn btn-primary btn-sm">
                   <i class="fa fa-search"></i>
@@ -75,7 +105,9 @@
 
             <tr *ngIf="!tableData || tableData.length <= 0">
               <td colspan="6" class="text-center">
-                Nenhum Paciente {{ currentListStatus === 1 ? 'Ativo' : (currentListStatus === 2 ? 'Inativo' : 'de Alta') }} {{ clearFiltersBtn ? ' com os filtros selecionados' : '' }} <!-- @REFACTOR MULTIPLE TERNARY IF-->
+                Nenhum Paciente {{ currentListStatus === 1 ? 'Ativo' : (currentListStatus === 2 ? 'Inativo' : 'de
+                Alta') }} {{ clearFiltersBtn ? ' com os filtros selecionados' : '' }}
+                <!-- @REFACTOR MULTIPLE TERNARY IF-->
               </td>
             </tr>
 
@@ -88,32 +120,32 @@
 
       </div>
 
-      <div *ngIf="tableMetaData" class="row tablePagination">
-
+      <div class="row tablePagination">
 
         <div class="input-group col-xl-2 col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Limite</label>
+            <label class="input-group-text" for="list-limit">Limite</label>
           </div>
-          <select [(ngModel)]="selectedSize" (change)="limitChange(selectedSize)" class="custom-select" id="inputGroupSelect01">
+          <select id="list-limit" [(ngModel)]="selectedSize" (change)="limitChange(selectedSize)" class="custom-select">
             <option *ngFor="let pageSize of pageSizeOptions" [value]="pageSize">{{pageSize}}</option>
           </select>
         </div>
 
+        <div class="btn-group col-xl-4 col-lg-8 col-md-8 col-sm-12 col-12" role="group">
 
-
-        <div class="btn-group col-xl-4 col-lg-8 col-md-8 col-sm-12 col-12" role="group" aria-label="Basic example">
-          <button type="button" [disabled]="tableMetaData.paginationConfig.current_page === 1" class="btn btn-secondary"
-            (click)="paginationChange(tableMetaData.paginationConfig.current_page - 1)">
+          <button type="button" [disabled]="tableMetaData?.paginationConfig.current_page === 1" class="btn btn-secondary"
+            (click)="paginationChange(tableMetaData?.paginationConfig.current_page - 1)">
             <i class="fa fa-angle-left"></i>
           </button>
-          <button type="button" class="btn btn-primary">{{tableMetaData.paginationConfig.current_page}}</button>
-          <button type="button" [disabled]="tableMetaData.paginationConfig.current_page === tableMetaData.paginationConfig.total_pages"
-            class="btn btn-secondary" (click)="paginationChange(tableMetaData.paginationConfig.current_page + 1)">
+
+          <button type="button" class="btn btn-primary">{{tableMetaData?.paginationConfig.current_page}}</button>
+
+          <button type="button" [disabled]="tableMetaData?.paginationConfig.current_page === tableMetaData?.paginationConfig.total_pages"
+            class="btn btn-secondary" (click)="paginationChange(tableMetaData?.paginationConfig.current_page + 1)">
             <i class="fa fa-angle-right"></i>
           </button>
-        </div>
 
+        </div>
 
       </div>
 
@@ -124,3 +156,7 @@
 
 
 </div>
+
+<!-- <app-patients-list-filter *ngIf="tableMetaData && tableMetaData.filterConfig" [filterConfig]="tableMetaData.filterConfig"
+  [hidden]="!(filtersFormOpen === 'open')" (closeModal)="changeFiltersModalState($event)" (sendFilters)="submitFilters($event)">
+</app-patients-list-filter> -->

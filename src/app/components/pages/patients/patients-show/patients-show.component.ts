@@ -2,8 +2,7 @@ import { PatientsService, ShareDataService, SessionsService } from 'src/app/serv
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { showup } from 'src/app/utils/animations/animations';
-import { sortByKey } from 'src/app/utils/app.utils';
-import saveAs from 'node_modules/file-saver';
+import { sortByKeyDesc } from 'src/app/utils/app.utils';
 
 
 @Component({
@@ -14,53 +13,39 @@ import saveAs from 'node_modules/file-saver';
 })
 export class PatientsShowComponent implements OnInit {
 
-  public patientData: any;
-  public patientSessions: any;
+  public patientDataLoaded: boolean = false
   public totalSessions: number;
-
-  public sessionsListLimit = 8;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private patientsService: PatientsService,
-    private sessionsService: SessionsService,
-    private shareData: ShareDataService) { }
+    private shareDataService: ShareDataService) { }
 
   ngOnInit() {
 
-    this.shareData.sessionLimitEvent
-      .subscribe(
-        res => {
-          if (res) this.loadData(null);
-        }
-      );
-
-    this.loadData(this.sessionsListLimit);
+    this.loadData();
   }
 
-  loadData(sessions_limit: number): void {
+  loadData(): void {
 
-    this.shareData.activateLoadingScreen(true);
+    this.shareDataService.activateLoadingScreen(true);
 
     this.activatedRoute.params.subscribe(res => {
 
-      let options: any = { id: res.id };
-      if (sessions_limit) {
-        options = {...options, query: { sessions_limit }};
-      }
-
-      this.patientsService.get(options)
+      this.patientsService.get({ id: res.id })
         .subscribe(
           (res) => {
-            this.shareData.activateLoadingScreen(false);
-            this.patientData = res.patient;
-            this.patientSessions = res.patient.Sessions;
-            this.totalSessions = res.meta.total_sessions;
-            sortByKey(this.patientSessions, 'attendance_at');
+            this.patientDataLoaded = true;
+
+            this.shareDataService.patient = res.patient;
+
+            this.shareDataService.activateLoadingScreen(false);
+
+            sortByKeyDesc(this.shareDataService.patient.Sessions, 'attendance_at');
 
           },
           () => {
-            this.shareData.activateLoadingScreen(false);
+            this.shareDataService.activateLoadingScreen(false);
 
           });
 
@@ -69,24 +54,10 @@ export class PatientsShowComponent implements OnInit {
 
   public updatePatientData($event): void {
     this.patientsService.update($event).subscribe(() => {
-      this.patientData.updated_at = new Date();
+      if (this.shareDataService.patient) {
+        this.shareDataService.patient.updated_at = new Date();
+      }
     });
-  }
-
-  public downloadPatientEvolution(last_sessions_number): void {
-
-    this.sessionsService.downloadPatientEvolution({ last_sessions_number, patient_id: this.patientData.id })
-    .then((res) => {
-        const file = new Blob([res], {type: 'application/pdf'});
-        const patientEvolutionName = this.patientData.name.toLowerCase().split(' ').join('-');
-        const filename = `evolução-${patientEvolutionName}.pdf`;
-
-        saveAs(file, filename);
-    })
-    .catch((err) => {
-        console.log(err);
-    });
-
   }
 
 }

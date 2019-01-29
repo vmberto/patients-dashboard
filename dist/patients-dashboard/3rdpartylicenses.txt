@@ -100,7 +100,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 MIT
 MIT
 
-@angular/cdk@6.4.7
+@angular/cdk@6.4.3
 MIT
 The MIT License
 
