@@ -13,7 +13,7 @@ import { sortByKeyDesc } from 'src/app/utils/app.utils';
 })
 export class PatientsShowComponent implements OnInit {
 
-  public patientDataLoaded: boolean = false
+  public patientDataLoaded = false;
   public totalSessions: number;
 
   constructor(
@@ -53,6 +53,7 @@ export class PatientsShowComponent implements OnInit {
   }
 
   public updatePatientData($event): void {
+
     this.patientsService.update($event).subscribe(() => {
       if (this.shareDataService.patient) {
         this.shareDataService.patient.updated_at = new Date();
