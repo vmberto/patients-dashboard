@@ -40,6 +40,7 @@ import {
 
 // Directives
 import { ModalDirective } from './directives/modal.directive';
+import { PatientDataCellComponent } from './components/pages/patients/patients-show/patient-data/patient-data-cell/patient-data-cell.component';
 
 registerLocaleData(localePt);
 @NgModule({
@@ -66,6 +67,7 @@ registerLocaleData(localePt);
     PatientsIndexComponent,
     CreateSessionComponent,
     ModalDirective,
+    PatientDataCellComponent,
   ],
   imports: [
     BrowserModule,

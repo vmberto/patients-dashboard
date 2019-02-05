@@ -13,30 +13,22 @@
 
   <div class="panel-body">
     <div class="row">
-      <div class="col-md-3 col-sm-6">
-        <h5 class="data-name">Nome <i [ngClass]="{'always-shown': openInput}" class="edit-pencil fa fa-pencil"></i></h5>
-        <p [hidden]="openInput" (click)="openInputToEdit('name')" class="click-for-edit">
-          {{patient.name ? patient.name : '--'}}
-        </p>
-        <div *ngIf="openInput" class="input-group">
-          <input [(ngModel)]="edit" class="form-control" autofocus type="text">
-          <div class="input-group-append">
-            <button (click)="closeOrEditButton(edit)" [ngClass]="{'btn-success': edit, 'btn-danger': !edit || edit === patient.name}"
-              class="btn btn-success" type="button">
-              <i class="fa" [ngClass]="{'fa-check': edit, 'fa-times': !edit || edit === patient.name}"></i>
-            </button>
-          </div>
-        </div>
 
+      <div class="col-md-3 col-sm-6">
+        <app-patient-data-cell [cellTitle]="'Nome'" [(cellValue)]="patient.name" [cellType]="'text'"></app-patient-data-cell>
       </div>
+
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Plano de Saúde</h5>
         <p class="click-for-edit">{{patient.HealthInsurance ? patient.HealthInsurance.name : 'Nenhum'}}</p>
       </div>
+
+
       <div class="col-md-3 col-sm-6">
-        <h5 class="data-name">Nascimento</h5>
-        <p class="click-for-edit">{{patient.birthday ? (patient.birthday | date:'dd/MM/yyyy') : 'Não Informado'}}</p>
+        <app-patient-data-cell [cellTitle]="'Nascimento'" [(cellValue)]="patient.birthday" [cellType]="'date'"></app-patient-data-cell>
       </div>
+
+
       <div class="col-md-3 col-sm-6">
         <h5 class="data-name">Celular</h5>
         <p class="click-for-edit">{{patient.Contact.phone ? patient.Contact.phone : '--'}}</p>
@@ -76,12 +68,10 @@
         <p class="click-for-edit">{{patient.Address.street || '--'}}</p>
       </div>
       <div class="col-md-3 col-sm-6">
-        <h5 class="data-name">Número</h5>
-        <p class="click-for-edit">{{patient.Address.number || '--'}}</p>
+        <app-patient-data-cell [cellTitle]="'Número'" [(cellValue)]="patient.Address.number" [cellType]="'text'"></app-patient-data-cell>
       </div>
       <div class="col-md-3 col-sm-6">
-        <h5 class="data-name">Complemento</h5>
-        <p class="click-for-edit">{{patient.Address.complement || '--'}}</p>
+        <app-patient-data-cell [cellTitle]="'Complemento'" [(cellValue)]="patient.Address.complement" [cellType]="'text'"></app-patient-data-cell>
       </div>
     </div>
     <div class="row">
@@ -94,8 +84,12 @@
         <p class="click-for-edit">{{patient.Address.city || '--'}}</p>
       </div>
     </div>
+
+
     <hr class="details-separator">
+
     <div class="panel-footer">
+
       <div class="row">
         <div class="col-md-12">
           <p style="display: inline-block"><strong class="data-name">Cadastrado em: </strong>{{patient.created_at |
@@ -107,7 +101,7 @@
             HH:mm'}}</p>
         </div>
       </div>
-    </div>
 
+    </div>
 
   </div>

@@ -33,7 +33,7 @@ export class RootComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.showLoadingScreen = this.shareData.loadingScreenEvent;
+    this.showLoadingScreen = this.shareData.loadingScreenSubscriber;
   }
 
   @HostListener('window:resize', ['$event'])

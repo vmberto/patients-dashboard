@@ -23,6 +23,11 @@ export class PatientsShowComponent implements OnInit {
 
   ngOnInit() {
 
+    this.shareDataService.patientChangesSubscriber.subscribe(
+      (newData) => {
+        this.updatePatientData(newData);
+      });
+
     this.loadData();
   }
 
@@ -52,13 +57,13 @@ export class PatientsShowComponent implements OnInit {
     });
   }
 
-  public updatePatientData($event): void {
+  public updatePatientData(newData): void {
 
-    this.patientsService.update($event).subscribe(() => {
-      if (this.shareDataService.patient) {
+    this.patientsService.update(newData)
+      .subscribe(() => {
         this.shareDataService.patient.updated_at = new Date();
-      }
-    });
+      });
+      
   }
 
 }

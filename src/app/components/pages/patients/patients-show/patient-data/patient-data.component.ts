@@ -12,30 +12,17 @@ export class PatientDataComponent implements OnInit {
 
   public patient: any;
 
-  @Output() editPatientData: EventEmitter<any> = new EventEmitter<any>();
   public downloadingAnamnesis: boolean;
   public edit: string;
   public openInput = false;
+
 
   constructor(private anamnesisService: AnamnesisService, private shareDataService: ShareDataService) { }
 
   ngOnInit() {
 
     this.patient = this.shareDataService.patient;
-    this.edit = this.patient.name;
 
-  }
-
-  public openInputToEdit() {
-    this.openInput = !this.openInput;
-  }
-
-  public closeOrEditButton(editField) {
-    if (editField && this.patient.name !== editField) {
-      this.patient.name = editField;
-      this.editPatientData.emit(this.patient);
-    }
-    this.openInput = false;
   }
 
   public downloadPatientAnamnesis() {

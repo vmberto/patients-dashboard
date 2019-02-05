@@ -36,6 +36,8 @@ export class EventHandler {
 
     if (typeof Object.keys(event.body)[0] === 'string' && Object.keys(event.body)[0].substr(0, 3) === 'new') {
       this.toastService.show({ text: 'Criado com sucesso!', type: 'success' });
+    } else if (typeof Object.keys(event.body)[0] === 'string' && Object.keys(event.body)[0].substr(0, 6) === 'edited') {
+      this.toastService.show({ text: 'Atualizado com sucesso!', type: 'success' });
     } else if (event.body.error && event.body.msg) {
       this.toastService.show({ text: event.body.msg, type: 'warning' });
     } else if (event.body instanceof Blob) {
@@ -75,7 +77,7 @@ export class EventHandler {
    * @param {any} event
    */
   private handle422(event: any): void {
-    this.toastService.show({ text: event.error.msg || 'Ocorreu um erro', type: 'danger' });
+    this.toastService.show({ text: event.error.msg || 'Ocorreu um erro', type: 'warning' });
   }
 
 

@@ -6,27 +6,28 @@ import { Subject } from 'rxjs';
 })
 export class ShareDataService {
 
-    public loadingScreenEvent = new Subject<any>();
-    public sessionLimitEvent = new Subject<any>();
+    public loadingScreenSubscriber = new Subject<any>();
+    public patientChangesSubscriber = new Subject<any>();
 
     private patientData: any;
 
     constructor() {}
 
     public activateLoadingScreen(activate) {
-      setTimeout(() => { this.loadingScreenEvent.next(activate); });
+      setTimeout(() => { this.loadingScreenSubscriber.next(activate); });
     }
-
-    public watchSessionLimit(changed: boolean) {
-      this.sessionLimitEvent.next(changed);
-    }
-
+    
+    
     get patient() {
       return this.patientData;
     }
 
     set patient(patientData: any) {
       this.patientData = patientData;
+    }
+
+    public sendPatientChanges(changes) {
+      this.patientChangesSubscriber.next(changes);
     }
 
 

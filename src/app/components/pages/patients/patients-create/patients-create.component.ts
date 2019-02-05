@@ -159,7 +159,6 @@ export class PatientsCreateComponent implements OnInit {
       
       this.creatingPatient = true;
 
-
       const formControls = this.patientForm.controls;
 
       const patientData = {
