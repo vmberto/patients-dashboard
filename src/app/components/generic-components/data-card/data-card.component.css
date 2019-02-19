@@ -18,10 +18,10 @@
 }
 .card-category {
   font-weight: 700!important;
-  letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--font-subcolor)!important;
   margin: 0;
+  word-break: keep-all;
 }
 
 .info-icon {
@@ -48,6 +48,7 @@
 }
 .card-footer{
   padding: .25rem;
+  word-break: keep-all;
 }
 .card-footer-title {
   margin: 0;
@@ -56,5 +57,4 @@
 
 .card-title {
   font-size: 60px;
-  margin: 0;
 }
